@@ -1,10 +1,3 @@
-/**
- * ============================================================================
- * TRANSLATIONS MODULE (i18n)
- * Supports: en, id, ja, ru, zh, ko, ar
- * ============================================================================
- */
-
 const translations = {
     en: {
         nav_overview: "Overview", nav_news: "News", nav_projects: "Projects", nav_docs: "Docs", nav_credits: "Credits", nav_community: "Community",
@@ -67,68 +60,6 @@ const translations = {
         ea_warn_p3: "⚠️ Klik di bawah untuk melanjutkan pengunduhan file ISO.",
         ea_warn_continue: "Continue to Download &rarr;",
         btn_use_supported: "View Release Status"
-    },
-    id: {
-        nav_overview: "Overview", nav_news: "News", nav_projects: "Projects", nav_docs: "Docs", nav_credits: "Credits", nav_community: "Community",
-        nav_chat: "Support", nav_support: "Donasi",
-        oobe_welcome: "🌿 Welcome to Nook<span>leaf</span>", oobe_prompt: "> PRESS ANY KEY OR CLICK TO INITIALIZE...", oobe_bye: "👋 Bye bye!...",
-        oobe_shutting: "Shutting down Nook Core...", oobe_thanks: "Terima kasih telah berkunjung ke situs resmi Nookleaf.",
-        global_update_notice: "<strong>Website Update:</strong> tetoOS 10 saat ini dalam tahap finalisasi dan ditargetkan rilis pada tahun 2027. File EA Maret tetap dapat diunduh.",
-        hero_title: "Redefining your<br><span class=\"text-gradient\">Desktop Experience.</span>",
-        hero_desc: "Pusat pengembangan modifikasi Sistem Operasi yang dirancang khusus untuk memberikan latency terendah, penggunaan RAM efisien, dan stabilitas maksimal.",
-        btn_explore: "Explore tetoOS 10 (2027)", btn_license: "Free Windows License 🎁",
-        card_dev_label: "Project In Development",
-        card_teto11_desc: "<span style=\"color: #10b981;\">></span> Leader modder is now fully focused on tetoOS projects.<br><span style=\"color: #10b981;\">></span> Focus: Privacy, Productivity & Fluid UI<br><span style=\"color: #10b981;\">></span> Progress: Building kernel modules... 45%<br>",
-        card_stable_label: "Target Flagship: 2027",
-        news_main_title: "Nookleaf <span class=\"text-gradient\">Newswire</span>",
-        news_main_desc: "Pembaruan terbaru, catatan rilis, dan informasi menarik dari ekosistem Nookleaf.",
-        news0_title: "tetoOS 10 Final dipastikan akan rilis pada tahun 2027",
-        news1_title: "Pengembangan tetoOS 11 Dimulai",
-        news2_title: "Proyek Archleaf Resmi Memasuki Masa EOS",
-        news3_title: "Repository Nookleaf ala Linux Hadir!",
-        news4_title: "tetoOS 10 EA Resmi Dirilis ke Publik",
-        news5_title: "Review Perdana dari Bootloop ID & LortLimbah",
-        teto_final_soon: "Versi Final (Target 2027)",
-        teto11_subtitle: "Next Generation Experience",
-        teto11_dev_status: "Status: <strong>Dalam Tahap Pengembangan 🛠️</strong><br><br>Tim kami saat ini sedang membangun ekosistem tetoOS 11. Harap bersabar menunggu, informasi lebih lanjut akan segera diumumkan.",
-        zenth_dev_status: "Status: <strong style=\"color: #60a5fa;\">Coming Soon / Belum Lanjut 🔒</strong><br><br>tetoOS Zenth adalah sistem operasi berbasis <strong>Linux (Fedora Base)</strong>. Saat ini proyek masih bersifat sangat tertutup (internal only) dan dalam tahap pengerjaan modul inti.",
-        btn_closed_access: "🔒 Akses Tertutup (Coming Soon)", btn_preregister: "Pre-Register Sekarang", btn_back_home: "← Kembali ke Beranda Nookleaf",
-        team_title: "Meet Our <span style=\"background: linear-gradient(135deg, #34d399 0%, #059669 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;\">Development Team</span>",
-        team_subtitle: "Passionate developers creating amazing experiences",
-        comm_label: "JOIN OUR COMMUNITY", comm_title: "Be part of the <span class=\"text-gradient\">Nookleaf Community</span>",
-        comm_desc: "Ask smart questions, get fast support, share what you learn, and squad up — bergabunglah dengan ekosistem kami sekarang.",
-        footer_desc: "Built for speed. Tuned for gaming.<br>Research-backed Windows & Linux optimizations.",
-        footer_privacy: "Privacy Policy & Terms of Service", btn_back_top: "↑ Back to top",
-        
-        teto10_badge: "Target Rilis: 2027 • Dalam Proses Peracikan",
-        teto10_desc: "Dibangun di atas Windows 10 Enterprise LTSC IoT. Saat ini dalam tahap persiapan intensif untuk peluncuran resmi tahun 2027. Edisi EA Maret tetap dapat Anda unduh di bawah.",
-        btn_dl_teto: "Download EA Maret / Edisi",
-        btn_cbt_soon: "Roadmap Rilis 2027 🔒",
-        teto10_card1_title: "Sangat Ringan",
-        teto10_card1_desc: "Sepenuhnya debloated, hemat RAM, hanya komponen penting yang tersisa. Kecepatan murni, tanpa beban mati.",
-        teto10_card2_title: "Aturan Anda",
-        teto10_card2_desc: "Instalasi modular — pilih hanya yang Anda butuhkan sejak awal. Defender, Firewall, UAC, Hibernate — semua dalam kendali Anda.",
-        teto10_card3_title: "Setup Aplikasi Mudah",
-        teto10_card3_desc: "Menginstal software belum pernah semudah ini berkat tpkg — package manager bawaan tetoOS. Satu perintah, selesai.",
-        dl_modal_title: "Download tetoOS 10",
-        dl_modal_subtitle: "Pilih versi & edisi Windows Anda (EA Maret tetap tersedia)",
-        dl_modal_version: "Versi Windows",
-        dl_modal_edition: "Edisi",
-        dl_modal_supported: "Supported (Final 2027)",
-        dl_modal_unsupported: "Unsupported / Arsip",
-        dl_modal_helper: "Pilih sebuah edisi.",
-        dl_modal_no_selection: "Tidak ada edisi yang dipilih.",
-        dl_modal_btn_dl: "Download",
-        dl_no_iso: "ISO tidak tersedia untuk versi ini.",
-        dl_selected: "dipilih.",
-        cbt_modal_title: "Peluncuran Dijadwalkan 2027",
-        cbt_modal_desc: "tetoOS 10 versi Final saat ini masih <strong>dalam tahap peracikan intensif</strong> dan ditargetkan rilis pada tahun <strong>2027</strong>.",
-        cbt_modal_info: "Sambil menunggu versi 2027, Anda tetap dapat mencoba dan mengunduh versi <strong>EA Maret</strong> di menu download.",
-        ea_warn_p1: "Build Early Access / Unsupported ini tersedia untuk eksperimen dan pengujian pada mesin lama.",
-        ea_warn_p2: "Versi Final tetoOS 10 saat ini sedang diproses secara penuh dengan target rilis 2027.",
-        ea_warn_p3: "⚠️ Klik tautan di bawah untuk melanjutkan pengunduhan file ISO.",
-        ea_warn_continue: "Lanjut Download &rarr;",
-        btn_use_supported: "Lihat Status Rilis"
     },
     ja: {
         nav_overview: "概要", nav_news: "ニュース", nav_projects: "プロジェクト", nav_docs: "ドキュメント", nav_credits: "クレジット", nav_community: "コミュニティ",
@@ -439,37 +370,102 @@ const translations = {
         ea_warn_p3: "⚠️ انقر أدناه لمتابعة التنزيل.",
         ea_warn_continue: "متابعة التنزيل &rarr;",
         btn_use_supported: "عرض حالة الإصدار"
+    },
+    id: {
+        nav_overview: "Overview", nav_news: "News", nav_projects: "Projects", nav_docs: "Docs", nav_credits: "Credits", nav_community: "Community",
+        nav_chat: "Support", nav_support: "Donasi",
+        oobe_welcome: "🌿 Welcome to Nook<span>leaf</span>", oobe_prompt: "> PRESS ANY KEY OR CLICK TO INITIALIZE...", oobe_bye: "👋 Bye bye!...",
+        oobe_shutting: "Shutting down Nook Core...", oobe_thanks: "Terima kasih telah berkunjung ke situs resmi Nookleaf.",
+        global_update_notice: "<strong>Website Update:</strong> tetoOS 10 saat ini dalam tahap finalisasi dan ditargetkan rilis pada tahun 2027. File EA Maret tetap dapat diunduh.",
+        hero_title: "Redefining your<br><span class=\"text-gradient\">Desktop Experience.</span>",
+        hero_desc: "Pusat pengembangan modifikasi Sistem Operasi yang dirancang khusus untuk memberikan latency terendah, penggunaan RAM efisien, dan stabilitas maksimal.",
+        btn_explore: "Explore tetoOS 10 (2027)", btn_license: "Free Windows License 🎁",
+        card_dev_label: "Project In Development",
+        card_teto11_desc: "<span style=\"color: #10b981;\">></span> Leader modder is now fully focused on tetoOS projects.<br><span style=\"color: #10b981;\">></span> Focus: Privacy, Productivity & Fluid UI<br><span style=\"color: #10b981;\">></span> Progress: Building kernel modules... 45%<br>",
+        card_stable_label: "Target Flagship: 2027",
+        news_main_title: "Nookleaf <span class=\"text-gradient\">Newswire</span>",
+        news_main_desc: "Pembaruan terbaru, catatan rilis, dan informasi menarik dari ekosistem Nookleaf.",
+        news0_title: "tetoOS 10 Final dipastikan akan rilis pada tahun 2027",
+        news1_title: "Pengembangan tetoOS 11 Dimulai",
+        news2_title: "Proyek Archleaf Resmi Memasuki Masa EOS",
+        news3_title: "Repository Nookleaf ala Linux Hadir!",
+        news4_title: "tetoOS 10 EA Resmi Dirilis ke Publik",
+        news5_title: "Review Perdana dari Bootloop ID & LortLimbah",
+        teto_final_soon: "Versi Final (Target 2027)",
+        teto11_subtitle: "Next Generation Experience",
+        teto11_dev_status: "Status: <strong>Dalam Tahap Pengembangan 🛠️</strong><br><br>Tim kami saat ini sedang membangun ekosistem tetoOS 11. Harap bersabar menunggu, informasi lebih lanjut akan segera diumumkan.",
+        zenth_dev_status: "Status: <strong style=\"color: #60a5fa;\">Coming Soon / Belum Lanjut 🔒</strong><br><br>tetoOS Zenth adalah sistem operasi berbasis <strong>Linux (Fedora Base)</strong>. Saat ini proyek masih bersifat sangat tertutup (internal only) dan dalam tahap pengerjaan modul inti.",
+        btn_closed_access: "🔒 Akses Tertutup (Coming Soon)", btn_preregister: "Pre-Register Sekarang", btn_back_home: "← Kembali ke Beranda Nookleaf",
+        team_title: "Meet Our <span style=\"background: linear-gradient(135deg, #34d399 0%, #059669 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;\">Development Team</span>",
+        team_subtitle: "Passionate developers creating amazing experiences",
+        comm_label: "JOIN OUR COMMUNITY", comm_title: "Be part of the <span class=\"text-gradient\">Nookleaf Community</span>",
+        comm_desc: "Ask smart questions, get fast support, share what you learn, and squad up — bergabunglah dengan ekosistem kami sekarang.",
+        footer_desc: "Built for speed. Tuned for gaming.<br>Research-backed Windows & Linux optimizations.",
+        footer_privacy: "Privacy Policy & Terms of Service", btn_back_top: "↑ Back to top",
+        
+        teto10_badge: "Target Rilis: 2027 • Dalam Proses Peracikan",
+        teto10_desc: "Dibangun di atas Windows 10 Enterprise LTSC IoT. Saat ini dalam tahap persiapan intensif untuk peluncuran resmi tahun 2027. Edisi EA Maret tetap dapat Anda unduh di bawah.",
+        btn_dl_teto: "Download EA Maret / Edisi",
+        btn_cbt_soon: "Roadmap Rilis 2027 🔒",
+        teto10_card1_title: "Sangat Ringan",
+        teto10_card1_desc: "Sepenuhnya debloated, hemat RAM, hanya komponen penting yang tersisa. Kecepatan murni, tanpa beban mati.",
+        teto10_card2_title: "Aturan Anda",
+        teto10_card2_desc: "Instalasi modular — pilih hanya yang Anda butuhkan sejak awal. Defender, Firewall, UAC, Hibernate — semua dalam kendali Anda.",
+        teto10_card3_title: "Setup Aplikasi Mudah",
+        teto10_card3_desc: "Menginstal software belum pernah semudah ini berkat tpkg — package manager bawaan tetoOS. Satu perintah, selesai.",
+        dl_modal_title: "Download tetoOS 10",
+        dl_modal_subtitle: "Pilih versi & edisi Windows Anda (EA Maret tetap tersedia)",
+        dl_modal_version: "Versi Windows",
+        dl_modal_edition: "Edisi",
+        dl_modal_supported: "Supported (Final 2027)",
+        dl_modal_unsupported: "Unsupported / Arsip",
+        dl_modal_helper: "Pilih sebuah edisi.",
+        dl_modal_no_selection: "Tidak ada edisi yang dipilih.",
+        dl_modal_btn_dl: "Download",
+        dl_no_iso: "ISO tidak tersedia untuk versi ini.",
+        dl_selected: "dipilih.",
+        cbt_modal_title: "Peluncuran Dijadwalkan 2027",
+        cbt_modal_desc: "tetoOS 10 versi Final saat ini masih <strong>dalam tahap peracikan intensif</strong> dan ditargetkan rilis pada tahun <strong>2027</strong>.",
+        cbt_modal_info: "Sambil menunggu versi 2027, Anda tetap dapat mencoba dan mengunduh versi <strong>EA Maret</strong> di menu download.",
+        ea_warn_p1: "Build Early Access / Unsupported ini tersedia untuk eksperimen dan pengujian pada mesin lama.",
+        ea_warn_p2: "Versi Final tetoOS 10 saat ini sedang diproses secara penuh dengan target rilis 2027.",
+        ea_warn_p3: "⚠️ Klik tautan di bawah untuk melanjutkan pengunduhan file ISO.",
+        ea_warn_continue: "Lanjut Download &rarr;",
+        btn_use_supported: "Lihat Status Rilis"
     }
 };
 
 /**
  * Switch active language and update UI strings
- * @param {string} lang - Language code ('en', 'ru', 'ja', 'zh', 'ko', 'ar', 'id')
+ * @param {string} lang - Language code ('en', 'ja', 'ru', 'zh', 'ko', 'ar', 'id')
  */
 function setLanguage(lang) {
     if (!translations[lang]) lang = 'en';
     localStorage.setItem('nookleaf_lang', lang);
     document.documentElement.lang = lang;
 
+    const flagImg = (cc, alt) =>
+        `<img src="https://flagcdn.com/20x15/${cc}.png" width="20" height="15" alt="${alt}" style="vertical-align:middle;display:inline-block;">`;
+
     const langLabels = {
-        en: 'EN',
-        ru: 'RU',
-        ja: 'JA',
-        zh: 'ZH',
-        ko: 'KO',
-        ar: 'AR'
-        id: 'ID',
+        en: flagImg('us', 'EN'),
+        ja: flagImg('jp', 'JA'),
+        ru: flagImg('ru', 'RU'),
+        zh: flagImg('cn', 'ZH'),
+        ko: flagImg('kr', 'KO'),
+        ar: flagImg('sa', 'AR'),
+        id: flagImg('id', 'ID'),
     };
-    const labelText = '🌐 ' + (langLabels[lang] || 'EN');
+    const labelHTML = langLabels[lang] || flagImg('us', 'EN');
 
     const dBtn = document.getElementById('langDropdown');
-    if (dBtn) dBtn.innerText = labelText;
+    if (dBtn) dBtn.innerHTML = labelHTML;
 
     const mBtn = document.getElementById('langDropdownMobile');
-    if (mBtn) mBtn.innerText = labelText;
+    if (mBtn) mBtn.innerHTML = labelHTML;
 
     const fBtn = document.getElementById('langDropdownFooter');
-    if (fBtn) fBtn.innerText = labelText;
+    if (fBtn) fBtn.innerHTML = labelHTML;
 
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
