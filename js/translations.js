@@ -444,7 +444,7 @@ const translations = {
 
 /**
  * Switch active language and update UI strings
- * @param {string} lang - Language code ('en', 'id', 'ja', 'ru', 'zh', 'ko', 'ar')
+ * @param {string} lang - Language code ('en', 'ru', 'ja', 'zh', 'ko', 'ar', 'id')
  */
 function setLanguage(lang) {
     if (!translations[lang]) lang = 'en';
@@ -452,15 +452,15 @@ function setLanguage(lang) {
     document.documentElement.lang = lang;
 
     const langLabels = {
-        id: '🇮🇩 ID',
-        en: '🇺🇸 EN',
-        ja: '🇯🇵 JA',
-        ko: '🇰🇷 KO',
-        ru: '🇷🇺 RU',
-        zh: '🇨🇳 ZH',
-        ar: '🇸🇦 AR'
+        en: 'EN',
+        ru: 'RU',
+        ja: 'JA',
+        zh: 'ZH',
+        ko: 'KO',
+        ar: 'AR'
+        id: 'ID',
     };
-    const labelText = '🌐 ' + (langLabels[lang] || '🇺🇸 EN');
+    const labelText = '🌐 ' + (langLabels[lang] || 'EN');
 
     const dBtn = document.getElementById('langDropdown');
     if (dBtn) dBtn.innerText = labelText;
