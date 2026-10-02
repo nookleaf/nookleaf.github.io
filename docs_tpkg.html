@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="tpkg (Teto Package Manager) Documentation — Beginner-friendly guide to installing, updating, and managing software on tetoOS with an Arch Linux-style CLI.">
+    <title>tpkg Package Manager Guide - Nookleaf Docs</title>
+    <!-- Preconnect CDN Hints -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://flagcdn.com">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Modular Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/teto.css">
+    <link rel="stylesheet" href="css/docs.css">
+</head>
+<body class="teto-theme">
+
+    <!-- RICKROLL OVERLAY -->
+    <div id="rickroll-container">
+        <video id="rickroll-video" src="" loop preload="auto"></video>
+    </div>
+
+    <!-- SHARED NAVBAR -->
+    <nav id="main-nav"></nav>
+
+    <!-- MAIN DOCUMENTATION CONTAINER -->
+    <main class="docs-wrapper container fade-in-smooth" style="margin-top: 100px; margin-bottom: 80px;">
+        
+        <!-- Header -->
+        <header class="docs-header text-center" style="margin-bottom: 40px;">
+            <div class="docs-badge" data-i18n="tpkg_badge">PACKAGE MANAGER & USER GUIDE</div>
+            <h1 class="docs-title" style="font-size: 2.6rem; font-weight: 800; margin-top: 12px; margin-bottom: 12px;" data-i18n="tpkg_main_title">tpkg — Teto Package Manager</h1>
+            <p class="docs-subtitle" style="font-size: 1.05rem; color: #94a3b8; font-weight: 600; max-width: 800px; margin: 0 auto;" data-i18n="tpkg_main_subtitle">
+                A blazing-fast, Arch Linux-style package manager designed for Windows. Install, upgrade, and manage your applications effortlessly from the command line.
+            </p>
+        </header>
+
+        <div class="row">
+            
+            <!-- Sticky Sidebar (Table of Contents) -->
+            <div class="col-lg-3 mb-4">
+                <div class="toc-box">
+                    <div class="toc-title" data-i18n="tpkg_toc_title">📑 TABLE OF CONTENTS</div>
+                    <ul class="toc-list">
+                        <li><a href="#overview" data-i18n="tpkg_toc_1">1. What is tpkg?</a></li>
+                        <li><a href="#quickstart" data-i18n="tpkg_toc_2">2. Beginner Quick Start</a></li>
+                        <li><a href="#winget-bridge" data-i18n="tpkg_toc_3">3. Recommended: Winget & MS Store</a></li>
+                        <li><a href="#sync-install" data-i18n="tpkg_toc_4">4. Installing & Upgrading (-S)</a></li>
+                        <li><a href="#query-mode" data-i18n="tpkg_toc_5">5. Searching & Inspecting (-Q)</a></li>
+                        <li><a href="#remove-mode" data-i18n="tpkg_toc_6">6. Uninstalling Cleanly (-R)</a></li>
+                        <li><a href="#tetaur" data-i18n="tpkg_toc_7">7. Community Repo (TETAUR)</a></li>
+                        <li><a href="#building" data-i18n="tpkg_toc_8">8. Building Packages (-B)</a></li>
+                        <li><a href="#cheatsheet" data-i18n="tpkg_toc_9">9. Quick Command Cheat Sheet</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-lg-9">
+
+                <!-- SECTION 1: WHAT IS TPKG? -->
+                <section id="overview" class="docs-card mb-4">
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec1_title"><span class="icon">⚡</span> 1. What is tpkg?</h2>
+                    <p class="docs-lead" data-i18n="tpkg_sec1_lead">
+                        <strong>tpkg</strong> (Teto Package Manager) is a modern package management system built natively in <strong>Rust</strong> for tetoOS and Windows.
+                    </p>
+                    <p style="color: #cbd5e1; line-height: 1.8;" data-i18n="tpkg_sec1_p1">
+                        If you've ever used <strong>Arch Linux</strong> (pacman) or <strong>Void Linux</strong> (xbps), you'll feel right at home. Instead of opening a web browser, hunting down download buttons, dodging installer adware, and clicking "Next, Next, Agree, Finish", <code>tpkg</code> lets you install, update, and manage all your software with single, concise terminal commands.
+                    </p>
+
+                    <div class="row g-3 my-3">
+                        <div class="col-md-6">
+                            <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 12px; padding: 18px;">
+                                <h5 style="color: #fca5a5; font-weight: 700; font-size: 1rem; margin-bottom: 8px;">❌ The Old Windows Way</h5>
+                                <ul style="color: #94a3b8; font-size: 0.9rem; padding-left: 18px; line-height: 1.6; margin: 0;">
+                                    <li>Manually searching websites on Google</li>
+                                    <li>Risk of downloading bundled bloatware or malware</li>
+                                    <li>Scattered uninstallers leaving leftover registry junk</li>
+                                    <li>Updating 20 apps requires opening 20 individual updaters</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 12px; padding: 18px;">
+                                <h5 style="color: #6ee7b7; font-weight: 700; font-size: 1rem; margin-bottom: 8px;">✅ The tpkg Way</h5>
+                                <ul style="color: #cbd5e1; font-size: 0.9rem; padding-left: 18px; line-height: 1.6; margin: 0;">
+                                    <li>One simple command: <code>tpkg -Sw appname</code></li>
+                                    <li>Direct access to millions of verified Windows packages</li>
+                                    <li>Atomic tracking — clean installs and clean uninstalls</li>
+                                    <li>One command to update every app on your system: <code>tpkg -Syu</code></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert-box-info">
+                        <strong data-i18n="tpkg_sec1_arch_title">Under the Hood Highlights:</strong>
+                        <ul class="mb-0 mt-2 ps-3" style="line-height: 1.7;">
+                            <li data-i18n="tpkg_sec1_arch1"><strong>Native Speed:</strong> Built from scratch in Rust with zero heavy runtime overhead.</li>
+                            <li data-i18n="tpkg_sec1_arch2"><strong>PubGrub Dependency Resolver:</strong> Automatically detects and resolves required libraries and dependencies before installing.</li>
+                            <li data-i18n="tpkg_sec1_arch3"><strong>.tetopkg Format:</strong> Ultra-fast compression using Zstandard (zstd) and tar archives for instantaneous decompression.</li>
+                            <li data-i18n="tpkg_sec1_arch4"><strong>Atomic Safety:</strong> If an installation fails mid-way, <code>tpkg</code> rolls back changes automatically to prevent broken states.</li>
+                            <li data-i18n="tpkg_sec1_arch5"><strong>Windows GUI Sync:</strong> Automatically syncs with Windows <strong>Apps & features</strong> and Control Panel so you can still uninstall apps the standard way.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SECTION 2: BEGINNER QUICK START -->
+                <section id="quickstart" class="docs-card mb-4">
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec2_title"><span class="icon">🚀</span> 2. Beginner Quick Start</h2>
+                    <p class="docs-lead" data-i18n="tpkg_sec2_lead">
+                        You don't need to memorize dozens of flags. Here are the 3 most essential commands you'll use 95% of the time:
+                    </p>
+
+                    <div class="mb-4">
+                        <h5 style="color: #fff; font-weight: 700;">Step 1: Open Your Terminal</h5>
+                        <p style="color: #cbd5e1;">Press <kbd style="background: #1e293b; color: #38bdf8; border: 1px solid #334155; padding: 2px 6px; border-radius: 4px;">Win + X</kbd> and select <strong>Terminal</strong> or <strong>PowerShell</strong>.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 style="color: #fff; font-weight: 700;">Step 2: Install Any Popular App (Recommended)</h5>
+                        <p style="color: #cbd5e1;">Install common Windows apps like Discord, Steam, Spotify, or Chrome in seconds with the <code>-Sw</code> flag:</p>
+                        <pre class="code-block"><code><span class="keyword">tpkg</span> <span class="string">-Sw</span> Discord.Discord Valve.Steam Spotify.Spotify</code></pre>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 style="color: #fff; font-weight: 700;">Step 3: Update Everything in One Step</h5>
+                        <p style="color: #cbd5e1;">To update your package database and upgrade all installed apps at once:</p>
+                        <pre class="code-block"><code><span class="keyword">tpkg</span> <span class="string">-Syu</span></code></pre>
+                    </div>
+
+                    <div class="alert-box-info">
+                        <strong>💡 How pacman flags work:</strong><br>
+                        Uppercase letters indicate the primary operation mode (<code>-S</code> = Sync/Install, <code>-R</code> = Remove, <code>-Q</code> = Query, <code>-T</code> = TETAUR, <code>-B</code> = Build). Lowercase letters modify that operation (<code>w</code> = winget catalog, <code>y</code> = refresh database, <code>u</code> = upgrade, <code>s</code> = search, <code>i</code> = info).
+                    </div>
+                </section>
+
+                <!-- SECTION 3: WINGET & MS STORE (RECOMMENDED) -->
+                <section id="winget-bridge" class="docs-card mb-4" style="border: 1px solid rgba(16, 185, 129, 0.35); box-shadow: 0 0 25px rgba(16, 185, 129, 0.08);">
+                    <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                        <h2 class="docs-card-title m-0" data-i18n="tpkg_sec3_title"><span class="icon">⭐</span> 3. Best & Recommended: Winget & MS Store Integration</h2>
+                        <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #059669; padding: 6px 12px; font-weight: 700; font-size: 0.78rem;">⭐ RECOMMENDED FOR BEGINNERS</span>
+                    </div>
+
+                    <p class="docs-lead" data-i18n="tpkg_sec3_lead" style="color: #6ee7b7;">
+                        For daily computer use, pairing <code>tpkg</code> with the vast <strong>Winget</strong> and <strong>Microsoft Store</strong> ecosystem is the easiest and most powerful method to get your software!
+                    </p>
+                    <p style="color: #cbd5e1; line-height: 1.8;">
+                        You get the ultra-clean CLI experience of <code>tpkg</code> combined with immediate access to hundreds of thousands of popular Windows games, browsers, chat tools, and developer utilities (e.g. Google Chrome, Visual Studio Code, Discord, Steam, OBS Studio).
+                    </p>
+
+                    <div class="table-responsive my-3">
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Command</th>
+                                    <th>Target Source</th>
+                                    <th>Practical Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>tpkg -Sw &lt;PackageIdentifier&gt;</code></td>
+                                    <td>Winget Catalog (Install)</td>
+                                    <td><code>tpkg -Sw Discord.Discord</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Ssw &lt;query&gt;</code></td>
+                                    <td>Search Winget Catalog</td>
+                                    <td><code>tpkg -Ssw chrome</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Syw &lt;package&gt;</code></td>
+                                    <td>Sync Index + Install from Winget</td>
+                                    <td><code>tpkg -Syw Valve.Steam</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Qw</code></td>
+                                    <td>Query Installed Winget Packages</td>
+                                    <td><code>tpkg -Qw</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Sws &lt;ProductId&gt;</code></td>
+                                    <td>Microsoft Store (Install by ID)</td>
+                                    <td><code>tpkg -Sws 9NBLGGH4NNS1</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Ssws &lt;query&gt;</code></td>
+                                    <td>Search Microsoft Store Catalog</td>
+                                    <td><code>tpkg -Ssws "Windows Terminal"</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h5 style="color: #fff; font-weight: 700; margin-top: 25px;">Popular One-Liner Install Bundles:</h5>
+                    <div class="mb-3">
+                        <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 6px;">🎮 <strong>Gamer Essentials Bundle:</strong></p>
+                        <pre class="code-block"><code><span class="keyword">tpkg</span> <span class="string">-Sw</span> Valve.Steam Discord.Discord OBSProject.OBSStudio Spotify.Spotify</code></pre>
+                    </div>
+
+                    <div class="mb-2">
+                        <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 6px;">💻 <strong>Developer Essentials Bundle:</strong></p>
+                        <pre class="code-block"><code><span class="keyword">tpkg</span> <span class="string">-Sw</span> Microsoft.VisualStudioCode Git.Git 7zip.7zip Python.Python.3.12</code></pre>
+                    </div>
+                </section>
+
+                <!-- SECTION 4: INSTALLING & UPGRADING (-S) -->
+                <section id="sync-install" class="docs-card mb-4">
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec4_title"><span class="icon">📥</span> 4. Installing & Upgrading Native Packages (-S / Sync)</h2>
+                    <p class="docs-lead" data-i18n="tpkg_sec4_lead">
+                        The <code>-S</code> (Sync) mode interacts with official tetoOS repositories to download, verify, install, and update native <code>.tetopkg</code> packages.
+                    </p>
+
+                    <div class="table-responsive my-3">
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Command</th>
+                                    <th>What It Does</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>tpkg -S &lt;package&gt;</code></td>
+                                    <td>Downloads and installs a specific package</td>
+                                    <td><code>tpkg -S neovim</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -S &lt;pkg1&gt; &lt;pkg2&gt;</code></td>
+                                    <td>Installs multiple packages in a single batch</td>
+                                    <td><code>tpkg -S vlc 7zip curl</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Sy</code></td>
+                                    <td>Refreshes & synchronizes repository index databases</td>
+                                    <td><code>tpkg -Sy</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Su</code></td>
+                                    <td>Upgrades all installed packages to their newest versions</td>
+                                    <td><code>tpkg -Su</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Syu</code></td>
+                                    <td>Synchronizes databases and performs a full system upgrade</td>
+                                    <td><code>tpkg -Syu</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Ss &lt;query&gt;</code></td>
+                                    <td>Searches repository databases for packages matching keyword</td>
+                                    <td><code>tpkg -Ss editor</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Si &lt;package&gt;</code></td>
+                                    <td>Displays detailed package info (version, size, deps, license)</td>
+                                    <td><code>tpkg -Si firefox</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -S --noconfirm &lt;pkg&gt;</code></td>
+                                    <td>Installs automatically without prompting for confirmation</td>
+                                    <td><code>tpkg -S --noconfirm git</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h5 style="color: #fff; font-weight: 700; margin-top: 25px;">Example Terminal Output:</h5>
+                    <pre class="code-block"><code><span class="heading">$ tpkg -S neovim</span>
+ 
+<span class="keyword">::</span> Resolving dependencies...
+<span class="keyword">Packages (3)</span> libuv-1.46.0  luajit-2.1.0  neovim-0.10.0
+ 
+<span class="comment">Total Download Size:   8.43 MiB</span>
+<span class="comment">Total Installed Size:  32.10 MiB</span>
+ 
+<span class="keyword">:: Proceed with installation? [Y/n]</span> y
+<span class="keyword">::</span> Downloading packages...
+ libuv-1.46.0              [############################] 100%
+ luajit-2.1.0              [############################] 100%
+ neovim-0.10.0             [############################] 100%
+<span class="keyword">::</span> Verifying checksums... done
+<span class="keyword">::</span> Installing packages...
+(1/3) installing libuv                   [############################] done
+(2/3) installing luajit                  [############################] done
+(3/3) installing neovim                  [############################] done</code></pre>
+                </section>
+
+                <!-- SECTION 5: SEARCHING & INSPECTING (-Q) -->
+                <section id="query-mode" class="docs-card mb-4">
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec5_title"><span class="icon">🔍</span> 5. Searching & Inspecting (-Q / Query)</h2>
+                    <p class="docs-lead" data-i18n="tpkg_sec5_lead">
+                        The <code>-Q</code> (Query) mode lets you inspect your local system to see what is currently installed, search local apps, and trace files.
+                    </p>
+
+                    <div class="table-responsive my-3">
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Command</th>
+                                    <th>Explanation</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>tpkg -Q</code></td>
+                                    <td>Lists all packages currently installed on your computer</td>
+                                    <td><code>tpkg -Q</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Q &lt;package&gt;</code></td>
+                                    <td>Checks if a specific package is installed and shows its version</td>
+                                    <td><code>tpkg -Q python</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Qi &lt;package&gt;</code></td>
+                                    <td>Shows complete info, install date, packager, and dependencies</td>
+                                    <td><code>tpkg -Qi neovim</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Ql &lt;package&gt;</code></td>
+                                    <td>Lists every single file installed on disk by this package</td>
+                                    <td><code>tpkg -Ql 7zip</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Qs &lt;keyword&gt;</code></td>
+                                    <td>Searches among your installed packages only</td>
+                                    <td><code>tpkg -Qs player</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Qo &lt;file_path&gt;</code></td>
+                                    <td>Finds which installed package owns a given file on disk</td>
+                                    <td><code>tpkg -Qo C:\ProgramData\tetopkg\db\local</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Qu</code></td>
+                                    <td>Lists all installed packages that have available updates</td>
+                                    <td><code>tpkg -Qu</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: UNINSTALLING CLEANLY (-R) -->
+                <section id="remove-mode" class="docs-card mb-4">
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec6_title"><span class="icon">🗑️</span> 6. Uninstalling Software Cleanly (-R / Remove)</h2>
+                    <p class="docs-lead" data-i18n="tpkg_sec6_lead">
+                        When you remove software with <code>tpkg</code>, it tracks installed files precisely to prevent leaving orphaned junk or bloated directories behind.
+                    </p>
+
+                    <div class="table-responsive my-3">
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Command</th>
+                                    <th>Function</th>
+                                    <th>Recommended Use Case</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>tpkg -R &lt;package&gt;</code></td>
+                                    <td>Standard removal of a package</td>
+                                    <td>Standard uninstallation</td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Rs &lt;package&gt;</code></td>
+                                    <td>Removes the package + unneeded orphan dependencies</td>
+                                    <td><strong>Best practice!</strong> Keeps system lean and free of unused sub-dependencies</td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Rn &lt;package&gt;</code></td>
+                                    <td>Removes package and wipes user configuration files</td>
+                                    <td>When you want a completely fresh reset with zero leftover config</td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Rns &lt;package&gt;</code></td>
+                                    <td>Full clean purge: removes package, orphan deps, and configs</td>
+                                    <td>Total cleanup of an application and everything associated with it</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="alert-box-info my-4" data-i18n="tpkg_sec6_gui_sync">
+                        <strong>Prefer Using the Windows Interface?</strong><br>
+                        Don't worry if you ever feel uncomfortable using the command line! All software installed through <code>tpkg</code> is automatically registered with Windows. You can open <strong>Windows Settings &rarr; Apps &rarr; Installed apps</strong> (or the classic <strong>Control Panel &rarr; Programs and Features</strong>) and uninstall or modify any application the traditional Windows way whenever you wish.
+                    </div>
+
+                    <h5 style="color: #fff; font-weight: 700; margin-top: 25px;">Managing Repositories via -R:</h5>
+                    <p style="color: #cbd5e1;">You can also configure custom package repositories using repo flags:</p>
+                    <pre class="code-block"><code><span class="comment"># List all active package repositories</span>
+<span class="keyword">tpkg</span> <span class="string">-R --list-repo</span>
+ 
+<span class="comment"># Add a third-party or internal community repository</span>
+<span class="keyword">tpkg</span> <span class="string">-R --add-repo</span> https://repo.example.com/teto
+ 
+<span class="comment"># Remove a repository by name</span>
+<span class="keyword">tpkg</span> <span class="string">-R --remove-repo</span> custom-repo</code></pre>
+                </section>
+
+                <!-- SECTION 7: TETAUR COMMUNITY REPO -->
+                <section id="tetaur" class="docs-card mb-4">
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec7_title_tetaur"><span class="icon">🌐</span> 7. Community Repository (TETAUR)</h2>
+                    <p class="docs-lead" data-i18n="tpkg_sec7_lead_tetaur">
+                        <strong>TETAUR</strong> (Teto User Repository) is the community repository system, inspired directly by Arch Linux's AUR.
+                    </p>
+                    <p style="color: #cbd5e1; line-height: 1.8;">
+                        While the main <code>tpkg</code> repository contains officially verified packages, TETAUR allows developers and power users to share build recipes (<code>TETOBUILD</code>) for game patches, custom themes, and nightly development builds.
+                    </p>
+
+                    <div class="table-responsive my-3">
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Command</th>
+                                    <th>Action</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>tpkg -T &lt;package&gt;</code></td>
+                                    <td>Install from TETAUR</td>
+                                    <td>Clones the recipe, verifies sources, builds locally, and installs</td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Ts &lt;keyword&gt;</code></td>
+                                    <td>Search TETAUR</td>
+                                    <td>Searches the community catalog for available user recipes</td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -Tu</code></td>
+                                    <td>Update TETAUR packages</td>
+                                    <td>Checks for recipe updates and recompiles installed community software</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- SECTION 8: BUILDING PACKAGES (-B) -->
+                <section id="building" class="docs-card mb-4">
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec8_title"><span class="icon">📦</span> 8. Building Packages (-B / TETOBUILD)</h2>
+                    <p class="docs-lead" data-i18n="tpkg_sec8_lead">
+                        Building packages in <code>tpkg</code> is straightforward. Instead of complex bash scripts, recipes use clean, human-readable <strong>TOML</strong> format.
+                    </p>
+
+                    <h5 style="color: #fff; font-weight: 700;">Sample TETOBUILD.toml:</h5>
+                    <pre class="code-block"><code><span class="heading">[meta]</span>
+pkgname = <span class="string">"sample-tool"</span>
+pkgver  = <span class="string">"1.0.0"</span>
+pkgrel  = 1
+pkgdesc = <span class="string">"Ultra fast sample CLI utility"</span>
+arch    = [<span class="string">"x86_64"</span>]
+license = [<span class="string">"MIT"</span>]
+ 
+<span class="heading">[deps]</span>
+depends = [<span class="string">"curl"</span>]
+ 
+<span class="heading">[[source]]</span>
+url    = <span class="string">"https://example.com/downloads/v1.0.0.zip"</span>
+sha256 = <span class="string">"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"</span>
+ 
+<span class="heading">[scripts]</span>
+package = <span class="string">"""
+copy sample-tool.exe ${pkgdir}\bin\
+"""</span></code></pre>
+
+                    <h5 style="color: #fff; font-weight: 700; margin-top: 25px;">Build Commands:</h5>
+                    <div class="table-responsive my-3">
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Command</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>tpkg -B</code></td>
+                                    <td>Builds a <code>.tetopkg</code> package file from <code>TETOBUILD.toml</code> in the current folder</td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -B &lt;path&gt;</code></td>
+                                    <td>Builds a package from a specified directory path</td>
+                                </tr>
+                                <tr>
+                                    <td><code>tpkg -B --install</code></td>
+                                    <td>Builds the package and immediately installs it to your system upon completion</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- SECTION 9: COMMAND CHEAT SHEET -->
+                <section id="cheatsheet" class="docs-card mb-4">
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec9_title"><span class="icon">📋</span> 9. Quick Command Cheat Sheet</h2>
+                    <p class="docs-lead" data-i18n="tpkg_sec9_lead">
+                        Bookmark or save this cheat sheet for fast reference whenever you're using the terminal:
+                    </p>
+
+                    <div class="table-responsive my-3">
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th>Goal</th>
+                                    <th>Command</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Install popular app (Winget)</strong></td>
+                                    <td><code>tpkg -Sw &lt;app&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Install native package</strong></td>
+                                    <td><code>tpkg -S &lt;package&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Install multiple apps</strong></td>
+                                    <td><code>tpkg -Sw Discord.Discord Valve.Steam 7zip.7zip</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Update whole system</strong></td>
+                                    <td><code>tpkg -Syu</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Search an app (Winget)</strong></td>
+                                    <td><code>tpkg -Ssw &lt;keyword&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>View app info</strong></td>
+                                    <td><code>tpkg -Si &lt;package&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Uninstall an app cleanly</strong></td>
+                                    <td><code>tpkg -Rs &lt;package&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>List installed apps</strong></td>
+                                    <td><code>tpkg -Q</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Find which app owns a file</strong></td>
+                                    <td><code>tpkg -Qo &lt;filepath&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Install from Community (TETAUR)</strong></td>
+                                    <td><code>tpkg -T &lt;package&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Build recipe locally</strong></td>
+                                    <td><code>tpkg -B --install</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Navigation Footer inside Card -->
+                    <!-- <div class="text-center mt-4 pt-3 border-top" style="border-color: rgba(255, 255, 255, 0.08) !important;"> -->
+                        <!-- <a href="teto.html" class="btn btn-primary-red px-4 py-2 me-2">← Back to tetoOS 10</a> -->
+                        <!-- <a href="docs_setup.html" class="btn btn-outline-light px-4 py-2 me-2" style="border-radius: 8px;">Setup Docs &rarr;</a> -->
+                        <!-- <a href="docs_debloat.html" class="btn btn-outline-light px-4 py-2" style="border-radius: 8px;">Debloat Docs &rarr;</a> -->
+                    <!-- </div> -->
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- SHARED BOTTOM SECTIONS (Special Thanks + Footer) -->
+    <div id="shared-bottom-sections"></div>
+
+    <!-- SHARED MODALS (Docs, Policy, Privacy) -->
+    <div id="shared-modals"></div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Modular JavaScript Files -->
+    <script src="js/translations.js"></script>
+    <script src="js/translations_docs_tpkg.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/rickroll.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

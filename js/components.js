@@ -19,7 +19,7 @@ const NookleafComponents = {
         const isTeto = currentFile === 'teto.html';
         const isTeto11 = currentFile === 'teto11.html';
         const isZenth = currentFile === 'zenth.html';
-        const isDocs = currentFile === 'docs_setup.html' || currentFile === 'docs_debloat.html' || currentFile === 'docs.html';
+        const isDocs = currentFile === 'docs_setup.html' || currentFile === 'docs_debloat.html' || currentFile === 'docs_tpkg.html' || currentFile === 'docs.html';
         const isPolicy = currentFile === 'policy.html';
 
         navContainer.outerHTML = `
