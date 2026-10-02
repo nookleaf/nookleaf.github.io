@@ -33,7 +33,7 @@
             docs_sec1_foot: "This system is designed as an extension of the Windows <code>$oem$</code> mechanism. Folders, scripts, and configuration files (<code>StartSetup.ini</code>, <code>OS_Settings.ini</code>) are deeply interconnected. An error in one component can disrupt the entire installation process.",
 
             docs_sec2_title: '<span class="icon">⚙️</span> 2. StartSetup.ini Structure',
-            docs_sec2_lead: "The primary configuration file read <code>StartSetup_x64.exe</code> to manage OS selection and setup UI timeout.",
+            docs_sec2_lead: "The primary configuration file read to manage OS selection and setup UI timeout.",
             docs_sec2_example_label: "Example StartSetup.ini Content:",
             docs_sec2_th_key: "Key / Parameter",
             docs_sec2_th_desc: "Function & Explanation",
