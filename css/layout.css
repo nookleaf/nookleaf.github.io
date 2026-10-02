@@ -43,6 +43,33 @@
     color: #10b981 !important;
 }
 
+/* Navbar action buttons — unified height and square icon buttons */
+.navbar .btn-outline-green,
+.navbar .btn-donate,
+.navbar .btn-lang-bright {
+    height: 38px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+/* Make toggle theme and language buttons a clean square */
+.navbar #theme-btn,
+.navbar #langDropdown {
+    width: 38px;
+    height: 38px;
+    padding: 0 !important;
+    min-width: 38px;
+}
+
+/* Hide Bootstrap caret on flag-only lang button */
+.navbar .btn-lang-bright.dropdown-toggle::after {
+    display: none;
+}
+
 /* Glass Dropdown */
 .glass-dropdown {
     background: rgba(10, 25, 15, 0.85);
@@ -71,6 +98,7 @@ body.zenth-theme .glass-dropdown {
     padding: 14px 16px;
     transition: all 0.3s ease;
     background: transparent;
+    color: #e2e8f0;
     margin-bottom: 5px;
     cursor: pointer;
     text-decoration: none;
@@ -78,14 +106,35 @@ body.zenth-theme .glass-dropdown {
 
 .glass-dropdown .dropdown-item:hover {
     background: rgba(16, 185, 129, 0.1);
+    color: #fff;
 }
 
 body.teto-theme .glass-dropdown .dropdown-item:hover {
     background: rgba(239, 68, 68, 0.1);
+    color: #fff;
 }
 
 body.zenth-theme .glass-dropdown .dropdown-item:hover {
     background: rgba(59, 130, 246, 0.1);
+    color: #fff;
+}
+
+body.light-mode .glass-dropdown .dropdown-item {
+    color: #0f172a;
+}
+
+body.light-mode .glass-dropdown .dropdown-item:hover {
+    color: #059669;
+}
+
+/* Compact lang-picker dropdown items */
+.lang-dropdown .dropdown-item {
+    padding: 8px 12px;
+    margin-bottom: 2px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .project-icon-box {
@@ -170,12 +219,12 @@ body.zenth-theme .glass-dropdown .dropdown-item:hover {
 .shared-bg-2 {
     padding: 80px 5%;
     background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-#community-section {
-    padding: 100px 5%;
-    background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+#community-section,
+#thanks-section {
+    padding: 80px 5%;
 }
 
 /* === FOOTER === */
@@ -270,6 +319,46 @@ body.light-mode .footer-link:hover {
 
 body.light-mode .footer-heading {
     color: #0f172a;
+}
+
+/* Light mode theme-specific navbar & footer borders/colors */
+body.light-mode.teto-theme .navbar {
+    border-bottom: 1px solid rgba(239, 68, 68, 0.3);
+}
+body.light-mode.teto-theme .nav-link:hover,
+body.light-mode.teto-theme .nav-link.active {
+    color: #dc2626 !important;
+}
+body.light-mode.teto-theme .glass-dropdown {
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+body.light-mode.teto-theme .footer-nookleaf {
+    border-top: 1px solid rgba(239, 68, 68, 0.2);
+}
+body.light-mode.teto-theme .footer-link:hover {
+    color: #dc2626 !important;
+}
+
+body.light-mode.teto11-theme .navbar {
+    border-bottom: 1px solid rgba(234, 179, 8, 0.3);
+}
+body.light-mode.teto11-theme .nav-link:hover,
+body.light-mode.teto11-theme .nav-link.active {
+    color: #ca8a04 !important;
+}
+body.light-mode.teto11-theme .glass-dropdown {
+    border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+body.light-mode.zenth-theme .navbar {
+    border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+}
+body.light-mode.zenth-theme .nav-link:hover,
+body.light-mode.zenth-theme .nav-link.active {
+    color: #2563eb !important;
+}
+body.light-mode.zenth-theme .glass-dropdown {
+    border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
 /* === RESPONSIVE MEDIA QUERIES === */

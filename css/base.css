@@ -26,9 +26,9 @@ body {
     transition: background-color 0.8s ease, background-image 0.8s ease, color 0.5s;
 }
 
-/* === THEME VARIANTS === */
+/* === THEME VARIANTS (STRICT ACCENT COLORS - ZERO GREEN IN TETO/TETO11/ZENTH) === */
 
-/* TETO OS (RED THEME) */
+/* TETO OS 10 (RED THEME) */
 body.teto-theme {
     background-color: #0a0505;
     background-image: radial-gradient(circle at 80% -10%, #421111 0%, #0a0505 60%),
@@ -40,13 +40,61 @@ body.teto-theme .navbar {
 }
 
 body.teto-theme .brand-highlight {
-    color: #ef4444;
+    color: #ef4444 !important;
 }
 
 body.teto-theme .nav-link:hover,
 body.teto-theme .nav-link.active {
     color: #ef4444 !important;
 }
+
+body.teto-theme .btn-outline-green {
+    border: 2px solid rgba(239, 68, 68, 0.5) !important;
+    color: #ef4444 !important;
+}
+
+body.teto-theme .btn-outline-green:hover {
+    border-color: #ef4444 !important;
+    background-color: rgba(239, 68, 68, 0.15) !important;
+    color: #f87171 !important;
+}
+
+body.teto-theme .glass-dropdown {
+    border-color: rgba(239, 68, 68, 0.3) !important;
+    background: rgba(18, 10, 10, 0.9) !important;
+}
+
+body.teto-theme .glass-dropdown .dropdown-item:hover,
+body.teto-theme .glass-dropdown .dropdown-item:focus {
+    background-color: rgba(239, 68, 68, 0.15) !important;
+}
+
+body.teto-theme .footer-nookleaf strong {
+    color: #ef4444 !important;
+}
+
+body.teto-theme .footer-link:hover {
+    color: #ef4444 !important;
+}
+
+body.teto-theme .back-to-top:hover {
+    color: #ef4444 !important;
+    border-color: #ef4444 !important;
+}
+
+body.teto-theme #creditsModal h6[data-i18n="modal_credits_heading"] {
+    color: #ef4444 !important;
+}
+
+body.teto-theme #privacyModal p[style*="10b981"] {
+    color: #ef4444 !important;
+}
+
+body.teto-theme .btn-outline-secondary:hover {
+    border-color: #ef4444 !important;
+    color: #ef4444 !important;
+}
+
 
 /* TETO OS 11 (YELLOW / BLACK THEME) */
 body.teto11-theme {
@@ -60,8 +108,48 @@ body.teto11-theme .navbar {
 }
 
 body.teto11-theme .brand-highlight {
-    color: #eab308;
+    color: #eab308 !important;
 }
+
+body.teto11-theme .nav-link:hover,
+body.teto11-theme .nav-link.active {
+    color: #eab308 !important;
+}
+
+body.teto11-theme .btn-outline-green {
+    border: 2px solid rgba(234, 179, 8, 0.5) !important;
+    color: #eab308 !important;
+}
+
+body.teto11-theme .btn-outline-green:hover {
+    border-color: #eab308 !important;
+    background-color: rgba(234, 179, 8, 0.15) !important;
+    color: #facc15 !important;
+}
+
+body.teto11-theme .glass-dropdown {
+    border-color: rgba(234, 179, 8, 0.3) !important;
+    background: rgba(18, 18, 10, 0.9) !important;
+}
+
+body.teto11-theme .glass-dropdown .dropdown-item:hover,
+body.teto11-theme .glass-dropdown .dropdown-item:focus {
+    background-color: rgba(234, 179, 8, 0.15) !important;
+}
+
+body.teto11-theme #creditsModal h6[data-i18n="modal_credits_heading"] {
+    color: #eab308 !important;
+}
+
+body.teto11-theme #privacyModal p[style*="10b981"] {
+    color: #eab308 !important;
+}
+
+body.teto11-theme .btn-outline-secondary:hover {
+    border-color: #eab308 !important;
+    color: #eab308 !important;
+}
+
 
 /* TETO OS ZENTH (BLUE / FEDORA THEME) */
 body.zenth-theme {
@@ -76,11 +164,45 @@ body.zenth-theme .navbar {
 }
 
 body.zenth-theme .brand-highlight {
-    color: #3b82f6;
+    color: #3b82f6 !important;
 }
 
 body.zenth-theme .nav-link:hover,
 body.zenth-theme .nav-link.active {
+    color: #3b82f6 !important;
+}
+
+body.zenth-theme .btn-outline-green {
+    border: 2px solid rgba(59, 130, 246, 0.5) !important;
+    color: #3b82f6 !important;
+}
+
+body.zenth-theme .btn-outline-green:hover {
+    border-color: #3b82f6 !important;
+    background-color: rgba(59, 130, 246, 0.15) !important;
+    color: #60a5fa !important;
+}
+
+body.zenth-theme .glass-dropdown {
+    border-color: rgba(59, 130, 246, 0.3) !important;
+    background: rgba(10, 16, 30, 0.85) !important;
+}
+
+body.zenth-theme .glass-dropdown .dropdown-item:hover,
+body.zenth-theme .glass-dropdown .dropdown-item:focus {
+    background-color: rgba(59, 130, 246, 0.15) !important;
+}
+
+body.zenth-theme #creditsModal h6[data-i18n="modal_credits_heading"] {
+    color: #3b82f6 !important;
+}
+
+body.zenth-theme #privacyModal p[style*="10b981"] {
+    color: #3b82f6 !important;
+}
+
+body.zenth-theme .btn-outline-secondary:hover {
+    border-color: #3b82f6 !important;
     color: #3b82f6 !important;
 }
 
@@ -102,6 +224,12 @@ body.light-mode.teto-theme {
     background-color: #fff5f6;
     background-image: radial-gradient(circle at 80% -10%, #ffe4e6 0%, #fff5f6 60%),
                       radial-gradient(circle at 10% 90%, #f1f5f9 0%, transparent 50%);
+}
+
+body.light-mode.teto11-theme {
+    background-color: #fefce8;
+    background-image: radial-gradient(circle at 80% -10%, #fef08a 0%, #fefce8 60%),
+                      radial-gradient(circle at 10% 90%, #fef9c3 0%, transparent 50%);
 }
 
 body.light-mode.zenth-theme {

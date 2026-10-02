@@ -266,6 +266,19 @@
     line-height: 1.6;
 }
 
+body.teto-theme .dev-card {
+    background: rgba(25, 10, 10, 0.6);
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+body.teto-theme .dev-card::before {
+    background: linear-gradient(90deg, transparent, #ef4444, transparent);
+}
+
+body.teto-theme .dev-card img {
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
 /* === ALERTS === */
 .alert-update {
     background: rgba(16, 185, 129, 0.1);
