@@ -19,6 +19,8 @@ const NookleafComponents = {
         const isTeto = currentFile === 'teto.html';
         const isTeto11 = currentFile === 'teto11.html';
         const isZenth = currentFile === 'zenth.html';
+        const isDocs = currentFile === 'docs_setup.html' || currentFile === 'docs_debloat.html' || currentFile === 'docs.html';
+        const isPolicy = currentFile === 'policy.html';
 
         navContainer.outerHTML = `
     <!-- NAVBAR -->
@@ -73,8 +75,8 @@ const NookleafComponents = {
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#docsModal" data-i18n="nav_docs">Docs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#creditsModal" data-i18n="nav_credits">Policy</a></li>
+                    <!-- li class="nav-item"><a class="nav-link ${isDocs ? 'active' : ''}" href="docs_setup.html" data-i18n="nav_docs">Docs</a></li -->
+                    <li class="nav-item"><a class="nav-link ${isPolicy ? 'active' : ''}" href="policy.html" data-i18n="nav_credits">Policy</a></li>
 
                     <!-- Mobile Controls -->
                     <li class="nav-item d-lg-none mt-3 pt-3 border-top border-secondary w-100 text-center">
@@ -227,7 +229,7 @@ const NookleafComponents = {
                 <div class="d-flex flex-column flex-md-row justify-content-between align-items-center pt-3">
                     <div class="footer-text text-center text-md-start mb-3 mb-md-0">
                         <p style="color: #64748b; font-size: 0.9rem; margin: 0; margin-bottom: 5px;" data-i18n="footer_copyright">© 2026 <strong style="color: #10b981;">Nookleaf</strong> — This site is a work in progress and subject to change.</p>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" style="color: #94a3b8; font-size: 0.85rem; text-decoration: underline;" data-i18n="footer_privacy">Privacy Policy & Terms of Service</a>
+                        <a href="policy.html" style="color: #94a3b8; font-size: 0.85rem; text-decoration: underline;" data-i18n="footer_privacy">Privacy Policy & Terms of Service</a>
                     </div>
                 </div>
             </div>

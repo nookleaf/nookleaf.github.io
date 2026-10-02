@@ -42,7 +42,7 @@
                     <p class="hero-desc" data-i18n="teto10_desc">Built on Windows 10 Enterprise LTSC IoT. Grand 2027 release in progress. Early Access (EA) ISO available below.</p>
                     <div class="d-flex flex-wrap gap-3">
                         <button type="button" class="btn btn-primary-red" data-bs-toggle="modal" data-bs-target="#downloadModal" data-i18n="btn_dl_teto">Download EA Maret / Editions</button>
-                        <button type="button" class="btn btn-cbt" data-bs-toggle="modal" data-bs-target="#cbtModal" data-i18n="btn_cbt_soon">Roadmap Rilis 2027 🔒</button>
+                        <button type="button" class="btn btn-cbt" data-bs-toggle="modal" data-bs-target="#cbtModal" data-i18n="btn_cbt_soon">Roadmap Rilis 2027</button>
                     </div>
                 </div>
 
@@ -54,11 +54,17 @@
                 <!-- Right Column: Feature Cards -->
                 <div class="col-lg-4 order-2 order-lg-3" style="z-index: 2;">
                     <div class="glass-card glass-card-red mb-4">
-                        <h4 data-i18n="teto10_card1_title">Blazing Lightweight</h4>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h4 class="m-0" data-i18n="teto10_card1_title">Blazing Lightweight</h4>
+                            <a href="docs_debloat.html" class="learn-more-link" style="color: #f87171; font-size: 0.82rem; text-decoration: underline; font-weight: 600; transition: 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#f87171'" data-i18n="btn_learn_more">Learn more...</a>
+                        </div>
                         <p class="system-font m-0" data-i18n="teto10_card1_desc">Fully debloated, light on RAM, only the essentials remain. Pure speed, zero dead weight.</p>
                     </div>
                     <div class="glass-card glass-card-red mb-4">
-                        <h4 data-i18n="teto10_card2_title">Your Rules</h4>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h4 class="m-0" data-i18n="teto10_card2_title">Your Rules</h4>
+                            <a href="docs_setup.html" class="learn-more-link" style="color: #f87171; font-size: 0.82rem; text-decoration: underline; font-weight: 600; transition: 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#f87171'" data-i18n="btn_learn_more">Learn more...</a>
+                        </div>
                         <p class="system-font m-0" data-i18n="teto10_card2_desc">Modular install — pick only what you need from the start. Defender, Firewall, UAC, Hibernate — all yours to control.</p>
                     </div>
                     <div class="glass-card glass-card-red">
@@ -107,7 +113,7 @@
                         <button class="teto-btn-outline active" data-version="sl" data-i18n="dl_version_sl">tetoOS Superlite</button>
                         <button class="teto-btn-outline" data-version="normal" data-i18n="dl_version_normal">tetoOS Normal</button>
                         
-                        <button class="faq-icon-btn" title="FAQ" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#docsModal">
+                        <button class="faq-icon-btn" title="Edition FAQ" data-bs-toggle="modal" data-bs-target="#editionFaqModal">
                             <svg viewBox="0 0 24 24">
                                 <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10C22 6.48 17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-2.5c0-.55.22-1.05.59-1.42l1.2-1.2C13.15 9.53 13.5 9 13.5 8.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5H8.5c0-1.93 1.57-3.5 3.5-3.5s3.5 1.57 3.5 3.5c0 .95-.38 1.81-1.03 2.45z"/>
                             </svg>
@@ -143,6 +149,79 @@
                         </svg>
                         <span data-i18n="dl_modal_btn_dl">Download</span>
                     </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- EDITION FAQ MODAL (Shows on top of Download Modal without closing it) -->
+    <div class="modal fade" id="editionFaqModal" tabindex="-1" aria-labelledby="editionFaqModalLabel" aria-hidden="true" style="z-index: 1065;">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 680px;">
+            <div class="modal-content glass-modal text-light border-0" style="background: rgba(18, 18, 22, 0.96); backdrop-filter: blur(20px); border: 1px solid rgba(239, 68, 68, 0.3) !important; box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 30px rgba(239, 68, 68, 0.15);">
+                
+                <div class="modal-header border-0 pb-0" style="padding: 24px 28px 12px;">
+                    <div class="d-flex align-items-center gap-2">
+                        <span style="font-size: 1.4rem;">💡</span>
+                        <h5 class="modal-title fw-bold" style="color: #fca5a5; font-size: 1.2rem;" data-i18n="ed_faq_modal_title">tetoOS Edition FAQ & Guide</h5>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body system-font" style="padding: 16px 28px 24px; max-height: 70vh; overflow-y: auto;">
+                    
+                    <!-- Q1 -->
+                    <div class="mb-4" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 18px;">
+                        <h6 class="fw-bold mb-2" style="color: #fff; font-size: 1.02rem;">
+                            <span style="color: #ef4444;">Q:</span> <span data-i18n="ed_faq_q1_title">What is the difference between Normal and Superlite editions?</span>
+                        </h6>
+                        <p style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.7; margin-bottom: 12px;" data-i18n="ed_faq_q1_desc">
+                            Both editions are fully debloated (unnecessary UWP apps and useless background services removed). The primary difference lies in the core system components:
+                        </p>
+                        <ul class="list-unstyled mb-0" style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.7;">
+                            <li class="mb-2" data-i18n="ed_faq_q1_normal"><strong>Normal Edition:</strong> Keeps core system files intact (including the WinSxS folder and default Windows fonts). Extremely lightweight while retaining full support for Windows Update.</li>
+                            <li data-i18n="ed_faq_q1_superlite"><strong>Superlite Edition:</strong> Drastically cuts disk footprint by removing non-essential fonts and COMPLETELY REMOVING the WinSxS folder (Component Store) for minimal RAM usage and maximum gaming throughput.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Warning Box for Superlite -->
+                    <div class="mb-4" style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 18px;">
+                        <div class="fw-bold mb-2" style="color: #fca5a5; font-size: 0.95rem;" data-i18n="ed_faq_warn_badge">
+                            ⚠️ Critical Warning for Superlite Users
+                        </div>
+                        <div class="fw-bold mb-1" style="color: #fff; font-size: 0.92rem;" data-i18n="ed_faq_warn_q">
+                            Can I use Windows Update on Superlite?
+                        </div>
+                        <p class="m-0" style="color: #fecaca; font-size: 0.88rem; line-height: 1.6;" data-i18n="ed_faq_warn_ans">
+                            NO. Because the WinSxS folder is removed, Windows Update cannot function. Even if forced on via tweak tools, the system will error out due to missing component files. If you require future updates, use the Normal Edition.
+                        </p>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="mb-4" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 18px;">
+                        <h6 class="fw-bold mb-2" style="color: #fff; font-size: 1.02rem;">
+                            <span style="color: #ef4444;">Q:</span> <span data-i18n="ed_faq_q2_title">Can I re-enable disabled features later?</span>
+                        </h6>
+                        <p class="m-0" style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.7;" data-i18n="ed_faq_q2_ans">
+                            Some can, some cannot — depending on how deep the modification is and which edition you choose. Features provided in the setup installer options are easier to toggle later. Core system components are difficult or impossible to restore. Choose wisely before downloading.
+                        </p>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="mb-2" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 18px;">
+                        <h6 class="fw-bold mb-2" style="color: #fff; font-size: 1.02rem;">
+                            <span style="color: #ef4444;">Q:</span> <span data-i18n="ed_faq_q3_title">Which edition should I choose?</span>
+                        </h6>
+                        <ul class="list-unstyled mb-0" style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.7;">
+                            <li class="mb-2" data-i18n="ed_faq_q3_normal"><strong>Choose Normal Edition if:</strong> You want a clean, fast Windows without bloatware, but still want the freedom to install Windows Updates in the future.</li>
+                            <li data-i18n="ed_faq_q3_superlite"><strong>Choose Superlite Edition if:</strong> You have low-end hardware, very limited disk storage, want maximum competitive FPS, and are 100% CERTAIN you will never update Windows.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="modal-footer border-0 pt-0" style="padding: 12px 28px 24px;">
+                    <button type="button" class="btn btn-primary-red w-100 py-2" data-bs-dismiss="modal" style="border-radius: 8px; font-weight: 600;" data-i18n="btn_got_it">Got it</button>
                 </div>
 
             </div>

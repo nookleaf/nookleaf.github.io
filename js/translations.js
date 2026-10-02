@@ -1,4 +1,6 @@
-const translations = {
+window.translations = window.translations || {};
+
+const coreTranslations = {
     en: {
         nav_overview: "Overview", nav_news: "News", nav_projects: "Projects", nav_docs: "Docs", nav_credits: "Policy", nav_community: "Community",
         nav_chat: "Support", nav_support: "Donate",
@@ -11,7 +13,7 @@ const translations = {
         global_update_notice: "<strong>Update:</strong> tetoOS 10 final target: 2027. Early Access (EA) ISO available below.",
         hero_title: "Redefining your<br><span class=\"text-gradient\">Desktop Experience.</span>",
         hero_desc: "OS modification development center designed for ultra-low latency, efficient RAM usage, and gaming stability.",
-        btn_explore: "Explore tetoOS 10 (2027)", btn_license: "Free Windows License 🎁",
+        btn_explore: "Explore tetoOS 10 (2027)", btn_license: "Free Windows License",
         card_dev_label: "Project In Development",
         card_teto11_desc: "<span style=\"color: #10b981;\">></span> Core focus: tetoOS next-gen<br><span style=\"color: #10b981;\">></span> Privacy, Speed & Modern UI<br><span style=\"color: #10b981;\">></span> Kernel modules: 45%<br>",
         card_stable_label: "Next Flagship Target: 2027",
@@ -29,9 +31,9 @@ const translations = {
 
         teto_final_soon: "Final Version (Target: 2027)",
         teto11_subtitle: "Next Generation Experience",
-        teto11_dev_status: "Status: <strong>In Development 🛠️</strong><br><br>Building next-generation tetoOS 11 ecosystem. Stay tuned for future updates.",
+        teto11_dev_status: "Status: <strong>In Development</strong><br><br>Building next-generation tetoOS 11 ecosystem. Stay tuned for future updates.",
         zenth_badge: "🐧 Linux • Base Fedora",
-        zenth_dev_status: "Status: <strong style=\"color: #60a5fa;\">Internal / In Progress 🔒</strong><br><br>tetoOS Zenth is a <strong>Linux (Fedora Base)</strong> OS currently in core module development.",
+        zenth_dev_status: "Status: <strong style=\"color: #60a5fa;\">Internal / In Progress</strong><br><br>tetoOS Zenth is a <strong>Linux (Fedora Base)</strong> OS currently in core module development.",
         btn_closed_access: "🔒 Closed Access (Coming Soon)", btn_preregister: "Pre-Register Now", btn_back_home: "← Back to Nookleaf Home",
 
         comm_label: "JOIN OUR COMMUNITY", comm_title: "Be part of the <span class=\"text-gradient\">Nookleaf Community</span>",
@@ -43,7 +45,7 @@ const translations = {
         thanks_creator_vtuber: "VTuber Content Creator",
         thanks_creator_tech: "Tech Content Creator",
         thanks_desc: "Thank you for testing and reviewing tetoOS 10. Creator feedback is vital to our development!",
-        thanks_watch: "📺 Watch Video Review",
+        thanks_watch: "Watch Video Review",
 
         footer_desc: "Built for speed. Tuned for gaming.<br>Research-backed Windows & Linux optimizations.",
         footer_heading_products: "PRODUCTS", footer_heading_community: "COMMUNITY",
@@ -61,6 +63,7 @@ const translations = {
         teto10_card2_desc: "Modular install — pick only what you need. Defender, Firewall, UAC, Hibernate under your control.",
         teto10_card3_title: "Easy App Setup",
         teto10_card3_desc: "Installing software is effortless with tpkg — built-in package manager. One command, done.",
+        btn_learn_more: "Learn more...",
 
         dl_modal_title: "Download tetoOS 10",
         dl_modal_subtitle: "Choose your Windows version & edition (EA Maret remains downloadable)",
@@ -85,7 +88,7 @@ const translations = {
         ea_warn_header: "⚠️ Notice: Early Access / Unsupported Build",
         ea_warn_p1: "This Early Access / Unsupported build is provided for experimentation and testing.",
         ea_warn_p2: "The official Final build is scheduled for 2027.",
-        ea_warn_p3: "⚠️ Click below to proceed to the ISO file download.",
+        ea_warn_p3: "Click below to proceed to the ISO file download.",
         ea_warn_continue: "Continue to Download &rarr;",
         btn_use_supported: "View Release Status",
         btn_wa_group: "WhatsApp Group",
@@ -113,7 +116,21 @@ const translations = {
         modal_privacy_sec1_p2: "<strong>2. Telemetry & Tracking:</strong> Most native telemetry services are deactivated to protect user privacy and maximize frame pacing.",
         modal_privacy_sec2_title: "🛡️ SECTION 2: DISCLAIMER",
         modal_privacy_sec2_p1: "<strong>Use at Your Own Risk:</strong> Custom operating systems involve core system alterations. Please verify compatibility before daily driving.",
-        modal_privacy_thanks: "Thank you for respecting Nookleaf Project guidelines."
+        modal_privacy_thanks: "Thank you for respecting Nookleaf Project guidelines.",
+
+        ed_faq_modal_title: "tetoOS Edition FAQ & Guide",
+        ed_faq_q1_title: "What is the difference between Normal and Superlite editions?",
+        ed_faq_q1_desc: "Both editions are fully debloated (unnecessary UWP apps and useless background services removed). The primary difference lies in the core system components:",
+        ed_faq_q1_normal: "<strong>Normal Edition:</strong> Keeps core system files intact (including the WinSxS folder and default Windows fonts). Extremely lightweight while retaining full support for Windows Update.",
+        ed_faq_q1_superlite: "<strong>Superlite Edition:</strong> Drastically cuts disk footprint by removing non-essential fonts and COMPLETELY REMOVING the WinSxS folder (Component Store) for minimal RAM usage and maximum gaming throughput.",
+        ed_faq_warn_badge: "⚠️ Critical Warning for Superlite Users",
+        ed_faq_warn_q: "Can I use Windows Update on Superlite?",
+        ed_faq_warn_ans: "NO. Because the WinSxS folder is removed, Windows Update cannot function. Even if forced on via tweak tools, the system will error out due to missing component files. If you require future updates, use the Normal Edition.",
+        ed_faq_q2_title: "Can I re-enable disabled features later?",
+        ed_faq_q2_ans: "Some can, some cannot — depending on how deep the modification is and which edition you choose. Features provided in the setup installer options are easier to toggle later. Core system components are difficult or impossible to restore. Choose wisely before downloading.",
+        ed_faq_q3_title: "Which edition should I choose?",
+        ed_faq_q3_normal: "<strong>Choose Normal Edition if:</strong> You want a clean, fast Windows without bloatware, but still want the freedom to install Windows Updates in the future.",
+        ed_faq_q3_superlite: "<strong>Choose Superlite Edition if:</strong> You have low-end hardware, very limited disk storage, want maximum competitive FPS, and are 100% CERTAIN you will never update Windows."
     },
     ja: {
         nav_overview: "概要", nav_news: "ニュース", nav_projects: "プロジェクト", nav_docs: "ドキュメント", nav_credits: "規約", nav_community: "コミュニティ",
@@ -127,7 +144,7 @@ const translations = {
         global_update_notice: "<strong>更新:</strong> tetoOS 10 正式版は2027年目標。EA版ISOは下記よりダウンロード可能です。",
         hero_title: "デスクトップ体験を、<br><span class=\"text-gradient\">再定義する。</span>",
         hero_desc: "超低遅延・省メモリ・最高峰のゲーム安定性を追求したOS最適化開発センター。",
-        btn_explore: "tetoOS 10 (2027) を見る", btn_license: "無料 Windows ライセンス 🎁",
+        btn_explore: "tetoOS 10 (2027) を見る", btn_license: "無料 Windows ライセンス",
         card_dev_label: "開発中プロジェクト",
         card_teto11_desc: "<span style=\"color: #10b981;\">></span> 次世代 tetoOS に開発集中<br><span style=\"color: #10b981;\">></span> プライバシー・高速性・モダンUI<br><span style=\"color: #10b981;\">></span> カーネル構築: 45%<br>",
         card_stable_label: "次期フラッグシップ目標: 2027",
@@ -145,9 +162,9 @@ const translations = {
 
         teto_final_soon: "正式版 (目標: 2027)",
         teto11_subtitle: "次世代のエクスペリエンス",
-        teto11_dev_status: "ステータス: <strong>開発中 🛠️</strong><br><br>次世代 tetoOS 11 エコシステムを構築中です。続報をお待ちください。",
+        teto11_dev_status: "ステータス: <strong>開発中</strong><br><br>次世代 tetoOS 11 エコシステムを構築中です。続報をお待ちください。",
         zenth_badge: "🐧 Linux • Base Fedora",
-        zenth_dev_status: "ステータス: <strong style=\"color: #60a5fa;\">開発中・非公開 🔒</strong><br><br>tetoOS Zenth は <strong>Linux (Fedora Base)</strong> OS です。現在コアモジュール開発中。",
+        zenth_dev_status: "ステータス: <strong style=\"color: #60a5fa;\">開発中・非公開</strong><br><br>tetoOS Zenth は <strong>Linux (Fedora Base)</strong> OS です。現在コアモジュール開発中。",
         btn_closed_access: "🔒 非公開アクセス (近日公開)", btn_preregister: "今すぐ事前登録", btn_back_home: "← Nookleaf ホームに戻る",
 
         comm_label: "コミュニティに参加", comm_title: "<span class=\"text-gradient\">Nookleaf コミュニティ</span> の一員になろう",
@@ -159,7 +176,7 @@ const translations = {
         thanks_creator_vtuber: "VTuber コンテンツクリエイター",
         thanks_creator_tech: "テックコンテンツクリエイター",
         thanks_desc: "tetoOS 10 のレビュー誠にありがとうございます。皆様のフィードバックが開発の大きな力となっています！",
-        thanks_watch: "📺 動画レビューを見る",
+        thanks_watch: "動画レビューを見る",
 
         footer_desc: "スピードのために設計。ゲームのためにチューニング。<br>研究に基づく Windows & Linux 最適化。",
         footer_heading_products: "製品", footer_heading_community: "コミュニティ",
@@ -177,6 +194,7 @@ const translations = {
         teto10_card2_desc: "モジュール式インストール。Defender、Firewall、UAC、休止状態などを自在にコントロール。",
         teto10_card3_title: "簡単なアプリ導入",
         teto10_card3_desc: "内蔵パッケージマネージャー tpkg でアプリ導入がスムーズ。コマンド一つで完了。",
+        btn_learn_more: "詳細を見る...",
 
         dl_modal_title: "tetoOS 10 をダウンロード",
         dl_modal_subtitle: "Windows バージョンとエディションを選択 (EA版も引き続き利用可能)",
@@ -201,7 +219,7 @@ const translations = {
         ea_warn_header: "⚠️ 注意: アーリーアクセス / 非サポートビルド",
         ea_warn_p1: "この EA / 非サポートビルドは実験およびテスト目的で提供されています。",
         ea_warn_p2: "公式正式版は2027年にリリース予定です。",
-        ea_warn_p3: "⚠️ 下のリンクをクリックして ISO ダウンロードに進んでください。",
+        ea_warn_p3: "下のリンクをクリックして ISO ダウンロードに進んでください。",
         ea_warn_continue: "ダウンロードを続行 &rarr;",
         btn_use_supported: "リリース状況を確認",
         btn_wa_group: "WhatsApp グループ",
@@ -229,7 +247,21 @@ const translations = {
         modal_privacy_sec1_p2: "<strong>2. テレメトリと追跡:</strong> プライバシー保護とフレームレート向上のため不要な追跡機能は無効化されています。",
         modal_privacy_sec2_title: "🛡️ 第2条: 免責事項",
         modal_privacy_sec2_p1: "<strong>自己責任での利用:</strong> カスタムOSはコアシステムに変更を加えます。必ず事前に互換性を確認してください。",
-        modal_privacy_thanks: "Nookleaf Project のガイドラインを遵守いただきありがとうございます。"
+        modal_privacy_thanks: "Nookleaf Project のガイドラインを遵守いただきありがとうございます。",
+
+        ed_faq_modal_title: "tetoOS エディション FAQ & ガイド",
+        ed_faq_q1_title: "Normal版とSuperlite版の違いは何ですか？",
+        ed_faq_q1_desc: "両エディションとも完全に軽量化（不要なUWPアプリやバックグラウンドサービスを削除）されています。主な違いはコアコンポーネントにあります：",
+        ed_faq_q1_normal: "<strong>Normal Edition:</strong> システムコアを保持（WinSxSフォルダや標準フォントを含む）。超軽量でありながらWindows Updateの受信が可能です。",
+        ed_faq_q1_superlite: "<strong>Superlite Edition:</strong> 不要なフォントを削除し、WinSxSフォルダ（Component Store）を完全削除してストレージを極限まで削減。究極のメモリ節約と最高性能を発揮します。",
+        ed_faq_warn_badge: "⚠️ Superlite版ユーザーへの重要な警告",
+        ed_faq_warn_q: "Superlite版でWindows Updateを利用できますか？",
+        ed_faq_warn_ans: "いいえ。WinSxSフォルダが削除されているため、Windows Updateは動作しません。ツールで強制的に有効化してもコアファイルが存在しないためエラーになります。将来更新が必要な場合はNormal版をお選びください。",
+        ed_faq_q2_title: "無効化された機能を後から再度有効にできますか？",
+        ed_faq_q2_ans: "一部は可能ですが、一部は不可能です。変更の深さと選択したエディションによります。インストーラーのオプション項目は後から変更しやすいですが、コア機能の復元は困難です。慎重にお選びください。",
+        ed_faq_q3_title: "どちらのエディションを選ぶべきですか？",
+        ed_faq_q3_normal: "<strong>Normal Edition を選ぶべき方:</strong> 余計なものがないクリーンで高速なWindowsを求めつつ、将来Windows Updateを適用する柔軟性を残したい場合。",
+        ed_faq_q3_superlite: "<strong>Superlite Edition を選ぶべき方:</strong> スペックが低め、容量が極めて少ない、限界までFPSを伸ばしたい、そしてWindowsを更新するつもりが100%ない場合。"
     },
     ru: {
         nav_overview: "Обзор", nav_news: "Новости", nav_projects: "Проекты", nav_docs: "Документация", nav_credits: "Правила", nav_community: "Сообщество",
@@ -243,7 +275,7 @@ const translations = {
         global_update_notice: "<strong>Обновление:</strong> Финал tetoOS 10 запланирован на 2027. Сборка EA доступна ниже.",
         hero_title: "Новый взгляд на<br><span class=\"text-gradient\">Ваш Рабочий Стол.</span>",
         hero_desc: "Центр разработки модификаций ОС для ультранизкой задержки, экономии ОЗУ и стабильности в играх.",
-        btn_explore: "Узнать о tetoOS 10 (2027)", btn_license: "Бесплатная лицензия Windows 🎁",
+        btn_explore: "Узнать о tetoOS 10 (2027)", btn_license: "Бесплатная лицензия Windows",
         card_dev_label: "Проект в разработке",
         card_teto11_desc: "<span style=\"color: #10b981;\">></span> Фокус: следующее поколение tetoOS<br><span style=\"color: #10b981;\">></span> Приватность, скорость и новый UI<br><span style=\"color: #10b981;\">></span> Модули ядра: 45%<br>",
         card_stable_label: "Цель следующего флагмана: 2027",
@@ -261,9 +293,9 @@ const translations = {
 
         teto_final_soon: "Финальная версия (2027)",
         teto11_subtitle: "Опыт Нового Поколения",
-        teto11_dev_status: "Статус: <strong>В разработке 🛠️</strong><br><br>Создаем экосистему tetoOS 11 нового поколения. Следите за обновлениями.",
+        teto11_dev_status: "Статус: <strong>В разработке</strong><br><br>Создаем экосистему tetoOS 11 нового поколения. Следите за обновлениями.",
         zenth_badge: "🐧 Linux • Base Fedora",
-        zenth_dev_status: "Статус: <strong style=\"color: #60a5fa;\">В разработке / Закрытый доступ 🔒</strong><br><br>tetoOS Zenth — ОС на базе <strong>Linux (Fedora)</strong>. В стадии разработки ядра.",
+        zenth_dev_status: "Статус: <strong style=\"color: #60a5fa;\">В разработке / Закрытый доступ</strong><br><br>tetoOS Zenth — ОС на базе <strong>Linux (Fedora)</strong>. В стадии разработки ядра.",
         btn_closed_access: "🔒 Закрытый доступ (Скоро)", btn_preregister: "Предварительная регистрация", btn_back_home: "← На главную Nookleaf",
 
         comm_label: "НАШЕ СООБЩЕСТВО", comm_title: "Станьте частью <span class=\"text-gradient\">Nookleaf Community</span>",
@@ -275,7 +307,7 @@ const translations = {
         thanks_creator_vtuber: "VTuber Контент-мейкер",
         thanks_creator_tech: "Техно-блогер",
         thanks_desc: "Спасибо за тестирование и подробные обзоры tetoOS 10. Ваша поддержка бесценна!",
-        thanks_watch: "📺 Смотреть видеообзор",
+        thanks_watch: "Смотреть видеообзор",
 
         footer_desc: "Создано для скорости. Настроено для игр.<br>Оптимизация Windows и Linux на основе исследований.",
         footer_heading_products: "ПРОДУКТЫ", footer_heading_community: "СООБЩЕСТВО",
@@ -293,6 +325,7 @@ const translations = {
         teto10_card2_desc: "Модульная установка — выбирайте только необходимое: Defender, Firewall, UAC, гибернация.",
         teto10_card3_title: "Удобная установка ПО",
         teto10_card3_desc: "Установка программ проще простого благодаря встроенному менеджеру пакетов tpkg. Одна команда — готово.",
+        btn_learn_more: "Подробнее...",
 
         dl_modal_title: "Скачать tetoOS 10",
         dl_modal_subtitle: "Выберите версию и редакцию Windows (сборка EA доступна)",
@@ -317,7 +350,7 @@ const translations = {
         ea_warn_header: "⚠️ Внимание: Сборка Early Access / Без поддержки",
         ea_warn_p1: "Эта сборка предназначена исключительно для экспериментов и тестирования.",
         ea_warn_p2: "Официальный финальный релиз запланирован на 2027 год.",
-        ea_warn_p3: "⚠️ Нажмите ниже, чтобы перейти к загрузке файла ISO.",
+        ea_warn_p3: "Нажмите ниже, чтобы перейти к загрузке файла ISO.",
         ea_warn_continue: "Перейти к скачиванию &rarr;",
         btn_use_supported: "Статус релиза",
         btn_wa_group: "Группа WhatsApp",
@@ -345,7 +378,21 @@ const translations = {
         modal_privacy_sec1_p2: "<strong>2. Телеметрия:</strong> Встроенная телеметрия отключена для защиты данных и стабильности фреймрейта.",
         modal_privacy_sec2_title: "🛡️ РАЗДЕЛ 2: ОТКАЗ ОТ ОТВЕТСТВЕННОСТИ",
         modal_privacy_sec2_p1: "<strong>Использование на свой страх и риск:</strong> Кастомные ОС вносят изменения в систему. Проверяйте совместимость заранее.",
-        modal_privacy_thanks: "Спасибо за соблюдение правил Nookleaf Project."
+        modal_privacy_thanks: "Спасибо за соблюдение правил Nookleaf Project.",
+
+        ed_faq_modal_title: "FAQ по редакциям tetoOS",
+        ed_faq_q1_title: "В чем разница между редакциями Normal и Superlite?",
+        ed_faq_q1_desc: "Обе редакции полностью оптимизированы (удалены UWP-приложения и лишние фоновые службы). Главное различие кроется в системном ядре:",
+        ed_faq_q1_normal: "<strong>Normal Edition:</strong> Сохраняет системное ядро (включая папку WinSxS и стандартные шрифты). Система очень легкая, но сохраняет возможность обновлений Windows Update.",
+        ed_faq_q1_superlite: "<strong>Superlite Edition:</strong> Экстремально урезает размер диска за счет удаления лишних шрифтов и ПОЛНОГО УДАЛЕНИЯ папки WinSxS (Component Store) для максимальной экономии ОЗУ и предельной производительности.",
+        ed_faq_warn_badge: "⚠️ Важное предупреждение для пользователей Superlite",
+        ed_faq_warn_q: "Могу ли я использовать Windows Update на Superlite?",
+        ed_faq_warn_ans: "НЕТ. Поскольку папка WinSxS удалена, Windows Update работать не будет. Даже при принудительном включении через утилиты возникнет ошибка из-за отсутствия файлов. Если вам нужны обновления, выбирайте Normal Edition.",
+        ed_faq_q2_title: "Могу ли я снова включить отключенные функции?",
+        ed_faq_q2_ans: "Некоторые можно, некоторые нет — зависит от глубины модификации и выбранной редакции. Функции из меню установщика проще включить позже. Базовые компоненты восстановить трудно. Выбирайте осознанно перед загрузкой.",
+        ed_faq_q3_title: "Какую редакцию мне выбрать?",
+        ed_faq_q3_normal: "<strong>Выберите Normal Edition, если:</strong> Вам нужна чистая, быстрая система без мусора, но с возможностью устанавливать обновления Windows в будущем.",
+        ed_faq_q3_superlite: "<strong>Выберите Superlite Edition, если:</strong> У вас слабый ПК, очень мало места на диске, вы стремитесь к максимальному FPS и на 100% УВЕРЕНЫ, что никогда не будете обновлять Windows."
     },
     zh: {
         nav_overview: "概览", nav_news: "新闻", nav_projects: "项目", nav_docs: "文档", nav_credits: "政策", nav_community: "社区",
@@ -359,7 +406,7 @@ const translations = {
         global_update_notice: "<strong>更新：</strong>tetoOS 10 正式版定于 2027 年。EA 测试版可在下方下载。",
         hero_title: "重新定义你的<br><span class=\"text-gradient\">桌面体验。</span>",
         hero_desc: "专为超低延迟、极低内存占用与顶级游戏稳定性打造的系统定制开发中心。",
-        btn_explore: "探索 tetoOS 10 (2027)", btn_license: "获取免费 Windows 许可证 🎁",
+        btn_explore: "探索 tetoOS 10 (2027)", btn_license: "获取免费 Windows 许可证",
         card_dev_label: "正在开发的项目",
         card_teto11_desc: "<span style=\"color: #10b981;\">></span> 全力打造次世代 tetoOS<br><span style=\"color: #10b981;\">></span> 隐私、极速与现代界面<br><span style=\"color: #10b981;\">></span> 内核模块构建进度：45%<br>",
         card_stable_label: "下一代旗舰目标：2027",
@@ -377,9 +424,9 @@ const translations = {
 
         teto_final_soon: "正式版 (目标: 2027)",
         teto11_subtitle: "次世代操作体验",
-        teto11_dev_status: "状态：<strong>开发阶段 🛠️</strong><br><br>正在构建次世代 tetoOS 11 生态，敬请期待后续发布。",
+        teto11_dev_status: "状态：<strong>开发阶段</strong><br><br>正在构建次世代 tetoOS 11 生态，敬请期待后续发布。",
         zenth_badge: "🐧 Linux • Base Fedora",
-        zenth_dev_status: "状态：<strong style=\"color: #60a5fa;\">内部研发中 🔒</strong><br><br>tetoOS Zenth 是基于 <strong>Linux (Fedora)</strong> 的操作系统，核心模块正在构建中。",
+        zenth_dev_status: "状态：<strong style=\"color: #60a5fa;\">内部研发中</strong><br><br>tetoOS Zenth 是基于 <strong>Linux (Fedora)</strong> 的操作系统，核心模块正在构建中。",
         btn_closed_access: "🔒 封闭访问 (即将推出)", btn_preregister: "立即预约体验", btn_back_home: "← 返回 Nookleaf 首页",
 
         comm_label: "加入我们的社区", comm_title: "成为 <span class=\"text-gradient\">Nookleaf 社区</span> 的一份子",
@@ -391,7 +438,7 @@ const translations = {
         thanks_creator_vtuber: "VTuber 创作者",
         thanks_creator_tech: "科技数码博主",
         thanks_desc: "感谢您测试并提供 tetoOS 10 的宝贵评测意见。创作者的支持是我们前进的动力！",
-        thanks_watch: "📺 观看视频评测",
+        thanks_watch: "观看视频评测",
 
         footer_desc: "为极致速度而生，为纯粹游戏调优。<br>基于科研级优化的 Windows 与 Linux 方案。",
         footer_heading_products: "产品列表", footer_heading_community: "交流社区",
@@ -409,6 +456,7 @@ const translations = {
         teto10_card2_desc: "模块化定制安装——Defender、防火墙、UAC、休眠均可按需自由配置。",
         teto10_card3_title: "便捷应用安装",
         teto10_card3_desc: "内置包管理器 tpkg 让软件部署前所未有地轻松。单行指令，一触即成。",
+        btn_learn_more: "了解更多...",
 
         dl_modal_title: "下载 tetoOS 10",
         dl_modal_subtitle: "选择您的 Windows 版本与具体构建（EA 预览版依然可供下载）",
@@ -433,7 +481,7 @@ const translations = {
         ea_warn_header: "⚠️ 提示：抢先体验 / 历史测试版本",
         ea_warn_p1: "此 EA / 社区测试构建仅供实验与测试使用。",
         ea_warn_p2: "官方正式版本定于 2027 年发布。",
-        ea_warn_p3: "⚠️ 点击下方链接继续下载 ISO 镜像文件。",
+        ea_warn_p3: "点击下方链接继续下载 ISO 镜像文件。",
         ea_warn_continue: "继续前往下载 &rarr;",
         btn_use_supported: "查看发布状态",
         btn_wa_group: "WhatsApp 群组",
@@ -461,7 +509,21 @@ const translations = {
         modal_privacy_sec1_p2: "<strong>2. 遥测与追踪：</strong>大部分原生遥测已禁用，全面保护隐私并提升帧率稳定性。",
         modal_privacy_sec2_title: "🛡️ 第二部分：免责声明",
         modal_privacy_sec2_p1: "<strong>使用风险自负：</strong>定制系统涉及底层修改，请在主力使用前充分测试兼容性。",
-        modal_privacy_thanks: "感谢您遵守 Nookleaf Project 社区规范。"
+        modal_privacy_thanks: "感谢您遵守 Nookleaf Project 社区规范。",
+
+        ed_faq_modal_title: "tetoOS 版本常见问题与指南",
+        ed_faq_q1_title: "Normal 和 Superlite 版本有什么区别？",
+        ed_faq_q1_desc: "两个版本均已深度精简（已删除无用的 UWP 应用和后台服务）。主要区别在于核心组件：",
+        ed_faq_q1_normal: "<strong>Normal Edition:</strong> 保持系统核心完整（包括 WinSxS 文件夹和默认 Windows 字体）。系统极其轻量，同时仍可正常接收 Windows Update。",
+        ed_faq_q1_superlite: "<strong>Superlite Edition:</strong> 通过删除非必要字体并彻底删除 WinSxS 文件夹（组件存储），极大缩减存储占用，以实现最低内存占用与极致性能。",
+        ed_faq_warn_badge: "⚠️ Superlite 用户重要警告",
+        ed_faq_warn_q: "我可以在 Superlite 上使用 Windows Update 吗？",
+        ed_faq_warn_ans: "不能。因为 WinSxS 文件夹已被删除，Windows Update 无法工作。即使通过工具强行开启，也会因为缺少核心组件文件而报错。如果您未来需要更新，请选择 Normal Edition。",
+        ed_faq_q2_title: "我可以稍后重新开启已被禁用的功能吗？",
+        ed_faq_q2_ans: "有的可以，有的不行 —— 这取决于修改的深度以及您选择的版本。安装程序选项中的功能后续较容易开启/关闭。但核心组件很难恢复。下载前请慎重选择。",
+        ed_faq_q3_title: "我应该选择哪种版本？",
+        ed_faq_q3_normal: "<strong>选择 Normal Edition 的情况：</strong> 您想要一个干净、快速、无冗余软件的 Windows，同时仍希望保留未来安装 Windows Update 的自由度。",
+        ed_faq_q3_superlite: "<strong>选择 Superlite Edition 的情况：</strong> 您的电脑配置较低、磁盘空间极度紧张、追求极致游戏帧率，并且 100% 确定绝不打算更新 Windows。"
     },
     ko: {
         nav_overview: "개요", nav_news: "뉴스", nav_projects: "프로젝트", nav_docs: "문서", nav_credits: "정책", nav_community: "커뮤니티",
@@ -475,7 +537,7 @@ const translations = {
         global_update_notice: "<strong>업데이트:</strong> tetoOS 10 정식 출시 목표: 2027년. EA ISO는 아래에서 다운로드 가능합니다.",
         hero_title: "데스크톱 경험의<br><span class=\"text-gradient\">새로운 기준.</span>",
         hero_desc: "초저지연, 효율적인 RAM 사용량, 게이밍 안정성을 위해 설계된 OS 최적화 개발 센터.",
-        btn_explore: "tetoOS 10 (2027) 살펴보기", btn_license: "무료 Windows 라이선스 🎁",
+        btn_explore: "tetoOS 10 (2027) 살펴보기", btn_license: "무료 Windows 라이선스",
         card_dev_label: "개발 중인 프로젝트",
         card_teto11_desc: "<span style=\"color: #10b981;\">></span> 차세대 tetoOS 개발 집중<br><span style=\"color: #10b981;\">></span> 개인정보 보호, 속도 및 모던 UI<br><span style=\"color: #10b981;\">></span> 커널 모듈 구축: 45%<br>",
         card_stable_label: "차기 플래그십 목표: 2027",
@@ -493,9 +555,9 @@ const translations = {
 
         teto_final_soon: "정식 버전 (목표: 2027)",
         teto11_subtitle: "차세대 운영체제 경험",
-        teto11_dev_status: "상태: <strong>개발 진행 중 🛠️</strong><br><br>차세대 tetoOS 11 생태계를 구축하고 있습니다. 곧 추가 정보가 공개됩니다.",
+        teto11_dev_status: "상태: <strong>개발 진행 중</strong><br><br>차세대 tetoOS 11 생태계를 구축하고 있습니다. 곧 추가 정보가 공개됩니다.",
         zenth_badge: "🐧 Linux • Base Fedora",
-        zenth_dev_status: "상태: <strong style=\"color: #60a5fa;\">개발 중 / 내부 프로젝트 🔒</strong><br><br>tetoOS Zenth는 <strong>Linux (Fedora Base)</strong> 운영체제이며 핵심 모듈을 개발 중입니다.",
+        zenth_dev_status: "상태: <strong style=\"color: #60a5fa;\">개발 중 / 내부 프로젝트</strong><br><br>tetoOS Zenth는 <strong>Linux (Fedora Base)</strong> 운영체제이며 핵심 모듈을 개발 중입니다.",
         btn_closed_access: "🔒 비공개 접근 (곧 제공)", btn_preregister: "지금 사전 등록", btn_back_home: "← Nookleaf 홈으로 돌아가기",
 
         comm_label: "커뮤니티 참여", comm_title: "<span class=\"text-gradient\">Nookleaf 커뮤니티</span>의 일원이 되세요",
@@ -507,7 +569,7 @@ const translations = {
         thanks_creator_vtuber: "VTuber 콘텐츠 크리에이터",
         thanks_creator_tech: "테크 콘텐츠 크리에이터",
         thanks_desc: "tetoOS 10을 테스트하고 리뷰해주셔서 진심으로 감사드립니다. 여러분의 피드백이 큰 힘이 됩니다!",
-        thanks_watch: "📺 영상 리뷰 보기",
+        thanks_watch: "영상 리뷰 보기",
 
         footer_desc: "속도를 위한 설계. 게이밍을 위한 튜닝.<br>연구 기반 Windows & Linux 최적화.",
         footer_heading_products: "제품", footer_heading_community: "커뮤니티",
@@ -525,6 +587,7 @@ const translations = {
         teto10_card2_desc: "모듈식 설치 제공. Defender, 방화벽, UAC, 최대 절전 모드를 원하는 대로 제어하세요.",
         teto10_card3_title: "간편한 앱 설치",
         teto10_card3_desc: "내장 패키지 관리자 tpkg로 소프트웨어 설치가 쉬워집니다. 명령어 하나로 완료.",
+        btn_learn_more: "더 알아보기...",
 
         dl_modal_title: "tetoOS 10 다운로드",
         dl_modal_subtitle: "Windows 버전 및 에디션을 선택하세요 (EA 버전 다운로드 가능)",
@@ -549,7 +612,7 @@ const translations = {
         ea_warn_header: "⚠️ 주의: 얼리 액세스 / 미지원 빌드",
         ea_warn_p1: "본 Early Access / 미지원 빌드는 테스트 목적으로 제공됩니다.",
         ea_warn_p2: "공식 정식 버전은 2027년에 출시될 예정입니다.",
-        ea_warn_p3: "⚠️ 아래 링크를 클릭하여 ISO 다운로드를 진행하세요.",
+        ea_warn_p3: "아래 링크를 클릭하여 ISO 다운로드를 진행하세요.",
         ea_warn_continue: "다운로드 계속하기 &rarr;",
         btn_use_supported: "출시 현황 확인",
         btn_wa_group: "WhatsApp 그룹",
@@ -577,7 +640,21 @@ const translations = {
         modal_privacy_sec1_p2: "<strong>2. 텔레메트리:</strong> 개인정보 보호와 프레임 유지를 위해 대부분의 네이티브 텔레메트리가 비활성화되어 있습니다.",
         modal_privacy_sec2_title: "🛡️ 제2조: 면책 조항",
         modal_privacy_sec2_p1: "<strong>사용자 책임 원칙:</strong> 커스텀 OS는 시스템을 수정합니다. 실사용 전 호환성을 반드시 확인하세요.",
-        modal_privacy_thanks: "Nookleaf Project 가이드라인을 준수해 주셔서 감사합니다."
+        modal_privacy_thanks: "Nookleaf Project 가이드라인을 준수해 주셔서 감사합니다.",
+
+        ed_faq_modal_title: "tetoOS 에디션 FAQ 및 가이드",
+        ed_faq_q1_title: "Normal과 Superlite 에디션의 차이점은 무엇인가요?",
+        ed_faq_q1_desc: "두 에디션 모두 완전히 최적화(불필요한 UWP 앱 및 백그라운드 서비스 제거)되었습니다. 주된 차이점은 핵심 구성요소에 있습니다:",
+        ed_faq_q1_normal: "<strong>Normal Edition:</strong> 시스템 코어(WinSxS 폴더 및 기본 Windows 폰트 포함)를 온전히 유지합니다. 초경량이면서도 Windows Update를 계속 지원합니다.",
+        ed_faq_q1_superlite: "<strong>Superlite Edition:</strong> 불필요한 폰트를 제거하고 WinSxS 폴더(컴포넌트 스토어)를 완전히 제거하여 저장 공간을 극단적으로 절약하고 최소 메모리 점유 및 최고 성능을 제공합니다.",
+        ed_faq_warn_badge: "⚠️ Superlite 사용자 필독 주의사항",
+        ed_faq_warn_q: "Superlite에서 Windows Update를 사용할 수 있나요?",
+        ed_faq_warn_ans: "불가합니다. WinSxS 폴더가 제거되어 Windows Update가 작동하지 않습니다. 도구로 강제 활성화하더라도 핵심 파일이 없어 오류가 발생합니다. 향후 업데이트가 필요하다면 Normal Edition을 사용하세요.",
+        ed_faq_q2_title: "비활성화된 기능을 나중에 다시 켤 수 있나요?",
+        ed_faq_q2_ans: "일부는 가능하고 일부는 불가능합니다. 수정의 깊이와 선택한 에디션에 따라 다릅니다. 설치 옵션 메뉴에 포함된 기능은 추후 켜고 끄기 쉽지만, 코어 구성요소는 복원이 어렵습니다. 다운로드 전 현명하게 선택하세요.",
+        ed_faq_q3_title: "어떤 에디션을 선택해야 하나요?",
+        ed_faq_q3_normal: "<strong>Normal Edition 선택:</strong> 블로트웨어 없는 깔끔하고 빠른 Windows를 원하면서도, 향후 Windows Update를 설치할 수 있는 유연성을 유지하고 싶은 경우.",
+        ed_faq_q3_superlite: "<strong>Superlite Edition 선택:</strong> 저사양 PC이거나 디스크 공간이 매우 부족하고, 극한의 FPS를 원하며, Windows를 업데이트할 생각이 100% 없는 경우."
     },
     ar: {
         nav_overview: "نظرة عامة", nav_news: "الأخبار", nav_projects: "المشاريع", nav_docs: "التوثيق", nav_credits: "السياسة", nav_community: "المجتمع",
@@ -591,7 +668,7 @@ const translations = {
         global_update_notice: "<strong>تحديث:</strong> الإطلاق النهائي لـ tetoOS 10 في 2027. نسخة الوصول المبكر (EA) متاحة أدناه.",
         hero_title: "إعادة تعريف<br><span class=\"text-gradient\">تجربة سطح المكتب.</span>",
         hero_desc: "مركز تعديل وتطوير أنظمة التشغيل المصمم لتقليل زمن الاستجابة، وتوفير الذاكرة، وأقصى استقرار للألعاب.",
-        btn_explore: "استكشف tetoOS 10 (2027)", btn_license: "ترخيص Windows مجاني 🎁",
+        btn_explore: "استكشف tetoOS 10 (2027)", btn_license: "ترخيص Windows مجاني",
         card_dev_label: "مشروع قيد التطوير",
         card_teto11_desc: "<span style=\"color: #10b981;\">></span> التركيز على الجيل القادم من tetoOS<br><span style=\"color: #10b981;\">></span> الخصوصية والسرعة وواجهة حديثة<br><span style=\"color: #10b981;\">></span> بناء النواة: 45%<br>",
         card_stable_label: "الهدف الرئيسي التالي: 2027",
@@ -609,9 +686,9 @@ const translations = {
 
         teto_final_soon: "الإصدار النهائي (الهدف: 2027)",
         teto11_subtitle: "تجربة الجيل القادم",
-        teto11_dev_status: "الحالة: <strong>قيد التطوير 🛠️</strong><br><br>يجري حالياً بناء نظام tetoOS 11 القادم. ترقبوا المزيد من التفاصيل.",
+        teto11_dev_status: "الحالة: <strong>قيد التطوير</strong><br><br>يجري حالياً بناء نظام tetoOS 11 القادم. ترقبوا المزيد من التفاصيل.",
         zenth_badge: "🐧 Linux • Base Fedora",
-        zenth_dev_status: "الحالة: <strong style=\"color: #60a5fa;\">مشروع داخلي / قيد التطوير 🔒</strong><br><br>tetoOS Zenth هو نظام تشغيل مبني على <strong>Linux (Fedora)</strong> في مرحلة تطوير النواة.",
+        zenth_dev_status: "الحالة: <strong style=\"color: #60a5fa;\">مشروع داخلي / قيد التطوير</strong><br><br>tetoOS Zenth هو نظام تشغيل مبني على <strong>Linux (Fedora)</strong> في مرحلة تطوير النواة.",
         btn_closed_access: "🔒 وصول مغلق (قريباً)", btn_preregister: "سجل مسبقاً الآن", btn_back_home: "← العودة للرئيسية",
 
         comm_label: "انضم إلى مجتمعنا", comm_title: "كن جزءاً من <span class=\"text-gradient\">مجتمع Nookleaf</span>",
@@ -623,7 +700,7 @@ const translations = {
         thanks_creator_vtuber: "صانع محتوى VTuber",
         thanks_creator_tech: "صانع محتوى تقني",
         thanks_desc: "شكراً لتجربة ومراجعة tetoOS 10. دعمكم وملاحظاتكم تعني الكثير لتطور هذا المشروع!",
-        thanks_watch: "📺 مشاهدة مراجعة الفيديو",
+        thanks_watch: "مشاهدة مراجعة الفيديو",
 
         footer_desc: "صُمم للسرعة. ضُبط للألعاب.<br>تحسينات Windows و Linux المستندة إلى الأبحاث.",
         footer_heading_products: "المنتجات", footer_heading_community: "المجتمع",
@@ -641,6 +718,7 @@ const translations = {
         teto10_card2_desc: "تثبيت مخصص — اختر ما تريده فقط: الحماية، الجدار الناري، UAC، السكون تحت تحكمك.",
         teto10_card3_title: "تثبيت برامج بسهولة",
         teto10_card3_desc: "تثبيت البرامج أسهل مع tpkg — مدير الحزم المدمج. أمر واحد ويكتمل التثبيت.",
+        btn_learn_more: "المزيد...",
 
         dl_modal_title: "تحميل tetoOS 10",
         dl_modal_subtitle: "اختر إصدار Windows والنسخة المناسبة (نسخة EA متاحة للتحميل)",
@@ -665,7 +743,7 @@ const translations = {
         ea_warn_header: "⚠️ تنبيه: إصدار وصول مبكر / غير مدعوم",
         ea_warn_p1: "هذا الإصدار التجريبي مخصص لأغراض الاختبار والتجربة.",
         ea_warn_p2: "الإصدار الرسمي النهائي قادم في عام 2027.",
-        ea_warn_p3: "⚠️ انقر أدناه لمتابعة تحميل ملف ISO.",
+        ea_warn_p3: "انقر أدناه لمتابعة تحميل ملف ISO.",
         ea_warn_continue: "متابعة التحميل &rarr;",
         btn_use_supported: "عرض حالة الإصدار",
         btn_wa_group: "مجموعة WhatsApp",
@@ -693,7 +771,21 @@ const translations = {
         modal_privacy_sec1_p2: "<strong>2. القياس عن بُعد:</strong> تم تعطيل خدمات التتبع لحماية الخصوصية وتحسين الأداء.",
         modal_privacy_sec2_title: "🛡️ القسم 2: إخلاء المسؤولية",
         modal_privacy_sec2_p1: "<strong>الاستخدام على مسؤوليتك الخاصة:</strong> تعديلات النظام تمس ملفات أساسية. يرجى التأكد من التوافق قبل الاعتماد الكامل.",
-        modal_privacy_thanks: "شكراً لالتزامكم بإرشادات Nookleaf Project."
+        modal_privacy_thanks: "شكراً لالتزامكم بإرشادات Nookleaf Project.",
+
+        ed_faq_modal_title: "الأسئلة الشائعة حول إصدارات tetoOS",
+        ed_faq_q1_title: "ما الفرق بين إصدار Normal وإصدار Superlite في tetoOS؟",
+        ed_faq_q1_desc: "كلا الإصدارين تم تجريدهما بالكامل من الزوائد (تمت إزالة تطبيقات UWP غير الضرورية وخدمات الخلفية غير المفيدة). يكمن الاختلاف الرئيسي في مكونات النظام الأساسية:",
+        ed_faq_q1_normal: "<strong>Normal Edition:</strong> يحافظ على ملفات النظام الأساسية سليمة (بما في ذلك مجلد WinSxS وخطوط Windows الافتراضية). النظام خفيف للغاية مع الحفاظ على إمكانية تلقي تحديثات Windows Update.",
+        ed_faq_q1_superlite: "<strong>Superlite Edition:</strong> يقلل المساحة التخزينية بشكل جذري عن طريق حذف الخطوط غير الضرورية والحذف الكامل لمجلد WinSxS (Component Store) لتحقيق أقصى توفير للذاكرة وأعلى أداء ممكن.",
+        ed_faq_warn_badge: "⚠️ تحذير مهم لمستخدمي Superlite",
+        ed_faq_warn_q: "هل يمكنني استخدام Windows Update في نسخة Superlite؟",
+        ed_faq_warn_ans: "لا. نظراً لحذف مجلد WinSxS، لن تعمل خدمة Windows Update. حتى لو حاولت تفعيلها عبر الأدوات، ستحدث أخطاء لفقدان الملفات الأساسية. إذا كنت بحاجة للتحديثات مستقبلاً، استخدم Normal Edition.",
+        ed_faq_q2_title: "هل يمكنني إعادة تفعيل الميزات المعطلة لاحقاً؟",
+        ed_faq_q2_ans: "بعضها يمكن وبعضها لا — يعتمد ذلك على عمق التعديل والإصدار المختار. الميزات الموجودة في خيارات المثبت يسهل تشغيلها لاحقاً، أما المكونات الأساسية فيصعب استعادتها. اختر بحكمة قبل التحميل.",
+        ed_faq_q3_title: "أي إصدار يجب أن أختار؟",
+        ed_faq_q3_normal: "<strong>اختر Normal Edition إذا:</strong> كنت تريد نظام Windows نظيف وسريع وخالي من البرامج الزائدة، مع الاحتفاظ بحرية تثبيت التحديثات مستقبلاً.",
+        ed_faq_q3_superlite: "<strong>اختر Superlite Edition إذا:</strong> كان جهازك متواضع المواصفات، وسعة التخزين محدودة جداً، وتريد أقصى معدل إطارات (FPS)، وأنت متأكد 100% أنك لن تقوم بتحديث Windows أبداً."
     },
     id: {
         nav_overview: "Ringkasan", nav_news: "Berita", nav_projects: "Proyek", nav_docs: "Dokumentasi", nav_credits: "Kebijakan", nav_community: "Komunitas",
@@ -707,7 +799,7 @@ const translations = {
         global_update_notice: "<strong>Update:</strong> Target final tetoOS 10: 2027. ISO Early Access (EA) tersedia di bawah.",
         hero_title: "Mendefinisikan Ulang<br><span class=\"text-gradient\">Pengalaman Desktop.</span>",
         hero_desc: "Pusat optimasi sistem operasi untuk latensi terendah, efisiensi RAM, dan stabilitas gaming.",
-        btn_explore: "Eksplorasi tetoOS 10 (2027)", btn_license: "Lisensi Windows Gratis 🎁",
+        btn_explore: "Eksplorasi tetoOS 10 (2027)", btn_license: "Lisensi Windows Gratis",
         card_dev_label: "Proyek Dalam Pengembangan",
         card_teto11_desc: "<span style=\"color: #10b981;\">></span> Fokus penuh ke tetoOS generasi baru<br><span style=\"color: #10b981;\">></span> Privasi, Performa & UI Modern<br><span style=\"color: #10b981;\">></span> Modul kernel: 45%<br>",
         card_stable_label: "Target Flagship Berikutnya: 2027",
@@ -725,9 +817,9 @@ const translations = {
 
         teto_final_soon: "Versi Final (Target: 2027)",
         teto11_subtitle: "Pengalaman Generasi Berikutnya",
-        teto11_dev_status: "Status: <strong>Dalam Tahap Pengembangan 🛠️</strong><br><br>Pengembangan ekosistem tetoOS 11 generasi baru sedang berjalan. Nantikan info selanjutnya.",
+        teto11_dev_status: "Status: <strong>Dalam Tahap Pengembangan</strong><br><br>Pengembangan ekosistem tetoOS 11 generasi baru sedang berjalan. Nantikan info selanjutnya.",
         zenth_badge: "🐧 Linux • Base Fedora",
-        zenth_dev_status: "Status: <strong style=\"color: #60a5fa;\">Pengembangan Internal 🔒</strong><br><br>tetoOS Zenth adalah sistem operasi <strong>Linux (Fedora Base)</strong> yang sedang dalam perakitan modul inti.",
+        zenth_dev_status: "Status: <strong style=\"color: #60a5fa;\">Pengembangan Internal</strong><br><br>tetoOS Zenth adalah sistem operasi <strong>Linux (Fedora Base)</strong> yang sedang dalam perakitan modul inti.",
         btn_closed_access: "🔒 Akses Tertutup (Segera Hadir)", btn_preregister: "Pra-Registrasi Sekarang", btn_back_home: "← Kembali ke Beranda Nookleaf",
 
         comm_label: "GABUNG KOMUNITAS KAMI", comm_title: "Jadilah bagian dari <span class=\"text-gradient\">Komunitas Nookleaf</span>",
@@ -739,7 +831,7 @@ const translations = {
         thanks_creator_vtuber: "VTuber Content Creator",
         thanks_creator_tech: "Tech Content Creator",
         thanks_desc: "Terima kasih telah mencoba dan memberikan ulasan tetoOS 10. Masukan kreator sangat berarti untuk pengembangan!",
-        thanks_watch: "📺 Tonton Video Review",
+        thanks_watch: "Tonton Video Review",
 
         footer_desc: "Dibangun untuk kecepatan. Dirancang untuk gaming.<br>Optimasi Windows & Linux berbasis riset.",
         footer_heading_products: "PRODUK", footer_heading_community: "KOMUNITAS",
@@ -757,6 +849,7 @@ const translations = {
         teto10_card2_desc: "Instalasi modular — pilih hanya yang Anda butuhkan. Defender, Firewall, UAC, Hibernate dalam kendali Anda.",
         teto10_card3_title: "Setup Aplikasi Mudah",
         teto10_card3_desc: "Menginstal software mudah dengan tpkg — package manager bawaan tetoOS. Satu perintah, selesai.",
+        btn_learn_more: "Pelajari selengkapnya...",
 
         dl_modal_title: "Download tetoOS 10",
         dl_modal_subtitle: "Pilih versi & edisi Windows Anda (EA Maret tetap tersedia)",
@@ -781,7 +874,7 @@ const translations = {
         ea_warn_header: "⚠️ Peringatan: Build Early Access / Unsupported",
         ea_warn_p1: "Build Early Access / Unsupported ini disediakan untuk eksperimen dan pengujian.",
         ea_warn_p2: "Versi Final resmi ditargetkan rilis tahun 2027.",
-        ea_warn_p3: "⚠️ Klik tautan di bawah untuk melanjutkan pengunduhan file ISO.",
+        ea_warn_p3: "Klik tautan di bawah untuk melanjutkan pengunduhan file ISO.",
         ea_warn_continue: "Lanjut Download &rarr;",
         btn_use_supported: "Lihat Status Rilis",
         btn_wa_group: "Grup WhatsApp",
@@ -809,16 +902,37 @@ const translations = {
         modal_privacy_sec1_p2: "<strong>2. Telemetri & Pelacakan:</strong> Sebagian besar layanan telemetri bawaan telah dimatikan untuk melindungi privasi.",
         modal_privacy_sec2_title: "🛡️ BAGIAN 2: PENAFIAN",
         modal_privacy_sec2_p1: "<strong>Risiko Ditanggung Pengguna:</strong> Sistem operasi kustom melibatkan perubahan sistem inti. Harap uji kompatibilitas terlebih dahulu.",
-        modal_privacy_thanks: "Terima kasih telah menghormati panduan Nookleaf Project."
+        modal_privacy_thanks: "Terima kasih telah menghormati panduan Nookleaf Project.",
+
+        ed_faq_modal_title: "FAQ & Panduan Edisi tetoOS",
+        ed_faq_q1_title: "Apa perbedaan antara edisi Normal dan Superlite di tetoOS?",
+        ed_faq_q1_desc: "Kedua edisi sudah di-debloat (aplikasi UWP dan background services yang tidak berguna sudah dihapus). Perbedaan utama ada di komponen inti:",
+        ed_faq_q1_normal: "<strong>Normal Edition:</strong> Menjaga inti sistem tetap utuh (termasuk folder WinSxS dan Font bawaan Windows). Sistem sangat ringan tapi tetap bisa menerima Windows Update.",
+        ed_faq_q1_superlite: "<strong>Superlite Edition:</strong> Memangkas ruang penyimpanan lebih ekstrem dengan menghapus Font yang tidak penting dan MENGHAPUS TOTAL folder WinSxS (Component Store) demi hemat memori dan performa maksimal.",
+        ed_faq_warn_badge: "⚠️ Peringatan untuk Pengguna Superlite",
+        ed_faq_warn_q: "Bisakah saya memakai Windows Update di Superlite?",
+        ed_faq_warn_ans: "TIDAK. Karena folder WinSxS dihapus, Windows Update tidak akan berfungsi. Meski Anda menyalakannya paksa via tools, sistem akan error karena file komponen utamanya hilang. Jika Anda butuh update di masa depan, gunakan Normal Edition.",
+        ed_faq_q2_title: "Bisakah saya menyalakan kembali fitur yang sudah dimatikan?",
+        ed_faq_q2_ans: "Ada yang bisa, ada yang tidak — tergantung sedalam apa modifikasinya dan edisi apa yang Anda pilih. Fitur yang masuk dalam menu opsi instalasi lebih mudah dinyalakan/dimatikan nanti. Untuk fitur inti, sulit dikembalikan. Pilihlah dengan bijak sebelum mendownload.",
+        ed_faq_q3_title: "Edisi mana yang harus saya pilih?",
+        ed_faq_q3_normal: "<strong>Pilih Normal Edition jika:</strong> Anda ingin Windows yang bersih, cepat, tanpa bloatware, namun tetap ingin kebebasan menginstal Windows Update suatu saat nanti.",
+        ed_faq_q3_superlite: "<strong>Pilih Superlite Edition jika:</strong> PC Anda kentang, storage sangat sempit, mengejar FPS mentok, dan Anda YAKIN 100% tidak akan pernah berniat meng-update Windows."
     }
 };
+
+// Merge coreTranslations into window.translations
+for (const lang in coreTranslations) {
+    window.translations[lang] = Object.assign(coreTranslations[lang], window.translations[lang] || {});
+}
+var translations = window.translations;
 
 /**
  * Switch active language and update UI strings
  * @param {string} lang - Language code ('en', 'ja', 'ru', 'zh', 'ko', 'ar', 'id')
  */
 function setLanguage(lang) {
-    if (!translations[lang]) lang = 'en';
+    const t = window.translations || translations || {};
+    if (!t[lang]) lang = 'en';
     // If current saved is 'id' but Indonesian is hidden, fallback to 'en'
     if (lang === 'id') lang = 'en';
     localStorage.setItem('nookleaf_lang', lang);
@@ -848,10 +962,10 @@ function setLanguage(lang) {
 
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-            el.innerHTML = translations[lang][key];
-        } else if (translations['en'] && translations['en'][key]) {
-            el.innerHTML = translations['en'][key];
+        if (t[lang] && t[lang][key]) {
+            el.innerHTML = t[lang][key];
+        } else if (t['en'] && t['en'][key]) {
+            el.innerHTML = t['en'][key];
         }
     });
 

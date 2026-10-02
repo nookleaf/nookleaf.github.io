@@ -188,5 +188,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const edFaqModalEl = document.getElementById('editionFaqModal');
+    if (edFaqModalEl) {
+        edFaqModalEl.addEventListener('hidden.bs.modal', () => {
+            const dlModalEl = document.getElementById('downloadModal');
+            if (dlModalEl && dlModalEl.classList.contains('show')) {
+                document.body.classList.add('modal-open');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
+
     renderEditions();
 });
