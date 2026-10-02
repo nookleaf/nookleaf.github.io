@@ -1,0 +1,159 @@
+/* ==========================================================================
+   TEASER PAGES - tetoOS 11 & tetoOS Zenth
+   ========================================================================== */
+
+.teaser-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 40px 20px;
+}
+
+.teaser-glow-teto11 {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(234, 179, 8, 0.08) 0%, rgba(5, 5, 5, 0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.teaser-glow-zenth {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(3, 7, 18, 0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.teaser-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 40px;
+    max-width: 700px;
+    width: 100%;
+}
+
+.teaser-badge {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #60a5fa;
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.teaser-title {
+    font-size: clamp(3.5rem, 8vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+    background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.teaser-title-zenth {
+    background: linear-gradient(180deg, #ffffff 0%, #93c5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.teaser-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 300;
+    color: #a1a1aa;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.teaser-message {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    color: #d4d4d8;
+    max-width: 520px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.teaser-message-zenth {
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+.btn-preregister {
+    background-color: #eab308;
+    color: #050505;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(234, 179, 8, 0.3);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-preregister:hover {
+    background-color: #facc15;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(234, 179, 8, 0.5);
+}
+
+.btn-closed-access {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+    border: 1px dashed rgba(59, 130, 246, 0.5);
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: not-allowed;
+}
+
+.back-link {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+    border-bottom: 1px solid transparent;
+}
+
+.back-link-yellow {
+    color: #eab308;
+}
+
+.back-link-yellow:hover {
+    color: #facc15;
+    border-bottom-color: #facc15;
+}
+
+.back-link-blue {
+    color: #3b82f6;
+}
+
+.back-link-blue:hover {
+    color: #60a5fa;
+    border-bottom-color: #60a5fa;
+}

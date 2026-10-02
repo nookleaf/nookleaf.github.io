@@ -1,0 +1,365 @@
+/* ==========================================================================
+   TETO OS 10 & DOWNLOAD MODAL STYLES
+   ========================================================================== */
+
+/* === TETO MASCOT === */
+.teto-mascot {
+    max-height: 80vh;
+    filter: drop-shadow(0 0 25px rgba(239, 68, 68, 0.2));
+    object-fit: contain;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+@media (max-width: 991px) {
+    .teto-mascot {
+        max-height: 45vh;
+        transform: scale(1);
+        margin-top: 2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* === TETO DOWNLOAD MODAL (KERNELOS STYLE) === */
+.teto-modal {
+    background-color: #121212;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    padding: 24px;
+    color: white;
+    border: 1px solid #2a2a2a;
+    position: relative;
+}
+
+.modal-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.modal-icon-box {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(239, 68, 68, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+.modal-icon-box svg {
+    width: 22px;
+    height: 22px;
+    color: #ef4444;
+}
+
+.teto-modal-title h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.teto-modal-title p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+.btn-close-custom {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: 0.2s;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+}
+
+.btn-close-custom:hover {
+    background: #2a2a2a;
+    color: white;
+    border-color: #444;
+}
+
+.modal-divider-h {
+    width: 100%;
+    height: 1px;
+    background-color: #2a2a2a;
+    margin-bottom: 24px;
+}
+
+.modal-body-split {
+    display: flex;
+    gap: 24px;
+}
+
+.modal-left-pane {
+    width: 30%;
+    border-right: 1px solid #2a2a2a;
+    padding-right: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-right-pane {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pane-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 16px;
+}
+
+.teto-btn-outline {
+    background: transparent;
+    border: 1px solid #333;
+    color: #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 16px;
+    margin-bottom: 12px;
+    text-align: left;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.teto-btn-outline.active {
+    background-color: transparent;
+    border: 1px solid #ef4444;
+    color: white;
+}
+
+.teto-btn-outline:not(.active):hover {
+    border-color: #555;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.faq-icon-btn {
+    background-color: transparent;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    transition: 0.2s;
+    cursor: pointer;
+    color: #94a3b8;
+}
+
+.faq-icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    border-color: #555;
+}
+
+.faq-icon-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+.teto-tabs {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 0;
+}
+
+.teto-tab {
+    background: none;
+    border: none;
+    color: #64748b;
+    padding-bottom: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+
+.teto-tab:hover {
+    color: #94a3b8;
+}
+
+.teto-tab.active {
+    color: white;
+}
+
+.teto-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ef4444;
+}
+
+.ed-btn {
+    width: 100%;
+    background: #161616;
+    border: 1px solid #2a2a2a;
+    color: white;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.ed-btn:not(:disabled):hover {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+.ed-btn.selected {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    border-color: #ef4444 !important;
+}
+
+.ed-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background-color: #0d0d0d;
+    border-color: #1a1a1a;
+    color: #555;
+}
+
+.helper-text {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+
+.modal-footer-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #2a2a2a;
+}
+
+.footer-status {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.download-final-btn {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.05);
+    color: #fca5a5;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.download-final-btn:not(.disabled):hover {
+    background: rgba(239, 68, 68, 0.25);
+    color: white;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.download-final-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.download-final-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* === LIGHT MODE OVERRIDES === */
+body.light-mode .teto-modal {
+    background-color: #f8fafc;
+    color: #1e293b;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+body.light-mode .btn-close-custom {
+    background: #e2e8f0;
+    border-color: #cbd5e1;
+    color: #475569;
+}
+
+body.light-mode .teto-btn-outline {
+    color: #475569;
+    border-color: #cbd5e1;
+}
+
+body.light-mode .teto-btn-outline.active {
+    color: #fff;
+    background-color: #ef4444;
+    border-color: #ef4444;
+}
+
+body.light-mode .ed-btn {
+    background: #f1f5f9;
+    color: #1e293b;
+    border-color: #e2e8f0;
+}
+
+body.light-mode .ed-btn.selected {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    border-color: #ef4444 !important;
+}
+
+body.light-mode .modal-divider-h, 
+body.light-mode .modal-left-pane, 
+body.light-mode .teto-tabs, 
+body.light-mode .modal-footer-custom {
+    border-color: #e2e8f0;
+}
+
+/* Responsive Modal Split */
+@media (max-width: 768px) {
+    .modal-body-split {
+        flex-direction: column;
+        gap: 0;
+    }
+    .modal-left-pane {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #2a2a2a;
+        padding-right: 0;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .modal-right-pane {
+        width: 100%;
+    }
+}
