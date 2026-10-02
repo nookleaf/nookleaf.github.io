@@ -90,7 +90,7 @@
                         Folder placement follows the native Windows <code>$OEM$</code> folder mechanism. This wrapper was created to apply customizations during the installation process, so after progress reaches 100%, the computer can be left unattended without waiting for OOBE to finish.
                     </p>
                     <p style="color: #cbd5e1; line-height: 1.7;" data-i18n="docs_sec1_p1">
-                        This wrapper does not eliminate OOBE, but rather moves most of the post-installation workload into the Windows setup stage. The entry point is <code>StartSetup.au3</code> (compiled as <code>StartSetup_x64.exe</code>), which reads <code>StartSetup.ini</code> to display OS/edition selection and then copies the appropriate <code>$oem$</code> folder to the installation media.
+                        This wrapper does not eliminate OOBE, but rather moves most of the post-installation workload into the Windows setup stage. The entry point is reads <code>StartSetup.ini</code> to display OS/edition selection and then copies the appropriate <code>$oem$</code> folder to the installation media.
                     </p>
 
                     <div class="my-4">

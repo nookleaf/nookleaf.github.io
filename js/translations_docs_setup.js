@@ -23,7 +23,7 @@
 
             docs_sec1_title: '<span class="icon">🚀</span> 1. Overview',
             docs_sec1_lead: "Folder placement follows the native Windows <code>$OEM$</code> folder mechanism. This wrapper was created to apply customizations during the installation process, so after progress reaches 100%, the computer can be left unattended without waiting for OOBE to finish.",
-            docs_sec1_p1: "This wrapper does not eliminate OOBE, but rather moves most of the post-installation workload into the Windows setup stage. The entry point is <code>StartSetup.au3</code> (compiled as <code>StartSetup_x64.exe</code>), which reads <code>StartSetup.ini</code> to display OS/edition selection and then copies the appropriate <code>$oem$</code> folder to the installation media.",
+            docs_sec1_p1: "This wrapper does not eliminate OOBE, but rather moves most of the post-installation workload into the Windows setup stage. The entry point is <code>StartSetup.ini</code> to display OS/edition selection and then copies the appropriate <code>$oem$</code> folder to the installation media.",
             docs_sec1_adv_title: "Advantages of this Method:",
             docs_sec1_adv1: '<span style="color: #34d399;">✅</span> <strong>Users can unplug the USB drive after 100% progress.</strong>',
             docs_sec1_adv2: '<span style="color: #34d399;">✅</span> <strong>Tweaks and software can be installed while setup is running.</strong>',
@@ -157,7 +157,7 @@
 
             docs_sec1_title: '<span class="icon">🚀</span> 1. Gambaran Umum',
             docs_sec1_lead: "Peletakan folder mengikuti mekanisme folder <code>$OEM$</code> bawaan Windows. Wrapper ini dibuat untuk menerapkan kustomisasi selama proses instalasi, sehingga setelah progres mencapai 100%, komputer dapat ditinggalkan tanpa perlu menunggu OOBE selesai.",
-            docs_sec1_p1: "Wrapper ini tidak menghilangkan OOBE, melainkan memindahkan sebagian besar pekerjaan yang biasanya terjadi setelah instalasi ke tahap setup Windows. Titik masuknya adalah <code>StartSetup.au3</code> (dikompilasi menjadi <code>StartSetup_x64.exe</code>) yang membaca <code>StartSetup.ini</code> untuk menampilkan pemilihan OS/edisi, lalu menyalin folder <code>$oem$</code> yang sesuai ke media instalasi.",
+            docs_sec1_p1: "Wrapper ini tidak menghilangkan OOBE, melainkan memindahkan sebagian besar pekerjaan yang biasanya terjadi setelah instalasi ke tahap setup Windows. Titik masuknya adalah membaca <code>StartSetup.ini</code> untuk menampilkan pemilihan OS/edisi, lalu menyalin folder <code>$oem$</code> yang sesuai ke media instalasi.",
             docs_sec1_adv_title: "Keuntungan Metode Ini:",
             docs_sec1_adv1: '<span style="color: #34d399;">✅</span> <strong>Pengguna dapat mencabut flashdisk setelah progres 100%.</strong>',
             docs_sec1_adv2: '<span style="color: #34d399;">✅</span> <strong>Tweak dan aplikasi dapat dipasang saat setup masih berjalan.</strong>',
