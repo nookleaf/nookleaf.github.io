@@ -8,7 +8,7 @@
 const translations = {
     en: {
         nav_overview: "Overview", nav_news: "News", nav_projects: "Projects", nav_docs: "Docs", nav_credits: "Credits", nav_community: "Community",
-        nav_chat: "TetoYapping Chat", nav_support: "Top-up & Support ☕",
+        nav_chat: "Support", nav_support: "Donate",
         oobe_welcome: "🌿 Welcome to Nook<span>leaf</span>", oobe_prompt: "> PRESS ANY KEY OR CLICK TO INITIALIZE...", oobe_bye: "👋 Bye bye!...",
         oobe_shutting: "Shutting down Nook Core...", oobe_thanks: "Thank you for visiting the official Nookleaf website.",
         global_update_notice: "<strong>Website Update:</strong> tetoOS 10 is currently undergoing final tuning with an official release target in 2027. Early Access (EA) download is available below.",
@@ -70,7 +70,7 @@ const translations = {
     },
     id: {
         nav_overview: "Overview", nav_news: "News", nav_projects: "Projects", nav_docs: "Docs", nav_credits: "Credits", nav_community: "Community",
-        nav_chat: "TetoYapping Chat", nav_support: "Top-up & Support ☕",
+        nav_chat: "Support", nav_support: "Donasi",
         oobe_welcome: "🌿 Welcome to Nook<span>leaf</span>", oobe_prompt: "> PRESS ANY KEY OR CLICK TO INITIALIZE...", oobe_bye: "👋 Bye bye!...",
         oobe_shutting: "Shutting down Nook Core...", oobe_thanks: "Terima kasih telah berkunjung ke situs resmi Nookleaf.",
         global_update_notice: "<strong>Website Update:</strong> tetoOS 10 saat ini dalam tahap finalisasi dan ditargetkan rilis pada tahun 2027. File EA Maret tetap dapat diunduh.",
@@ -132,7 +132,7 @@ const translations = {
     },
     ja: {
         nav_overview: "概要", nav_news: "ニュース", nav_projects: "プロジェクト", nav_docs: "ドキュメント", nav_credits: "クレジット", nav_community: "コミュニティ",
-        nav_chat: "TetoYapping チャット", nav_support: "トップアップ & サポート ☕",
+        nav_chat: "サポート", nav_support: "寄付する",
         oobe_welcome: "🌿 Nook<span>leaf</span>へようこそ", oobe_prompt: "> 任意のキーを押すかクリックして初期化...", oobe_bye: "👋 さようなら！",
         oobe_shutting: "Nook Coreをシャットダウンしています...", oobe_thanks: "Nookleaf公式サイトをご利用いただきありがとうございます。",
         global_update_notice: "<strong>ウェブサイトの更新:</strong> tetoOS 10は現在最終調整中で、2027年に正式リリース予定です。EA Maretのダウンロードは引き続き利用可能です。",
@@ -194,7 +194,7 @@ const translations = {
     },
     ru: {
         nav_overview: "Обзор", nav_news: "Новости", nav_projects: "Проекты", nav_docs: "Документация", nav_credits: "Авторы", nav_community: "Сообщество",
-        nav_chat: "Чат TetoYapping", nav_support: "Поддержка ☕",
+        nav_chat: "Поддержка", nav_support: "Пожертвовать",
         oobe_welcome: "🌿 Добро пожаловать в Nook<span>leaf</span>", oobe_prompt: "> НАЖМИТЕ ЛЮБУЮ КЛАВИШУ ИЛИ КЛИКНИТЕ ДЛЯ ИНИЦИАЛИЗАЦИИ...", oobe_bye: "👋 Пока-пока!",
         oobe_shutting: "Завершение работы Nook Core...", oobe_thanks: "Спасибо за посещение официального сайта Nookleaf.",
         global_update_notice: "<strong>Обновление:</strong> Релиз tetoOS 10 запланирован на 2027 год. Версия EA Maret доступна для скачивания ниже.",
@@ -256,7 +256,7 @@ const translations = {
     },
     zh: {
         nav_overview: "概览", nav_news: "新闻", nav_projects: "项目", nav_docs: "文档", nav_credits: "致谢", nav_community: "社区",
-        nav_chat: "TetoYapping 聊天", nav_support: "充值与支持 ☕",
+        nav_chat: "支援", nav_support: "捐贈",
         oobe_welcome: "🌿 欢迎来到 Nook<span>leaf</span>", oobe_prompt: "> 按任意键或点击以初始化...", oobe_bye: "👋 再见！",
         oobe_shutting: "正在关闭 Nook Core...", oobe_thanks: "感谢您访问 Nookleaf 官方网站。",
         global_update_notice: "<strong>网站更新：</strong> tetoOS 10 目前正在进行最终调优，正式发布目标为 2027 年。EA Maret 版本依然可以下载。",
@@ -318,7 +318,7 @@ const translations = {
     },
     ko: {
         nav_overview: "개요", nav_news: "뉴스", nav_projects: "프로젝트", nav_docs: "문서", nav_credits: "크레딧", nav_community: "커뮤니티",
-        nav_chat: "TetoYapping 채팅", nav_support: "후원하기 ☕",
+        nav_chat: "지원", nav_support: "후원",
         oobe_welcome: "🌿 Nook<span>leaf</span>에 오신 것을 환영합니다", oobe_prompt: "> 아무 키나 누르거나 클릭하여 시작...", oobe_bye: "👋 안녕히 가세요!",
         oobe_shutting: "Nook Core 종료 중...", oobe_thanks: "Nookleaf 공식 웹사이트를 방문해 주셔서 감사합니다.",
         global_update_notice: "<strong>웹사이트 업데이트:</strong> tetoOS 10은 2027년 출시를 목표로 최종 개발 중입니다. EA Maret 버전은 계속 다운로드 가능합니다.",
@@ -380,7 +380,7 @@ const translations = {
     },
     ar: {
         nav_overview: "نظرة عامة", nav_news: "أخبار", nav_projects: "مشاريع", nav_docs: "مستندات", nav_credits: "الاعتمادات", nav_community: "مجتمع",
-        nav_chat: "دردشة TetoYapping", nav_support: "تعبئة رصيد ودعم ☕",
+        nav_chat: "الدعم", nav_support: "تبرع",
         oobe_welcome: "🌿 مرحبًا بك في Nook<span>leaf</span>", oobe_prompt: "> اضغط على أي مفتاح أو انقر للتهيئة...", oobe_bye: "👋 وداعاً!",
         oobe_shutting: "يتم الآن إيقاف تشغيل Nook Core...", oobe_thanks: "شكرًا لزيارتك موقع Nookleaf الرسمي.",
         global_update_notice: "<strong>تحديث الموقع:</strong> يخضع tetoOS 10 للضبط النهائي مع استهداف الإطلاق في عام 2027. تنزيل EA Maret لا يزال متاحًا أدناه.",
