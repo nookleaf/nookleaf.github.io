@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Setup & Script System Guide — Nookleaf Docs</title>
-    <meta name="description" content="tetoOS Setup Architecture Documentation — Comprehensive guide to $OEM$ folder structures, AutoIt setup wrapper, stage scripts, and installer options.">
+    <meta name="description" content="tetoOS Setup Architecture Documentation — Comprehensive guide to $OEM$ folder structures, stage scripts, and installer options.">
     <meta name="keywords" content="tetoOS setup, $OEM$ structure, Windows setup wrapper, StartSetup.ini, OS_Settings.ini, customize windows iso">
     <meta name="author" content="Nookleaf Project">
     <meta name="robots" content="index, follow, max-image-preview:large">
@@ -116,7 +116,7 @@
                     </div>
 
                     <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.7; margin-bottom: 0;" data-i18n="docs_sec1_foot">
-                        This system is designed as an extension of the Windows <code>$oem$</code> mechanism. Folders, scripts, AutoIt wrappers, and configuration files (<code>StartSetup.ini</code>, <code>OS_Settings.ini</code>) are deeply interconnected. An error in one component can disrupt the entire installation process.
+                        This system is designed as an extension of the Windows <code>$oem$</code> mechanism. Folders, scripts, and configuration files (<code>StartSetup.ini</code>, <code>OS_Settings.ini</code>) are deeply interconnected. An error in one component can disrupt the entire installation process.
                     </p>
                 </section>
 
@@ -124,7 +124,7 @@
                 <section id="startsetup-ini" class="docs-card">
                     <h2 class="docs-card-title" data-i18n="docs_sec2_title"><span class="icon">⚙️</span> 2. StartSetup.ini Structure</h2>
                     <p class="docs-lead" data-i18n="docs_sec2_lead">
-                        The primary configuration file read by the AutoIt wrapper <code>StartSetup_x64.exe</code> to manage OS selection and setup UI timeout.
+                        The primary configuration file read to manage OS selection and setup UI timeout.
                     </p>
 
                     <h6 style="color: #fca5a5; font-weight: 700; margin-top: 20px;" data-i18n="docs_sec2_example_label">Example StartSetup.ini Content:</h6>
