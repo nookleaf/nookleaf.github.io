@@ -1,10 +1,12 @@
-/* ==========================================================================
-   NEWS PAGE - Rockstar-style News Grid & Cards
-   ========================================================================== */
-
 .news-header {
-    padding: 100px 0 40px;
+    padding: 115px 0 40px;
     text-align: left;
+}
+
+@media (max-width: 768px) {
+    .news-header {
+        padding: 105px 0 30px;
+    }
 }
 
 .news-title {
@@ -103,7 +105,7 @@
     line-height: 1.4;
 }
 
-/* === LIGHT MODE OVERRIDES === */
+/* LIGHT MODE OVERRIDES */
 body.light-mode .news-title {
     color: #0f172a;
 }

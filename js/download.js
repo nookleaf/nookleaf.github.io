@@ -1,35 +1,130 @@
-/**
- * ============================================================================
- * DOWNLOAD MODULE - KernelOS Style Modal Edition Selection & Handlers
- * ============================================================================
- */
+﻿// tetoOS download modal and edition selector
 
-const editionsData = {
-    'sl': {
-        'supported': [
-            { name: 'tetoOS Superlite Final (Target 2027)', disabled: true },
-            { name: 'tetoOS Superlite RC1 21H2 (On Proses)', disabled: true }
-        ],
-        'unsupported': [
-            { name: 'tetoOS Superlite EA Maret (Available)', disabled: false, url: 'https://sfl.gl/HQfCtx', isEa: true },
-            { name: 'tetoOS CBT v6 (Legacy / Unsupported)', disabled: false, url: 'https://sfl.gl/Tnj58g', isEa: true }
-        ]
-    },
-    'normal': {
-        'supported': [
-            { name: 'tetoOS Normal Final (Target 2027)', disabled: true },
-            { name: 'tetoOS Normal RC1 21H2 (On Proses)', disabled: true }
-        ],
-        'unsupported': [
-            { name: 'tetoOS CBT v6 (Legacy / Unsupported)', disabled: false, url: 'https://sfl.gl/Tnj58g', isEa: true }
-        ]
-    }
-};
-
-let currentVersion = 'sl';
+let currentOS = 'win10';
+let currentBuild = '21h2';
+let currentType = 'sl';
 let currentTab = 'supported';
 let selectedEditionObj = null;
 
+/**
+ * Get active database from window.TETO_EDITIONS_CONFIG
+ */
+function getDatabase() {
+    return window.TETO_EDITIONS_CONFIG || {};
+}
+
+/**
+ * Render dynamic build pills based on active OS
+ */
+function renderBuildPills() {
+    const container = document.getElementById('build-pills-container');
+    if (!container) return;
+
+    container.innerHTML = '';
+    const db = getDatabase();
+    const osInfo = db[currentOS];
+    if (!osInfo || !osInfo.builds) return;
+
+    // Check if currentBuild is valid for this OS
+    const validBuild = osInfo.builds.some(b => b.id === currentBuild);
+    if (!validBuild) {
+        currentBuild = osInfo.builds[0].id;
+    }
+
+    osInfo.builds.forEach(build => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = `teto-pill-btn ${build.id === currentBuild ? 'active' : ''}`;
+        btn.textContent = build.label;
+        btn.dataset.build = build.id;
+
+        btn.addEventListener('click', () => {
+            container.querySelectorAll('.teto-pill-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentBuild = build.id;
+            updateTypeRestrictions();
+            resetSelection();
+            renderEditions();
+        });
+
+        container.appendChild(btn);
+    });
+
+    updateTypeRestrictions();
+}
+
+/**
+ * Handle restrictions (e.g. 26H2 has NO Superlite)
+ */
+function updateTypeRestrictions() {
+    const slBtn = document.querySelector('.teto-type-btn[data-type="sl"]');
+    const normalBtn = document.querySelector('.teto-type-btn[data-type="normal"]');
+    const noticeBox = document.getElementById('build-notice-box');
+
+    const is26H2 = currentOS === 'win11' && currentBuild === '26h2';
+
+    if (is26H2) {
+        if (slBtn) {
+            slBtn.disabled = true;
+            slBtn.classList.remove('active');
+            slBtn.title = 'Superlite is not available for 26H2';
+        }
+        if (normalBtn) {
+            normalBtn.classList.add('active');
+        }
+        if (currentType === 'sl') {
+            currentType = 'normal';
+        }
+        if (noticeBox) {
+            noticeBox.classList.remove('d-none');
+        }
+    } else {
+        if (slBtn) {
+            slBtn.disabled = false;
+            slBtn.title = '';
+            if (currentType === 'sl') {
+                slBtn.classList.add('active');
+                if (normalBtn) normalBtn.classList.remove('active');
+            }
+        }
+        if (noticeBox) {
+            noticeBox.classList.add('d-none');
+        }
+    }
+}
+
+/**
+ * Show Changelog Modal for a specific edition
+ */
+function openChangelogModal(item) {
+    const modalEl = document.getElementById('changelogModal');
+    const titleEl = document.getElementById('changelogModalTitle');
+    const bodyEl = document.getElementById('changelogModalBody');
+    if (!modalEl || !titleEl || !bodyEl) return;
+
+    titleEl.textContent = `Changelog: ${item.name}`;
+
+    if (item.changelog && Array.isArray(item.changelog) && item.changelog.length > 0) {
+        bodyEl.innerHTML = `
+            <ul class="changelog-list">
+                ${item.changelog.map(log => `<li>${log}</li>`).join('')}
+            </ul>
+        `;
+    } else if (item.changelog && typeof item.changelog === 'string') {
+        bodyEl.innerHTML = `<p class="m-0" style="color: #cbd5e1; line-height: 1.6;">${item.changelog}</p>`;
+    } else {
+        bodyEl.innerHTML = `<p class="m-0 text-muted" style="font-style: italic;">No changelog notes available yet for this build.</p>`;
+    }
+
+    if (typeof bootstrap !== 'undefined') {
+        const modalInstance = bootstrap.Modal.getOrCreateInstance(modalEl);
+        modalInstance.show();
+    }
+}
+
+/**
+ * Render edition items in the download list
+ */
 function renderEditions() {
     const listContainer = document.getElementById('edition-list');
     const helperText = document.getElementById('helper-text-choose');
@@ -37,10 +132,15 @@ function renderEditions() {
 
     listContainer.innerHTML = '';
 
-    const items = (editionsData[currentVersion] && editionsData[currentVersion][currentTab]) || [];
-    const currentLang = localStorage.getItem('nookleaf_lang') || 'en';
+    const db = getDatabase();
+    const osData = db[currentOS]?.editions || db[currentOS]?.data;
+    const buildData = osData ? osData[currentBuild] : null;
+    const typeData = buildData ? buildData[currentType] : null;
+    const items = typeData ? typeData[currentTab] : [];
 
-    if (items.length === 0) {
+    const currentLang = localStorage.getItem('moedev_lang') || 'en';
+
+    if (!items || items.length === 0) {
         const noDataMsg = document.createElement('p');
         noDataMsg.className = 'helper-text';
         noDataMsg.style.color = '#ef4444';
@@ -49,13 +149,17 @@ function renderEditions() {
 
         noDataMsg.innerHTML = (typeof translations !== 'undefined' && translations[currentLang] && translations[currentLang]['dl_no_iso'])
             ? translations[currentLang]['dl_no_iso']
-            : (translations && translations['en'] ? translations['en']['dl_no_iso'] : 'ISO is not available.');
+            : (translations && translations['en'] ? translations['en']['dl_no_iso'] : 'ISO is not available for this selection.');
 
         listContainer.appendChild(noDataMsg);
         helperText.style.display = 'none';
     } else {
         items.forEach(item => {
+            const row = document.createElement('div');
+            row.className = 'ed-row';
+
             const btn = document.createElement('button');
+            btn.type = 'button';
             btn.className = 'ed-btn';
 
             let displayName = item.name;
@@ -81,7 +185,7 @@ function renderEditions() {
                     btn.classList.add('selected');
 
                     selectedEditionObj = item;
-                    const footerStatus = document.querySelector('.footer-status');
+                    const footerStatus = document.getElementById('dl-status-text');
                     const selectedWord = (typeof translations !== 'undefined' && translations[currentLang] && translations[currentLang]['dl_selected'])
                         ? translations[currentLang]['dl_selected']
                         : 'selected.';
@@ -100,19 +204,41 @@ function renderEditions() {
                 btn.classList.add('selected');
             }
 
-            listContainer.appendChild(btn);
+            // Changelog Button on the right
+            const changelogBtn = document.createElement('button');
+            changelogBtn.type = 'button';
+            changelogBtn.className = 'ed-changelog-btn';
+            changelogBtn.title = `View Changelog for ${item.name}`;
+            changelogBtn.innerHTML = `
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                </svg>
+                <span>Changelog</span>
+            `;
+
+            changelogBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openChangelogModal(item);
+            });
+
+            row.appendChild(btn);
+            row.appendChild(changelogBtn);
+            listContainer.appendChild(row);
         });
 
         helperText.style.display = selectedEditionObj ? 'none' : 'block';
     }
 }
 
+/**
+ * Reset selected download option
+ */
 function resetSelection() {
     selectedEditionObj = null;
-    const footerStatus = document.querySelector('.footer-status');
+    const footerStatus = document.getElementById('dl-status-text');
     const finalDownloadBtn = document.getElementById('finalDownloadBtn');
     const helperText = document.getElementById('helper-text-choose');
-    const currentLang = localStorage.getItem('nookleaf_lang') || 'en';
+    const currentLang = localStorage.getItem('moedev_lang') || 'en';
 
     if (footerStatus) {
         footerStatus.textContent = (typeof translations !== 'undefined' && translations[currentLang] && translations[currentLang]['dl_modal_no_selection'])
@@ -121,12 +247,20 @@ function resetSelection() {
     }
     if (finalDownloadBtn) finalDownloadBtn.classList.add('disabled');
 
-    const items = editionsData[currentVersion] && editionsData[currentVersion][currentTab];
+    const db = getDatabase();
+    const osData = db[currentOS]?.editions || db[currentOS]?.data;
+    const buildData = osData ? osData[currentBuild] : null;
+    const typeData = buildData ? buildData[currentType] : null;
+    const items = typeData ? typeData[currentTab] : [];
+
     if (items && items.length > 0 && helperText) {
         helperText.style.display = 'block';
     }
 }
 
+/**
+ * Switch from EA Warning to Supported Tab
+ */
 function switchToSupportedTab() {
     const dlModalEl = document.getElementById('downloadModal');
     if (dlModalEl && typeof bootstrap !== 'undefined') {
@@ -138,21 +272,40 @@ function switchToSupportedTab() {
     if (supportedTab) supportedTab.click();
 }
 
+/**
+ * Setup Event Listeners
+ */
 document.addEventListener('DOMContentLoaded', () => {
-    const versionBtns = document.querySelectorAll('.teto-btn-outline');
+    const osBtns = document.querySelectorAll('.teto-os-btn');
+    const typeBtns = document.querySelectorAll('.teto-type-btn');
     const tabBtns = document.querySelectorAll('.teto-tab');
     const finalDownloadBtn = document.getElementById('finalDownloadBtn');
 
-    versionBtns.forEach(btn => {
+    // OS buttons (Windows 10 / 11)
+    osBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            versionBtns.forEach(b => b.classList.remove('active'));
+            osBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            currentVersion = btn.getAttribute('data-version');
+            currentOS = btn.getAttribute('data-os');
+            renderBuildPills();
             resetSelection();
             renderEditions();
         });
     });
 
+    // Type buttons (Superlite / Normal)
+    typeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (btn.disabled) return;
+            typeBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentType = btn.getAttribute('data-type');
+            resetSelection();
+            renderEditions();
+        });
+    });
+
+    // Channel tab buttons (Supported / Unsupported)
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             tabBtns.forEach(b => b.classList.remove('active'));
@@ -163,6 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Final download button handler
     if (finalDownloadBtn) {
         finalDownloadBtn.addEventListener('click', () => {
             if (selectedEditionObj) {
@@ -188,16 +342,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const edFaqModalEl = document.getElementById('editionFaqModal');
-    if (edFaqModalEl) {
-        edFaqModalEl.addEventListener('hidden.bs.modal', () => {
-            const dlModalEl = document.getElementById('downloadModal');
-            if (dlModalEl && dlModalEl.classList.contains('show')) {
-                document.body.classList.add('modal-open');
-                document.body.style.overflow = 'hidden';
-            }
-        });
-    }
+    // Keep body scroll lock when closing nested modals (FAQ & Changelog)
+    ['editionFaqModal', 'changelogModal'].forEach(modalId => {
+        const modalEl = document.getElementById(modalId);
+        if (modalEl) {
+            modalEl.addEventListener('hidden.bs.modal', () => {
+                const dlModalEl = document.getElementById('downloadModal');
+                if (dlModalEl && dlModalEl.classList.contains('show')) {
+                    document.body.classList.add('modal-open');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        }
+    });
 
+    // Initial render
+    renderBuildPills();
     renderEditions();
 });

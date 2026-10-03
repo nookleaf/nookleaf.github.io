@@ -1,6 +1,6 @@
-/**
+﻿/**
  * ============================================================================
- * DEBLOAT DOCUMENTATION TRANSLATIONS MODULE - Nookleaf & tetoOS
+ * DEBLOAT DOCUMENTATION TRANSLATIONS MODULE - moedev & tetoOS
  * Contains translations specifically for docs_debloat.html
  * ============================================================================
  */
@@ -12,9 +12,9 @@
             debloat_title: "Performance & Debloat Philosophy",
             debloat_subtitle: "Understanding Windows services, components, background telemetry, and the balance between raw speed and day-to-day stability in tetoOS.",
             debloat_q1_title: "Does disabling more services always make Windows faster?",
-            debloat_q1_ans: "Not necessarily. Idle services do not continuously consume significant CPU or RAM resources. What matters most is balance — removing what is genuinely unnecessary without breaking daily software compatibility.",
+            debloat_q1_ans: "Not necessarily. Idle services do not continuously consume significant CPU or RAM resources. What matters most is balance - removing what is genuinely unnecessary without breaking daily software compatibility.",
             debloat_q2_title: "Why aren't all 'unused' services disabled?",
-            debloat_q2_ans: "Because \"unused by one person\" does not mean \"unused by everyone\". Features like the Print Spooler, for example, are still essential for PDF creators or design apps that rely on virtual printers — even if you don't own a physical printer.",
+            debloat_q2_ans: "Because \"unused by one person\" does not mean \"unused by everyone\". Features like the Print Spooler, for example, are still essential for PDF creators or design apps that rely on virtual printers - even if you don't own a physical printer.",
             debloat_q3_title: "What is tetoOS's design philosophy regarding Windows services?",
             debloat_q3_lead: "Our philosophy balances performance with system compatibility. Idle services consume minimal resources, so disabling everything indiscriminately provides negligible gains while risking system instability. tetoOS only disables services meeting strict criteria:",
             debloat_q3_crit1: "<span style=\"color: #f87171;\">•</span> Rarely used by typical personal computing workflows.",
@@ -66,11 +66,11 @@
             debloat_title: "Философия производительности и оптимизации",
             debloat_subtitle: "Понимание служб Windows, компонентов, телеметрии и баланса между максимальной скоростью и стабильностью в tetoOS.",
             debloat_q1_title: "Делает ли отключение большего числа служб Windows быстрее?",
-            debloat_q1_ans: "Не обязательно. Неактивные службы не потребляют ресурсы процессора или ОЗУ постоянно. Главное — баланс: удаление действительно лишнего без ущерба для совместимости приложений.",
+            debloat_q1_ans: "Не обязательно. Неактивные службы не потребляют ресурсы процессора или ОЗУ постоянно. Главное - баланс: удаление действительно лишнего без ущерба для совместимости приложений.",
             debloat_q2_title: "Почему отключены не все 'неиспользуемые' службы?",
             debloat_q2_ans: "Потому что служба, не нужная одному, может быть критична для другого. Например, Диспетчер печати (Print Spooler) необходим для экспорта PDF и виртуальных принтеров, даже если нет физического принтера.",
             debloat_q3_title: "Какова философия tetoOS в отношении служб Windows?",
-            debloat_q3_lead: "Наша философия — баланс скорости и совместимости. Службы в простое не нагружают ПК, а беспорядочное отключение несет риск поломки системы. tetoOS отключает службы только по четким критериям:",
+            debloat_q3_lead: "Наша философия - баланс скорости и совместимости. Службы в простое не нагружают ПК, а беспорядочное отключение несет риск поломки системы. tetoOS отключает службы только по четким критериям:",
             debloat_q3_crit1: "<span style=\"color: #f87171;\">•</span> Редко используемые обычными пользователями.",
             debloat_q3_crit2: "<span style=\"color: #f87171;\">•</span> Корпоративная инфраструктура предприятий.",
             debloat_q3_crit3: "<span style=\"color: #f87171;\">•</span> Устаревшие компоненты прошлых поколений.",
@@ -93,7 +93,7 @@
             debloat_title: "性能与系统精简哲学",
             debloat_subtitle: "深入了解 Windows 服务、组件、后台遥测机制，以及 tetoOS 如何平衡极致速度与日常稳定性。",
             debloat_q1_title: "禁用更多系统服务就一定会让 Windows 运行得更快吗？",
-            debloat_q1_ans: "未必。处于空闲状态的系统服务并不会持续大幅占用 CPU 或内存资源。最重要的是平衡 —— 精简真正无用的组件，同时不破坏日常软件与游戏的兼容性。",
+            debloat_q1_ans: "未必。处于空闲状态的系统服务并不会持续大幅占用 CPU 或内存资源。最重要的是平衡 -- 精简真正无用的组件，同时不破坏日常软件与游戏的兼容性。",
             debloat_q2_title: "为什么不把所有『未用到』的服务全部关闭？",
             debloat_q2_ans: "因为“某个人用不到”并不等于“所有人都不需要”。例如打印后台处理程序（Print Spooler），即便您没有实体打印机，PDF 导出软件或设计类应用依然依赖虚拟打印机功能。",
             debloat_q3_title: "tetoOS 关于 Windows 服务的核心设计哲学是什么？",
@@ -120,7 +120,7 @@
             debloat_title: "성능 및 디블로트 철학",
             debloat_subtitle: "Windows 서비스, 시스템 구성요소, 백그라운드 텔레메트리 이해 및 tetoOS의 성능과 안정성 간의 균형 원칙.",
             debloat_q1_title: "더 많은 서비스를 비활성화하면 Windows가 항상 더 빨라지나요?",
-            debloat_q1_ans: "반드시 그렇지는 않습니다. 유휴(Idle) 상태의 서비스는 CPU나 RAM 리소스를 지속적으로 크게 소모하지 않습니다. 가장 중요한 것은 균형입니다 — 일상적인 호환성을 해치지 않으면서 정말 불필요한 것만 제거하는 것입니다.",
+            debloat_q1_ans: "반드시 그렇지는 않습니다. 유휴(Idle) 상태의 서비스는 CPU나 RAM 리소스를 지속적으로 크게 소모하지 않습니다. 가장 중요한 것은 균형입니다 - 일상적인 호환성을 해치지 않으면서 정말 불필요한 것만 제거하는 것입니다.",
             debloat_q2_title: "왜 모든 '사용하지 않는' 서비스를 끄지 않나요?",
             debloat_q2_ans: "‘나에게 필요 없는 것’이 ‘모두에게 필요 없는 것’은 아니기 때문입니다. 예를 들어 Print Spooler와 같은 기능은 물리적 프린터가 없더라도 가상 프린터를 사용하는 PDF 생성기나 디자인 프로그램에서 필수적으로 요구됩니다.",
             debloat_q3_title: "Windows 서비스에 대한 tetoOS의 설계 철학은 무엇인가요?",
@@ -147,9 +147,9 @@
             debloat_title: "فلسفة الأداء وإزالة البرمجيات غير الضرورية",
             debloat_subtitle: "فهم خدمات Windows، والمكونات، والتتبع في الخلفية، والتوازن بين السرعة الفائقة والاستقرار اليومي في tetoOS.",
             debloat_q1_title: "هل يؤدي تعطيل المزيد من الخدمات دائماً إلى جعل Windows أسرع؟",
-            debloat_q1_ans: "ليس بالضرورة. الخدمات الخاملة لا تستهلك قدرًا كبيرًا ومستمرًا من موارد المعالج أو الذاكرة العشوائية. الأهم هو التوازن — إزالة ما هو غير ضروري حقاً دون الإخلال بتوافق البرامج اليومية.",
+            debloat_q1_ans: "ليس بالضرورة. الخدمات الخاملة لا تستهلك قدرًا كبيرًا ومستمرًا من موارد المعالج أو الذاكرة العشوائية. الأهم هو التوازن - إزالة ما هو غير ضروري حقاً دون الإخلال بتوافق البرامج اليومية.",
             debloat_q2_title: "لماذا لا يتم تعطيل جميع الخدمات 'غير المستخدمة'؟",
-            debloat_q2_ans: "لأن \"ما لا يستخدمه شخص ما\" ليس بالضرورة \"غير مستخدم من قِبل الجميع\". على سبيل المثال، خدمة الطباعة (Print Spooler) تظل ضرورية لتطبيقات إنشاء مستندات PDF والتصميم التي تعتمد على طابعات افتراضية — حتى لو لم تكن تمتلك طابعة فعلية.",
+            debloat_q2_ans: "لأن \"ما لا يستخدمه شخص ما\" ليس بالضرورة \"غير مستخدم من قِبل الجميع\". على سبيل المثال، خدمة الطباعة (Print Spooler) تظل ضرورية لتطبيقات إنشاء مستندات PDF والتصميم التي تعتمد على طابعات افتراضية - حتى لو لم تكن تمتلك طابعة فعلية.",
             debloat_q3_title: "ما هي فلسفة تصميم tetoOS فيما يتعلق بخدمات Windows؟",
             debloat_q3_lead: "توازن فلسفتنا بين الأداء وتوافق النظام. الخدمات الخاملة تستهلك الحد الأدنى من الموارد، لذا فإن تعطيل كل شيء عشوائياً يعطي مكاسب ضئيلة مع المخاطرة باستقرار النظام. يقوم tetoOS بتعطيل الخدمات التي تطابق معايير محددة فقط:",
             debloat_q3_crit1: "<span style=\"color: #f87171;\">•</span> نادراً ما يتم استخدامها في أنشطة الاستخدام الشخصي المعتادة.",
@@ -174,9 +174,9 @@
             debloat_title: "Filosofi Performa & Debloat",
             debloat_subtitle: "Memahami layanan Windows, komponen sistem, telemetri latar belakang, dan keseimbangan antara kecepatan tinggi dan stabilitas harian di tetoOS.",
             debloat_q1_title: "Apakah mematikan lebih banyak layanan (services) selalu membuat Windows lebih cepat?",
-            debloat_q1_ans: "Belum tentu. Layanan yang tidak aktif digunakan tidak terus-menerus memakan CPU atau RAM secara signifikan. Yang terpenting adalah keseimbangan — menghapus apa yang benar-benar tidak perlu tanpa merusak kompatibilitas harian.",
+            debloat_q1_ans: "Belum tentu. Layanan yang tidak aktif digunakan tidak terus-menerus memakan CPU atau RAM secara signifikan. Yang terpenting adalah keseimbangan - menghapus apa yang benar-benar tidak perlu tanpa merusak kompatibilitas harian.",
             debloat_q2_title: "Mengapa tidak semua layanan yang 'tidak terpakai' dimatikan?",
-            debloat_q2_ans: "Karena 'tidak terpakai oleh satu orang' belum tentu 'tidak terpakai oleh semua orang'. Fitur seperti Print Spooler, misalnya, tetap dibutuhkan oleh aplikasi pembuat PDF atau desain yang menggunakan printer virtual — meskipun Anda tidak punya printer fisik.",
+            debloat_q2_ans: "Karena 'tidak terpakai oleh satu orang' belum tentu 'tidak terpakai oleh semua orang'. Fitur seperti Print Spooler, misalnya, tetap dibutuhkan oleh aplikasi pembuat PDF atau desain yang menggunakan printer virtual - meskipun Anda tidak punya printer fisik.",
             debloat_q3_title: "Apa filosofi desain tetoOS mengenai layanan Windows?",
             debloat_q3_lead: "Filosofi kami menyeimbangkan performa dengan kompatibilitas sistem. Layanan yang diam tidak menguras resource, jadi mematikan semuanya secara acak hanya memberi sedikit performa namun berisiko merusak sistem. tetoOS hanya mematikan layanan dengan kriteria:",
             debloat_q3_crit1: "<span style=\"color: #f87171;\">•</span> Jarang digunakan oleh rata-rata pengguna personal.",
@@ -205,7 +205,7 @@
     }
 
     if (typeof setLanguage === 'function') {
-        const currentLang = localStorage.getItem('nookleaf_lang') || 'en';
+        const currentLang = localStorage.getItem('moedev_lang') || 'en';
         setLanguage(currentLang);
     }
 })();

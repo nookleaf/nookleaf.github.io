@@ -1,6 +1,4 @@
-/* ==========================================================================
-   MAIN STYLESHEET BUNDLE - Nookleaf & tetoOS
-   ========================================================================== */
+/* Main stylesheet bundle */
 @import url('base.css');
 @import url('layout.css');
 @import url('components.css');

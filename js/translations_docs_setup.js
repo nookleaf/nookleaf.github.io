@@ -1,6 +1,6 @@
-/**
+﻿/**
  * ============================================================================
- * SETUP DOCUMENTATION TRANSLATIONS MODULE - Nookleaf & tetoOS
+ * SETUP DOCUMENTATION TRANSLATIONS MODULE - moedev & tetoOS
  * Contains translations specifically for docs_setup.html
  * ============================================================================
  */
@@ -10,8 +10,8 @@
         en: {
             docs_badge: "DOCUMENTATION & SETUP GUIDE",
             docs_title: "Section required for review",
-            docs_subtitle: "README — Complete Guide to Folder Structures, Custom Setup Wrappers, Script Systems & Installer Options for tetoOS ISO Modification.",
-            docs_toc_title: "📑 TABLE OF CONTENTS",
+            docs_subtitle: "README - Complete Guide to Folder Structures, Custom Setup Wrappers, Script Systems & Installer Options for tetoOS ISO Modification.",
+            docs_toc_title: "TABLE OF CONTENTS",
             docs_toc_1: "1. Overview",
             docs_toc_2: "2. StartSetup.ini Structure",
             docs_toc_3: "3. $OEM$ Folder Structure",
@@ -21,18 +21,18 @@
             docs_toc_7: "7. CMD Scripting Guide",
             docs_toc_8: "8. Common Errors & Debugging",
 
-            docs_sec1_title: '<span class="icon">🚀</span> 1. Overview',
+            docs_sec1_title: "1. Overview",
             docs_sec1_lead: "Folder placement follows the native Windows <code>$OEM$</code> folder mechanism. This wrapper was created to apply customizations during the installation process, so after progress reaches 100%, the computer can be left unattended without waiting for OOBE to finish.",
             docs_sec1_p1: "This wrapper does not eliminate OOBE, but rather moves most of the post-installation workload into the Windows setup stage. The entry point is <code>StartSetup.ini</code> to display OS/edition selection and then copies the appropriate <code>$oem$</code> folder to the installation media.",
             docs_sec1_adv_title: "Advantages of this Method:",
-            docs_sec1_adv1: '<span style="color: #34d399;">✅</span> <strong>Users can unplug the USB drive after 100% progress.</strong>',
-            docs_sec1_adv2: '<span style="color: #34d399;">✅</span> <strong>Tweaks and software can be installed while setup is running.</strong>',
-            docs_sec1_adv3: '<span style="color: #34d399;">✅</span> <strong>No need to wait at the computer during OOBE.</strong>',
-            docs_sec1_adv4: '<span style="color: #34d399;">✅</span> <strong>Compatible with standard $oem$ structure.</strong>',
+            docs_sec1_adv1: '<span style="color: #34d399; font-weight: bold;">•</span> <strong>Users can unplug the USB drive after 100% progress.</strong>',
+            docs_sec1_adv2: '<span style="color: #34d399; font-weight: bold;">•</span> <strong>Tweaks and software can be installed while setup is running.</strong>',
+            docs_sec1_adv3: '<span style="color: #34d399; font-weight: bold;">•</span> <strong>No need to wait at the computer during OOBE.</strong>',
+            docs_sec1_adv4: '<span style="color: #34d399; font-weight: bold;">•</span> <strong>Compatible with standard $oem$ structure.</strong>',
             docs_sec1_warn: '<strong>Critical Warning:</strong><br>Scripts running too early, taking too long, or containing invalid syntax can still cause:<ul class="mb-0 mt-2 ps-3"><li>Indefinite <em>Just a moment</em> screen;</li><li>Recurring boot loops;</li><li><code>CONFIG_INITIALIZATION_FAILED</code>;</li><li>User profile corruption;</li><li>Deadlocks during OOBE phase.</li></ul>',
             docs_sec1_foot: "This system is designed as an extension of the Windows <code>$oem$</code> mechanism. Folders, scripts, and configuration files (<code>StartSetup.ini</code>, <code>OS_Settings.ini</code>) are deeply interconnected. An error in one component can disrupt the entire installation process.",
 
-            docs_sec2_title: '<span class="icon">⚙️</span> 2. StartSetup.ini Structure',
+            docs_sec2_title: "2. StartSetup.ini Structure",
             docs_sec2_lead: "The primary configuration file read to manage OS selection and setup UI timeout.",
             docs_sec2_example_label: "Example StartSetup.ini Content:",
             docs_sec2_th_key: "Key / Parameter",
@@ -44,8 +44,8 @@
             docs_sec2_row5: "If uncommented (<code>=1</code>), hides the OS selection page.",
             docs_sec2_row6: "Seconds before the OS selection page automatically advances to the next step.",
 
-            docs_sec3_title: '<span class="icon">📁</span> 3. Folder Structure & $OEM$ Mapping',
-            docs_sec3_lead: "Below are the physical folders packaged inside the Setup. Numeric prefixes (e.g. <code>OS_</code>) denote target OS codes defined in <code>[OSList]</code> — <code>10</code> = Windows 10.",
+            docs_sec3_title: "3. Folder Structure & $OEM$ Mapping",
+            docs_sec3_lead: "Below are the physical folders packaged inside the Setup. Numeric prefixes (e.g. <code>OS_</code>) denote target OS codes defined in <code>[OSList]</code> - <code>10</code> = Windows 10.",
             docs_sec3_h1: "Per-OS $oem$ Folders",
             docs_sec3_th_folder: "Folder",
             docs_sec3_th_fn: "Function",
@@ -64,7 +64,7 @@
             docs_sec3_ex_map: "<strong>Mapping Examples:</strong><br>• <code>OS_$oem$\\$1\\Users\\Public\\Desktop</code> &rarr; copied to <code>C:\\Users\\Public\\Desktop</code><br>• <code>OS_$oem$\\$$\\Setup\\Scripts\\SetupComplete.cmd</code> &rarr; copied to <code>C:\\Windows\\Setup\\Scripts\\SetupComplete.cmd</code>",
             docs_sec3_warn: "<strong>Important Notes:</strong><ul class=\"mb-0 mt-2 ps-3\"><li>Folders ending in <code>_options</code> require user selection in the installer.</li><li>Folders ending in <code>_2</code> are always applied automatically.</li><li><code>OS_Settings.ini</code> configures tweaks and installer options for that OS.</li><li>Incorrect folder placement may cause tweaks or scripts not to execute at all.</li></ul>",
 
-            docs_sec4_title: '<span class="icon">📜</span> 4. Script System',
+            docs_sec4_title: "4. Script System",
             docs_sec4_lead: "Contents of <code>$$\\Setup\\Scripts</code> are copied to <code>C:\\Windows\\Setup\\Scripts</code> and executed automatically during matching installation phases. Primary stage scripts reside in <code>OS_$oem$\\$$\\Setup\\Scripts</code>.",
             docs_sec4_order_title: "Execution Order of Stage Scripts:",
             docs_sec4_pattern_title: "Tweak Calling Pattern (Crucial):",
@@ -74,10 +74,10 @@
             docs_sec4_note2: '<span style="color: #38bdf8;">•</span> <code>.DONE</code> marker files (e.g. <code>specialize.DONE</code>, <code>FirstLogonCommands.DONE</code>) prevent redundant/looping executions.',
             docs_sec4_note3: '<span style="color: #38bdf8;">•</span> <code>Tweaks_forced\\*.reg</code> are applied without options; folder tweaks use <code>_InstallOption_&lt;Stage&gt;.cmd</code>.',
 
-            docs_sec5_title: '<span class="icon">⚡</span> 5. _InstallOption_*.cmd Files & Mechanism',
+            docs_sec5_title: "5. _InstallOption_*.cmd Files & Mechanism",
             docs_sec5_lead: "The filename dictates the exact installation stage where the tweak is triggered by the wrapper.",
             docs_sec5_stages_title: "System Recognized Stage Names:",
-            docs_sec5_special_alert: "<strong>Special Tweak Collections:</strong><br>• Tweaks in <code>Tweaks_forced</code> (e.g. <code>Control_Defender</code>, <code>Control_UpdateCenter</code>) are invoked directly via <code>_Install.cmd</code> from <code>OOBE.cmd</code> — not via <code>_InstallOption_</code>.<br>• The <code>Skipped</code> folder contains intentionally disabled tweaks (using <code>__InstallOption_Specialize.cmd</code> with double underscores so the system skips looping it).",
+            docs_sec5_special_alert: "<strong>Special Tweak Collections:</strong><br>• Tweaks in <code>Tweaks_forced</code> (e.g. <code>Control_Defender</code>, <code>Control_UpdateCenter</code>) are invoked directly via <code>_Install.cmd</code> from <code>OOBE.cmd</code> - not via <code>_InstallOption_</code>.<br>• The <code>Skipped</code> folder contains intentionally disabled tweaks (using <code>__InstallOption_Specialize.cmd</code> with double underscores so the system skips looping it).",
             docs_sec5_workflow_title: "Installer Workflow & Configuration:",
             docs_sec5_workflow_p: "The installer reads <code>OS_Settings.ini</code>, scans for matching <code>_InstallOption_*.cmd</code> files in target tweak folders, and executes them at the designated stage after user confirmation.",
             docs_sec5_result_p: "<strong>Result:</strong> \"Windows 7 Start Menu\" tweak runs at <em>SetupComplete</em> and <em>FirstLogonDesktop</em> stages if checked by user during install.",
@@ -87,7 +87,7 @@
             docs_sec5_step3: "Place supporting files such as <code>.reg</code>, <code>.cmd</code>, <code>.ps1</code>, or <code>.exe</code> in the same folder.",
             docs_sec5_step4: "Register the folder in <code>OS_Settings.ini</code> (for optional installer tweaks).",
 
-            docs_sec6_title: '<span class="icon">🔧</span> 6. OS_Settings.ini Structure',
+            docs_sec6_title: "6. OS_Settings.ini Structure",
             docs_sec6_lead: "<code>OS_Settings.ini</code> is utilized by the installer to specify target images/editions, unattend options, and the list of tweaks presented to users. It connects tweak labels to script folders. Stored as <strong>UTF-16LE</strong>.",
             docs_sec6_sec1_title: "Section [WIM-ESD]",
             docs_sec6_sec1_p: "Defines image sources, WIM/ESD index assignments, and Office image targets.",
@@ -97,21 +97,21 @@
             docs_sec6_sec3_p: "Configures edition page behavior and installer customization defaults.",
             docs_sec6_sec4_title: "Section [Option:*]",
             docs_sec6_sec4_p: "Each optional tweak is defined as an <code>[Option:Name]</code> block. Language labels (e.g. <code>en-US=</code>) display in the installer UI; <code>Dir=</code> targets the tweak folder; <code>Checked=</code> determines default selection state.",
-            docs_sec6_note: "<strong>Note:</strong> Folders listed in <code>OS_Settings.ini</code> will still be copied, but without a matching <code>_InstallOption_&lt;Stage&gt;.cmd</code> file, scripts won't execute — files are simply copied over.",
+            docs_sec6_note: "<strong>Note:</strong> Folders listed in <code>OS_Settings.ini</code> will still be copied, but without a matching <code>_InstallOption_&lt;Stage&gt;.cmd</code> file, scripts won't execute - files are simply copied over.",
 
-            docs_sec7_title: '<span class="icon">💻</span> 7. CMD Script Writing Guide',
+            docs_sec7_title: "7. CMD Script Writing Guide",
             docs_sec7_lead: "Most tweaks are executed through <code>.cmd</code> or <code>.bat</code> files. Minor mistakes can cause excessive setup delays, boot failures, or OOBE stalls.",
             docs_sec7_basic_title: "Basic CMD Script Structure:",
             docs_sec7_rules_title: "Practical Script Writing Guidelines:",
-            docs_sec7_rule1: "<span>✔</span> <strong>Always terminate scripts with <code>exit /b</code></strong> (or <code>exit</code> for main stage scripts) so the installer can proceed.",
-            docs_sec7_rule2: "<span>✔</span> <strong>Use <code>call</code> when invoking external CMD files;</strong> otherwise, the parent script terminates prematurely.",
-            docs_sec7_rule3: "<span>✔</span> <strong>Use <code>start /wait</code></strong> whenever external installers must finish before continuing.",
-            docs_sec7_rule4: "<span>✔</span> <strong>Begin stage scripts with <code>cd /d \"%~dp0\"</code></strong> and <code>\"%~dp0cmdow.exe\" @ /HID</code> to conceal CMD console windows.",
-            docs_sec7_rule5: "<span>✔</span> <strong>Leverage <code>.DONE</code> markers</strong> to prevent scripts from executing repeatedly.",
-            docs_sec7_rule6: "<span>✔</span> <strong>Avoid interactive dialogs</strong> such as <code>pause</code>, <code>choice</code>, or <code>msgbox</code> during installation.",
-            docs_sec7_rule7: "<span>✔</span> <strong>Avoid issuing restart, shutdown, or logoff commands</strong> unless strictly mandatory.",
-            docs_sec7_rule8: "<span>✔</span> <strong>Wrap all system paths in double quotes</strong>, e.g. <code>\"%SystemRoot%\\Setup\\Scripts\"</code>.",
-            docs_sec7_rule9: "<span>✔</span> <strong>Test every tweak standalone</strong> before integrating into the master installer package.",
+            docs_sec7_rule1: "<span>•</span> <strong>Always terminate scripts with <code>exit /b</code></strong> (or <code>exit</code> for main stage scripts) so the installer can proceed.",
+            docs_sec7_rule2: "<span>•</span> <strong>Use <code>call</code> when invoking external CMD files;</strong> otherwise, the parent script terminates prematurely.",
+            docs_sec7_rule3: "<span>•</span> <strong>Use <code>start /wait</code></strong> whenever external installers must finish before continuing.",
+            docs_sec7_rule4: "<span>•</span> <strong>Begin stage scripts with <code>cd /d \"%~dp0\"</code></strong> and <code>\"%~dp0cmdow.exe\" @ /HID</code> to conceal CMD console windows.",
+            docs_sec7_rule5: "<span>•</span> <strong>Leverage <code>.DONE</code> markers</strong> to prevent scripts from executing repeatedly.",
+            docs_sec7_rule6: "<span>•</span> <strong>Avoid interactive dialogs</strong> such as <code>pause</code>, <code>choice</code>, or <code>msgbox</code> during installation.",
+            docs_sec7_rule7: "<span>•</span> <strong>Avoid issuing restart, shutdown, or logoff commands</strong> unless strictly mandatory.",
+            docs_sec7_rule8: "<span>•</span> <strong>Wrap all system paths in double quotes</strong>, e.g. <code>\"%SystemRoot%\\Setup\\Scripts\"</code>.",
+            docs_sec7_rule9: "<span>•</span> <strong>Test every tweak standalone</strong> before integrating into the master installer package.",
             docs_sec7_stages_table_title: "Installation Stage Breakdown Table:",
             docs_sec7_th_stage: "Installation Stage",
             docs_sec7_th_purpose: "Recommended Usage",
@@ -121,7 +121,7 @@
             docs_sec7_stg4: "Specific configuration for new user profiles upon initial login.",
             docs_sec7_stg5: "Taskbar, Start Menu, Windows Explorer settings, and visual desktop interface tweaks.",
 
-            docs_sec8_title: '<span class="icon">🔍</span> 8. Common Errors & Debugging Tips',
+            docs_sec8_title: "8. Common Errors & Debugging Tips",
             docs_sec8_common_err_title: "Most Frequent Mistakes:",
             docs_sec8_err1: '<span style="color: #ef4444;">•</span> Forgetting to append <code>exit /b</code> at the end of the script.',
             docs_sec8_err2: '<span style="color: #ef4444;">•</span> Using <code>start</code> without the <code>/wait</code> switch, causing process overlap.',
@@ -130,7 +130,7 @@
             docs_sec8_err5: '<span style="color: #ef4444;">•</span> Assigning tweaks to the wrong stage (e.g. running UI desktop tweaks during Specialize).',
             docs_sec8_err6: '<span style="color: #ef4444;">•</span> Typos in filename: using <code>_InstallOptions_</code> (plural) instead of <code>_InstallOption_</code> (singular).',
             docs_sec8_err7: '<span style="color: #ef4444;">•</span> Tweak folder name mismatching the <code>Dir=</code> entry in <code>OS_Settings.ini</code>.',
-            docs_sec8_checklist_title: "🛠️ Debugging Checklist Tips:",
+            docs_sec8_checklist_title: "Debugging Checklist Tips:",
             docs_sec8_checklist_desc: "If your tweak or customization fails to execute during setup, verify the following:",
             docs_sec8_chk1: "Verify the tweak folder is registered under the <code>Dir=</code> line in <code>OS_Settings.ini</code>.",
             docs_sec8_chk2: "Ensure the physical folder name matches the INI file entry exactly (case-sensitive safe).",
@@ -139,13 +139,13 @@
             docs_sec8_chk5: "Test the script manually inside a running live Windows instance to verify functionality.",
             docs_sec8_chk6: "Add debug logging like <code>echo Stage OK &gt;&gt; C:\\log.txt</code> to track execution line by line.",
             docs_btn_back_teto: "← Back to tetoOS 10",
-            docs_btn_home: "Nookleaf Home"
+            docs_btn_home: "moedev Home"
         },
         id: {
             docs_badge: "DOKUMENTASI & PANDUAN SETUP",
             docs_title: "Section required for review",
-            docs_subtitle: "README — Panduan Lengkap Struktur Folder, Wrapper Custom Setup, Sistem Script & Opsi Installer untuk Modifikasi ISO tetoOS.",
-            docs_toc_title: "📑 DAFTAR ISI",
+            docs_subtitle: "README - Panduan Lengkap Struktur Folder, Wrapper Custom Setup, Sistem Script & Opsi Installer untuk Modifikasi ISO tetoOS.",
+            docs_toc_title: "DAFTAR ISI",
             docs_toc_1: "1. Gambaran Umum",
             docs_toc_2: "2. Struktur StartSetup.ini",
             docs_toc_3: "3. Struktur Folder $OEM$",
@@ -155,18 +155,18 @@
             docs_toc_7: "7. Panduan Script CMD",
             docs_toc_8: "8. Kesalahan & Debugging",
 
-            docs_sec1_title: '<span class="icon">🚀</span> 1. Gambaran Umum',
+            docs_sec1_title: "1. Gambaran Umum",
             docs_sec1_lead: "Peletakan folder mengikuti mekanisme folder <code>$OEM$</code> bawaan Windows. Wrapper ini dibuat untuk menerapkan kustomisasi selama proses instalasi, sehingga setelah progres mencapai 100%, komputer dapat ditinggalkan tanpa perlu menunggu OOBE selesai.",
             docs_sec1_p1: "Wrapper ini tidak menghilangkan OOBE, melainkan memindahkan sebagian besar pekerjaan yang biasanya terjadi setelah instalasi ke tahap setup Windows. Titik masuknya adalah membaca <code>StartSetup.ini</code> untuk menampilkan pemilihan OS/edisi, lalu menyalin folder <code>$oem$</code> yang sesuai ke media instalasi.",
             docs_sec1_adv_title: "Keuntungan Metode Ini:",
-            docs_sec1_adv1: '<span style="color: #34d399;">✅</span> <strong>Pengguna dapat mencabut flashdisk setelah progres 100%.</strong>',
-            docs_sec1_adv2: '<span style="color: #34d399;">✅</span> <strong>Tweak dan aplikasi dapat dipasang saat setup masih berjalan.</strong>',
-            docs_sec1_adv3: '<span style="color: #34d399;">✅</span> <strong>Tidak perlu berjaga di depan komputer selama OOBE.</strong>',
-            docs_sec1_adv4: '<span style="color: #34d399;">✅</span> <strong>Kompatibel dengan struktur $oem$ standar.</strong>',
+            docs_sec1_adv1: '<span style="color: #34d399; font-weight: bold;">•</span> <strong>Pengguna dapat mencabut flashdisk setelah progres 100%.</strong>',
+            docs_sec1_adv2: '<span style="color: #34d399; font-weight: bold;">•</span> <strong>Tweak dan aplikasi dapat dipasang saat setup masih berjalan.</strong>',
+            docs_sec1_adv3: '<span style="color: #34d399; font-weight: bold;">•</span> <strong>Tidak perlu berjaga di depan komputer selama OOBE.</strong>',
+            docs_sec1_adv4: '<span style="color: #34d399; font-weight: bold;">•</span> <strong>Kompatibel dengan struktur $oem$ standar.</strong>',
             docs_sec1_warn: '<strong>Peringatan Penting:</strong><br>Script yang berjalan terlalu dini, terlalu lama, atau tidak sesuai syntax masih dapat menyebabkan:<ul class="mb-0 mt-2 ps-3"><li><em>Just a moment</em> yang sangat lama;</li><li>Boot loop berulang;</li><li><code>CONFIG_INITIALIZATION_FAILED</code>;</li><li>Kerusakan profil pengguna (Profile corruption);</li><li>Deadlock pada fase OOBE.</li></ul>',
             docs_sec1_foot: "Sistem ini dirancang sebagai ekstensi dari mekanisme <code>$oem$</code> Windows. Folder, script, dan file konfigurasi (<code>StartSetup.ini</code>, <code>OS_Settings.ini</code>) saling terhubung. Kesalahan pada satu komponen dapat memengaruhi seluruh proses instalasi.",
 
-            docs_sec2_title: '<span class="icon">⚙️</span> 2. Struktur StartSetup.ini',
+            docs_sec2_title: "2. Struktur StartSetup.ini",
             docs_sec2_lead: "File konfigurasi utama yang dibaca untuk mengontrol pemilihan OS dan timeout antarmuka setup.",
             docs_sec2_example_label: "Contoh Isi StartSetup.ini:",
             docs_sec2_th_key: "Kunci / Parameter",
@@ -178,8 +178,8 @@
             docs_sec2_row5: "Bila di-uncomment (<code>=1</code>), halaman pemilihan OS disembunyikan.",
             docs_sec2_row6: "Detik sebelum halaman pemilihan OS lanjut otomatis ke tahap berikutnya.",
 
-            docs_sec3_title: '<span class="icon">📁</span> 3. Struktur Folder & Pemetaan $OEM$',
-            docs_sec3_lead: "Berikut folder yang benar-benar ada di dalam paket Setup. Prefiks angka (mis. <code>OS_</code>) menandai OS target sesuai kode di <code>[OSList]</code> — <code>10</code> = Windows 10.",
+            docs_sec3_title: "3. Struktur Folder & Pemetaan $OEM$",
+            docs_sec3_lead: "Berikut folder yang benar-benar ada di dalam paket Setup. Prefiks angka (mis. <code>OS_</code>) menandai OS target sesuai kode di <code>[OSList]</code> - <code>10</code> = Windows 10.",
             docs_sec3_h1: "Folder $oem$ per-OS",
             docs_sec3_th_folder: "Folder",
             docs_sec3_th_fn: "Fungsi",
@@ -198,7 +198,7 @@
             docs_sec3_ex_map: "<strong>Contoh Pemetaan:</strong><br>• <code>OS_$oem$\\$1\\Users\\Public\\Desktop</code> &rarr; disalin ke <code>C:\\Users\\Public\\Desktop</code><br>• <code>OS_$oem$\\$$\\Setup\\Scripts\\SetupComplete.cmd</code> &rarr; disalin ke <code>C:\\Windows\\Setup\\Scripts\\SetupComplete.cmd</code>",
             docs_sec3_warn: "<strong>Catatan Penting:</strong><ul class=\"mb-0 mt-2 ps-3\"><li>Folder yang diakhiri <code>_options</code> memerlukan pilihan pengguna di installer.</li><li>Folder yang diakhiri <code>_2</code> akan selalu diterapkan secara otomatis.</li><li><code>OS_Settings.ini</code> mengatur tweak dan opsi installer untuk OS tersebut.</li><li>Kesalahan peletakan folder dapat menyebabkan tweak atau script tidak berjalan sama sekali.</li></ul>",
 
-            docs_sec4_title: '<span class="icon">📜</span> 4. Sistem Scripts',
+            docs_sec4_title: "4. Sistem Scripts",
             docs_sec4_lead: "Isi <code>$$\\Setup\\Scripts</code> disalin ke <code>C:\\Windows\\Setup\\Scripts</code> dan dijalankan otomatis pada tahap instalasi yang sesuai. Script tahapan utama berada di <code>OS_$oem$\\$$\\Setup\\Scripts</code>.",
             docs_sec4_order_title: "Urutan Eksekusi Script Tahapan:",
             docs_sec4_pattern_title: "Pola Pemanggilan Tweak (Sangat Penting):",
@@ -208,10 +208,10 @@
             docs_sec4_note2: '<span style="color: #38bdf8;">•</span> File penanda <code>.DONE</code> (mis. <code>specialize.DONE</code>, <code>FirstLogonCommands.DONE</code>) mencegah script berjalan ganda / looping.',
             docs_sec4_note3: '<span style="color: #38bdf8;">•</span> <code>Tweaks_forced\\*.reg</code> diterapkan tanpa opsi; sedangkan tweak per-folder memakai file <code>_InstallOption_&lt;Tahap&gt;.cmd</code>.',
 
-            docs_sec5_title: '<span class="icon">⚡</span> 5. File _InstallOption_*.cmd & Cara Kerja',
+            docs_sec5_title: "5. File _InstallOption_*.cmd & Cara Kerja",
             docs_sec5_lead: "Nama file menentukan tahap instalasi spesifik di mana tweak akan dieksekusi oleh wrapper.",
             docs_sec5_stages_title: "Nama Tahap yang Dikenali Sistem:",
-            docs_sec5_special_alert: "<strong>Koleksi Tweak Khusus:</strong><br>• Tweak di <code>Tweaks_forced</code> (mis. <code>Control_Defender</code>, <code>Control_UpdateCenter</code>) dipanggil langsung lewat <code>_Install.cmd</code> dari <code>OOBE.cmd</code> — bukan lewat <code>_InstallOption_</code>.<br>• Folder <code>Skipped</code> berisi tweak yang sengaja dinonaktifkan (memakai <code>__InstallOption_Specialize.cmd</code> dengan dua garis bawah / underscore agar tidak ter-loop oleh sistem).",
+            docs_sec5_special_alert: "<strong>Koleksi Tweak Khusus:</strong><br>• Tweak di <code>Tweaks_forced</code> (mis. <code>Control_Defender</code>, <code>Control_UpdateCenter</code>) dipanggil langsung lewat <code>_Install.cmd</code> dari <code>OOBE.cmd</code> - bukan lewat <code>_InstallOption_</code>.<br>• Folder <code>Skipped</code> berisi tweak yang sengaja dinonaktifkan (memakai <code>__InstallOption_Specialize.cmd</code> dengan dua garis bawah / underscore agar tidak ter-loop oleh sistem).",
             docs_sec5_workflow_title: "Alur Kerja Installer & Konfigurasi:",
             docs_sec5_workflow_p: "Installer membaca <code>OS_Settings.ini</code>, mencari file <code>_InstallOption_*.cmd</code> di dalam folder tweak terkait, lalu setelah pengguna memilih opsi, tweak dijalankan pada tahap yang sesuai.",
             docs_sec5_result_p: "<strong>Hasil:</strong> Tweak \"Windows 7 Start Menu\" dijalankan pada tahap <em>SetupComplete</em> dan <em>FirstLogonDesktop</em> bila opsinya dicentang oleh pengguna saat instalasi.",
@@ -221,7 +221,7 @@
             docs_sec5_step3: "Tambahkan file pendukung seperti <code>.reg</code>, <code>.cmd</code>, <code>.ps1</code>, atau <code>.exe</code> di folder yang sama.",
             docs_sec5_step4: "Daftarkan folder tersebut ke <code>OS_Settings.ini</code> (khusus untuk tweak opsional).",
 
-            docs_sec6_title: '<span class="icon">🔧</span> 6. Struktur OS_Settings.ini',
+            docs_sec6_title: "6. Struktur OS_Settings.ini",
             docs_sec6_lead: "<code>OS_Settings.ini</code> dipakai installer untuk menentukan image/edisi target, opsi unattend, dan daftar tweak yang ditampilkan ke pengguna. File ini menghubungkan nama tweak dengan folder script pendukungnya. Disimpan sebagai <strong>UTF-16LE</strong>.",
             docs_sec6_sec1_title: "Bagian [WIM-ESD]",
             docs_sec6_sec1_p: "Menentukan sumber image dan penomoran indeks WIM/ESD serta image Office.",
@@ -233,19 +233,19 @@
             docs_sec6_sec4_p: "Setiap tweak opsional didefinisikan sebagai blok <code>[Option:Nama]</code>. Label bahasa (mis. <code>en-US=</code>) adalah teks yang tampil di installer; <code>Dir=</code> menunjuk folder tweak; <code>Checked=</code> menentukan status centang default.",
             docs_sec6_note: "<strong>Catatan:</strong> Folder yang terdaftar di <code>OS_Settings.ini</code> tetap akan disalin, tetapi jika tidak memiliki file <code>_InstallOption_&lt;Tahap&gt;.cmd</code> yang sesuai maka script tidak akan diproses, hanya menyalin file saja.",
 
-            docs_sec7_title: '<span class="icon">💻</span> 7. Panduan Menulis Script CMD',
+            docs_sec7_title: "7. Panduan Menulis Script CMD",
             docs_sec7_lead: "Sebagian besar tweak dijalankan lewat file <code>.cmd</code> atau <code>.bat</code>. Kesalahan kecil dapat membuat instalasi sangat lama, gagal boot, atau berhenti di OOBE.",
             docs_sec7_basic_title: "Struktur Dasar Script CMD:",
             docs_sec7_rules_title: "Pedoman Praktis Menulis Script:",
-            docs_sec7_rule1: "<span>✔</span> <strong>Selalu akhiri script dengan <code>exit /b</code></strong> (atau <code>exit</code> untuk script tahapan utama) agar installer dapat melanjutkan alur proses.",
-            docs_sec7_rule2: "<span>✔</span> <strong>Gunakan <code>call</code> saat memanggil file CMD lain;</strong> tanpa <code>call</code>, script pemanggil utama akan langsung berhenti.",
-            docs_sec7_rule3: "<span>✔</span> <strong>Gunakan <code>start /wait</code></strong> jika harus menunggu program atau installer eksternal selesai sebelum lanjut.",
-            docs_sec7_rule4: "<span>✔</span> <strong>Awali script tahapan dengan <code>cd /d \"%~dp0\"</code></strong> dan <code>\"%~dp0cmdow.exe\" @ /HID</code> bila ingin menyembunyikan jendela CMD.",
-            docs_sec7_rule5: "<span>✔</span> <strong>Manfaatkan penanda <code>.DONE</code></strong> agar script tidak pernah berjalan ganda.",
-            docs_sec7_rule6: "<span>✔</span> <strong>Hindari jendela interaktif</strong> seperti <code>pause</code>, <code>choice</code>, atau <code>msgbox</code> selama instalasi.",
-            docs_sec7_rule7: "<span>✔</span> <strong>Jangan gunakan perintah restart, shutdown, atau logoff</strong> kecuali benar-benar diwajibkan.",
-            docs_sec7_rule8: "<span>✔</span> <strong>Pastikan semua path diapit tanda kutip dua</strong>, misal: <code>\"%SystemRoot%\\Setup\\Scripts\"</code>.",
-            docs_sec7_rule9: "<span>✔</span> <strong>Uji setiap tweak secara terpisah</strong> sebelum dimasukkan ke dalam paket master installer.",
+            docs_sec7_rule1: "<span>•</span> <strong>Selalu akhiri script dengan <code>exit /b</code></strong> (atau <code>exit</code> untuk script tahapan utama) agar installer dapat melanjutkan alur proses.",
+            docs_sec7_rule2: "<span>•</span> <strong>Gunakan <code>call</code> saat memanggil file CMD lain;</strong> tanpa <code>call</code>, script pemanggil utama akan langsung berhenti.",
+            docs_sec7_rule3: "<span>•</span> <strong>Gunakan <code>start /wait</code></strong> jika harus menunggu program atau installer eksternal selesai sebelum lanjut.",
+            docs_sec7_rule4: "<span>•</span> <strong>Awali script tahapan dengan <code>cd /d \"%~dp0\"</code></strong> dan <code>\"%~dp0cmdow.exe\" @ /HID</code> bila ingin menyembunyikan jendela CMD.",
+            docs_sec7_rule5: "<span>•</span> <strong>Manfaatkan penanda <code>.DONE</code></strong> agar script tidak pernah berjalan ganda.",
+            docs_sec7_rule6: "<span>•</span> <strong>Hindari jendela interaktif</strong> seperti <code>pause</code>, <code>choice</code>, atau <code>msgbox</code> selama instalasi.",
+            docs_sec7_rule7: "<span>•</span> <strong>Jangan gunakan perintah restart, shutdown, atau logoff</strong> kecuali benar-benar diwajibkan.",
+            docs_sec7_rule8: "<span>•</span> <strong>Pastikan semua path diapit tanda kutip dua</strong>, misal: <code>\"%SystemRoot%\\Setup\\Scripts\"</code>.",
+            docs_sec7_rule9: "<span>•</span> <strong>Uji setiap tweak secara terpisah</strong> sebelum dimasukkan ke dalam paket master installer.",
             docs_sec7_stages_table_title: "Tabel Perbedaan Tahap Instalasi:",
             docs_sec7_th_stage: "Tahap Instalasi",
             docs_sec7_th_purpose: "Kegunaan yang Disarankan",
@@ -255,7 +255,7 @@
             docs_sec7_stg4: "Konfigurasi spesifik profil pengguna baru saat pertama kali login.",
             docs_sec7_stg5: "Pengaturan Taskbar, Start Menu, Windows Explorer, dan tweak visual antarmuka desktop.",
 
-            docs_sec8_title: '<span class="icon">🔍</span> 8. Kesalahan Umum & Tips Debugging',
+            docs_sec8_title: "8. Kesalahan Umum & Tips Debugging",
             docs_sec8_common_err_title: "Kesalahan yang Paling Sering Terjadi:",
             docs_sec8_err1: '<span style="color: #ef4444;">•</span> Lupa menambahkan <code>exit /b</code> di akhir file script.',
             docs_sec8_err2: '<span style="color: #ef4444;">•</span> Menggunakan <code>start</code> tanpa parameter <code>/wait</code> sehingga proses tumpang tindih.',
@@ -264,7 +264,7 @@
             docs_sec8_err5: '<span style="color: #ef4444;">•</span> Menaruh tweak pada tahap instalasi yang salah (mis. tweak UI di tahap Specialize).',
             docs_sec8_err6: '<span style="color: #ef4444;">•</span> Salah ketik nama file: memakai <code>_InstallOptions_</code> (jamak) bukan <code>_InstallOption_</code> (tunggal).',
             docs_sec8_err7: '<span style="color: #ef4444;">•</span> Nama folder tweak berbeda dengan entri <code>Dir=</code> di <code>OS_Settings.ini</code>.',
-            docs_sec8_checklist_title: "🛠️ Checklist Tips Debugging:",
+            docs_sec8_checklist_title: "Checklist Tips Debugging:",
             docs_sec8_checklist_desc: "Jika tweak atau kustomisasi Anda tidak berjalan saat setup, periksa urutan berikut:",
             docs_sec8_chk1: "Pastikan folder tweak terdaftar di <code>OS_Settings.ini</code> pada baris <code>Dir=</code>.",
             docs_sec8_chk2: "Pastikan ejaan nama folder fisik dan entri di file INI sama persis (case-sensitive safe).",
@@ -273,7 +273,7 @@
             docs_sec8_chk5: "Uji script secara manual langsung di dalam sistem Windows yang berjalan untuk memverifikasi fungsionalitasnya.",
             docs_sec8_chk6: "Tambahkan logging seperti <code>echo Stage OK &gt;&gt; C:\\log.txt</code> untuk melacak alur eksekusi baris per baris.",
             docs_btn_back_teto: "← Kembali ke tetoOS 10",
-            docs_btn_home: "Beranda Nookleaf"
+            docs_btn_home: "Beranda moedev"
         }
     };
 
@@ -284,7 +284,7 @@
     }
 
     if (typeof setLanguage === 'function') {
-        const currentLang = localStorage.getItem('nookleaf_lang') || 'en';
+        const currentLang = localStorage.getItem('moedev_lang') || 'en';
         setLanguage(currentLang);
     }
 })();

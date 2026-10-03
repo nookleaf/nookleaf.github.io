@@ -1,4 +1,4 @@
-# 🌿 Nookleaf Project & tetoOS
+﻿# 🌿 MOEDEV PROJECT & tetoOS
 
 > **Redefining your Desktop Experience.**  
 > High-performance operating system modification development center designed for ultra-low latency, efficient RAM usage, and peak gaming stability.
@@ -13,4 +13,4 @@
 
 ---
 
-© 2026 **Nookleaf Project**. Developed with ❤️ for low-latency desktop computing.
+© 2026 **MOEDEV PROJECT**. Developed with ❤️ for low-latency desktop computing.

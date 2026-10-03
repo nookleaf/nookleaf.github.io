@@ -1,77 +1,70 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tpkg (Teto Package Manager) Documentation & Guide — Nookleaf Docs</title>
-    <meta name="description" content="Official guide to tpkg (Teto Package Manager) — A blazing-fast, Rust-based, Arch Linux (pacman) style package manager for Windows and tetoOS. Install Winget apps, build recipes, and manage packages effortlessly.">
+    <title>tpkg (Teto Package Manager) Documentation & Guide - moedev Docs</title>
+    <meta name="description" content="Official guide to tpkg (Teto Package Manager) - A blazing-fast, Rust-based, Arch Linux (pacman) style package manager for Windows and tetoOS. Install Winget apps, build recipes, and manage packages effortlessly.">
     <meta name="keywords" content="tpkg, tetopkg, Windows package manager, pacman for windows, TETAUR, TETOBUILD, winget cli, arch linux on windows, tetoOS tools">
-    <meta name="author" content="Nookleaf Project">
+    <meta name="author" content="moedev Project">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#dc2626">
-    <link rel="canonical" href="https://nookleaf.dev/docs_tpkg.html">
+    <link rel="canonical" href="https://moedev.dev/docs_tpkg.html">
     <link rel="icon" type="image/webp" href="img/t_ic.webp">
 
-    <!-- Open Graph / Facebook / Discord -->
+    <!-- OG -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://nookleaf.dev/docs_tpkg.html">
-    <meta property="og:site_name" content="Nookleaf Docs">
-    <meta property="og:title" content="tpkg — Modern Arch Linux-Style Package Manager for Windows">
+    <meta property="og:url" content="https://moedev.dev/docs_tpkg.html">
+    <meta property="og:site_name" content="moedev Docs">
+    <meta property="og:title" content="tpkg - Modern Arch Linux-Style Package Manager for Windows">
     <meta property="og:description" content="Install, upgrade, and manage your software with single terminal commands using tpkg, Winget, and Microsoft Store integration.">
-    <meta property="og:image" content="https://nookleaf.dev/img/t_ic.webp">
+    <meta property="og:image" content="https://moedev.dev/img/t_ic.webp">
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter / X -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="tpkg — Modern Arch Linux-Style Package Manager for Windows">
+    <meta name="twitter:title" content="tpkg - Modern Arch Linux-Style Package Manager for Windows">
     <meta name="twitter:description" content="Install, upgrade, and manage your software with single terminal commands using tpkg, Winget, and Microsoft Store integration.">
-    <meta name="twitter:image" content="https://nookleaf.dev/img/t_ic.webp">
+    <meta name="twitter:image" content="https://moedev.dev/img/t_ic.webp">
 
     <!-- Schema.org TechArticle Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TechArticle",
-      "headline": "tpkg — Teto Package Manager Guide",
+      "headline": "tpkg - Teto Package Manager Guide",
       "description": "Comprehensive user guide to using the tpkg package manager on Windows and tetoOS.",
       "author": {
         "@type": "Organization",
-        "name": "Nookleaf Project"
+        "name": "moedev Project"
       }
     }
     </script>
 
-    <!-- Preconnect CDN Hints -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://flagcdn.com">
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Modular Stylesheets -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/teto.css">
+    <link rel="stylesheet" href="css/main.css?v=2.5">
     <link rel="stylesheet" href="css/docs.css">
 </head>
 <body class="teto-theme">
 
-    <!-- RICKROLL OVERLAY -->
-    <div id="rickroll-container">
-        <video id="rickroll-video" src="" loop preload="auto"></video>
-    </div>
-
-    <!-- SHARED NAVBAR -->
+    <!-- Navbar -->
     <nav id="main-nav"></nav>
 
-    <!-- MAIN DOCUMENTATION CONTAINER -->
+    <!-- Content -->
     <main class="docs-wrapper container fade-in-smooth" style="margin-top: 100px; margin-bottom: 80px;">
         
         <!-- Header -->
         <header class="docs-header text-center" style="margin-bottom: 40px;">
             <div class="docs-badge" data-i18n="tpkg_badge">PACKAGE MANAGER & USER GUIDE</div>
-            <h1 class="docs-title" style="font-size: 2.6rem; font-weight: 800; margin-top: 12px; margin-bottom: 12px;" data-i18n="tpkg_main_title">tpkg — Teto Package Manager</h1>
+            <h1 class="docs-title" style="font-size: 2.6rem; font-weight: 800; margin-top: 12px; margin-bottom: 12px;" data-i18n="tpkg_main_title">tpkg - Teto Package Manager</h1>
             <p class="docs-subtitle" style="font-size: 1.05rem; color: #94a3b8; font-weight: 600; max-width: 800px; margin: 0 auto;" data-i18n="tpkg_main_subtitle">
                 A blazing-fast, Arch Linux-style package manager designed for Windows. Install, upgrade, and manage your applications effortlessly from the command line.
             </p>
@@ -82,7 +75,7 @@
             <!-- Sticky Sidebar (Table of Contents) -->
             <div class="col-lg-3 mb-4">
                 <div class="toc-box">
-                    <div class="toc-title" data-i18n="tpkg_toc_title">📑 TABLE OF CONTENTS</div>
+                    <div class="toc-title" data-i18n="tpkg_toc_title">TABLE OF CONTENTS</div>
                     <ul class="toc-list">
                         <li><a href="#overview" data-i18n="tpkg_toc_1">1. What is tpkg?</a></li>
                         <li><a href="#quickstart" data-i18n="tpkg_toc_2">2. Beginner Quick Start</a></li>
@@ -102,7 +95,7 @@
 
                 <!-- SECTION 1: WHAT IS TPKG? -->
                 <section id="overview" class="docs-card mb-4">
-                    <h2 class="docs-card-title" data-i18n="tpkg_sec1_title"><span class="icon">⚡</span> 1. What is tpkg?</h2>
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec1_title">1. What is tpkg?</h2>
                     <p class="docs-lead" data-i18n="tpkg_sec1_lead">
                         <strong>tpkg</strong> (Teto Package Manager) is a modern package management system built natively in <strong>Rust</strong> for tetoOS and Windows.
                     </p>
@@ -113,7 +106,7 @@
                     <div class="row g-3 my-3">
                         <div class="col-md-6">
                             <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 12px; padding: 18px;">
-                                <h5 style="color: #fca5a5; font-weight: 700; font-size: 1rem; margin-bottom: 8px;">❌ The Old Windows Way</h5>
+                                <h5 style="color: #fca5a5; font-weight: 700; font-size: 1rem; margin-bottom: 8px;">The Old Windows Way</h5>
                                 <ul style="color: #94a3b8; font-size: 0.9rem; padding-left: 18px; line-height: 1.6; margin: 0;">
                                     <li>Manually searching websites on Google</li>
                                     <li>Risk of downloading bundled bloatware or malware</li>
@@ -124,11 +117,11 @@
                         </div>
                         <div class="col-md-6">
                             <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 12px; padding: 18px;">
-                                <h5 style="color: #6ee7b7; font-weight: 700; font-size: 1rem; margin-bottom: 8px;">✅ The tpkg Way</h5>
+                                <h5 style="color: #6ee7b7; font-weight: 700; font-size: 1rem; margin-bottom: 8px;">The tpkg Way</h5>
                                 <ul style="color: #cbd5e1; font-size: 0.9rem; padding-left: 18px; line-height: 1.6; margin: 0;">
                                     <li>One simple command: <code>tpkg -Sw appname</code></li>
                                     <li>Direct access to millions of verified Windows packages</li>
-                                    <li>Atomic tracking — clean installs and clean uninstalls</li>
+                                    <li>Atomic tracking - clean installs and clean uninstalls</li>
                                     <li>One command to update every app on your system: <code>tpkg -Syu</code></li>
                                 </ul>
                             </div>
@@ -149,7 +142,7 @@
 
                 <!-- SECTION 2: BEGINNER QUICK START -->
                 <section id="quickstart" class="docs-card mb-4">
-                    <h2 class="docs-card-title" data-i18n="tpkg_sec2_title"><span class="icon">🚀</span> 2. Beginner Quick Start</h2>
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec2_title">2. Beginner Quick Start</h2>
                     <p class="docs-lead" data-i18n="tpkg_sec2_lead">
                         You don't need to memorize dozens of flags. Here are the 3 most essential commands you'll use 95% of the time:
                     </p>
@@ -172,7 +165,7 @@
                     </div>
 
                     <div class="alert-box-info">
-                        <strong>💡 How pacman flags work:</strong><br>
+                        <strong>How pacman flags work:</strong><br>
                         Uppercase letters indicate the primary operation mode (<code>-S</code> = Sync/Install, <code>-R</code> = Remove, <code>-Q</code> = Query, <code>-T</code> = TETAUR, <code>-B</code> = Build). Lowercase letters modify that operation (<code>w</code> = winget catalog, <code>y</code> = refresh database, <code>u</code> = upgrade, <code>s</code> = search, <code>i</code> = info).
                     </div>
                 </section>
@@ -180,8 +173,8 @@
                 <!-- SECTION 3: WINGET & MS STORE (RECOMMENDED) -->
                 <section id="winget-bridge" class="docs-card mb-4" style="border: 1px solid rgba(16, 185, 129, 0.35); box-shadow: 0 0 25px rgba(16, 185, 129, 0.08);">
                     <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
-                        <h2 class="docs-card-title m-0" data-i18n="tpkg_sec3_title"><span class="icon">⭐</span> 3. Best & Recommended: Winget & MS Store Integration</h2>
-                        <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #059669; padding: 6px 12px; font-weight: 700; font-size: 0.78rem;">⭐ RECOMMENDED FOR BEGINNERS</span>
+                        <h2 class="docs-card-title m-0" data-i18n="tpkg_sec3_title">3. Best & Recommended: Winget & MS Store Integration</h2>
+                        <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #059669; padding: 6px 12px; font-weight: 700; font-size: 0.78rem;">RECOMMENDED FOR BEGINNERS</span>
                     </div>
 
                     <p class="docs-lead" data-i18n="tpkg_sec3_lead" style="color: #6ee7b7;">
@@ -237,19 +230,19 @@
 
                     <h5 style="color: #fff; font-weight: 700; margin-top: 25px;">Popular One-Liner Install Bundles:</h5>
                     <div class="mb-3">
-                        <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 6px;">🎮 <strong>Gamer Essentials Bundle:</strong></p>
+                        <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 6px;"><strong>Gamer Essentials Bundle:</strong></p>
                         <pre class="code-block"><code><span class="keyword">tpkg</span> <span class="string">-Sw</span> Valve.Steam Discord.Discord OBSProject.OBSStudio Spotify.Spotify</code></pre>
                     </div>
 
                     <div class="mb-2">
-                        <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 6px;">💻 <strong>Developer Essentials Bundle:</strong></p>
+                        <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 6px;"><strong>Developer Essentials Bundle:</strong></p>
                         <pre class="code-block"><code><span class="keyword">tpkg</span> <span class="string">-Sw</span> Microsoft.VisualStudioCode Git.Git 7zip.7zip Python.Python.3.12</code></pre>
                     </div>
                 </section>
 
                 <!-- SECTION 4: INSTALLING & UPGRADING (-S) -->
                 <section id="sync-install" class="docs-card mb-4">
-                    <h2 class="docs-card-title" data-i18n="tpkg_sec4_title"><span class="icon">📥</span> 4. Installing & Upgrading Native Packages (-S / Sync)</h2>
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec4_title">4. Installing & Upgrading Native Packages (-S / Sync)</h2>
                     <p class="docs-lead" data-i18n="tpkg_sec4_lead">
                         The <code>-S</code> (Sync) mode interacts with official tetoOS repositories to download, verify, install, and update native <code>.tetopkg</code> packages.
                     </p>
@@ -331,7 +324,7 @@
 
                 <!-- SECTION 5: SEARCHING & INSPECTING (-Q) -->
                 <section id="query-mode" class="docs-card mb-4">
-                    <h2 class="docs-card-title" data-i18n="tpkg_sec5_title"><span class="icon">🔍</span> 5. Searching & Inspecting (-Q / Query)</h2>
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec5_title">5. Searching & Inspecting (-Q / Query)</h2>
                     <p class="docs-lead" data-i18n="tpkg_sec5_lead">
                         The <code>-Q</code> (Query) mode lets you inspect your local system to see what is currently installed, search local apps, and trace files.
                     </p>
@@ -388,7 +381,7 @@
 
                 <!-- SECTION 6: UNINSTALLING CLEANLY (-R) -->
                 <section id="remove-mode" class="docs-card mb-4">
-                    <h2 class="docs-card-title" data-i18n="tpkg_sec6_title"><span class="icon">🗑️</span> 6. Uninstalling Software Cleanly (-R / Remove)</h2>
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec6_title">6. Uninstalling Software Cleanly (-R / Remove)</h2>
                     <p class="docs-lead" data-i18n="tpkg_sec6_lead">
                         When you remove software with <code>tpkg</code>, it tracks installed files precisely to prevent leaving orphaned junk or bloated directories behind.
                     </p>
@@ -446,7 +439,7 @@
 
                 <!-- SECTION 7: TETAUR COMMUNITY REPO -->
                 <section id="tetaur" class="docs-card mb-4">
-                    <h2 class="docs-card-title" data-i18n="tpkg_sec7_title_tetaur"><span class="icon">🌐</span> 7. Community Repository (TETAUR)</h2>
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec7_title_tetaur">7. Community Repository (TETAUR)</h2>
                     <p class="docs-lead" data-i18n="tpkg_sec7_lead_tetaur">
                         <strong>TETAUR</strong> (Teto User Repository) is the community repository system, inspired directly by Arch Linux's AUR.
                     </p>
@@ -486,7 +479,7 @@
 
                 <!-- SECTION 8: BUILDING PACKAGES (-B) -->
                 <section id="building" class="docs-card mb-4">
-                    <h2 class="docs-card-title" data-i18n="tpkg_sec8_title"><span class="icon">📦</span> 8. Building Packages (-B / TETOBUILD)</h2>
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec8_title">8. Building Packages (-B / TETOBUILD)</h2>
                     <p class="docs-lead" data-i18n="tpkg_sec8_lead">
                         Building packages in <code>tpkg</code> is straightforward. Instead of complex bash scripts, recipes use clean, human-readable <strong>TOML</strong> format.
                     </p>
@@ -519,20 +512,24 @@ copy sample-tool.exe ${pkgdir}\bin\
                                 <tr>
                                     <th>Command</th>
                                     <th>Action</th>
+                                    <th>Description</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td><code>tpkg -B</code></td>
                                     <td>Builds a <code>.tetopkg</code> package file from <code>TETOBUILD.toml</code> in the current folder</td>
+                                    <td>Standard package build</td>
                                 </tr>
                                 <tr>
                                     <td><code>tpkg -B &lt;path&gt;</code></td>
                                     <td>Builds a package from a specified directory path</td>
+                                    <td>Custom path build</td>
                                 </tr>
                                 <tr>
                                     <td><code>tpkg -B --install</code></td>
                                     <td>Builds the package and immediately installs it to your system upon completion</td>
+                                    <td>Build and install</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -541,7 +538,7 @@ copy sample-tool.exe ${pkgdir}\bin\
 
                 <!-- SECTION 9: COMMAND CHEAT SHEET -->
                 <section id="cheatsheet" class="docs-card mb-4">
-                    <h2 class="docs-card-title" data-i18n="tpkg_sec9_title"><span class="icon">📋</span> 9. Quick Command Cheat Sheet</h2>
+                    <h2 class="docs-card-title" data-i18n="tpkg_sec9_title">9. Quick Command Cheat Sheet</h2>
                     <p class="docs-lead" data-i18n="tpkg_sec9_lead">
                         Bookmark or save this cheat sheet for fast reference whenever you're using the terminal:
                     </p>
@@ -615,20 +612,16 @@ copy sample-tool.exe ${pkgdir}\bin\
         </div>
     </main>
 
-    <!-- SHARED BOTTOM SECTIONS (Special Thanks + Footer) -->
+    <!-- Shared bottom -->
     <div id="shared-bottom-sections"></div>
 
-    <!-- SHARED MODALS (Docs, Policy, Privacy) -->
+    <!-- Modals -->
     <div id="shared-modals"></div>
 
-    <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Modular JavaScript Files -->
     <script src="js/translations.js"></script>
     <script src="js/translations_docs_tpkg.js"></script>
     <script src="js/components.js"></script>
     <script src="js/theme.js"></script>
-    <script src="js/rickroll.js"></script>
-    <script src="js/main.js"></script>
 </body>
 </html>

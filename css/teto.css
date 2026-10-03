@@ -1,26 +1,94 @@
-/* ==========================================================================
-   TETO OS 10 & DOWNLOAD MODAL STYLES
-   ========================================================================== */
-
-/* === TETO MASCOT === */
+/* TETO MASCOT & HERO (RESPONSIVE) */
 .teto-mascot {
-    max-height: 80vh;
     filter: drop-shadow(0 0 25px rgba(239, 68, 68, 0.2));
     object-fit: contain;
-    transform: scale(1.1);
     transition: 0.3s;
 }
 
-@media (max-width: 991px) {
+@media (min-width: 992px) {
     .teto-mascot {
-        max-height: 45vh;
-        transform: scale(1);
-        margin-top: 2rem;
-        margin-bottom: 1.5rem;
+        max-height: 86vh;
+        transform: scale(1.2);
     }
 }
 
-/* === TETO DOWNLOAD MODAL (KERNELOS STYLE) === */
+@media (max-width: 991px) {
+    #teto-view {
+        min-height: auto !important;
+        display: block !important;
+        padding-top: 0 !important;
+    }
+    #teto-view .hero-wrapper {
+        padding-top: 135px !important;
+        padding-bottom: 30px !important;
+        min-height: auto !important;
+        display: block !important;
+    }
+    .teto-mascot {
+        max-height: 275px !important;
+        height: auto !important;
+        width: auto !important;
+        max-width: 100% !important;
+        transform: none !important;
+        margin: 0 auto 16px auto !important;
+        display: block !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #teto-view .hero-wrapper {
+        padding-top: 145px !important;
+        padding-bottom: 25px !important;
+    }
+    .teto-mascot {
+        max-height: 230px !important;
+        margin: 0 auto 14px auto !important;
+    }
+}
+
+/* FREE WINDOWS LICENSE TROLL BUTTON */
+.btn-license-teto {
+    background: transparent;
+    border: 1px dashed rgba(255, 255, 255, 0.28);
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 9px 22px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-license-teto:hover {
+    border-color: #ef4444;
+    color: #fff;
+    background: rgba(239, 68, 68, 0.12);
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.25);
+    transform: translateY(-2px);
+}
+
+body.light-mode .btn-license-teto {
+    border: 1px dashed rgba(0, 0, 0, 0.25);
+    color: #475569;
+}
+
+body.light-mode .btn-license-teto:hover {
+    border-color: #dc2626;
+    color: #dc2626;
+    background: rgba(220, 38, 38, 0.08);
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.15);
+}
+
+@media (max-width: 991px) {
+    .btn-license-teto {
+        width: 100%;
+        text-align: center;
+        margin-top: 4px;
+        margin-bottom: 10px;
+    }
+}
+
+/* TETO DOWNLOAD MODAL (KERNELOS STYLE) */
 .teto-modal {
     background-color: #121212;
     border-radius: 16px;
@@ -143,40 +211,90 @@
 }
 
 .teto-btn-outline.active {
-    background-color: transparent;
+    background-color: rgba(239, 68, 68, 0.1);
     border: 1px solid #ef4444;
     color: white;
 }
 
-.teto-btn-outline:not(.active):hover {
+.teto-btn-outline:not(.active):not(:disabled):hover {
     border-color: #555;
     background: rgba(255, 255, 255, 0.03);
 }
 
-.faq-icon-btn {
-    background-color: transparent;
-    border: 1px solid #333;
-    border-radius: 10px;
-    padding: 10px;
+.teto-btn-outline:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    border-color: #222;
+    color: #64748b;
+}
+
+.teto-build-pills {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: auto;
-    transition: 0.2s;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.teto-pill-btn {
+    background: #161616;
+    border: 1px solid #2a2a2a;
+    color: #cbd5e1;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.teto-pill-btn:hover {
+    border-color: #444;
+    color: #fff;
+}
+
+.teto-pill-btn.active {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: #ef4444;
+    color: #fca5a5;
+}
+
+.alert-notice-box {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    margin-bottom: 14px;
+}
+
+.teto-link-help {
+    background: none;
+    border: none;
+    padding: 6px 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
     color: #94a3b8;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    cursor: pointer;
+    width: fit-content;
 }
 
-.faq-icon-btn:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: white;
-    border-color: #555;
+.teto-link-help:hover {
+    color: #ef4444;
+    text-decoration: underline;
 }
 
-.faq-icon-btn svg {
-    width: 22px;
-    height: 22px;
+.teto-link-help svg {
+    width: 15px;
+    height: 15px;
     fill: currentColor;
+    flex-shrink: 0;
 }
 
 .teto-tabs {
@@ -217,14 +335,23 @@
     background-color: #ef4444;
 }
 
-.ed-btn {
+.ed-row {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    margin-bottom: 10px;
     width: 100%;
+}
+
+.ed-btn {
+    flex: 1;
+    min-width: 0;
     background: #161616;
     border: 1px solid #2a2a2a;
     color: white;
     border-radius: 10px;
     padding: 12px 16px;
-    margin-bottom: 10px;
+    margin-bottom: 0;
     text-align: left;
     font-size: 0.95rem;
     font-weight: 500;
@@ -248,6 +375,56 @@
     background-color: #0d0d0d;
     border-color: #1a1a1a;
     color: #555;
+}
+
+.ed-changelog-btn {
+    background: #161616;
+    border: 1px solid #2a2a2a;
+    color: #94a3b8;
+    border-radius: 10px;
+    padding: 0 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.ed-changelog-btn:hover {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.4);
+    color: #fca5a5;
+}
+
+.changelog-content-box {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 16px;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.changelog-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.changelog-list li {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.changelog-list li:last-child {
+    margin-bottom: 0;
 }
 
 .helper-text {
@@ -303,7 +480,7 @@
     height: 16px;
 }
 
-/* === LIGHT MODE OVERRIDES === */
+/* LIGHT MODE OVERRIDES */
 body.light-mode .teto-modal {
     background-color: #f8fafc;
     color: #1e293b;
@@ -345,6 +522,35 @@ body.light-mode .modal-footer-custom {
     border-color: #e2e8f0;
 }
 
+body.light-mode .teto-link-help {
+    color: #64748b;
+}
+
+body.light-mode .teto-link-help:hover {
+    color: #ef4444;
+}
+
+body.light-mode .ed-changelog-btn {
+    background: #f1f5f9;
+    border-color: #e2e8f0;
+    color: #64748b;
+}
+
+body.light-mode .ed-changelog-btn:hover {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+body.light-mode .changelog-content-box {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+}
+
+body.light-mode .changelog-list li {
+    color: #334155;
+}
+
 /* Responsive Modal Split */
 @media (max-width: 768px) {
     .modal-body-split {
@@ -361,5 +567,14 @@ body.light-mode .modal-footer-custom {
     }
     .modal-right-pane {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .ed-changelog-btn span {
+        display: none;
+    }
+    .ed-changelog-btn {
+        padding: 0 10px;
     }
 }

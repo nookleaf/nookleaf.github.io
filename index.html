@@ -1,93 +1,92 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nookleaf & tetoOS — High Performance OS Modification & Tools</title>
-    <meta name="description" content="Nookleaf & tetoOS — Lightweight, debloated Windows and Linux OS modification development center. Optimized for ultra-low latency, low RAM usage, and gaming stability.">
-    <meta name="keywords" content="tetoOS, Nookleaf, Windows 10 LTSC mod, debloated Windows, custom Windows ISO, tpkg, package manager, low latency OS, gaming Windows, Kasane Teto, Zenth Linux">
-    <meta name="author" content="Nookleaf Project">
+    <title>moedev & tetoOS - High Performance OS Modification & Tools</title>
+    <meta name="description" content="moedev & tetoOS - Lightweight, debloated Windows and Linux OS modification development center. Optimized for ultra-low latency, low RAM usage, and gaming stability.">
+    <meta name="keywords" content="tetoOS, moedev, Windows 10 LTSC mod, debloated Windows, custom Windows ISO, tpkg, package manager, low latency OS, gaming Windows, Kasane Teto, Zenth Linux">
+    <meta name="author" content="moedev Project">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#10b981">
-    <link rel="canonical" href="https://nookleaf.dev/">
-    <link rel="icon" type="image/webp" href="img/n_ic.webp">
+    <link rel="canonical" href="https://moedev.dev/">
+    <link rel="icon" type="image/webp" href="img/t_ic.webp">
 
-    <!-- Open Graph / Facebook / Discord -->
+    <!-- OG -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nookleaf.dev/">
-    <meta property="og:site_name" content="Nookleaf Project">
-    <meta property="og:title" content="Nookleaf & tetoOS — Redefining your Desktop Experience">
+    <meta property="og:url" content="https://moedev.dev/">
+    <meta property="og:site_name" content="moedev Project">
+    <meta property="og:title" content="moedev & tetoOS - Redefining your Desktop Experience">
     <meta property="og:description" content="OS modification development center designed for ultra-low latency, efficient RAM usage, and gaming stability.">
-    <meta property="og:image" content="https://nookleaf.dev/img/n_ic.webp">
+    <meta property="og:image" content="https://moedev.dev/img/t_ic.webp">
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter / X -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nookleaf & tetoOS — Redefining your Desktop Experience">
+    <meta name="twitter:title" content="moedev & tetoOS - Redefining your Desktop Experience">
     <meta name="twitter:description" content="OS modification development center designed for ultra-low latency, efficient RAM usage, and gaming stability.">
-    <meta name="twitter:image" content="https://nookleaf.dev/img/n_ic.webp">
+    <meta name="twitter:image" content="https://moedev.dev/img/t_ic.webp">
 
-    <!-- Schema.org Structured Data -->
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Nookleaf & tetoOS",
-      "url": "https://nookleaf.dev/",
+      "name": "moedev & tetoOS",
+      "url": "https://moedev.dev/",
       "description": "OS modification development center designed for ultra-low latency, efficient RAM usage, and gaming stability.",
       "publisher": {
         "@type": "Organization",
-        "name": "Nookleaf Project",
-        "logo": "https://nookleaf.dev/img/teto10.webp"
+        "name": "moedev Project",
+        "logo": "https://moedev.dev/img/teto10.webp"
       }
     }
     </script>
 
-    <!-- Preconnect CDN Hints -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://flagcdn.com">
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Modular Stylesheets -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/teto.css">
+    <link rel="stylesheet" href="css/main.css?v=2.5">
 </head>
 <body>
 
-    <!-- RICKROLL OVERLAY -->
-    <div id="rickroll-container">
-        <video id="rickroll-video" src="" loop preload="auto"></video>
-    </div>
-
-    <!-- SHARED NAVBAR -->
+    <!-- Navbar -->
     <nav id="main-nav"></nav>
 
-    <!-- GLOBAL UPDATE NOTICE -->
-    <div class="container" style="padding-top: 100px; padding-bottom: 0px;">
-        <div class="alert alert-update alert-dismissible fade show d-flex align-items-center mb-0" role="alert" style="border-radius: 12px;">
-            <div style="font-size: 1.5rem; margin-right: 15px;">🌐</div>
-            <div data-i18n="global_update_notice" style="font-size: 0.95rem;">
-                <strong>Update:</strong> tetoOS 10 final target: 2027. Early Access (EA) ISO available below.
+    <!-- Notice -->
+    <div class="floating-banner-container">
+        <div class="alert alert-update fade show d-flex align-items-center mb-0" role="alert">
+            <div class="banner-icon me-2 d-flex align-items-center" style="flex-shrink: 0;">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
             </div>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="filter: invert(1) grayscale(100%) brightness(200%); opacity: 0.6;"></button>
+            <div class="banner-text flex-grow-1" data-i18n="global_update_notice">
+                <strong>Update:</strong> tetoOS final build is actively in development. Early Access (EA) ISO available below.
+            </div>
+            <button type="button" class="btn-close banner-close-btn ms-2" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     </div>
 
-    <!-- HERO SECTION (HOME) -->
+    <!-- Hero -->
     <main id="home-view">
         <div class="hero-wrapper container fade-in-smooth">
             <div class="row align-items-center w-100 m-0">
                 <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="status-badge"><span class="dot"></span> <span data-i18n="badge_nookleaf_projects">Nookleaf Projects</span></div>
+                    <!-- <div class="status-badge"><span class="dot"></span> <span data-i18n="badge_moedev_projects">MOEDEV PROJECTs</span></div> -->
                     <h1 class="main-title" data-i18n="hero_title">Redefining your<br><span class="text-gradient">Desktop Experience.</span></h1>
                     <p class="hero-desc" data-i18n="hero_desc">OS modification development center designed for ultra-low latency, efficient RAM usage, and gaming stability.</p>
                     <div class="d-flex flex-wrap gap-3">
-                        <a href="teto.html" class="btn btn-primary-green" data-i18n="btn_explore">Explore tetoOS 10 (2027)</a>
-                        <button type="button" class="btn btn-donate rickroll-trigger" data-i18n="btn_license">Free Windows License</button>
+                        <a href="teto.html" class="btn btn-primary-red" data-i18n="btn_explore_win">Explore tetoOS (Windows)</a>
+                        <a href="zenth.html" class="btn btn-primary-blue" data-i18n="btn_explore_linux">Explore tetoOS Zenth (Linux)</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -110,8 +109,8 @@
                             <div class="glass-card" style="padding: 20px 30px; background: rgba(239, 68, 68, 0.05); border-color: rgba(239, 68, 68, 0.2);">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <span class="system-label" style="margin-bottom: 5px; color: #f87171;" data-i18n="card_stable_label">Next Flagship Target: 2027</span>
-                                        <h5 class="m-0 fw-bold" style="color: #fff;">tetoOS 10 Final</h5>
+                                        <span class="system-label" style="margin-bottom: 5px; color: #f87171;" data-i18n="card_stable_label">Flagship Development</span>
+                                        <h5 class="m-0 fw-bold" style="color: #fff;">tetoOS</h5>
                                     </div>
                                     <span class="badge bg-danger" data-i18n="badge_in_progress">IN PROGRESS</span>
                                 </div>
@@ -123,19 +122,15 @@
         </div>
     </main>
 
-    <!-- SHARED BOTTOM SECTIONS (Community + Footer) -->
+    <!-- Shared bottom -->
     <div id="shared-bottom-sections"></div>
 
-    <!-- SHARED MODALS (Docs, Credits, Privacy) -->
+    <!-- Modals -->
     <div id="shared-modals"></div>
 
-    <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Modular JavaScript Files -->
     <script src="js/translations.js"></script>
     <script src="js/components.js"></script>
     <script src="js/theme.js"></script>
-    <script src="js/rickroll.js"></script>
-    <script src="js/main.js"></script>
 </body>
 </html>

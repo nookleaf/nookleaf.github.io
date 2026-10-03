@@ -1,41 +1,41 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tetoOS 10 — Lightweight & Debloated Windows 10 LTSC Mod</title>
-    <meta name="description" content="tetoOS 10 — Ultra-lightweight, debloated Windows 10 Enterprise LTSC IoT modification built for low latency, low RAM, and extreme gaming performance.">
-    <meta name="keywords" content="tetoOS 10, Kasane Teto OS, Windows 10 LTSC debloat, custom Windows ISO, superlite Windows, gaming OS, low latency Windows mod">
-    <meta name="author" content="Nookleaf Project">
+    <title>tetoOS - Lightweight & Debloated Windows Mod</title>
+    <meta name="description" content="tetoOS - Ultra-lightweight, debloated Windows modification built for low latency, low RAM, and extreme gaming performance.">
+    <meta name="keywords" content="tetoOS, Kasane Teto OS, Windows 10 LTSC debloat, Windows 11 debloat, custom Windows ISO, superlite Windows, gaming OS, low latency Windows mod">
+    <meta name="author" content="moedev Project">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#dc2626">
-    <link rel="canonical" href="https://nookleaf.dev/teto.html">
+    <link rel="canonical" href="https://moedev.dev/teto.html">
     <link rel="icon" type="image/webp" href="img/t_ic.webp">
 
-    <!-- Open Graph / Facebook / Discord -->
+    <!-- OG -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nookleaf.dev/teto.html">
-    <meta property="og:site_name" content="Nookleaf Project">
-    <meta property="og:title" content="tetoOS 10 — Pure Speed, Zero Dead Weight">
-    <meta property="og:description" content="A lightweight, modular Windows 10 LTSC mod designed for ultra-low latency and peak gaming stability.">
-    <meta property="og:image" content="https://nookleaf.dev/img/t_ic.webp">
+    <meta property="og:url" content="https://moedev.dev/teto.html">
+    <meta property="og:site_name" content="moedev Project">
+    <meta property="og:title" content="tetoOS - Pure Speed, Zero Dead Weight">
+    <meta property="og:description" content="A lightweight, modular Windows modification designed for ultra-low latency and peak gaming stability.">
+    <meta property="og:image" content="https://moedev.dev/img/t_ic.webp">
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter / X -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="tetoOS 10 — Pure Speed, Zero Dead Weight">
-    <meta name="twitter:description" content="A lightweight, modular Windows 10 LTSC mod designed for ultra-low latency and peak gaming stability.">
-    <meta name="twitter:image" content="https://nookleaf.dev/img/t_ic.webp">
+    <meta name="twitter:title" content="tetoOS - Pure Speed, Zero Dead Weight">
+    <meta name="twitter:description" content="A lightweight, modular Windows modification designed for ultra-low latency and peak gaming stability.">
+    <meta name="twitter:image" content="https://moedev.dev/img/t_ic.webp">
 
     <!-- Schema.org SoftwareApplication Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      "name": "tetoOS 10",
-      "operatingSystem": "Windows 10 Enterprise LTSC IoT",
+      "name": "tetoOS",
+      "operatingSystem": "Windows 10 / Windows 11",
       "applicationCategory": "OperatingSystem",
-      "description": "A lightweight, debloated Windows 10 LTSC mod built for speed and gaming stability.",
+      "description": "A lightweight, debloated Windows modification built for speed and gaming stability.",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -44,54 +44,51 @@
     }
     </script>
 
-    <!-- Preconnect CDN Hints -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://flagcdn.com">
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Modular Stylesheets -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/teto.css">
+    <link rel="stylesheet" href="css/main.css?v=2.5">
+    <link rel="stylesheet" href="css/teto.css?v=2.5">
 </head>
 <body class="teto-theme">
 
-    <!-- RICKROLL OVERLAY -->
-    <div id="rickroll-container">
-        <video id="rickroll-video" src="" loop preload="auto"></video>
-    </div>
-
-    <!-- SHARED NAVBAR -->
+    <!-- Navbar -->
     <nav id="main-nav"></nav>
 
-    <!-- TETO OS HERO VIEW -->
+    <!-- Hero -->
     <main id="teto-view">
         <div class="hero-wrapper container fade-in-smooth">
             <div class="row align-items-center w-100 m-0">
 
-                <!-- Left Column: Title & Buttons -->
-                <div class="col-lg-5 order-1 mb-4 mb-lg-0" style="z-index: 2;">
+                <!-- Left Column: Title & Buttons (Desktop: 1st, Mobile: 2nd) -->
+                <div class="col-lg-5 order-2 order-lg-1 mb-4 mb-lg-0" style="z-index: 2;">
                     <div class="status-badge-red">
-                        <span class="dot"></span> <span data-i18n="teto10_badge">Target Release: 2027 • In Final Tuning</span>
+                        <span class="dot"></span> <span data-i18n="teto10_badge">Active Development • In Progress</span>
                     </div>
-                    <h1 class="main-title text-gradient-red">tetoOS 10</h1>
-                    <p class="hero-desc" data-i18n="teto10_desc">Built on Windows 10 Enterprise LTSC IoT. Grand 2027 release in progress. Early Access (EA) ISO available below.</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <button type="button" class="btn btn-primary-red" data-bs-toggle="modal" data-bs-target="#downloadModal" data-i18n="btn_dl_teto">Download EA Maret / Editions</button>
-                        <button type="button" class="btn btn-cbt" data-bs-toggle="modal" data-bs-target="#cbtModal" data-i18n="btn_cbt_soon">Roadmap Rilis 2027</button>
+                    <h1 class="main-title text-gradient-red">tetoOS</h1>
+                    <p class="hero-desc" data-i18n="teto10_desc">Built for high performance, low latency, and gaming stability across Windows 10 & 11 architectures.</p>
+                    <div class="d-flex flex-wrap gap-3 mb-3">
+                        <button type="button" class="btn btn-primary-red" data-bs-toggle="modal" data-bs-target="#downloadModal" data-i18n="btn_dl_teto">Download</button>
+                        <button type="button" class="btn btn-cbt" data-bs-toggle="modal" data-bs-target="#cbtModal" data-i18n="btn_cbt_soon">Roadmap</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-license-teto oobe-trigger" data-i18n="btn_license">Free Windows License</button>
                     </div>
                 </div>
 
-                <!-- Middle Column: Kasane Teto Mascot -->
-                <div class="col-lg-3 order-3 order-lg-2 d-flex justify-content-center align-items-end" style="position: relative; z-index: 1;">
+                <!-- Middle Column: Kasane Teto Mascot (Desktop: 2nd, Mobile: 1st) -->
+                <div class="col-lg-3 order-1 order-lg-2 d-flex justify-content-center align-items-center align-items-lg-end mb-3 mb-lg-0" style="position: relative; z-index: 1;">
                     <img src="img/teto10.webp" alt="Kasane Teto" class="img-fluid teto-mascot">
                 </div>
 
-                <!-- Right Column: Feature Cards -->
-                <div class="col-lg-4 order-2 order-lg-3" style="z-index: 2;">
+                <!-- Right Column: Feature Cards (Desktop: 3rd, Mobile: 3rd) -->
+                <div class="col-lg-4 order-3 order-lg-3" style="z-index: 2;">
                     <div class="glass-card glass-card-red mb-4">
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <h4 class="m-0" data-i18n="teto10_card1_title">Blazing Lightweight</h4>
@@ -104,14 +101,14 @@
                             <h4 class="m-0" data-i18n="teto10_card2_title">Your Rules</h4>
                             <a href="docs_setup.html" class="learn-more-link" style="color: #f87171; font-size: 0.82rem; text-decoration: underline; font-weight: 600; transition: 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#f87171'" data-i18n="btn_learn_more">Learn more...</a>
                         </div>
-                        <p class="system-font m-0" data-i18n="teto10_card2_desc">Modular install — pick only what you need from the start. Defender, Firewall, UAC, Hibernate — all yours to control.</p>
+                        <p class="system-font m-0" data-i18n="teto10_card2_desc">Modular install - pick only what you need from the start. Defender, Firewall, UAC, Hibernate - all yours to control.</p>
                     </div>
                     <div class="glass-card glass-card-red">
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <h4 class="m-0" data-i18n="teto10_card3_title">Easy App Setup</h4>
                             <a href="docs_tpkg.html" class="learn-more-link" style="color: #f87171; font-size: 0.82rem; text-decoration: underline; font-weight: 600; transition: 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#f87171'" data-i18n="btn_learn_more">Learn more...</a>
                         </div>
-                        <p class="system-font m-0" data-i18n="teto10_card3_desc">Installing software has never been easier with tpkg — tetoOS's built-in package manager. One command, done.</p>
+                        <p class="system-font m-0" data-i18n="teto10_card3_desc">Installing software has never been easier with tpkg - tetoOS's built-in package manager. One command, done.</p>
                     </div>
                 </div>
 
@@ -119,7 +116,7 @@
         </div>
     </main>
 
-    <!-- SHARED BOTTOM SECTIONS (Special Thanks + Footer) -->
+    <!-- Shared bottom -->
     <div id="shared-bottom-sections"></div>
 
     <!-- TETO-SPECIFIC MODALS -->
@@ -138,8 +135,8 @@
                         </svg>
                     </div>
                     <div class="teto-modal-title">
-                        <h2 data-i18n="dl_modal_title">Download tetoOS 10</h2>
-                        <p data-i18n="dl_modal_subtitle">Choose your Windows version & edition (EA Maret remains downloadable)</p>
+                        <h2 data-i18n="dl_modal_title">Download tetoOS</h2>
+                        <p data-i18n="dl_modal_subtitle">Choose your Windows version, build & edition</p>
                     </div>
                     <div class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -151,28 +148,49 @@
                 <div class="modal-body-split">
                     <!-- Left Column -->
                     <div class="modal-left-pane">
-                        <div class="pane-title" data-i18n="dl_modal_version">Windows Version</div>
-                        <button class="teto-btn-outline active" data-version="sl" data-i18n="dl_version_sl">tetoOS Superlite</button>
-                        <button class="teto-btn-outline" data-version="normal" data-i18n="dl_version_normal">tetoOS Normal</button>
+                        <div class="mb-3">
+                            <div class="pane-title" data-i18n="dl_modal_os">Operating System</div>
+                            <button class="teto-btn-outline teto-os-btn active" data-os="win10">Windows 10</button>
+                            <button class="teto-btn-outline teto-os-btn" data-os="win11">Windows 11</button>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="pane-title" data-i18n="dl_modal_type">Edition Type</div>
+                            <button class="teto-btn-outline teto-type-btn active" data-type="sl" data-i18n="dl_version_sl">tetoOS Superlite</button>
+                            <button class="teto-btn-outline teto-type-btn" data-type="normal" data-i18n="dl_version_normal">tetoOS Normal</button>
+                        </div>
                         
-                        <button class="faq-icon-btn" title="Edition FAQ" data-bs-toggle="modal" data-bs-target="#editionFaqModal">
+                        <a href="javascript:void(0)" class="teto-link-help mt-auto" data-bs-toggle="modal" data-bs-target="#editionFaqModal">
                             <svg viewBox="0 0 24 24">
                                 <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10C22 6.48 17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-2.5c0-.55.22-1.05.59-1.42l1.2-1.2C13.15 9.53 13.5 9 13.5 8.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5H8.5c0-1.93 1.57-3.5 3.5-3.5s3.5 1.57 3.5 3.5c0 .95-.38 1.81-1.03 2.45z"/>
                             </svg>
-                        </button>
+                            <span data-i18n="btn_help_choose">Help me choose</span>
+                        </a>
                     </div>
 
                     <!-- Right Column -->
                     <div class="modal-right-pane">
-                        <div class="pane-title" data-i18n="dl_modal_edition">Edition</div>
-                        
-                        <!-- Tabs -->
-                        <div class="teto-tabs">
-                            <button class="teto-tab active" data-tab="supported" data-i18n="dl_modal_supported">Supported (Final 2027)</button>
+                        <!-- Status Tabs -->
+                        <div class="teto-tabs mb-3">
+                            <button class="teto-tab active" data-tab="supported" data-i18n="dl_modal_supported">Supported</button>
                             <button class="teto-tab" data-tab="unsupported" data-i18n="dl_modal_unsupported">Unsupported / Archive</button>
                         </div>
                         
+                        <!-- Dynamic Build Pills -->
+                        <div class="mb-3">
+                            <div class="pane-title mb-2" data-i18n="dl_modal_build">Build</div>
+                            <div class="teto-build-pills" id="build-pills-container">
+                                <!-- Rendered dynamically via js/download.js -->
+                            </div>
+                        </div>
+
+                        <!-- 26H2 Notice Box -->
+                        <div id="build-notice-box" class="alert-notice-box d-none" data-i18n="dl_26h2_notice">
+                            Superlite is unavailable for 26H2 as it is actively supported by Microsoft. Normal Edition is selected.
+                        </div>
+
                         <!-- List Download -->
+                        <div class="pane-title mb-2" data-i18n="dl_modal_edition">Edition</div>
                         <div id="edition-list">
                             <!-- Rendered dynamically via js/download.js -->
                         </div>
@@ -204,7 +222,6 @@
                 
                 <div class="modal-header border-0 pb-0" style="padding: 24px 28px 12px;">
                     <div class="d-flex align-items-center gap-2">
-                        <span style="font-size: 1.4rem;">💡</span>
                         <h5 class="modal-title fw-bold" style="color: #fca5a5; font-size: 1.2rem;" data-i18n="ed_faq_modal_title">tetoOS Edition FAQ & Guide</h5>
                     </div>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -229,7 +246,7 @@
                     <!-- Warning Box for Superlite -->
                     <div class="mb-4" style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 12px; padding: 18px;">
                         <div class="fw-bold mb-2" style="color: #fca5a5; font-size: 0.95rem;" data-i18n="ed_faq_warn_badge">
-                            ⚠️ Critical Warning for Superlite Users
+                            Critical Warning for Superlite Users
                         </div>
                         <div class="fw-bold mb-1" style="color: #fff; font-size: 0.92rem;" data-i18n="ed_faq_warn_q">
                             Can I use Windows Update on Superlite?
@@ -245,7 +262,7 @@
                             <span style="color: #ef4444;">Q:</span> <span data-i18n="ed_faq_q2_title">Can I re-enable disabled features later?</span>
                         </h6>
                         <p class="m-0" style="color: #cbd5e1; font-size: 0.92rem; line-height: 1.7;" data-i18n="ed_faq_q2_ans">
-                            Some can, some cannot — depending on how deep the modification is and which edition you choose. Features provided in the setup installer options are easier to toggle later. Core system components are difficult or impossible to restore. Choose wisely before downloading.
+                            Some can, some cannot - depending on how deep the modification is and which edition you choose. Features provided in the setup installer options are easier to toggle later. Core system components are difficult or impossible to restore. Choose wisely before downloading.
                         </p>
                     </div>
 
@@ -270,22 +287,21 @@
         </div>
     </div>
 
-    <!-- CBT / Roadmap Modal -->
+    <!-- Roadmap Modal -->
     <div class="modal fade" id="cbtModal" tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content glass-modal text-light border-0">
           <div class="modal-header border-0 pb-0">
-            <h5 class="modal-title fw-bold" style="color: #fbbf24;" data-i18n="cbt_modal_header">🚧 Roadmap tetoOS 10 (Target 2027)</h5>
+            <h5 class="modal-title fw-bold" style="color: #fbbf24;" data-i18n="cbt_modal_header">tetoOS Development Roadmap</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body system-font text-center pt-2">
-            <div style="font-size: 3rem; margin-bottom: 10px;">📅</div>
-            <h4 style="font-weight: 700; color: #fff; margin-bottom: 15px;" data-i18n="cbt_modal_title">Launch Scheduled for 2027</h4>
+            <h4 style="font-weight: 700; color: #fff; margin-bottom: 15px;" data-i18n="cbt_modal_title">In Active Development</h4>
             <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 20px;" data-i18n="cbt_modal_desc">
-              tetoOS 10 Final version is currently in heavy tuning and scheduled for public launch in <strong>2027</strong>.
+              tetoOS Final version is currently in heavy tuning and continuous optimization.
             </p>
             <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6; margin-bottom: 30px;" data-i18n="cbt_modal_info">
-              In the meantime, you can test out the EA Maret ISO from the download menu.
+              In the meantime, you can test out the EA ISO from the download menu.
             </p>
             <button type="button" class="btn w-100" data-bs-dismiss="modal" style="background-color: transparent; border: 1px solid rgba(255,255,255,0.2); color: #cbd5e1; padding: 12px; font-size: 1rem; border-radius: 8px;" data-i18n="btn_got_it">Got it</button>
           </div>
@@ -298,35 +314,55 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content glass-modal text-light border-0" style="border-left: 4px solid #ef4444 !important;">
                 <div class="modal-header border-0 pb-0">
-                    <h5 class="modal-title fw-bold" style="color: #ef4444;" data-i18n="ea_warn_header">⚠️ Notice: Early Access / Unsupported Build</h5>
+                    <h5 class="modal-title fw-bold" style="color: #ef4444;" data-i18n="ea_warn_header">Notice: Early Access / Unsupported Build</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body system-font pt-2">
                     <div class="warning-box" style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 15px; margin-bottom: 15px;">
                         <p style="margin-bottom: 8px; font-size: 0.95rem; color: #fff;" data-i18n="ea_warn_p1">Build Early Access / Unsupported ini tersedia untuk eksperimen dan pengujian pada mesin lama.</p>
-                        <p style="margin-bottom: 10px; font-size: 0.95rem; color: #fff;" data-i18n="ea_warn_p2">The official Final build is set for 2027.</p>
-                        <p style="margin-bottom: 0; font-size: 0.95rem; color: #fca5a5;" data-i18n="ea_warn_p3">⚠️ Klik di bawah untuk melanjutkan pengunduhan file ISO.</p>
+                        <p style="margin-bottom: 10px; font-size: 0.95rem; color: #fff;" data-i18n="ea_warn_p2">The official Final build is actively under development.</p>
+                        <p style="margin-bottom: 0; font-size: 0.95rem; color: #fca5a5;" data-i18n="ea_warn_p3">Klik di bawah untuk melanjutkan pengunduhan file ISO.</p>
                     </div>
                 </div>
                 <div class="modal-footer border-0 justify-content-between pt-0 flex-wrap gap-2">
                     <a href="#" target="_blank" class="text-white text-decoration-underline" style="font-size: 0.85rem;" onclick="document.querySelector('#eaWarningModal .btn-close').click();" id="continue-ea-dl" data-i18n="ea_warn_continue">Continue to Download &rarr;</a>
-                    <button type="button" class="btn btn-cbt" data-bs-dismiss="modal" onclick="switchToSupportedTab()" data-i18n="btn_use_supported">View Release Status</button>
+                    <button type="button" class="btn btn-cbt" data-bs-dismiss="modal" onclick="switchToSupportedTab()" data-i18n="btn_use_supported">View Supported Editions</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- SHARED MODALS (Docs, Credits, Privacy) -->
+    <!-- Changelog Modal -->
+    <div class="modal fade" id="changelogModal" tabindex="-1" aria-labelledby="changelogModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-modal text-light border-0" style="border-left: 4px solid #ef4444 !important;">
+                <div class="modal-header border-0 pb-2">
+                    <div class="d-flex align-items-center gap-2" style="max-width: 85%;">
+                        <h5 class="modal-title fw-bold text-white m-0" id="changelogModalTitle" style="font-size: 1.05rem; line-height: 1.35; word-break: break-word;">Changelog</h5>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body system-font pt-2">
+                    <div id="changelogModalBody" class="changelog-content-box">
+                        <!-- Dynamic changelog entries inserted via JS -->
+                    </div>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-sm btn-cbt w-100" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
     <div id="shared-modals"></div>
 
-    <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Modular JavaScript Files -->
     <script src="js/translations.js"></script>
     <script src="js/components.js"></script>
     <script src="js/theme.js"></script>
+    <script src="js/editions-config.js"></script>
     <script src="js/download.js"></script>
-    <script src="js/rickroll.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/oobe.js"></script>
 </body>
 </html>

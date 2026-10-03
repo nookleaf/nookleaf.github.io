@@ -1,14 +1,10 @@
-/* ==========================================================================
-   TEASER PAGES - tetoOS 11 & tetoOS Zenth
-   ========================================================================== */
-
 .teaser-wrapper {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 40px 20px;
+    padding: 115px 20px 40px;
 }
 
 .teaser-glow-teto11 {
@@ -75,7 +71,7 @@
 
 .teaser-subtitle {
     font-size: clamp(1rem, 2vw, 1.2rem);
-    font-weight: 300;
+    font-weight: 400;
     color: #a1a1aa;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -156,4 +152,134 @@
 .back-link-blue:hover {
     color: #60a5fa;
     border-bottom-color: #60a5fa;
+}
+
+body.light-mode .teaser-glow-teto11 {
+    background: radial-gradient(circle, rgba(234, 179, 8, 0.15) 0%, rgba(254, 252, 232, 0) 70%);
+}
+
+body.light-mode .teaser-glow-zenth {
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(240, 247, 255, 0) 70%);
+}
+
+body.light-mode .teaser-title {
+    background: linear-gradient(180deg, #0f172a 0%, #334155 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+}
+
+body.light-mode.teto11-theme .teaser-title span {
+    color: #ca8a04 !important;
+    background: linear-gradient(135deg, #eab308 0%, #a16207 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+body.light-mode.zenth-theme .teaser-title span {
+    color: #2563eb !important;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+body.light-mode .teaser-subtitle {
+    color: #475569 !important;
+    font-weight: 600;
+}
+
+body.light-mode .teaser-message {
+    background: #ffffff !important;
+    color: #334155 !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-mode.teto11-theme .teaser-message {
+    border-color: rgba(234, 179, 8, 0.4) !important;
+    box-shadow: 0 10px 30px rgba(202, 138, 4, 0.08) !important;
+}
+
+body.light-mode.zenth-theme .teaser-message {
+    border-color: rgba(59, 130, 246, 0.35) !important;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08) !important;
+}
+
+body.light-mode .teaser-message strong {
+    color: #0f172a !important;
+}
+
+body.light-mode.teto11-theme .teaser-message strong {
+    color: #a16207 !important;
+}
+
+body.light-mode.zenth-theme .teaser-message strong {
+    color: #1d4ed8 !important;
+}
+
+body.light-mode .teaser-badge {
+    background: #eff6ff !important;
+    border: 1px solid #bfdbfe !important;
+    color: #1d4ed8 !important;
+    font-weight: 700;
+}
+
+body.light-mode .btn-preregister {
+    background-color: #eab308;
+    color: #000;
+    box-shadow: 0 4px 15px rgba(202, 138, 4, 0.25);
+}
+
+body.light-mode .btn-preregister:hover {
+    background-color: #ca8a04;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(202, 138, 4, 0.4);
+}
+
+body.light-mode .btn-closed-access {
+    background-color: #eff6ff !important;
+    color: #2563eb !important;
+    border: 1px dashed #93c5fd !important;
+}
+
+body.light-mode .back-link-yellow {
+    color: #a16207 !important;
+    font-weight: 600;
+}
+
+body.light-mode .back-link-yellow:hover {
+    color: #713f12 !important;
+    border-bottom-color: #713f12 !important;
+}
+
+body.light-mode .back-link-blue {
+    color: #1d4ed8 !important;
+    font-weight: 600;
+}
+
+body.light-mode .back-link-blue:hover {
+    color: #1e3a8a !important;
+    border-bottom-color: #1e3a8a !important;
+}
+
+@media (max-width: 768px) {
+    .teaser-wrapper {
+        min-height: 100vh;
+        padding: 95px 16px 30px;
+    }
+    .teaser-container {
+        padding: 20px 10px;
+    }
+    .teaser-title {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+    }
+    .teaser-subtitle {
+        font-size: 0.95rem;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+    }
+    .teaser-message {
+        padding: 16px;
+        font-size: 0.9rem;
+    }
 }

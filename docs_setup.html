@@ -1,64 +1,57 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setup & Script System Guide — Nookleaf Docs</title>
-    <meta name="description" content="tetoOS Setup Architecture Documentation — Comprehensive guide to $OEM$ folder structures, stage scripts, and installer options.">
+    <title>Setup & Script System Guide - moedev Docs</title>
+    <meta name="description" content="tetoOS Setup Architecture Documentation - Comprehensive guide to $OEM$ folder structures, stage scripts, and installer options.">
     <meta name="keywords" content="tetoOS setup, modular setup, $OEM$ structure, Windows setup wrapper, customize windows iso">
-    <meta name="author" content="Nookleaf Project">
+    <meta name="author" content="moedev Project">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#dc2626">
-    <link rel="canonical" href="https://nookleaf.dev/docs_setup.html">
+    <link rel="canonical" href="https://moedev.dev/docs_setup.html">
     <link rel="icon" type="image/webp" href="img/t_ic.webp">
 
-    <!-- Open Graph / Facebook / Discord -->
+    <!-- OG -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://nookleaf.dev/docs_setup.html">
-    <meta property="og:site_name" content="Nookleaf Docs">
+    <meta property="og:url" content="https://moedev.dev/docs_setup.html">
+    <meta property="og:site_name" content="moedev Docs">
     <meta property="og:title" content="tetoOS Setup & Script System Architecture">
     <meta property="og:description" content="Complete guide to folder structures, custom setup wrappers, and script systems for tetoOS ISO modification.">
-    <meta property="og:image" content="https://nookleaf.dev/img/t_ic.webp">
+    <meta property="og:image" content="https://moedev.dev/img/t_ic.webp">
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter / X -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="tetoOS Setup & Script System Architecture">
     <meta name="twitter:description" content="Complete guide to folder structures, custom setup wrappers, and script systems for tetoOS ISO modification.">
-    <meta name="twitter:image" content="https://nookleaf.dev/img/t_ic.webp">
+    <meta name="twitter:image" content="https://moedev.dev/img/t_ic.webp">
 
-    <!-- Preconnect CDN Hints -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://flagcdn.com">
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Modular Stylesheets -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/teto.css">
+    <link rel="stylesheet" href="css/main.css?v=2.5">
     <link rel="stylesheet" href="css/docs.css">
 </head>
 <body class="teto-theme">
 
-    <!-- RICKROLL OVERLAY -->
-    <div id="rickroll-container">
-        <video id="rickroll-video" src="" loop preload="auto"></video>
-    </div>
-
-    <!-- SHARED NAVBAR -->
+    <!-- Navbar -->
     <nav id="main-nav"></nav>
 
-    <!-- DOCUMENTATION CONTENT -->
+    <!-- Content -->
     <main class="docs-wrapper container fade-in-smooth">
         
         <!-- Header -->
         <header class="docs-header">
             <div class="docs-badge" data-i18n="docs_badge">DOCUMENTATION & SETUP GUIDE</div>
             <h1 class="docs-title" data-i18n="docs_title">Section required for review</h1>
-            <p class="docs-subtitle" data-i18n="docs_subtitle">README — Complete Guide to Folder Structures, Custom Setup Wrappers, Script Systems & Installer Options for tetoOS ISO Modification.</p>
+            <p class="docs-subtitle" data-i18n="docs_subtitle">README - Complete Guide to Folder Structures, Custom Setup Wrappers, Script Systems & Installer Options for tetoOS ISO Modification.</p>
         </header>
 
         <div class="row">
@@ -66,7 +59,7 @@
             <!-- Sticky Table of Contents (Sidebar) -->
             <div class="col-lg-3">
                 <div class="toc-box">
-                    <div class="toc-title" data-i18n="docs_toc_title">📑 TABLE OF CONTENTS</div>
+                    <div class="toc-title" data-i18n="docs_toc_title">TABLE OF CONTENTS</div>
                     <ul class="toc-list">
                         <li><a href="#overview" data-i18n="docs_toc_1">1. Overview</a></li>
                         <li><a href="#startsetup-ini" data-i18n="docs_toc_2">2. StartSetup.ini Structure</a></li>
@@ -85,7 +78,7 @@
 
                 <!-- SECTION 1: OVERVIEW -->
                 <section id="overview" class="docs-card">
-                    <h2 class="docs-card-title" data-i18n="docs_sec1_title"><span class="icon">🚀</span> 1. Overview</h2>
+                    <h2 class="docs-card-title" data-i18n="docs_sec1_title">1. Overview</h2>
                     <p class="docs-lead" data-i18n="docs_sec1_lead">
                         Folder placement follows the native Windows <code>$OEM$</code> folder mechanism. This wrapper was created to apply customizations during the installation process, so after progress reaches 100%, the computer can be left unattended without waiting for OOBE to finish.
                     </p>
@@ -96,15 +89,15 @@
                     <div class="my-4">
                         <h5 style="color: #fff; font-weight: 700; font-size: 1.1rem; margin-bottom: 12px;" data-i18n="docs_sec1_adv_title">Advantages of this Method:</h5>
                         <ul class="feature-list">
-                            <li data-i18n="docs_sec1_adv1"><span style="color: #34d399;">✅</span> <strong>Users can unplug the USB drive after 100% progress.</strong></li>
-                            <li data-i18n="docs_sec1_adv2"><span style="color: #34d399;">✅</span> <strong>Tweaks and software can be installed while setup is running.</strong></li>
-                            <li data-i18n="docs_sec1_adv3"><span style="color: #34d399;">✅</span> <strong>No need to wait at the computer during OOBE.</strong></li>
-                            <li data-i18n="docs_sec1_adv4"><span style="color: #34d399;">✅</span> <strong>Compatible with standard $oem$ structure.</strong></li>
+                            <li data-i18n="docs_sec1_adv1"><span style="color: #34d399; font-weight: bold;">•</span> <strong>Users can unplug the USB drive after 100% progress.</strong></li>
+                            <li data-i18n="docs_sec1_adv2"><span style="color: #34d399; font-weight: bold;">•</span> <strong>Tweaks and software can be installed while setup is running.</strong></li>
+                            <li data-i18n="docs_sec1_adv3"><span style="color: #34d399; font-weight: bold;">•</span> <strong>No need to wait at the computer during OOBE.</strong></li>
+                            <li data-i18n="docs_sec1_adv4"><span style="color: #34d399; font-weight: bold;">•</span> <strong>Compatible with standard $oem$ structure.</strong></li>
                         </ul>
                     </div>
 
                     <div class="alert-box-warn" data-i18n="docs_sec1_warn">
-                        <strong>⚠️ Critical Warning:</strong><br>
+                        <strong>Critical Warning:</strong><br>
                         Scripts running too early, taking too long, or containing invalid syntax can still cause:
                         <ul class="mb-0 mt-2 ps-3">
                             <li>Indefinite <em>Just a moment</em> screen;</li>
@@ -122,7 +115,7 @@
 
                 <!-- SECTION 2: STARTSETUP.INI -->
                 <section id="startsetup-ini" class="docs-card">
-                    <h2 class="docs-card-title" data-i18n="docs_sec2_title"><span class="icon">⚙️</span> 2. StartSetup.ini Structure</h2>
+                    <h2 class="docs-card-title" data-i18n="docs_sec2_title">2. StartSetup.ini Structure</h2>
                     <p class="docs-lead" data-i18n="docs_sec2_lead">
                         The primary configuration file read to manage OS selection and setup UI timeout.
                     </p>
@@ -181,9 +174,9 @@ OSPage_Timeout=1</code></pre>
 
                 <!-- SECTION 3: FOLDER STRUCTURE -->
                 <section id="folder-structure" class="docs-card">
-                    <h2 class="docs-card-title" data-i18n="docs_sec3_title"><span class="icon">📁</span> 3. Folder Structure & $OEM$ Mapping</h2>
+                    <h2 class="docs-card-title" data-i18n="docs_sec3_title">3. Folder Structure & $OEM$ Mapping</h2>
                     <p class="docs-lead" data-i18n="docs_sec3_lead">
-                        Below are the physical folders packaged inside the Setup. Numeric prefixes (e.g. <code>OS_</code>) denote target OS codes defined in <code>[OSList]</code> — <code>10</code> = Windows 10.
+                        Below are the physical folders packaged inside the Setup. Numeric prefixes (e.g. <code>OS_</code>) denote target OS codes defined in <code>[OSList]</code> - <code>10</code> = Windows 10.
                     </p>
 
                     <h5 style="color: #fff; font-weight: 700; margin-top: 25px;" data-i18n="docs_sec3_h1">Per-OS $oem$ Folders</h5>
@@ -274,7 +267,7 @@ OSPage_Timeout=1</code></pre>
                     </div>
 
                     <div class="alert-box-warn" data-i18n="docs_sec3_warn">
-                        <strong>📌 Important Notes:</strong>
+                        <strong>Important Notes:</strong>
                         <ul class="mb-0 mt-2 ps-3">
                             <li>Folders ending in <code>_options</code> require user selection in the installer.</li>
                             <li>Folders ending in <code>_2</code> are always applied automatically.</li>
@@ -286,7 +279,7 @@ OSPage_Timeout=1</code></pre>
 
                 <!-- SECTION 4: SCRIPT SYSTEM -->
                 <section id="script-system" class="docs-card">
-                    <h2 class="docs-card-title" data-i18n="docs_sec4_title"><span class="icon">📜</span> 4. Script System</h2>
+                    <h2 class="docs-card-title" data-i18n="docs_sec4_title">4. Script System</h2>
                     <p class="docs-lead" data-i18n="docs_sec4_lead">
                         Contents of <code>$$\Setup\Scripts</code> are copied to <code>C:\Windows\Setup\Scripts</code> and executed automatically during matching installation phases. Primary stage scripts reside in <code>OS_$oem$\$$\Setup\Scripts</code>.
                     </p>
@@ -336,7 +329,7 @@ OSPage_Timeout=1</code></pre>
 
                 <!-- SECTION 5: INSTALLOPTION & WORKFLOW -->
                 <section id="install-options" class="docs-card">
-                    <h2 class="docs-card-title" data-i18n="docs_sec5_title"><span class="icon">⚡</span> 5. _InstallOption_*.cmd Files & Mechanism</h2>
+                    <h2 class="docs-card-title" data-i18n="docs_sec5_title">5. _InstallOption_*.cmd Files & Mechanism</h2>
                     <p class="docs-lead" data-i18n="docs_sec5_lead">
                         The filename dictates the exact installation stage where the tweak is triggered by the wrapper.
                     </p>
@@ -352,7 +345,7 @@ OSPage_Timeout=1</code></pre>
 
                     <div class="alert-box-info" data-i18n="docs_sec5_special_alert">
                         <strong>Special Tweak Collections:</strong><br>
-                        • Tweaks in <code>Tweaks_forced</code> (e.g. <code>Control_Defender</code>, <code>Control_UpdateCenter</code>) are invoked directly via <code>_Install.cmd</code> from <code>OOBE.cmd</code> — not via <code>_InstallOption_</code>.<br>
+                        • Tweaks in <code>Tweaks_forced</code> (e.g. <code>Control_Defender</code>, <code>Control_UpdateCenter</code>) are invoked directly via <code>_Install.cmd</code> from <code>OOBE.cmd</code> - not via <code>_InstallOption_</code>.<br>
                         • The <code>Skipped</code> folder contains intentionally disabled tweaks (using <code>__InstallOption_Specialize.cmd</code> with double underscores so the system skips looping it).
                     </div>
 
@@ -386,7 +379,7 @@ Dir=$oem$_scripts_options_8+\0.StartMenu</code></pre>
 
                 <!-- SECTION 6: OS_SETTINGS.INI -->
                 <section id="settings-ini" class="docs-card">
-                    <h2 class="docs-card-title" data-i18n="docs_sec6_title"><span class="icon">🔧</span> 6. OS_Settings.ini Structure</h2>
+                    <h2 class="docs-card-title" data-i18n="docs_sec6_title">6. OS_Settings.ini Structure</h2>
                     <p class="docs-lead" data-i18n="docs_sec6_lead">
                         <code>OS_Settings.ini</code> is utilized by the installer to specify target images/editions, unattend options, and the list of tweaks presented to users. It connects tweak labels to script folders. Stored as <strong>UTF-16LE</strong>.
                     </p>
@@ -447,13 +440,13 @@ Checked=0
 en-US=No anime wallpaper
 Dir=$oem$_scripts_options_8+\Theme</code></pre>
                     <div class="alert-box-info" data-i18n="docs_sec6_note">
-                        <strong>Note:</strong> Folders listed in <code>OS_Settings.ini</code> will still be copied, but without a matching <code>_InstallOption_&lt;Stage&gt;.cmd</code> file, scripts won't execute — files are simply copied over.
+                        <strong>Note:</strong> Folders listed in <code>OS_Settings.ini</code> will still be copied, but without a matching <code>_InstallOption_&lt;Stage&gt;.cmd</code> file, scripts won't execute - files are simply copied over.
                     </div>
                 </section>
 
                 <!-- SECTION 7: CMD GUIDE -->
                 <section id="cmd-guide" class="docs-card">
-                    <h2 class="docs-card-title" data-i18n="docs_sec7_title"><span class="icon">💻</span> 7. CMD Script Writing Guide</h2>
+                    <h2 class="docs-card-title" data-i18n="docs_sec7_title">7. CMD Script Writing Guide</h2>
                     <p class="docs-lead" data-i18n="docs_sec7_lead">
                         Most tweaks are executed through <code>.cmd</code> or <code>.bat</code> files. Minor mistakes can cause excessive setup delays, boot failures, or OOBE stalls.
                     </p>
@@ -469,15 +462,15 @@ Dir=$oem$_scripts_options_8+\Theme</code></pre>
 
                     <h5 style="color: #fff; font-weight: 700; margin-top: 30px;" data-i18n="docs_sec7_rules_title">Practical Script Writing Guidelines:</h5>
                     <ul class="feature-list">
-                        <li data-i18n="docs_sec7_rule1"><span>✔</span> <strong>Always terminate scripts with <code>exit /b</code></strong> (or <code>exit</code> for main stage scripts) so the installer can proceed.</li>
-                        <li data-i18n="docs_sec7_rule2"><span>✔</span> <strong>Use <code>call</code> when invoking external CMD files;</strong> otherwise, the parent script terminates prematurely.</li>
-                        <li data-i18n="docs_sec7_rule3"><span>✔</span> <strong>Use <code>start /wait</code></strong> whenever external installers must finish before continuing.</li>
-                        <li data-i18n="docs_sec7_rule4"><span>✔</span> <strong>Begin stage scripts with <code>cd /d "%~dp0"</code></strong> and <code>"%~dp0cmdow.exe" @ /HID</code> to conceal CMD console windows.</li>
-                        <li data-i18n="docs_sec7_rule5"><span>✔</span> <strong>Leverage <code>.DONE</code> markers</strong> to prevent scripts from executing repeatedly.</li>
-                        <li data-i18n="docs_sec7_rule6"><span>✔</span> <strong>Avoid interactive dialogs</strong> such as <code>pause</code>, <code>choice</code>, or <code>msgbox</code> during installation.</li>
-                        <li data-i18n="docs_sec7_rule7"><span>✔</span> <strong>Avoid issuing restart, shutdown, or logoff commands</strong> unless strictly mandatory.</li>
-                        <li data-i18n="docs_sec7_rule8"><span>✔</span> <strong>Wrap all system paths in double quotes</strong>, e.g. <code>"%SystemRoot%\Setup\Scripts"</code>.</li>
-                        <li data-i18n="docs_sec7_rule9"><span>✔</span> <strong>Test every tweak standalone</strong> before integrating into the master installer package.</li>
+                        <li data-i18n="docs_sec7_rule1"><span>•</span> <strong>Always terminate scripts with <code>exit /b</code></strong> (or <code>exit</code> for main stage scripts) so the installer can proceed.</li>
+                        <li data-i18n="docs_sec7_rule2"><span>•</span> <strong>Use <code>call</code> when invoking external CMD files;</strong> otherwise, the parent script terminates prematurely.</li>
+                        <li data-i18n="docs_sec7_rule3"><span>•</span> <strong>Use <code>start /wait</code></strong> whenever external installers must finish before continuing.</li>
+                        <li data-i18n="docs_sec7_rule4"><span>•</span> <strong>Begin stage scripts with <code>cd /d "%~dp0"</code></strong> and <code>"%~dp0cmdow.exe" @ /HID</code> to conceal CMD console windows.</li>
+                        <li data-i18n="docs_sec7_rule5"><span>•</span> <strong>Leverage <code>.DONE</code> markers</strong> to prevent scripts from executing repeatedly.</li>
+                        <li data-i18n="docs_sec7_rule6"><span>•</span> <strong>Avoid interactive dialogs</strong> such as <code>pause</code>, <code>choice</code>, or <code>msgbox</code> during installation.</li>
+                        <li data-i18n="docs_sec7_rule7"><span>•</span> <strong>Avoid issuing restart, shutdown, or logoff commands</strong> unless strictly mandatory.</li>
+                        <li data-i18n="docs_sec7_rule8"><span>•</span> <strong>Wrap all system paths in double quotes</strong>, e.g. <code>"%SystemRoot%\Setup\Scripts"</code>.</li>
+                        <li data-i18n="docs_sec7_rule9"><span>•</span> <strong>Test every tweak standalone</strong> before integrating into the master installer package.</li>
                     </ul>
 
                     <h5 style="color: #fff; font-weight: 700; margin-top: 35px;" data-i18n="docs_sec7_stages_table_title">Installation Stage Breakdown Table:</h5>
@@ -517,7 +510,7 @@ Dir=$oem$_scripts_options_8+\Theme</code></pre>
 
                 <!-- SECTION 8: DEBUGGING & COMMON ERRORS -->
                 <section id="debugging" class="docs-card">
-                    <h2 class="docs-card-title" data-i18n="docs_sec8_title"><span class="icon">🔍</span> 8. Common Errors & Debugging Tips</h2>
+                    <h2 class="docs-card-title" data-i18n="docs_sec8_title">8. Common Errors & Debugging Tips</h2>
                     
                     <h5 style="color: #fca5a5; font-weight: 700;" data-i18n="docs_sec8_common_err_title">Most Frequent Mistakes:</h5>
                     <ul class="feature-list">
@@ -531,7 +524,7 @@ Dir=$oem$_scripts_options_8+\Theme</code></pre>
                     </ul>
 
                     <div class="alert-box-info mt-4">
-                        <h5 style="color: #93c5fd; font-weight: 700; margin-bottom: 10px;" data-i18n="docs_sec8_checklist_title">🛠️ Debugging Checklist Tips:</h5>
+                        <h5 style="color: #93c5fd; font-weight: 700; margin-bottom: 10px;" data-i18n="docs_sec8_checklist_title">Debugging Checklist Tips:</h5>
                         <p style="margin-bottom: 8px;" data-i18n="docs_sec8_checklist_desc">If your tweak or customization fails to execute during setup, verify the following:</p>
                         <ol style="padding-left: 20px; line-height: 1.8; margin-bottom: 0;">
                             <li data-i18n="docs_sec8_chk1">Verify the tweak folder is registered under the <code>Dir=</code> line in <code>OS_Settings.ini</code>.</li>
@@ -543,9 +536,11 @@ Dir=$oem$_scripts_options_8+\Theme</code></pre>
                         </ol>
                     </div>
 
-                    <!-- <div class="text-center mt-4 pt-3"> -->
-                        <!-- <a href="teto.html" class="btn btn-primary-red px-4 py-2 me-2" data-i18n="docs_btn_back_teto">← Back to tetoOS 10</a> -->
-                        <!-- <a href="index.html" class="btn btn-outline-green px-4 py-2" data-i18n="docs_btn_home">Nookleaf Home</a> -->
+                    <!-- Cross Navigation Footer -->
+                    <!-- <div class="text-center mt-4 pt-3 border-top" style="border-color: rgba(255, 255, 255, 0.08) !important;"> -->
+                        <!-- <a href="teto.html" class="btn btn-primary-red px-4 py-2 me-2">← Back to tetoOS 10</a> -->
+                        <!-- <a href="docs_tpkg.html" class="btn btn-outline-light px-4 py-2 me-2" style="border-radius: 8px;">Package Manager (tpkg) Docs &rarr;</a> -->
+                        <!-- <a href="docs_debloat.html" class="btn btn-outline-light px-4 py-2" style="border-radius: 8px;">Debloat Docs &rarr;</a> -->
                     <!-- </div> -->
                 </section>
 
@@ -553,20 +548,16 @@ Dir=$oem$_scripts_options_8+\Theme</code></pre>
         </div>
     </main>
 
-    <!-- SHARED BOTTOM SECTIONS (Special Thanks + Footer) -->
+    <!-- Shared bottom -->
     <div id="shared-bottom-sections"></div>
 
-    <!-- SHARED MODALS (Docs, Policy, Privacy) -->
+    <!-- Modals -->
     <div id="shared-modals"></div>
 
-    <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Modular JavaScript Files -->
     <script src="js/translations.js"></script>
     <script src="js/translations_docs_setup.js"></script>
     <script src="js/components.js"></script>
     <script src="js/theme.js"></script>
-    <script src="js/rickroll.js"></script>
-    <script src="js/main.js"></script>
 </body>
 </html>

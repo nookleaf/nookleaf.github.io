@@ -1,8 +1,5 @@
-/* ==========================================================================
-   RICKROLL TROLL OVERLAY
-   ========================================================================== */
-
-#rickroll-container {
+/* OOBE overlay */
+#oobe-container {
     display: none;
     position: fixed;
     top: 0;
@@ -13,7 +10,7 @@
     background: #000;
 }
 
-#rickroll-video {
+#oobe-video {
     width: 100%;
     height: 100%;
     object-fit: cover;

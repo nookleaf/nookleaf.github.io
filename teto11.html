@@ -1,56 +1,50 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tetoOS 11 — Next Generation Desktop Operating System</title>
-    <meta name="description" content="tetoOS 11 — The next evolution of Kasane Teto OS. Built on Windows 11 kernel with cutting-edge privacy, low latency, and modern UI. Currently in development.">
+    <title>tetoOS 11 - Next Generation Desktop Operating System</title>
+    <meta name="description" content="tetoOS 11 - The next evolution of Kasane Teto OS. Built on Windows 11 kernel with cutting-edge privacy, low latency, and modern UI. Currently in development.">
     <meta name="keywords" content="tetoOS 11, Windows 11 mod, debloated Windows 11, custom Windows 11 ISO, Kasane Teto 11">
-    <meta name="author" content="Nookleaf Project">
+    <meta name="author" content="moedev Project">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#ec4899">
-    <link rel="canonical" href="https://nookleaf.dev/teto11.html">
+    <link rel="canonical" href="https://moedev.dev/teto11.html">
     <link rel="icon" type="image/webp" href="img/t_ic.webp">
 
-    <!-- Open Graph / Facebook / Discord -->
+    <!-- OG -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nookleaf.dev/teto11.html">
-    <meta property="og:site_name" content="Nookleaf Project">
-    <meta property="og:title" content="tetoOS 11 — Next Generation Desktop Experience">
+    <meta property="og:url" content="https://moedev.dev/teto11.html">
+    <meta property="og:site_name" content="moedev Project">
+    <meta property="og:title" content="tetoOS 11 - Next Generation Desktop Experience">
     <meta property="og:description" content="Next generation OS built on Windows 11 with modern design and speed optimization. Pre-register now.">
-    <meta property="og:image" content="https://nookleaf.dev/img/t_ic.webp">
+    <meta property="og:image" content="https://moedev.dev/img/t_ic.webp">
     <meta property="og:locale" content="en_US">
 
-    <!-- Twitter / X -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="tetoOS 11 — Next Generation Desktop Experience">
+    <meta name="twitter:title" content="tetoOS 11 - Next Generation Desktop Experience">
     <meta name="twitter:description" content="Next generation OS built on Windows 11 with modern design and speed optimization. Pre-register now.">
-    <meta name="twitter:image" content="https://nookleaf.dev/img/t_ic.webp">
+    <meta name="twitter:image" content="https://moedev.dev/img/t_ic.webp">
 
-    <!-- Preconnect CDN Hints -->
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://flagcdn.com">
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Modular Stylesheets -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css?v=2.5">
     <link rel="stylesheet" href="css/teaser.css">
 </head>
 <body class="teto11-theme">
 
-    <!-- RICKROLL OVERLAY -->
-    <div id="rickroll-container">
-        <video id="rickroll-video" src="" loop preload="auto"></video>
-    </div>
-
-    <!-- SHARED NAVBAR -->
+    <!-- Navbar -->
     <nav id="main-nav"></nav>
 
-    <!-- TEASER CONTENT -->
+    <!-- Content -->
     <main class="teaser-wrapper">
         <div class="teaser-glow-teto11"></div>
         <div class="teaser-container fade-in-smooth">
@@ -58,28 +52,23 @@
             <div class="teaser-subtitle" data-i18n="teto11_subtitle">Next Generation Experience</div>
             
             <div class="teaser-message" data-i18n="teto11_dev_status">
-                Status: <strong>In Development 🛠️</strong><br><br>
+                Status: <strong>In Development</strong><br><br>
                 Building next-generation tetoOS 11 ecosystem. Stay tuned for future updates.
             </div>
 
             <div style="margin-bottom: 25px;">
-                <a href="#" class="btn-preregister rickroll-teto11-trigger" data-i18n="btn_preregister">Pre-Register Now</a>
+                <a href="#" class="btn-preregister oobe-teto11-trigger" data-i18n="btn_preregister">Pre-Register Now</a>
             </div>
-
-            <a href="index.html" class="back-link back-link-yellow" data-i18n="btn_back_home">← Back to Nookleaf Home</a>
         </div>
     </main>
 
-    <!-- SHARED MODALS (Docs, Credits, Privacy) -->
+    <!-- Modals -->
     <div id="shared-modals"></div>
 
-    <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Modular JavaScript Files -->
     <script src="js/translations.js"></script>
     <script src="js/components.js"></script>
     <script src="js/theme.js"></script>
-    <script src="js/rickroll.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/oobe.js"></script>
 </body>
 </html>
