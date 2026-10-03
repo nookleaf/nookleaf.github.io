@@ -8,7 +8,7 @@
 ## 📜 License & Guidelines
 
 - **tetoOS** is distributed as free-of-charge software (Freeware) for personal use.
-- Redistribution of raw ISO files or pre-loaded physical media for commercial sale is strictly prohibited under our [Commercial Policy](policy.html).
+- Redistribution of raw ISO files or pre-loaded physical media for commercial sale is strictly prohibited under our Commercial Policy.
 - Computer technicians are permitted to charge solely for their time and technical labor.
 
 ---
