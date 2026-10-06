@@ -50,7 +50,7 @@ const coreTranslations = {
         footer_desc: "Built for speed. Tuned for gaming.<br>Research-backed Windows & Linux optimizations.",
         footer_heading_products: "PRODUCTS", footer_heading_community: "COMMUNITY",
         footer_select_lang: "Select Language:",
-        footer_copyright: "© 2026 <strong style=\"color: #10b981;\">moedev</strong> - This site is a work in progress and subject to change.",
+        footer_copyright: "© 2026 <strong style=\"color: #10b981;\">moedev</strong> - all rights reserved",
         footer_privacy: "Privacy Policy & Terms of Service", btn_back_top: "↑ Back to top",
 
         teto10_badge: "Active Development • In Progress",
@@ -186,7 +186,7 @@ const coreTranslations = {
         footer_desc: "スピードのために設計。ゲームのためにチューニング。<br>研究に基づく Windows & Linux 最適化。",
         footer_heading_products: "製品", footer_heading_community: "コミュニティ",
         footer_select_lang: "言語選択:",
-        footer_copyright: "© 2026 <strong style=\"color: #10b981;\">moedev</strong> - 本サイトは制作中であり変更される場合があります。",
+        footer_copyright: "© 2026 <strong style=\"color: #10b981;\">moedev</strong> - All rights reserved.",
         footer_privacy: "プライバシーポリシー & 利用規約", btn_back_top: "↑ トップへ戻る",
 
         teto10_badge: "開発進行中 • 最終調整中",
@@ -322,7 +322,7 @@ const coreTranslations = {
         footer_desc: "Создано для скорости. Настроено для игр.<br>Оптимизация Windows и Linux на основе исследований.",
         footer_heading_products: "ПРОДУКТЫ", footer_heading_community: "СООБЩЕСТВО",
         footer_select_lang: "Выберите язык:",
-        footer_copyright: "© 2026 <strong style=\"color: #10b981;\">moedev</strong> - Сайт находится в разработке.",
+        footer_copyright: "© 2026 <strong style=\"color: #10b981;\">moedev</strong> - Все права защищены.",
         footer_privacy: "Политика конфиденциальности и условия", btn_back_top: "↑ Наверх",
 
         teto10_badge: "Активная разработка • В процессе",
@@ -458,7 +458,7 @@ const coreTranslations = {
         footer_desc: "为极致速度而生，为纯粹游戏调优。<br>基于科研级优化的 Windows 与 Linux 方案。",
         footer_heading_products: "产品列表", footer_heading_community: "交流社区",
         footer_select_lang: "选择语言：",
-        footer_copyright: "© 2026 <strong style=\"color: #10b981;\">moedev</strong> - 网站正在建设中，内容可能会发生变更。",
+        footer_copyright: "© 2026 <strong style=\"color: #10b981;\">moedev</strong> - 保留所有权利。",
         footer_privacy: "隐私政策与服务条款", btn_back_top: "↑ 返回顶部",
 
         teto10_badge: "积极研发中 • 处于推进阶段",
@@ -594,7 +594,7 @@ const coreTranslations = {
         footer_desc: "속도를 위한 설계. 게이밍을 위한 튜닝.<br>연구 기반 Windows & Linux 최적화.",
         footer_heading_products: "제품", footer_heading_community: "커뮤니티",
         footer_select_lang: "언어 선택:",
-        footer_copyright: "© 2026 <strong style=\"color: #10b981;\">moedev</strong> - 본 사이트는 제작 중이며 변경될 수 있습니다.",
+        footer_copyright: "© 2026 <strong style=\"color: #10b981;\">moedev</strong> - All rights reserved.",
         footer_privacy: "개인정보 처리방침 및 이용약관", btn_back_top: "↑ 맨 위로",
 
         teto10_badge: "개발 진행 중 • 최종 조율 중",
@@ -730,7 +730,7 @@ const coreTranslations = {
         footer_desc: "صُمم للسرعة. ضُبط للألعاب.<br>تحسينات Windows و Linux المستندة إلى الأبحاث.",
         footer_heading_products: "المنتجات", footer_heading_community: "المجتمع",
         footer_select_lang: "اختر اللغة:",
-        footer_copyright: "© 2026 <strong style=\"color: #10b981;\">moedev</strong> - الموقع قيد التطوير وقابل للتغيير.",
+        footer_copyright: "© 2026 <strong style=\"color: #10b981;\">moedev</strong> - جميع الحقوق محفوظة.",
         footer_privacy: "سياسة الخصوصية وشروط الخدمة", btn_back_top: "↑ العودة للأعلى",
 
         teto10_badge: "قيد التطوير النشط • الضبط النهائي",
@@ -866,7 +866,7 @@ const coreTranslations = {
         footer_desc: "Dibangun untuk kecepatan. Dirancang untuk gaming.<br>Optimasi Windows & Linux berbasis riset.",
         footer_heading_products: "PRODUK", footer_heading_community: "KOMUNITAS",
         footer_select_lang: "Pilih Bahasa:",
-        footer_copyright: "© 2026 <strong style=\"color: #10b981;\">moedev</strong> - Situs ini masih dalam tahap pengembangan.",
+        footer_copyright: "© 2026 <strong style=\"color: #10b981;\">moedev</strong> - all rights reserved",
         footer_privacy: "Kebijakan Privasi & Syarat Layanan", btn_back_top: "↑ Kembali ke atas",
 
         teto10_badge: "Dalam Proses Peracikan • Aktif",

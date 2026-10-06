@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install Tutorial - tetoOS (Windows) - moedev Docs</title>
+    <meta name="description" content="Step-by-step guide to install tetoOS (Windows): creating a bootable drive with Ventoy or Rufus 3.16, booting the installer, selecting features, and finishing setup.">
+    <meta name="keywords" content="tetoOS install, tetoOS tutorial, Ventoy, Rufus 3.16, WinNTSetup, bootable USB, custom Windows install">
+    <meta name="author" content="moedev Project">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#dc2626">
+    <link rel="canonical" href="https://moedev.eu.org/docs_install.html">
+    <link rel="icon" type="image/webp" href="img/t_ic.webp">
+
+    <!-- OG -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://moedev.eu.org/docs_install.html">
+    <meta property="og:site_name" content="moedev Docs">
+    <meta property="og:title" content="tetoOS (Windows) Install Tutorial">
+    <meta property="og:description" content="From making a bootable drive to your first desktop: the complete tetoOS installation guide.">
+    <meta property="og:image" content="https://moedev.eu.org/img/t_ic.webp">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="tetoOS (Windows) Install Tutorial">
+    <meta name="twitter:description" content="From making a bootable drive to your first desktop: the complete tetoOS installation guide.">
+    <meta name="twitter:image" content="https://moedev.eu.org/img/t_ic.webp">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://flagcdn.com">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css?v=2.7">
+    <link rel="stylesheet" href="css/docs.css?v=2.6">
+</head>
+<body class="teto-theme">
+
+    <!-- Navbar -->
+    <nav id="main-nav"></nav>
+
+    <!-- Content -->
+    <main class="docs-wrapper container fade-in-smooth">
+
+        <!-- Header -->
+        <header class="docs-header">
+            <div class="docs-badge" data-i18n="inst_badge">INSTALLATION GUIDE</div>
+            <h1 class="docs-title" data-i18n="inst_title">Install tetoOS (Windows)</h1>
+            <p class="docs-subtitle" data-i18n="inst_subtitle">This guide walks you from preparing the installation media to finishing the tetoOS setup on your computer.</p>
+        </header>
+
+        <div class="row">
+
+            <!-- Sticky Table of Contents (Sidebar) -->
+            <div class="col-lg-3">
+                <div class="toc-box">
+                    <div class="toc-title" data-i18n="inst_toc_title">TABLE OF CONTENTS</div>
+                    <ul class="toc-list">
+                        <li><a href="#pre-install" data-i18n="inst_toc_pre">0. Pre-Installation Checks</a></li>
+                        <li><a href="#install-methods" data-i18n="inst_toc_1">1. Choose Installation Method</a></li>
+                        <li><a href="#boot" data-i18n="inst_toc_2">2. Booting the Installer</a></li>
+                        <li><a href="#variant" data-i18n="inst_toc_3">3. OS Variant &amp; Setup Options</a></li>
+                        <li><a href="#disk" data-i18n="inst_toc_4">4. Disk Selection</a></li>
+                        <li><a href="#features" data-i18n="inst_toc_5">5. Feature Selection</a></li>
+                        <li><a href="#finish" data-i18n="inst_toc_6">6. Finishing Up</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-lg-9">
+
+                <!-- SECTION 0: PRE-INSTALLATION CHECKS -->
+                <section id="pre-install" class="docs-card">
+                    <h2 class="docs-card-title" data-i18n="inst_s0_title">Important: Pre-Installation Checklist</h2>
+                    <p class="docs-lead" data-i18n="inst_s0_lead">
+                        Please read and perform these critical steps <strong>before starting any part of the installation process</strong>:
+                    </p>
+
+                    <div class="alert-box-warn" style="margin-bottom: 20px;">
+                        <ul class="feature-list" style="margin: 0; padding: 0;">
+                            <li data-i18n="inst_s0_warn_virus"><strong>Clean PC Check:</strong> Ensure your PC is completely free from malware or viruses. If you suspect an infection or are unsure, do <strong>not</strong> install from within the compromised system. Instead, create a bootable USB drive using another clean, trusted computer.</li>
+                            <li data-i18n="inst_s0_warn_defender"><strong>Disable Security Software:</strong> Temporarily disable Windows Defender or any third-party antivirus software while preparing installation files and partition tools, as security software often flags and blocks OS reinstall utilities.</li>
+                            <li data-i18n="inst_s0_warn_rename"><strong>Rename Drive C to "Install Here":</strong> Open File Explorer, right-click Drive C, and rename it to <strong>Install Here</strong>. This is extremely important so you can easily distinguish it and avoid accidentally formatting or wiping the wrong drive during installation.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- SECTION 1: INSTALLATION METHODS ACCORDION -->
+                <section id="install-methods" class="docs-card">
+                    <h2 class="docs-card-title" data-i18n="inst_s1_methods_title">1. Choose Installation Method</h2>
+                    <p class="docs-lead" data-i18n="inst_s1_methods_lead">
+                        Select one of the three installation media preparation methods below to expand its step-by-step tutorial:
+                    </p>
+
+                    <!-- METHOD A: VENTOY -->
+                    <details class="docs-spoiler" id="method-ventoy">
+                        <summary class="docs-spoiler-summary">
+                            <span class="spoiler-title-wrap">
+                                <span class="badge" style="background: rgba(239, 68, 68, 0.25); border: 1px solid rgba(239, 68, 68, 0.5); color: #fca5a5; font-size: 0.85rem;">Recommended</span>
+                                <strong data-i18n="inst_s1a_title">Method 1: Ventoy (USB Flash Drive)</strong>
+                            </span>
+                            <span class="spoiler-icon">&#9660;</span>
+                        </summary>
+                        <div class="docs-spoiler-body">
+                            <p class="docs-lead mb-3" data-i18n="inst_s1a_lead">
+                                First, download the tetoOS ISO file from the Download button, then prepare your bootable USB flash drive using <strong>Ventoy</strong> (<a href="https://ventoy.net/en/download.html" target="_blank" rel="noopener" style="color: #f87171; text-decoration: underline;">Ventoy Download</a>).
+                            </p>
+
+                            <h4 style="color: #fca5a5; font-size: 1.1rem; margin-top: 18px; margin-bottom: 12px;" data-i18n="inst_s1a_vtitle">Step-by-Step with Ventoy</h4>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1a_vstep1">
+                                    <strong style="color: #f87171;">1. Select your USB drive:</strong> Download Ventoy from <a href="https://ventoy.net/en/download.html" target="_blank" rel="noopener" style="color: #f87171; text-decoration: underline;">official website</a>, extract it, and run <code>Ventoy2Disk.exe</code>. Make sure the target USB drive selected in the <strong>Device</strong> dropdown is correct.
+                                </p>
+                                <figure class="docs-figure">
+                                    <img src="img/docs_install/ventoy_step1.jpg" alt="Ventoy2Disk Device Selection" class="docs-img" loading="lazy">
+                                    <figcaption class="docs-figcaption" data-i18n="inst_s1a_vstep1_cap">Select your flash drive in the Device list</figcaption>
+                                </figure>
+                            </div>
+
+                            <div style="margin-bottom: 20px;">
+                                <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1a_vstep_opt">
+                                    <strong style="color: #f87171;">2. Partition Style &amp; Secure Boot:</strong> Click the <strong>Option</strong> menu at the top. Under <strong>Partition Style</strong>, choose <strong>MBR</strong> (for Legacy BIOS/UEFI) or <strong>GPT</strong> (for UEFI). You can also toggle <strong>Secure Boot Support</strong> according to your motherboard settings.
+                                </p>
+                                <figure class="docs-figure">
+                                    <img src="img/docs_install/ventoy_options.jpg" alt="Ventoy Partition Style and Secure Boot Option" class="docs-img" loading="lazy">
+                                    <figcaption class="docs-figcaption" data-i18n="inst_s1a_vstep_opt_cap">Configure Partition Style (MBR/GPT) and Secure Boot Support</figcaption>
+                                </figure>
+                            </div>
+
+                            <div style="margin-bottom: 20px;">
+                                <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1a_vstep2">
+                                    <strong style="color: #f87171;">3. Click Install:</strong> Click the <strong>Install</strong> button. A warning prompt will show informing that your USB drive will be formatted and all data erased. Click <strong>Yes</strong> to confirm.
+                                </p>
+                                <figure class="docs-figure">
+                                    <img src="img/docs_install/ventoy_step2.jpg" alt="Ventoy Format Warning Confirmation" class="docs-img" loading="lazy">
+                                    <figcaption class="docs-figcaption" data-i18n="inst_s1a_vstep2_cap">Confirm the warning prompt to proceed with formatting</figcaption>
+                                </figure>
+                            </div>
+
+                            <div style="margin-bottom: 20px;">
+                                <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1a_vstep4">
+                                    <strong style="color: #f87171;">4. Copy ISO into Ventoy:</strong> Simply copy and paste the tetoOS <code>.iso</code> file directly into the <strong>Ventoy</strong> partition. You do not need to extract or re-format anything.
+                                </p>
+                                <figure class="docs-figure">
+                                    <img src="img/docs_install/ventoy_step4.jpg" alt="Copy ISO to Ventoy Drive" class="docs-img" loading="lazy">
+                                    <figcaption class="docs-figcaption" data-i18n="inst_s1a_vstep4_cap">Copy and paste the ISO file directly into the flash drive</figcaption>
+                                </figure>
+                            </div>
+
+                            <div style="margin-bottom: 10px;">
+                                <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1a_vstep5">
+                                    <strong style="color: #f87171;">5. Boot into Ventoy:</strong> Restart your PC and press your boot menu key (F12, F11, F8, or Esc depending on your motherboard). Select your USB drive, and the Ventoy boot screen will show your ISO list. Select tetoOS to start booting.
+                                </p>
+                                <figure class="docs-figure m-0">
+                                    <img src="img/docs_install/ventoy_boot.jpg" alt="Ventoy Boot Menu Screen" class="docs-img" loading="lazy">
+                                    <figcaption class="docs-figcaption" data-i18n="inst_s1a_vstep5_cap">Ventoy boot menu screen</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- METHOD B: RUFUS -->
+                    <details class="docs-spoiler" id="method-rufus">
+                        <summary class="docs-spoiler-summary">
+                            <span class="spoiler-title-wrap">
+                                <span class="badge" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: #e2e8f0; font-size: 0.85rem;">Alternative</span>
+                                <strong data-i18n="inst_s1b_title">Method 2: Rufus (USB Flash Drive)</strong>
+                            </span>
+                            <span class="spoiler-icon">&#9660;</span>
+                        </summary>
+                        <div class="docs-spoiler-body">
+                            <div class="alert-box-warn mt-2 mb-3" data-i18n="inst_s1_m1_rufus">
+                                <strong>Using Rufus?</strong><br>
+                                Use <strong>version 3.16</strong> (<a href="https://rufus.ie/downloads/" target="_blank" rel="noopener" style="color: #f87171; text-decoration: underline;">Rufus Older Versions Download</a>). Do not use the latest Rufus: its newer options made for original Windows will conflict with tetoOS and cause the installation to fail.
+                            </div>
+
+                            <div class="row g-4 mb-3 mt-1">
+                                <div class="col-md-7">
+                                    <figure class="docs-figure m-0">
+                                        <img src="img/docs_install/rufus_step1.jpg" alt="Rufus Settings" class="docs-img" loading="lazy">
+                                        <figcaption class="docs-figcaption" data-i18n="inst_s1b_rcap1">Rufus settings: Device, Boot selection, Partition scheme, and Target system</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-md-5 d-flex flex-column justify-content-center">
+                                    <ul class="feature-list" style="margin: 0; padding: 0;">
+                                        <li data-i18n="inst_s1b_rst1"><strong>Device:</strong> Select your USB flash drive.</li>
+                                        <li data-i18n="inst_s1b_rst2"><strong>Boot selection:</strong> Click <strong>SELECT</strong> and browse to your downloaded tetoOS <code>.iso</code> file.</li>
+                                        <li data-i18n="inst_s1b_rst3"><strong>Image option:</strong> Select <strong>Standard Windows Installation</strong>.</li>
+                                        <li data-i18n="inst_s1b_rst4"><strong>Partition scheme &amp; Target system:</strong>
+                                            <ul>
+                                                <li>For <strong>UEFI</strong>: Select <strong>GPT</strong> (Target system: <em>UEFI (non CSM)</em>).</li>
+                                                <li>For <strong>Legacy BIOS</strong>: Select <strong>MBR</strong> (Target system: <em>BIOS or UEFI</em>).</li>
+                                            </ul>
+                                        </li>
+                                        <li data-i18n="inst_s1b_rst5">Click <strong>START</strong> and confirm the warning to write the bootable image.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 10px;">
+                                <figure class="docs-figure m-0">
+                                    <img src="img/docs_install/rufus_bootmode.jpg" alt="Rufus BIOS or UEFI dual mode" class="docs-img" style="max-width: 480px;" loading="lazy">
+                                    <figcaption class="docs-figcaption" data-i18n="inst_s1b_rcap2">Target system configuration (BIOS or UEFI)</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- METHOD C: WITHOUT FLASH DRIVE (EASYBCD) -->
+                    <details class="docs-spoiler" id="method-easybcd">
+                        <summary class="docs-spoiler-summary">
+                            <span class="spoiler-title-wrap">
+                                <span class="badge" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.4); color: #93c5fd; font-size: 0.85rem;">No Flash Drive</span>
+                                <strong data-i18n="inst_s1c_title">Method 3: EasyBCD (Direct Hard Drive Partition)</strong>
+                            </span>
+                            <span class="spoiler-icon">&#9660;</span>
+                        </summary>
+                        <div class="docs-spoiler-body">
+                    <p class="docs-lead" data-i18n="inst_s1_m2_lead">
+                        We suggest <a href="https://shopee.com" target="_blank" rel="noopener" style="color: #f87171; text-decoration: underline; font-weight: 600;">buying a flash drive</a> and follow the USB method first, it makes installation much easier. If you really can't, you can create a bootable partition on your own HDD/SSD instead using Disk Management and EasyBCD.
+                    </p>
+
+                    <div class="alert-box-info mb-4" data-i18n="inst_s1c_prep_note">
+                        <strong>Preparation:</strong> Make sure you have downloaded the tetoOS ISO file, and installed the free version of <a href="https://www.majorgeeks.com/mg/getmirror/easybcd,1.html" target="_blank" rel="noopener" style="color: #f87171; text-decoration: underline;"><strong>EasyBCD</strong></a>.
+                    </div>
+
+                    <h3 style="color: #fca5a5; font-size: 1.15rem; margin-top: 24px; margin-bottom: 16px;" data-i18n="inst_s1c_subpart">Part 1: Creating the Bootable Partition in Disk Management</h3>
+
+                    <!-- Step 1 -->
+                    <div style="margin-bottom: 24px;">
+                        <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1b_step1">
+                            <strong style="color: #f87171;">1. Open Disk Management:</strong> Press <kbd>Win + R</kbd> on your keyboard to open the Run dialog, type <code>diskmgmt.msc</code>, and click <strong>OK</strong> (or press Enter).
+                        </p>
+                        <figure class="docs-figure">
+                            <img src="img/docs_install/easybcd_step1_run.jpg" alt="Run diskmgmt.msc" class="docs-img" loading="lazy">
+                            <figcaption class="docs-figcaption" data-i18n="inst_s1b_step1_cap">Type diskmgmt.msc in Run dialog and click OK</figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div style="margin-bottom: 24px;">
+                        <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1b_step2">
+                            <strong style="color: #f87171;">2. Shrink Volume:</strong> In the Disk Management window, find your system drive (Drive C:), right-click on it, and select <strong>Shrink Volume...</strong> from the context menu.
+                        </p>
+                        <figure class="docs-figure">
+                            <img src="img/docs_install/easybcd_step2_shrink.jpg" alt="Right-click Drive C and select Shrink Volume" class="docs-img" loading="lazy">
+                            <figcaption class="docs-figcaption" data-i18n="inst_s1b_step2_cap">Right-click Drive C and select Shrink Volume</figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div style="margin-bottom: 24px;">
+                        <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1b_step3">
+                            <strong style="color: #f87171;">3. Specify Shrink Size (10 GB):</strong> In the "Enter the amount of space to shrink in MB" box, type <code>10000</code> (around 10 GB), then click the <strong>Shrink</strong> button at the bottom.
+                        </p>
+                        <figure class="docs-figure">
+                            <img src="img/docs_install/easybcd_step3_size.jpg" alt="Enter 10000 MB and click Shrink" class="docs-img" loading="lazy">
+                            <figcaption class="docs-figcaption" data-i18n="inst_s1b_step3_cap">Enter 10000 MB and click Shrink</figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div style="margin-bottom: 24px;">
+                        <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1b_step4">
+                            <strong style="color: #f87171;">4. Create New Simple Volume:</strong> You will now see an "Unallocated" space created (around ~9.77 GB). Right-click on this black unallocated bar, and select <strong>New Simple Volume...</strong>.
+                        </p>
+                        <figure class="docs-figure">
+                            <img src="img/docs_install/easybcd_step4_newvolume.jpg" alt="Right-click Unallocated space and select New Simple Volume" class="docs-img" loading="lazy">
+                            <figcaption class="docs-figcaption" data-i18n="inst_s1b_step4_cap">Right-click Unallocated space and select New Simple Volume</figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div style="margin-bottom: 24px;">
+                        <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1b_step5">
+                            <strong style="color: #f87171;">5. Specify Volume Size:</strong> In the wizard window, leave the "Simple volume size in MB" at its maximum default value, then click <strong>Next &gt;</strong>.
+                        </p>
+                        <figure class="docs-figure">
+                            <img src="img/docs_install/easybcd_step5_volsize.jpg" alt="Leave size at maximum and click Next" class="docs-img" loading="lazy">
+                            <figcaption class="docs-figcaption" data-i18n="inst_s1b_step5_cap">Keep default maximum volume size and click Next</figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div style="margin-bottom: 24px;">
+                        <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1b_step6">
+                            <strong style="color: #f87171;">6. Assign Drive Letter:</strong> Select "Assign the following drive letter" (e.g. drive E: or any available letter), then click <strong>Next &gt;</strong>.
+                        </p>
+                        <figure class="docs-figure">
+                            <img src="img/docs_install/easybcd_step6_driveletter.jpg" alt="Assign drive letter and click Next" class="docs-img" loading="lazy">
+                            <figcaption class="docs-figcaption" data-i18n="inst_s1b_step6_cap">Assign drive letter and click Next</figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Step 7 -->
+                    <div style="margin-bottom: 24px;">
+                        <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1b_step7">
+                            <strong style="color: #f87171;">7. Format &amp; Label the Partition:</strong> Select "Format this volume with the following settings". Set <em>File system</em> to <strong>NTFS</strong>, and in <em>Volume label</em>, type <code>Bootable TetoOS</code>. Ensure "Perform a quick format" is checked, then click <strong>Next &gt;</strong> and finish the wizard.
+                        </p>
+                        <figure class="docs-figure">
+                            <img src="img/docs_install/easybcd_step7_label.jpg" alt="Format partition with NTFS and label Bootable TetoOS" class="docs-img" loading="lazy">
+                            <figcaption class="docs-figcaption" data-i18n="inst_s1b_step7_cap">Format partition with NTFS and set label to Bootable TetoOS</figcaption>
+                        </figure>
+                    </div>
+
+                    <h3 style="color: #fca5a5; font-size: 1.15rem; margin-top: 32px; margin-bottom: 16px;" data-i18n="inst_s1b_subcopy">Part 2: Copying ISO Files into the Bootable Partition</h3>
+
+                    <!-- Step 8 -->
+                    <div style="margin-bottom: 24px;">
+                        <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1b_step8">
+                            <strong style="color: #f87171;">8. Mount ISO and Copy All Files:</strong> In File Explorer, right-click your downloaded tetoOS ISO file and select <strong>Mount</strong>. Open the mounted virtual DVD drive, select all files and folders inside (such as <code>boot</code>, <code>efi</code>, <code>sources</code>, <code>bootmgr</code>, etc.), copy them, and paste them into your newly created <strong>Bootable TetoOS</strong> partition. Wait until copying completes.
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-md-5">
+                                <figure class="docs-figure m-0">
+                                    <img src="img/docs_install/easybcd_step8_mountiso.jpg" alt="Right-click ISO and select Mount" class="docs-img" loading="lazy">
+                                    <figcaption class="docs-figcaption" data-i18n="inst_s1b_step8_mount_cap">Right-click tetoOS ISO and click Mount</figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-md-7">
+                                <figure class="docs-figure m-0">
+                                    <img src="img/docs_install/easybcd_step8_copyiso.jpg" alt="Copy all ISO contents to Bootable TetoOS partition" class="docs-img" loading="lazy">
+                                    <figcaption class="docs-figcaption" data-i18n="inst_s1b_step8_cap">Copy and paste all files from mounted ISO to Bootable TetoOS</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #fca5a5; font-size: 1.15rem; margin-top: 32px; margin-bottom: 16px;" data-i18n="inst_s1b_subbcd">Part 3: Registering Bootloader with EasyBCD</h3>
+
+                    <!-- Step 9 -->
+                    <div style="margin-bottom: 24px;">
+                        <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1b_step9">
+                            <strong style="color: #f87171;">9. Open EasyBCD &amp; Click "Add New Entry":</strong> Launch the <strong>EasyBCD</strong> application from your Desktop or Start menu. In the left toolbox sidebar, click on the <strong>Add New Entry</strong> button.
+                        </p>
+                        <figure class="docs-figure">
+                            <img src="img/docs_install/easybcd_step9_addentry.jpg" alt="Open EasyBCD and click Add New Entry" class="docs-img" loading="lazy">
+                            <figcaption class="docs-figcaption" data-i18n="inst_s1b_step9_cap">In EasyBCD toolbox, click Add New Entry</figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Step 10 -->
+                    <div style="margin-bottom: 24px;">
+                        <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1b_step10">
+                            <strong style="color: #f87171;">10. Go to WinPE Tab &amp; Set Name:</strong> In the lower section under <em>Portable/External Media</em>, click on the <strong>WinPE</strong> tab. Ensure <em>Type</em> is set to <strong>WIM Image (Ramdisk)</strong>, and in the <em>Name</em> field, type <code>Bootable TetoOS</code>.
+                        </p>
+                        <figure class="docs-figure">
+                            <img src="img/docs_install/easybcd_step10_winpe.jpg" alt="Select WinPE tab and name it Bootable TetoOS" class="docs-img" loading="lazy">
+                            <figcaption class="docs-figcaption" data-i18n="inst_s1b_step10_cap">Select WinPE tab, set Type to WIM Image, and Name to Bootable TetoOS</figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Step 11 -->
+                    <div style="margin-bottom: 24px;">
+                        <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1b_step11">
+                            <strong style="color: #f87171;">11. Browse and Select boot.wim:</strong> In the <em>Path</em> field, click the browse folder icon on the right. Navigate to your <strong>Bootable TetoOS</strong> drive &rarr; open the <code>sources</code> folder &rarr; select the <code>boot.wim</code> file, and click <strong>Open</strong>.
+                        </p>
+                        <figure class="docs-figure">
+                            <img src="img/docs_install/easybcd_step11_browsewim.jpg" alt="Browse to sources folder and select boot.wim" class="docs-img" loading="lazy">
+                            <figcaption class="docs-figcaption" data-i18n="inst_s1b_step11_cap">Browse into Bootable TetoOS > sources folder and choose boot.wim</figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Step 12 -->
+                    <div style="margin-bottom: 24px;">
+                        <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1b_step12">
+                            <strong style="color: #f87171;">12. Click Add Entry (+):</strong> With the path set (e.g. <code>E:\sources\boot.wim</code>), click the green plus button <strong style="color: #34d399;">(+)</strong> next to the browse icon to register the bootloader entry.
+                        </p>
+                        <figure class="docs-figure">
+                            <img src="img/docs_install/easybcd_step12_addbtn.jpg" alt="Click Add Entry button in EasyBCD" class="docs-img" loading="lazy">
+                            <figcaption class="docs-figcaption" data-i18n="inst_s1b_step12_cap">Click the green (+) icon to add the entry to Windows bootloader</figcaption>
+                        </figure>
+                    </div>
+
+                    <!-- Step 13 -->
+                    <div style="margin-bottom: 24px;">
+                        <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1b_step13">
+                            <strong style="color: #f87171;">13. Restart and Select Bootable TetoOS:</strong> Restart your computer. During startup, the <strong>Windows Boot Manager</strong> screen will appear. Depending on your system (Legacy BIOS or UEFI), you may see either the classic black text menu or the modern blue graphical menu. Select <strong>Bootable TetoOS</strong> (using arrow keys or mouse) and press <kbd>Enter</kbd> to boot into the installer!
+                        </p>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <figure class="docs-figure m-0">
+                                    <img src="img/docs_install/easybcd_step13_bootmenu.jpg" alt="Modern Blue Boot Manager Screen" class="docs-img" loading="lazy">
+                                    <figcaption class="docs-figcaption" data-i18n="inst_s1b_boot_blue">Modern Blue Boot Menu (UEFI): Click or select Bootable TetoOS</figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-md-6">
+                                <figure class="docs-figure m-0">
+                                    <img src="img/docs_install/easybcd_step13_bootmenu_legacy.jpg" alt="Classic Black Boot Manager Screen" class="docs-img" loading="lazy">
+                                    <figcaption class="docs-figcaption" data-i18n="inst_s1b_boot_black">Classic Black Boot Menu (Legacy): Use arrow keys and Enter</figcaption>
+                                </figure>
+                        </div>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <!-- SECTION 2: BOOTING -->
+                <section id="boot" class="docs-card">
+                    <h2 class="docs-card-title" data-i18n="inst_s2_title">2. Booting the Installer</h2>
+                    <p class="docs-lead" data-i18n="inst_s2_lead">
+                        Restart your computer and boot from the bootable media. You will see the "welcome to tetoOS installation" screen with several action choices:
+                    </p>
+                    
+                    <figure class="docs-figure">
+                        <img src="img/docs_install/pe_welcome.jpg" alt="Welcome to tetoOS installation" class="docs-img" loading="lazy">
+                        <figcaption class="docs-figcaption" data-i18n="inst_s2_cap">Welcome to tetoOS installation menu screen</figcaption>
+                    </figure>
+
+                    <div class="docs-table-wrapper mb-3">
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th data-i18n="inst_s2_th_action">Action</th>
+                                    <th data-i18n="inst_s2_th_desc">What it does</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="badge" style="background: rgba(239, 68, 68, 0.2); border: 1px solid rgba(239, 68, 68, 0.4); color: #fca5a5; font-size: 0.9rem; padding: 6px 12px; font-weight: 600;">Install now</span></td><td data-i18n="inst_s2_r1">Starts the tetoOS installation right away. Click this to proceed!</td></tr>
+                                <tr><td><span class="badge" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); color: #e2e8f0; font-size: 0.9rem; padding: 6px 12px; font-weight: 500;">View the release notes</span></td><td data-i18n="inst_s2_r2">Shows the release notes and changes of this OS version.</td></tr>
+                                <tr><td><span class="badge" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); color: #e2e8f0; font-size: 0.9rem; padding: 6px 12px; font-weight: 500;">Explore and see your files</span></td><td data-i18n="inst_s2_r3">Opens a mini file explorer in case you need to copy or back up data quickly.</td></tr>
+                                <tr><td><span class="badge" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); color: #e2e8f0; font-size: 0.9rem; padding: 6px 12px; font-weight: 500;">Manage disk partitions</span></td><td data-i18n="inst_s2_r4">Opens partition management to create, format or delete partitions.</td></tr>
+                                <tr><td><span class="badge" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); color: #e2e8f0; font-size: 0.9rem; padding: 6px 12px; font-weight: 500;">Use command prompt</span></td><td data-i18n="inst_s2_r5">Opens CMD for advanced troubleshooting or diskpart commands.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: VARIANT & SETUP OPTIONS -->
+                <section id="variant" class="docs-card">
+                    <h2 class="docs-card-title" data-i18n="inst_s3_title">3. OS Variant &amp; Setup Options</h2>
+                    <p class="docs-lead" data-i18n="inst_s3_lead">
+                        After clicking <strong>Install now</strong>, select the tetoOS edition you want to install from the list (e.g. <em>Windows 11 Professional</em>). You can also check the <strong>Install Microsoft Office</strong> box if you want Office pre-installed, select your installation language, and click <strong>Next</strong>.
+                    </p>
+                    
+                    <figure class="docs-figure">
+                        <img src="img/docs_install/pe_edition.jpg" alt="Select Operating System Edition" class="docs-img" loading="lazy">
+                        <figcaption class="docs-figcaption" data-i18n="inst_s3_cap">Select your desired OS Edition and click Next</figcaption>
+                    </figure>
+
+                    <!-- Advanced Bootloader / WinNTSetup Spoiler -->
+                    <details class="docs-spoiler mt-4">
+                        <summary class="docs-spoiler-summary">
+                            <span class="spoiler-title-wrap">
+                                <span class="badge" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #93c5fd; font-size: 0.85rem;">Advanced Option</span>
+                                <strong data-i18n="inst_s3_spoiler_title">Advanced Bootloader Configuration (WinNTSetup)</strong>
+                            </span>
+                            <span class="spoiler-icon">&#9660;</span>
+                        </summary>
+                        <div class="docs-spoiler-body">
+                            <div class="alert-box-info my-3" data-i18n="inst_s3_tip">
+                                <strong>Tip:</strong> If you need custom bootloader configuration or want to avoid modifying your existing EFI partition, hold <kbd>Shift</kbd> on your keyboard while clicking <strong>Next</strong> in the OS selection menu. This launches <strong>WinNTSetup</strong> for granular partition and boot targeting.
+                            </div>
+
+                            <h4 class="h6 text-white mb-3" style="font-weight: 700; border-left: 3px solid #f87171; padding-left: 10px;" data-i18n="inst_s3_winnt_title">
+                                WinNTSetup Step-by-Step:
+                            </h4>
+                            
+                            <div class="row g-4 mb-3">
+                                <div class="col-lg-6">
+                                    <figure class="docs-figure m-0">
+                                        <img src="img/docs_install/pe_winnt_init.jpg" alt="WinNTSetup Interface" class="docs-img" loading="lazy">
+                                        <figcaption class="docs-figcaption" data-i18n="inst_s3_winnt_init_cap">Step 1: Check Windows installation files &amp; Boot drive</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-lg-6 d-flex align-items-center">
+                                    <p style="color: #cbd5e1; line-height: 1.7;" data-i18n="inst_s3_winnt_desc1">
+                                        <strong style="color: #f87171;">1. Verify Installation Files &amp; Boot Drive:</strong><br>
+                                        In the first section, ensure the path to <code>install.wim</code> / <code>install.esd</code> points to the source image. Below it, verify the boot drive location (EFI system partition). WinNTSetup displays green indicators for compatibility.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row g-4 mb-3">
+                                <div class="col-lg-6">
+                                    <figure class="docs-figure m-0">
+                                        <img src="img/docs_install/pe_winnt_disk.jpg" alt="WinNTSetup Partition Selection" class="docs-img" loading="lazy">
+                                        <figcaption class="docs-figcaption" data-i18n="inst_s3_winnt_disk_cap">Step 2: Select the target installation drive</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-lg-6 d-flex align-items-center">
+                                    <p style="color: #cbd5e1; line-height: 1.7;" data-i18n="inst_s3_winnt_desc2">
+                                        <strong style="color: #f87171;">2. Select Target Drive Partition:</strong><br>
+                                        Under <em>"Select the location of the installation drive"</em>, click <strong>Search...</strong> and carefully choose your target Windows partition (look for the partition labeled <strong>Install Here</strong>). This protects your other partitions, such as Linux root or swap.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row g-4 mb-2">
+                                <div class="col-lg-6">
+                                    <figure class="docs-figure m-0">
+                                        <img src="img/docs_install/pe_winnt_setup.jpg" alt="WinNTSetup Setup Button" class="docs-img" loading="lazy">
+                                        <figcaption class="docs-figcaption" data-i18n="inst_s3_winnt_setup_cap">Step 3: Click the Setup button to proceed</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-lg-6 d-flex align-items-center">
+                                    <p style="color: #cbd5e1; line-height: 1.7;" data-i18n="inst_s3_winnt_desc3">
+                                        <strong style="color: #f87171;">3. Click Setup to Begin:</strong><br>
+                                        Once both the boot drive and installation drive are selected, click the <strong>"F"</strong> button to the right of the installation drive field to format the partition. Then, click the <strong>Setup</strong> button at the bottom right. In the confirmation dialog that pops up, leave the default boot options checked and click <strong>OK</strong> to start extracting Windows.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                </section>
+
+                <!-- SECTION 4: DISK -->
+                <section id="disk" class="docs-card">
+                    <h2 class="docs-card-title" data-i18n="inst_s4_title">4. Disk Selection</h2>
+                    <p class="docs-lead" data-i18n="inst_s4_lead">
+                        In standard installation mode, the "Where do you want to install Windows?" window will show your disks and partitions. Select the primary partition for tetoOS (you will easily recognize it by the <strong>Install Here</strong> label we assigned earlier), format or delete partitions if needed, and click <strong>Next</strong>.
+                    </p>
+
+                    <figure class="docs-figure">
+                        <img src="img/docs_install/pe_disk.jpg" alt="Where do you want to install Windows" class="docs-img" loading="lazy">
+                        <figcaption class="docs-figcaption" data-i18n="inst_s4_cap">Select the target partition (labeled Install Here) and click Next</figcaption>
+                    </figure>
+
+                    <div class="alert-box-warn" data-i18n="inst_s4_warn">
+                        <strong>Be careful:</strong><br>
+                        Formatting erases everything on that partition. Double-check the partition you pick and back up your important data first.
+                    </div>
+                </section>
+
+                <!-- SECTION 5: FEATURES -->
+                <section id="features" class="docs-card">
+                    <h2 class="docs-card-title" data-i18n="inst_s5_title">5. Feature Selection</h2>
+                    <p class="docs-lead" data-i18n="inst_s5_lead">
+                        While Windows files are getting prepared for installation, a custom tetoOS configuration window will appear. Here you can customize your installation preferences before ever landing on the desktop:
+                    </p>
+
+                    <figure class="docs-figure">
+                        <img src="img/docs_install/pe_opts.jpg" alt="tetoOS Feature and Tweaks Selection" class="docs-img" loading="lazy">
+                        <figcaption class="docs-figcaption" data-i18n="inst_s5_cap">tetoOS Feature &amp; Tweaks selection window</figcaption>
+                    </figure>
+
+                    <div class="docs-table-wrapper">
+                        <table class="docs-table">
+                            <thead>
+                                <tr>
+                                    <th data-i18n="inst_s5_th_group">Group</th>
+                                    <th data-i18n="inst_s5_th_desc">What you can set</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><code>Time zone</code></td><td data-i18n="inst_s5_r1">Set your local time zone and toggle daylight saving time.</td></tr>
+                                <tr><td><code>User &amp; Computer</code></td><td data-i18n="inst_s5_r2">Fill in your <strong>Display name</strong>, <strong>User name</strong>, <strong>PC name</strong>, and Workgroup.</td></tr>
+                                <tr><td><code>Activate</code></td><td data-i18n="inst_s5_r3">Tick boxes to automatically activate Windows and Microsoft Office.</td></tr>
+                                <tr><td><code>System settings</code></td><td data-i18n="inst_s5_r4">Pause Windows Update until 2077 (ticked by default), and options to disable Windows Defender, Firewall, UAC and Hibernate.</td></tr>
+                                <tr><td><code>Tweaks, patches, etc.</code></td><td data-i18n="inst_s5_r5">Essential tools and tweaks: 7-Zip, Registry Tweaks, Visual C++, HEIC/HEVC Codecs, and Windows 7 Start Menu / File Explorer style.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 0;" data-i18n="inst_s5_apply">
+                        After configuring all options to your liking, click the <strong>Apply</strong> button at the bottom right corner.
+                    </p>
+
+                    <div class="alert-box-info mt-3" data-i18n="inst_s5_tech_note">
+                        <strong>For expert technician or repair shop:</strong> you can customize the feature menu by yourself. <a href="docs_setup.html" style="color: #f87171; text-decoration: underline; font-weight: 600;">Learn more...</a>
+                    </div>
+                </section>
+
+                <!-- SECTION 6: FINISH -->
+                <section id="finish" class="docs-card">
+                    <h2 class="docs-card-title" data-i18n="inst_s6_title">6. Finishing Up</h2>
+                    <p class="docs-lead" data-i18n="inst_s6_lead">
+                        Once you click Apply, the installer resumes copying files and applying your customized tweaks.
+                    </p>
+
+                    <figure class="docs-figure">
+                        <img src="img/docs_install/pe_wait.jpg" alt="Installing Windows progress screen" class="docs-img" loading="lazy">
+                        <figcaption class="docs-figcaption" data-i18n="inst_s6_cap">Windows Setup: Getting files ready for installation</figcaption>
+                    </figure>
+
+                    <div class="alert-box-warn" data-i18n="inst_s6_warn">
+                        <strong>Do not force turn off your computer:</strong><br>
+                        The process may take several minutes depending on your storage speed and selected tweaks.
+                    </div>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 0;" data-i18n="inst_s6_done">
+                        Your computer will restart automatically several times. Once you arrive at the tetoOS Desktop, the installation is complete! You can now install device-specific drivers and enjoy your lightweight OS.
+                    </p>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Shared bottom -->
+    <div id="shared-bottom-sections"></div>
+
+    <!-- Modals -->
+    <div id="shared-modals"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/translations_docs_install.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>
+
+
+

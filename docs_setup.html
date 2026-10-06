@@ -9,23 +9,23 @@
     <meta name="author" content="moedev Project">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#dc2626">
-    <link rel="canonical" href="https://moedev.dev/docs_setup.html">
+    <link rel="canonical" href="https://moedev.eu.org/docs_setup.html">
     <link rel="icon" type="image/webp" href="img/t_ic.webp">
 
     <!-- OG -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://moedev.dev/docs_setup.html">
+    <meta property="og:url" content="https://moedev.eu.org/docs_setup.html">
     <meta property="og:site_name" content="moedev Docs">
     <meta property="og:title" content="tetoOS Setup & Script System Architecture">
     <meta property="og:description" content="Complete guide to folder structures, custom setup wrappers, and script systems for tetoOS ISO modification.">
-    <meta property="og:image" content="https://moedev.dev/img/t_ic.webp">
+    <meta property="og:image" content="https://moedev.eu.org/img/t_ic.webp">
     <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="tetoOS Setup & Script System Architecture">
     <meta name="twitter:description" content="Complete guide to folder structures, custom setup wrappers, and script systems for tetoOS ISO modification.">
-    <meta name="twitter:image" content="https://moedev.dev/img/t_ic.webp">
+    <meta name="twitter:image" content="https://moedev.eu.org/img/t_ic.webp">
 
     <!-- Preconnect -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -36,8 +36,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=2.5">
-    <link rel="stylesheet" href="css/docs.css">
+    <link rel="stylesheet" href="css/main.css?v=2.7">
+    <link rel="stylesheet" href="css/docs.css?v=2.6">
 </head>
 <body class="teto-theme">
 
@@ -89,10 +89,10 @@
                     <div class="my-4">
                         <h5 style="color: #fff; font-weight: 700; font-size: 1.1rem; margin-bottom: 12px;" data-i18n="docs_sec1_adv_title">Advantages of this Method:</h5>
                         <ul class="feature-list">
-                            <li data-i18n="docs_sec1_adv1"><span style="color: #34d399; font-weight: bold;">•</span> <strong>Users can unplug the USB drive after 100% progress.</strong></li>
-                            <li data-i18n="docs_sec1_adv2"><span style="color: #34d399; font-weight: bold;">•</span> <strong>Tweaks and software can be installed while setup is running.</strong></li>
-                            <li data-i18n="docs_sec1_adv3"><span style="color: #34d399; font-weight: bold;">•</span> <strong>No need to wait at the computer during OOBE.</strong></li>
-                            <li data-i18n="docs_sec1_adv4"><span style="color: #34d399; font-weight: bold;">•</span> <strong>Compatible with standard $oem$ structure.</strong></li>
+                            <li data-i18n="docs_sec1_adv1"><span style="color: #34d399; font-weight: bold;">â€¢</span> <strong>Users can unplug the USB drive after 100% progress.</strong></li>
+                            <li data-i18n="docs_sec1_adv2"><span style="color: #34d399; font-weight: bold;">â€¢</span> <strong>Tweaks and software can be installed while setup is running.</strong></li>
+                            <li data-i18n="docs_sec1_adv3"><span style="color: #34d399; font-weight: bold;">â€¢</span> <strong>No need to wait at the computer during OOBE.</strong></li>
+                            <li data-i18n="docs_sec1_adv4"><span style="color: #34d399; font-weight: bold;">â€¢</span> <strong>Compatible with standard $oem$ structure.</strong></li>
                         </ul>
                     </div>
 
@@ -259,8 +259,8 @@ OSDefault=10</pre>
 
                     <div class="alert-box-info my-3" data-i18n="docs_sec3_ex_map">
                         <strong>Mapping Examples:</strong><br>
-                        • <code>OS_$oem$\$1\Users\Public\Desktop</code> &rarr; copied to <code>C:\Users\Public\Desktop</code><br>
-                        • <code>OS_$oem$\$$\Setup\Scripts\SetupComplete.cmd</code> &rarr; copied to <code>C:\Windows\Setup\Scripts\SetupComplete.cmd</code>
+                        â€¢ <code>OS_$oem$\$1\Users\Public\Desktop</code> &rarr; copied to <code>C:\Users\Public\Desktop</code><br>
+                        â€¢ <code>OS_$oem$\$$\Setup\Scripts\SetupComplete.cmd</code> &rarr; copied to <code>C:\Windows\Setup\Scripts\SetupComplete.cmd</code>
                     </div>
 
                     <div class="alert-box-warn" data-i18n="docs_sec3_warn">
@@ -318,9 +318,9 @@ OSDefault=10</pre>
 <span class="keyword">exit</span></code></pre>
 
                     <ul class="feature-list">
-                        <li data-i18n="docs_sec4_note1"><span style="color: #38bdf8;">•</span> <code>cmdow.exe @ /HID</code> hides the CMD console window while background stages execute.</li>
-                        <li data-i18n="docs_sec4_note2"><span style="color: #38bdf8;">•</span> <code>.DONE</code> marker files (e.g. <code>specialize.DONE</code>, <code>FirstLogonCommands.DONE</code>) prevent redundant/looping executions.</li>
-                        <li data-i18n="docs_sec4_note3"><span style="color: #38bdf8;">•</span> <code>Tweaks_forced\*.reg</code> are applied without options; folder tweaks use <code>_InstallOption_&lt;Stage&gt;.cmd</code>.</li>
+                        <li data-i18n="docs_sec4_note1"><span style="color: #38bdf8;">â€¢</span> <code>cmdow.exe @ /HID</code> hides the CMD console window while background stages execute.</li>
+                        <li data-i18n="docs_sec4_note2"><span style="color: #38bdf8;">â€¢</span> <code>.DONE</code> marker files (e.g. <code>specialize.DONE</code>, <code>FirstLogonCommands.DONE</code>) prevent redundant/looping executions.</li>
+                        <li data-i18n="docs_sec4_note3"><span style="color: #38bdf8;">â€¢</span> <code>Tweaks_forced\*.reg</code> are applied without options; folder tweaks use <code>_InstallOption_&lt;Stage&gt;.cmd</code>.</li>
                     </ul>
                 </section>
 
@@ -342,8 +342,8 @@ OSDefault=10</pre>
 
                     <div class="alert-box-info" data-i18n="docs_sec5_special_alert">
                         <strong>Special Tweak Collections:</strong><br>
-                        • Tweaks in <code>Tweaks_forced</code> (e.g. <code>Control_Defender</code>, <code>Control_UpdateCenter</code>) are invoked directly via <code>_Install.cmd</code> from <code>OOBE.cmd</code> - not via <code>_InstallOption_</code>.<br>
-                        • The <code>Skipped</code> folder contains intentionally disabled tweaks (using <code>__InstallOption_Specialize.cmd</code> with double underscores so the system skips looping it).
+                        â€¢ Tweaks in <code>Tweaks_forced</code> (e.g. <code>Control_Defender</code>, <code>Control_UpdateCenter</code>) are invoked directly via <code>_Install.cmd</code> from <code>OOBE.cmd</code> - not via <code>_InstallOption_</code>.<br>
+                        â€¢ The <code>Skipped</code> folder contains intentionally disabled tweaks (using <code>__InstallOption_Specialize.cmd</code> with double underscores so the system skips looping it).
                     </div>
 
                     <h5 style="color: #fff; font-weight: 700; margin-top: 25px;" data-i18n="docs_sec5_workflow_title">Installer Workflow & Configuration:</h5>
@@ -353,8 +353,8 @@ OSDefault=10</pre>
 
                     <pre class="code-block"><code><span class="comment"># Folder Structure:</span>
 $oem$_scripts_options_8+\0.StartMenu
-  └── _InstallOption_SetupComplete.cmd
-  └── _InstallOption_FirstLogonDesktop.cmd
+  â””â”€â”€ _InstallOption_SetupComplete.cmd
+  â””â”€â”€ _InstallOption_FirstLogonDesktop.cmd
  
 <span class="comment"># Configuration in OS_Settings.ini:</span>
 <span class="heading">[Option:StartIsBack]</span>
@@ -459,15 +459,15 @@ Dir=$oem$_scripts_options_8+\Theme</code></pre>
 
                     <h5 style="color: #fff; font-weight: 700; margin-top: 30px;" data-i18n="docs_sec7_rules_title">Practical Script Writing Guidelines:</h5>
                     <ul class="feature-list">
-                        <li data-i18n="docs_sec7_rule1"><span>•</span> <strong>Always terminate scripts with <code>exit /b</code></strong> (or <code>exit</code> for main stage scripts) so the installer can proceed.</li>
-                        <li data-i18n="docs_sec7_rule2"><span>•</span> <strong>Use <code>call</code> when invoking external CMD files;</strong> otherwise, the parent script terminates prematurely.</li>
-                        <li data-i18n="docs_sec7_rule3"><span>•</span> <strong>Use <code>start /wait</code></strong> whenever external installers must finish before continuing.</li>
-                        <li data-i18n="docs_sec7_rule4"><span>•</span> <strong>Begin stage scripts with <code>cd /d "%~dp0"</code></strong> and <code>"%~dp0cmdow.exe" @ /HID</code> to conceal CMD console windows.</li>
-                        <li data-i18n="docs_sec7_rule5"><span>•</span> <strong>Leverage <code>.DONE</code> markers</strong> to prevent scripts from executing repeatedly.</li>
-                        <li data-i18n="docs_sec7_rule6"><span>•</span> <strong>Avoid interactive dialogs</strong> such as <code>pause</code>, <code>choice</code>, or <code>msgbox</code> during installation.</li>
-                        <li data-i18n="docs_sec7_rule7"><span>•</span> <strong>Avoid issuing restart, shutdown, or logoff commands</strong> unless strictly mandatory.</li>
-                        <li data-i18n="docs_sec7_rule8"><span>•</span> <strong>Wrap all system paths in double quotes</strong>, e.g. <code>"%SystemRoot%\Setup\Scripts"</code>.</li>
-                        <li data-i18n="docs_sec7_rule9"><span>•</span> <strong>Test every tweak standalone</strong> before integrating into the master installer package.</li>
+                        <li data-i18n="docs_sec7_rule1"><span>â€¢</span> <strong>Always terminate scripts with <code>exit /b</code></strong> (or <code>exit</code> for main stage scripts) so the installer can proceed.</li>
+                        <li data-i18n="docs_sec7_rule2"><span>â€¢</span> <strong>Use <code>call</code> when invoking external CMD files;</strong> otherwise, the parent script terminates prematurely.</li>
+                        <li data-i18n="docs_sec7_rule3"><span>â€¢</span> <strong>Use <code>start /wait</code></strong> whenever external installers must finish before continuing.</li>
+                        <li data-i18n="docs_sec7_rule4"><span>â€¢</span> <strong>Begin stage scripts with <code>cd /d "%~dp0"</code></strong> and <code>"%~dp0cmdow.exe" @ /HID</code> to conceal CMD console windows.</li>
+                        <li data-i18n="docs_sec7_rule5"><span>â€¢</span> <strong>Leverage <code>.DONE</code> markers</strong> to prevent scripts from executing repeatedly.</li>
+                        <li data-i18n="docs_sec7_rule6"><span>â€¢</span> <strong>Avoid interactive dialogs</strong> such as <code>pause</code>, <code>choice</code>, or <code>msgbox</code> during installation.</li>
+                        <li data-i18n="docs_sec7_rule7"><span>â€¢</span> <strong>Avoid issuing restart, shutdown, or logoff commands</strong> unless strictly mandatory.</li>
+                        <li data-i18n="docs_sec7_rule8"><span>â€¢</span> <strong>Wrap all system paths in double quotes</strong>, e.g. <code>"%SystemRoot%\Setup\Scripts"</code>.</li>
+                        <li data-i18n="docs_sec7_rule9"><span>â€¢</span> <strong>Test every tweak standalone</strong> before integrating into the master installer package.</li>
                     </ul>
 
                     <h5 style="color: #fff; font-weight: 700; margin-top: 35px;" data-i18n="docs_sec7_stages_table_title">Installation Stage Breakdown Table:</h5>
@@ -511,13 +511,13 @@ Dir=$oem$_scripts_options_8+\Theme</code></pre>
                     
                     <h5 style="color: #fca5a5; font-weight: 700;" data-i18n="docs_sec8_common_err_title">Most Frequent Mistakes:</h5>
                     <ul class="feature-list">
-                        <li data-i18n="docs_sec8_err1"><span style="color: #ef4444;">•</span> Forgetting to append <code>exit /b</code> at the end of the script.</li>
-                        <li data-i18n="docs_sec8_err2"><span style="color: #ef4444;">•</span> Using <code>start</code> without the <code>/wait</code> switch, causing process overlap.</li>
-                        <li data-i18n="docs_sec8_err3"><span style="color: #ef4444;">•</span> Calling secondary scripts directly without the <code>call</code> keyword.</li>
-                        <li data-i18n="docs_sec8_err4"><span style="color: #ef4444;">•</span> Running application installers that require interactive user input (non-silent).</li>
-                        <li data-i18n="docs_sec8_err5"><span style="color: #ef4444;">•</span> Assigning tweaks to the wrong stage (e.g. running UI desktop tweaks during Specialize).</li>
-                        <li data-i18n="docs_sec8_err6"><span style="color: #ef4444;">•</span> Typos in filename: using <code>_InstallOptions_</code> (plural) instead of <code>_InstallOption_</code> (singular).</li>
-                        <li data-i18n="docs_sec8_err7"><span style="color: #ef4444;">•</span> Tweak folder name mismatching the <code>Dir=</code> entry in <code>OS_Settings.ini</code>.</li>
+                        <li data-i18n="docs_sec8_err1"><span style="color: #ef4444;">â€¢</span> Forgetting to append <code>exit /b</code> at the end of the script.</li>
+                        <li data-i18n="docs_sec8_err2"><span style="color: #ef4444;">â€¢</span> Using <code>start</code> without the <code>/wait</code> switch, causing process overlap.</li>
+                        <li data-i18n="docs_sec8_err3"><span style="color: #ef4444;">â€¢</span> Calling secondary scripts directly without the <code>call</code> keyword.</li>
+                        <li data-i18n="docs_sec8_err4"><span style="color: #ef4444;">â€¢</span> Running application installers that require interactive user input (non-silent).</li>
+                        <li data-i18n="docs_sec8_err5"><span style="color: #ef4444;">â€¢</span> Assigning tweaks to the wrong stage (e.g. running UI desktop tweaks during Specialize).</li>
+                        <li data-i18n="docs_sec8_err6"><span style="color: #ef4444;">â€¢</span> Typos in filename: using <code>_InstallOptions_</code> (plural) instead of <code>_InstallOption_</code> (singular).</li>
+                        <li data-i18n="docs_sec8_err7"><span style="color: #ef4444;">â€¢</span> Tweak folder name mismatching the <code>Dir=</code> entry in <code>OS_Settings.ini</code>.</li>
                     </ul>
 
                     <div class="alert-box-info mt-4">
@@ -535,7 +535,7 @@ Dir=$oem$_scripts_options_8+\Theme</code></pre>
 
                     <!-- Cross Navigation Footer -->
                     <!-- <div class="text-center mt-4 pt-3 border-top" style="border-color: rgba(255, 255, 255, 0.08) !important;"> -->
-                        <!-- <a href="teto.html" class="btn btn-primary-red px-4 py-2 me-2">← Back to tetoOS 10</a> -->
+                        <!-- <a href="teto.html" class="btn btn-primary-red px-4 py-2 me-2">â† Back to tetoOS 10</a> -->
                         <!-- <a href="docs_tpkg.html" class="btn btn-outline-light px-4 py-2 me-2" style="border-radius: 8px;">Package Manager (tpkg) Docs &rarr;</a> -->
                         <!-- <a href="docs_debloat.html" class="btn btn-outline-light px-4 py-2" style="border-radius: 8px;">Debloat Docs &rarr;</a> -->
                     <!-- </div> -->
@@ -558,3 +558,4 @@ Dir=$oem$_scripts_options_8+\Theme</code></pre>
     <script src="js/theme.js"></script>
 </body>
 </html>
+

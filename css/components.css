@@ -140,18 +140,20 @@
     color: #60a5fa;
 }
 
-/* Language Selector Action Button (Icon-Only, Transparent) */
+/* Language Selector Action Button (Icon-Only, Transparent, Static) */
 .btn-lang-bright {
     background: transparent;
     color: inherit;
     border: none;
     border-radius: 6px;
     padding: 6px 8px;
-    transition: all 0.2s ease;
+    opacity: 1;
+    transition: none;
 }
 
 .btn-lang-bright:hover, 
-.btn-lang-bright:focus {
+.btn-lang-bright:focus,
+.btn-lang-bright:active {
     background: transparent;
     color: inherit;
     border: none;

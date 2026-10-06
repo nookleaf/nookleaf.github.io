@@ -1,4 +1,4 @@
-﻿// Reusable UI components
+// Reusable UI components
 const moedevComponents = {
     renderNavbar: function() {
         const navContainer = document.getElementById('main-nav');
@@ -130,7 +130,7 @@ const moedevComponents = {
             <footer class="footer-moedev text-center py-3">
                 <div class="container">
                     <p class="mb-1 footer-text" style="color: #64748b; font-size: 0.9rem;" data-i18n="footer_copyright">
-                        © 2026 <strong style="color: #10b981;">moedev</strong> - This site is a work in progress and subject to change.
+                        © 2026 <strong style="color: #10b981;">moedev</strong> - all rights reserved
                     </p>
                     <a href="policy.html" style="color: #94a3b8; font-size: 0.85rem; text-decoration: underline;" data-i18n="footer_privacy">Privacy Policy & Terms of Service</a>
                 </div>
@@ -172,7 +172,7 @@ const moedevComponents = {
             <footer class="footer-moedev text-center py-3">
                 <div class="container">
                     <p class="mb-1 footer-text" style="color: #64748b; font-size: 0.9rem;" data-i18n="footer_copyright">
-                        © 2026 <strong style="color: #10b981;">moedev</strong> - This site is a work in progress and subject to change.
+                        © 2026 <strong style="color: #10b981;">moedev</strong> - all rights reserved
                     </p>
                     <a href="policy.html" style="color: #94a3b8; font-size: 0.85rem; text-decoration: underline;" data-i18n="footer_privacy">Privacy Policy & Terms of Service</a>
                 </div>
@@ -184,7 +184,7 @@ const moedevComponents = {
         <footer class="footer-moedev text-center py-4">
             <div class="container">
                 <p class="mb-1 footer-text" style="color: #64748b; font-size: 0.9rem;" data-i18n="footer_copyright">
-                    © 2026 <strong style="color: #10b981;">moedev</strong> - This site is a work in progress and subject to change.
+                    © 2026 <strong style="color: #10b981;">moedev</strong> - all rights reserved
                 </p>
                 <a href="policy.html" style="color: #94a3b8; font-size: 0.85rem; text-decoration: underline;" data-i18n="footer_privacy">Privacy Policy & Terms of Service</a>
             </div>

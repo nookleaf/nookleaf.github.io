@@ -1,5 +1,5 @@
 /* Main stylesheet bundle */
-@import url('base.css');
-@import url('layout.css');
-@import url('components.css');
-@import url('oobe.css');
+@import url('base.css?v=2.7');
+@import url('layout.css?v=2.7');
+@import url('components.css?v=2.7');
+@import url('oobe.css?v=2.7');

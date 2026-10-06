@@ -1,4 +1,4 @@
-﻿/* SECTION-BY-SECTION SNAP SCROLLING (DESKTOP ONLY) */
+/* SECTION-BY-SECTION SNAP SCROLLING (DESKTOP ONLY) */
 @media (min-width: 992px) {
     html {
         scroll-behavior: smooth;
@@ -63,36 +63,58 @@
 }
 
 .navbar-brand {
-    color: #fff;
+    color: #fff !important;
     font-weight: 700;
     font-size: 1.35rem;
     cursor: pointer;
-    text-decoration: none;
+    text-decoration: none !important;
     display: inline-flex;
     align-items: center;
+    transition: none !important;
 }
 
-.navbar-brand:hover {
-    color: #fff;
+.navbar-brand:hover,
+.navbar-brand:active,
+.navbar-brand:focus {
+    color: #fff !important;
+    text-decoration: none !important;
 }
 
 .brand-highlight {
-    color: #10b981;
-    transition: color 0.3s;
+    color: #10b981 !important;
+    transition: none !important;
 }
 
 .nav-link {
-    color: #94a3b8;
+    color: #94a3b8 !important;
     font-weight: 500;
     margin: 0 10px;
-    transition: color 0.2s ease;
     cursor: pointer;
-    text-decoration: none;
+    text-decoration: none !important;
+    transition: none !important;
 }
 
-.nav-link:hover, 
 .nav-link.active {
     color: #fff !important;
+}
+
+/* Static states for links: no hover or pressed color change */
+.nav-link:hover,
+.nav-link:active,
+.nav-link:focus {
+    color: #94a3b8 !important;
+    background: transparent !important;
+    text-decoration: none !important;
+    transform: none !important;
+}
+
+.nav-link.active:hover,
+.nav-link.active:active,
+.nav-link.active:focus {
+    color: #fff !important;
+    background: transparent !important;
+    text-decoration: none !important;
+    transform: none !important;
 }
 
 /* Remove black pressed / active / focus states in navbar */
@@ -113,11 +135,16 @@
 .navbar .navbar-toggler:active,
 .navbar .navbar-toggler:focus,
 .navbar .dropdown-toggle:active,
-.navbar .dropdown-toggle.show {
+.navbar .dropdown-toggle.show,
+.navbar a:active,
+.navbar a:focus,
+.navbar button:active,
+.navbar button:focus {
     background: transparent !important;
     background-color: transparent !important;
     box-shadow: none !important;
     outline: none !important;
+    transform: none !important;
 }
 
 /* Navbar action buttons container */
@@ -147,7 +174,7 @@
     box-shadow: none !important;
 }
 
-/* Minimalist Icon-Only Action Buttons: Language, Theme, Mobile Toggler */
+/* Minimalist Icon-Only Action Buttons: Language, Theme, Mobile Toggler (Static, no hover/pressed shift) */
 .navbar .btn-lang-bright,
 .navbar .btn-theme-toggle {
     width: auto !important;
@@ -164,10 +191,10 @@
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    color: #fff !important;
+    color: #cbd5e1 !important;
     cursor: pointer;
-    opacity: 0.85;
-    transition: opacity 0.2s ease, color 0.2s ease;
+    opacity: 1 !important;
+    transition: none !important;
     outline: none !important;
 }
 
@@ -184,10 +211,10 @@
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    color: #fff !important;
+    color: #cbd5e1 !important;
     cursor: pointer;
-    opacity: 0.85;
-    transition: opacity 0.2s ease;
+    opacity: 1 !important;
+    transition: none !important;
     outline: none !important;
 }
 
@@ -206,15 +233,40 @@
 }
 
 .navbar .btn-lang-bright:hover,
+.navbar .btn-lang-bright:active,
+.navbar .btn-lang-bright:focus,
 .navbar .btn-theme-toggle:hover,
-.navbar .navbar-toggler:hover {
+.navbar .btn-theme-toggle:active,
+.navbar .btn-theme-toggle:focus,
+.navbar .navbar-toggler:hover,
+.navbar .navbar-toggler:active,
+.navbar .navbar-toggler:focus {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    opacity: 1;
+    outline: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    color: #cbd5e1 !important;
 }
 
-.navbar .btn-lang-bright img {
+/* Static navbar images: no opacity, filter, or transform change */
+.navbar img {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+.navbar img:hover,
+.navbar img:active,
+.navbar img:focus {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+}
+
+.navbar .btn-lang-bright > img {
     border-radius: 2px;
     display: block;
     margin: 0 auto;
@@ -224,14 +276,18 @@
     color: #cbd5e1 !important;
 }
 
-.navbar .btn-theme-toggle:hover {
-    background: transparent !important;
-    color: #fff !important;
+.navbar .btn-theme-toggle svg {
+    stroke: currentColor !important;
+    display: block;
+    transition: none !important;
+    transform: none !important;
 }
 
 .navbar .navbar-toggler svg {
-    stroke: #e2e8f0;
+    stroke: #e2e8f0 !important;
     display: block;
+    transition: none !important;
+    transform: none !important;
 }
 
 /* Hide Bootstrap caret on flag-only lang button */
@@ -390,6 +446,8 @@ body.light-mode .glass-dropdown .dropdown-item:active {
     right: 0 !important;
     left: auto !important;
     transform: none !important;
+    direction: ltr !important;
+    text-align: left !important;
 }
 
 .lang-dropdown-menu .dropdown-item {
@@ -398,9 +456,18 @@ body.light-mode .glass-dropdown .dropdown-item:active {
     border-radius: 8px !important;
     display: flex !important;
     align-items: center !important;
+    justify-content: flex-start !important;
     gap: 8px !important;
     font-size: 0.9rem !important;
     color: #cbd5e1 !important;
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+.lang-dropdown-menu .dropdown-item img {
+    margin: 0 8px 0 0 !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
 }
 
 .lang-dropdown-menu .dropdown-item:hover {
@@ -622,21 +689,45 @@ body.light-mode .navbar {
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-body.light-mode .navbar-brand {
-    color: #0f172a;
+body.light-mode .navbar-brand,
+body.light-mode .navbar-brand:hover,
+body.light-mode .navbar-brand:active,
+body.light-mode .navbar-brand:focus {
+    color: #0f172a !important;
 }
 
-body.light-mode .brand-highlight {
-    color: #16a34a;
+body.light-mode .brand-highlight,
+body.light-mode .navbar-brand:hover .brand-highlight,
+body.light-mode .navbar-brand:active .brand-highlight {
+    color: #16a34a !important;
 }
 
 body.light-mode .nav-link {
-    color: #64748b;
+    color: #64748b !important;
+    transition: none !important;
 }
 
-body.light-mode .nav-link:hover,
 body.light-mode .nav-link.active {
     color: #0f172a !important;
+}
+
+/* Light mode static link states: no hover/pressed color change */
+body.light-mode .nav-link:hover,
+body.light-mode .nav-link:active,
+body.light-mode .nav-link:focus {
+    color: #64748b !important;
+    background: transparent !important;
+    text-decoration: none !important;
+    transform: none !important;
+}
+
+body.light-mode .nav-link.active:hover,
+body.light-mode .nav-link.active:active,
+body.light-mode .nav-link.active:focus {
+    color: #0f172a !important;
+    background: transparent !important;
+    text-decoration: none !important;
+    transform: none !important;
 }
 
 body.light-mode .glass-dropdown {
@@ -659,7 +750,7 @@ body.light-mode .footer-moedev {
 }
 
 
-/* Light mode navbar action icon buttons (Icon-Only, Transparent, Standard Theme Color) */
+/* Light mode navbar action icon buttons (Static, no hover/pressed shift) */
 body.light-mode .navbar .btn-lang-bright,
 body.light-mode .navbar .btn-theme-toggle,
 body.light-mode .navbar .navbar-toggler {
@@ -667,23 +758,42 @@ body.light-mode .navbar .navbar-toggler {
     border: none !important;
     box-shadow: none !important;
     color: #475569 !important;
+    opacity: 1 !important;
+    transition: none !important;
 }
 
 body.light-mode .navbar .btn-lang-bright:hover,
+body.light-mode .navbar .btn-lang-bright:active,
+body.light-mode .navbar .btn-lang-bright:focus,
 body.light-mode .navbar .btn-theme-toggle:hover,
-body.light-mode .navbar .navbar-toggler:hover {
+body.light-mode .navbar .btn-theme-toggle:active,
+body.light-mode .navbar .btn-theme-toggle:focus,
+body.light-mode .navbar .navbar-toggler:hover,
+body.light-mode .navbar .navbar-toggler:active,
+body.light-mode .navbar .navbar-toggler:focus {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    color: #0f172a !important;
-    opacity: 1;
+    outline: none !important;
+    transform: none !important;
+    color: #475569 !important;
+    opacity: 1 !important;
 }
 
-body.light-mode .navbar .navbar-toggler svg {
-    stroke: #475569;
+body.light-mode .navbar .navbar-toggler svg,
+body.light-mode .navbar .navbar-toggler:hover svg,
+body.light-mode .navbar .navbar-toggler:active svg {
+    stroke: #475569 !important;
+    transition: none !important;
+    transform: none !important;
 }
-body.light-mode .navbar .navbar-toggler:hover svg {
-    stroke: #0f172a;
+
+body.light-mode .navbar .btn-theme-toggle svg,
+body.light-mode .navbar .btn-theme-toggle:hover svg,
+body.light-mode .navbar .btn-theme-toggle:active svg {
+    stroke: #475569 !important;
+    transition: none !important;
+    transform: none !important;
 }
 
 /* RESPONSIVE MEDIA QUERIES */

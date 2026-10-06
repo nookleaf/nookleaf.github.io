@@ -204,14 +204,18 @@
     background: rgba(255, 255, 255, 0.02);
 }
 
+.docs-wrapper code,
 .docs-table code {
     font-family: 'JetBrains Mono', monospace;
-    background: rgba(239, 68, 68, 0.1);
-    color: #fca5a5;
-    padding: 2px 7px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    border: 1px solid rgba(239, 68, 68, 0.2);
+    background: none;
+    color: inherit;
+    padding: 0;
+    border: none;
+    font-size: 0.88em;
+}
+
+.docs-wrapper .code-block code {
+    font-size: inherit;
 }
 
 /* Feature Checklist & Warnings */
@@ -222,12 +226,10 @@
 }
 
 .feature-list li {
-    padding: 8px 0;
+    padding: 8px 0 8px 1.5em;
+    text-indent: -1.5em;
     font-size: 0.95rem;
     color: #e2e8f0;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
     line-height: 1.6;
 }
 
@@ -447,10 +449,11 @@ body.light-mode .docs-table tr:hover td {
     background: #fff5f5 !important;
 }
 
+body.light-mode .docs-wrapper code,
 body.light-mode .docs-table code {
-    background: #fee2e2 !important;
-    color: #dc2626 !important;
-    border: 1px solid #fca5a5 !important;
+    background: none !important;
+    color: inherit !important;
+    border: none !important;
 }
 
 /* Feature list in Light Mode */
@@ -503,4 +506,119 @@ body.light-mode .toc-list a {
 body.light-mode .toc-list a:hover {
     color: #dc2626 !important;
     background: #fee2e2 !important;
+}
+
+/* Tutorial / Documentation Images */
+.docs-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    display: block;
+    margin: 14px 0 8px 0;
+}
+
+.docs-figure {
+    margin: 16px 0 24px 0;
+}
+
+.docs-figcaption {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+body.light-mode .docs-img {
+    border-color: rgba(239, 68, 68, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .docs-figcaption {
+    color: #64748b;
+}
+
+/* Custom Accordion / Spoiler Component */
+.docs-spoiler {
+    background: rgba(20, 10, 10, 0.5);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.25s ease;
+}
+
+.docs-spoiler[open] {
+    border-color: rgba(239, 68, 68, 0.5);
+    background: rgba(26, 12, 12, 0.7);
+    box-shadow: 0 4px 25px rgba(239, 68, 68, 0.08);
+}
+
+.docs-spoiler-summary {
+    padding: 16px 20px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.docs-spoiler-summary::-webkit-details-marker {
+    display: none;
+}
+
+.docs-spoiler-summary:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #fca5a5;
+}
+
+.docs-spoiler-summary .spoiler-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.docs-spoiler-summary .spoiler-icon {
+    font-size: 0.85rem;
+    transition: transform 0.25s ease;
+    color: #f87171;
+}
+
+.docs-spoiler[open] .docs-spoiler-summary .spoiler-icon {
+    transform: rotate(180deg);
+}
+
+.docs-spoiler-body {
+    padding: 10px 22px 24px 22px;
+    border-top: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+body.light-mode .docs-spoiler {
+    background: #ffffff;
+    border-color: rgba(239, 68, 68, 0.22);
+}
+
+body.light-mode .docs-spoiler[open] {
+    border-color: #ef4444;
+    background: #fffafa;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.08);
+}
+
+body.light-mode .docs-spoiler-summary {
+    color: #0f172a;
+}
+
+body.light-mode .docs-spoiler-summary:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+body.light-mode .docs-spoiler-body {
+    border-top-color: rgba(239, 68, 68, 0.15);
 }
