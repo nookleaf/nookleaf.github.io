@@ -84,6 +84,12 @@
 
                     <div class="alert-box-warn" style="margin-bottom: 20px;">
                         <ul class="feature-list" style="margin: 0; padding: 0;">
+                            <li data-i18n="inst_s0_warn_bootmode"><strong>Check Boot Mode (UEFI vs Legacy BIOS):</strong> Press <kbd>Win + R</kbd>, type <code>msinfo32</code>, and press <kbd>Enter</kbd>. Look for <strong>BIOS Mode</strong> in System Summary:
+                                <ul>
+                                    <li>If it says <strong>UEFI</strong> &rarr; Choose <strong>GPT</strong> partition style.</li>
+                                    <li>If it says <strong>Legacy</strong> &rarr; Choose <strong>MBR</strong> partition style.</li>
+                                </ul>
+                            </li>
                             <li data-i18n="inst_s0_warn_virus"><strong>Clean PC Check:</strong> Ensure your PC is completely free from malware or viruses. If you suspect an infection or are unsure, do <strong>not</strong> install from within the compromised system. Instead, create a bootable USB drive using another clean, trusted computer.</li>
                             <li data-i18n="inst_s0_warn_defender"><strong>Disable Security Software:</strong> Temporarily disable Windows Defender or any third-party antivirus software while preparing installation files and partition tools, as security software often flags and blocks OS reinstall utilities.</li>
                             <li data-i18n="inst_s0_warn_rename"><strong>Rename Drive C to "Install Here":</strong> Open File Explorer, right-click Drive C, and rename it to <strong>Install Here</strong>. This is extremely important so you can easily distinguish it and avoid accidentally formatting or wiping the wrong drive during installation.</li>
@@ -126,11 +132,11 @@
 
                             <div style="margin-bottom: 20px;">
                                 <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1a_vstep_opt">
-                                    <strong style="color: #f87171;">2. Partition Style &amp; Secure Boot:</strong> Click the <strong>Option</strong> menu at the top. Under <strong>Partition Style</strong>, choose <strong>MBR</strong> (for Legacy BIOS/UEFI) or <strong>GPT</strong> (for UEFI). You can also toggle <strong>Secure Boot Support</strong> according to your motherboard settings.
+                                    <strong style="color: #f87171;">2. Partition Style &amp; Secure Boot:</strong> Click the <strong>Option</strong> menu at the top. Under <strong>Partition Style</strong>, choose <strong>GPT</strong> or <strong>MBR</strong> according to the boot mode you determined earlier. You can also toggle <strong>Secure Boot Support</strong> if needed.
                                 </p>
                                 <figure class="docs-figure">
                                     <img src="img/docs_install/ventoy_options.jpg" alt="Ventoy Partition Style and Secure Boot Option" class="docs-img" loading="lazy">
-                                    <figcaption class="docs-figcaption" data-i18n="inst_s1a_vstep_opt_cap">Configure Partition Style (MBR/GPT) and Secure Boot Support</figcaption>
+                                    <figcaption class="docs-figcaption" data-i18n="inst_s1a_vstep_opt_cap">Configure Partition Style (Option menu) and Secure Boot Support</figcaption>
                                 </figure>
                             </div>
 
@@ -193,23 +199,18 @@
                                         <li data-i18n="inst_s1b_rst1"><strong>Device:</strong> Select your USB flash drive.</li>
                                         <li data-i18n="inst_s1b_rst2"><strong>Boot selection:</strong> Click <strong>SELECT</strong> and browse to your downloaded tetoOS <code>.iso</code> file.</li>
                                         <li data-i18n="inst_s1b_rst3"><strong>Image option:</strong> Select <strong>Standard Windows Installation</strong>.</li>
-                                        <li data-i18n="inst_s1b_rst4"><strong>Partition scheme &amp; Target system:</strong>
-                                            <ul>
-                                                <li>For <strong>UEFI</strong>: Select <strong>GPT</strong> (Target system: <em>UEFI (non CSM)</em>).</li>
-                                                <li>For <strong>Legacy BIOS</strong>: Select <strong>MBR</strong> (Target system: <em>BIOS or UEFI</em>).</li>
-                                            </ul>
-                                        </li>
+                                        <li data-i18n="inst_s1b_rst4"><strong>Partition scheme:</strong> In the dropdown, select <strong>GPT</strong> or <strong>MBR</strong> according to the boot mode you determined earlier (the Target system will configure automatically).</li>
                                         <li data-i18n="inst_s1b_rst5">Click <strong>START</strong> and confirm the warning to write the bootable image.</li>
                                     </ul>
                                 </div>
                             </div>
 
-                            <div style="margin-bottom: 10px;">
-                                <figure class="docs-figure m-0">
-                                    <img src="img/docs_install/rufus_bootmode.jpg" alt="Rufus BIOS or UEFI dual mode" class="docs-img" style="max-width: 480px;" loading="lazy">
-                                    <figcaption class="docs-figcaption" data-i18n="inst_s1b_rcap2">Target system configuration (BIOS or UEFI)</figcaption>
-                                </figure>
-                            </div>
+                            <!-- <div style="margin-bottom: 10px;"> -->
+                                <!-- <figure class="docs-figure m-0"> -->
+                                    <!-- <img src="img/docs_install/rufus_bootmode.jpg" alt="Rufus BIOS or UEFI dual mode" class="docs-img" style="max-width: 480px;" loading="lazy"> -->
+                                    <!-- <figcaption class="docs-figcaption" data-i18n="inst_s1b_rcap2">Select Partition scheme (GPT or MBR)</figcaption> -->
+                                <!-- </figure> -->
+                            <!-- </div> -->
                         </div>
                     </details>
 
@@ -382,19 +383,19 @@
                     <!-- Step 13 -->
                     <div style="margin-bottom: 24px;">
                         <p style="color: #cbd5e1; line-height: 1.7; margin-bottom: 8px;" data-i18n="inst_s1b_step13">
-                            <strong style="color: #f87171;">13. Restart and Select Bootable TetoOS:</strong> Restart your computer. During startup, the <strong>Windows Boot Manager</strong> screen will appear. Depending on your system (Legacy BIOS or UEFI), you may see either the classic black text menu or the modern blue graphical menu. Select <strong>Bootable TetoOS</strong> (using arrow keys or mouse) and press <kbd>Enter</kbd> to boot into the installer!
+                            <strong style="color: #f87171;">13. Restart and Select Bootable TetoOS:</strong> Restart your computer. During startup, the <strong>Windows Boot Manager</strong> screen will appear (either the modern blue menu or classic black menu). Select <strong>Bootable TetoOS</strong> (using arrow keys or mouse) and press <kbd>Enter</kbd> to boot into the installer!
                         </p>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <figure class="docs-figure m-0">
                                     <img src="img/docs_install/easybcd_step13_bootmenu.jpg" alt="Modern Blue Boot Manager Screen" class="docs-img" loading="lazy">
-                                    <figcaption class="docs-figcaption" data-i18n="inst_s1b_boot_blue">Modern Blue Boot Menu (UEFI): Click or select Bootable TetoOS</figcaption>
+                                    <figcaption class="docs-figcaption" data-i18n="inst_s1b_boot_blue">Modern Blue Boot Menu: Click or select Bootable TetoOS</figcaption>
                                 </figure>
                             </div>
                             <div class="col-md-6">
                                 <figure class="docs-figure m-0">
                                     <img src="img/docs_install/easybcd_step13_bootmenu_legacy.jpg" alt="Classic Black Boot Manager Screen" class="docs-img" loading="lazy">
-                                    <figcaption class="docs-figcaption" data-i18n="inst_s1b_boot_black">Classic Black Boot Menu (Legacy): Use arrow keys and Enter</figcaption>
+                                    <figcaption class="docs-figcaption" data-i18n="inst_s1b_boot_black">Classic Black Boot Menu: Use arrow keys and Enter</figcaption>
                                 </figure>
                         </div>
                     </div>
