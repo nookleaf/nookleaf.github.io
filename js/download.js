@@ -1,7 +1,7 @@
-﻿// tetoOS download modal and edition selector
+// tetoOS download modal and edition selector
 
 let currentOS = 'win10';
-let currentBuild = '21h2';
+let currentBuild = '2021ltsc';
 let currentType = 'sl';
 let currentTab = 'supported';
 let selectedEditionObj = null;
@@ -43,6 +43,7 @@ function renderBuildPills() {
             btn.classList.add('active');
             currentBuild = build.id;
             updateTypeRestrictions();
+            updateSSDWarning();
             resetSelection();
             renderEditions();
         });
@@ -51,23 +52,55 @@ function renderBuildPills() {
     });
 
     updateTypeRestrictions();
+    updateSSDWarning();
 }
 
 /**
- * Handle restrictions (e.g. 26H2 has NO Superlite)
+ * Handle SSD/NVMe warning for Windows 11 24H2 and above (24H2, 25H2, 26H2)
+ */
+function updateSSDWarning() {
+    const ssdBox = document.getElementById('ssd-warning-box');
+    if (!ssdBox) return;
+
+    const isWin11Newer = currentOS === 'win11' && ['25h2_24h2', '24h2_25h2', '24h2', '25h2', '26h2'].includes(currentBuild);
+    if (isWin11Newer) {
+        ssdBox.classList.remove('d-none');
+    } else {
+        ssdBox.classList.add('d-none');
+    }
+}
+
+/**
+ * Handle restrictions:
+ * - 24H2 to 26H2 (Windows 11) has NO Superlite (Normal only due to Windows Update mechanism)
+ * - 2019 LTSC (Windows 10) has NO Normal (Superlite only)
  */
 function updateTypeRestrictions() {
     const slBtn = document.querySelector('.teto-type-btn[data-type="sl"]');
     const normalBtn = document.querySelector('.teto-type-btn[data-type="normal"]');
-    const noticeBox = document.getElementById('build-notice-box');
+    const notice26H2 = document.getElementById('build-notice-box');
+    const notice2019 = document.getElementById('win10-2019-notice-box');
 
-    const is26H2 = currentOS === 'win11' && currentBuild === '26h2';
+    const isWin11NoSL = currentOS === 'win11' && ['25h2_24h2', '24h2_25h2', '24h2', '25h2', '26h2'].includes(currentBuild);
+    const is2019LTSC = currentOS === 'win10' && currentBuild === '2019ltsc';
 
-    if (is26H2) {
+    // Reset default button states & notices
+    if (slBtn) {
+        slBtn.disabled = false;
+        slBtn.title = '';
+    }
+    if (normalBtn) {
+        normalBtn.disabled = false;
+        normalBtn.title = '';
+    }
+    if (notice26H2) notice26H2.classList.add('d-none');
+    if (notice2019) notice2019.classList.add('d-none');
+
+    if (isWin11NoSL) {
         if (slBtn) {
             slBtn.disabled = true;
             slBtn.classList.remove('active');
-            slBtn.title = 'Superlite is not available for 26H2';
+            slBtn.title = 'Superlite is not available for 24H2 - 26H2';
         }
         if (normalBtn) {
             normalBtn.classList.add('active');
@@ -75,20 +108,31 @@ function updateTypeRestrictions() {
         if (currentType === 'sl') {
             currentType = 'normal';
         }
-        if (noticeBox) {
-            noticeBox.classList.remove('d-none');
+        if (notice26H2) {
+            notice26H2.classList.remove('d-none');
+        }
+    } else if (is2019LTSC) {
+        if (normalBtn) {
+            normalBtn.disabled = true;
+            normalBtn.classList.remove('active');
+            normalBtn.title = 'Normal Edition is not available for 2019 LTSC';
+        }
+        if (slBtn) {
+            slBtn.classList.add('active');
+        }
+        if (currentType === 'normal') {
+            currentType = 'sl';
+        }
+        if (notice2019) {
+            notice2019.classList.remove('d-none');
         }
     } else {
-        if (slBtn) {
-            slBtn.disabled = false;
-            slBtn.title = '';
-            if (currentType === 'sl') {
-                slBtn.classList.add('active');
-                if (normalBtn) normalBtn.classList.remove('active');
-            }
-        }
-        if (noticeBox) {
-            noticeBox.classList.add('d-none');
+        if (currentType === 'sl') {
+            if (slBtn) slBtn.classList.add('active');
+            if (normalBtn) normalBtn.classList.remove('active');
+        } else {
+            if (normalBtn) normalBtn.classList.add('active');
+            if (slBtn) slBtn.classList.remove('active');
         }
     }
 }
@@ -173,7 +217,11 @@ function renderEditions() {
                     zh: '(进行中)',
                     ar: '(قيد التنفيذ)'
                 };
-                displayName = displayName.replace('(On Proses)', inProgressText[currentLang] || '(In Progress)');
+                if (displayName.includes('(On Proses)')) {
+                    displayName = displayName.replace('(On Proses)', inProgressText[currentLang] || '(In Progress)');
+                } else if (!displayName.includes('(In Progress)')) {
+                    displayName += ' ' + (inProgressText[currentLang] || '(In Progress)');
+                }
             }
             btn.textContent = displayName;
 

@@ -67,6 +67,15 @@ const moedevComponents = {
                         <li><a class="dropdown-item" href="#" onclick="setLanguage('zh'); return false;"><img src="https://flagcdn.com/16x12/cn.png" width="16" height="12" alt="ZH" style="vertical-align:middle;margin-right:8px;"> 中文</a></li>
                         <li><a class="dropdown-item" href="#" onclick="setLanguage('ko'); return false;"><img src="https://flagcdn.com/16x12/kr.png" width="16" height="12" alt="KO" style="vertical-align:middle;margin-right:8px;"> 한국어</a></li>
                         <li><a class="dropdown-item" href="#" onclick="setLanguage('ar'); return false;"><img src="https://flagcdn.com/16x12/sa.png" width="16" height="12" alt="AR" style="vertical-align:middle;margin-right:8px;"> العربية</a></li>
+                        ${(function() {
+                            const params = new URLSearchParams(window.location.search);
+                            const isIdTrigger = params.get('lang') === 'id';
+                            const isUnlocked = localStorage.getItem('moedev_id_unlocked') === 'true' || isIdTrigger;
+                            if (isUnlocked) {
+                                return `<li><a class="dropdown-item" href="#" onclick="setLanguage('id'); return false;"><img src="https://flagcdn.com/16x12/id.png" width="16" height="12" alt="ID" style="vertical-align:middle;margin-right:8px;"> Bahasa Indonesia</a></li>`;
+                            }
+                            return '';
+                        })()}
                     </ul>
                 </div>
 
@@ -299,10 +308,23 @@ const moedevComponents = {
 
 // Auto-run when DOM is ready, BEFORE translations run
 document.addEventListener('DOMContentLoaded', () => {
+    // Check ?lang= parameter (supports en, ja, ru, zh, ko, ar, id)
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get('lang');
+    const validLangs = ['en', 'ja', 'ru', 'zh', 'ko', 'ar', 'id'];
+
+    if (urlLang && validLangs.includes(urlLang)) {
+        if (urlLang === 'id') {
+            localStorage.setItem('moedev_id_unlocked', 'true');
+        }
+        localStorage.setItem('moedev_lang', urlLang);
+    }
+
     moedevComponents.init();
     if (typeof setLanguage === 'function') {
-        let savedLang = localStorage.getItem('moedev_lang') || localStorage.getItem('moedev_lang') || 'en';
-        if (savedLang === 'id') savedLang = 'en';
+        const isUnlocked = localStorage.getItem('moedev_id_unlocked') === 'true';
+        let savedLang = localStorage.getItem('moedev_lang') || 'en';
+        if (savedLang === 'id' && !isUnlocked) savedLang = 'en';
         setLanguage(savedLang);
     }
 });

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -54,7 +54,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css?v=2.7">
-    <link rel="stylesheet" href="css/teto.css?v=2.5">
+    <link rel="stylesheet" href="css/teto.css?v=2.6">
 </head>
 <body class="teto-theme">
 
@@ -184,9 +184,20 @@
                             </div>
                         </div>
 
-                        <!-- 26H2 Notice Box -->
+                        <!-- Windows 11 24H2+ SSD/NVMe Warning Box -->
+                        <div id="ssd-warning-box" class="alert-notice-box alert-warning-box d-none">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="flex-shrink: 0; min-width: 16px;"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/></svg>
+                            <span data-i18n="dl_win11_ssd_warn">It is highly recommended to use an SSD/NVMe for Windows 11.</span>
+                        </div>
+
+                        <!-- Windows 11 24H2 - 26H2 Notice Box -->
                         <div id="build-notice-box" class="alert-notice-box d-none" data-i18n="dl_26h2_notice">
-                            Superlite is unavailable for 26H2 as it is actively supported by Microsoft. Normal Edition is selected.
+                            Superlite is unavailable for 24H2 to 26H2 due to changes in the Windows Update mechanism. Normal Edition is selected.
+                        </div>
+
+                        <!-- Windows 10 2019 LTSC Notice Box -->
+                        <div id="win10-2019-notice-box" class="alert-notice-box d-none" data-i18n="dl_2019ltsc_notice">
+                            Normal Edition is unavailable for 2019 LTSC. Superlite Edition is selected.
                         </div>
 
                         <!-- List Download -->

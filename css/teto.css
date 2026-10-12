@@ -268,6 +268,15 @@ body.light-mode .btn-license-teto:hover {
     margin-bottom: 14px;
 }
 
+.alert-notice-box.alert-warning-box {
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    color: #fcd34d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .teto-link-help {
     background: none;
     border: none;
@@ -549,6 +558,12 @@ body.light-mode .changelog-content-box {
 
 body.light-mode .changelog-list li {
     color: #334155;
+}
+
+body.light-mode .alert-notice-box.alert-warning-box {
+    background: #fffbeb;
+    border-color: #fde68a;
+    color: #b45309;
 }
 
 /* Responsive Modal Split */

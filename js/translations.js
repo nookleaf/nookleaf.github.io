@@ -82,7 +82,9 @@ const coreTranslations = {
         dl_modal_btn_dl: "Download",
         dl_no_iso: "ISO is not available for this selection.",
         dl_selected: "selected.",
-        dl_26h2_notice: "Superlite is unavailable for 26H2 as it is actively supported by Microsoft. Normal Edition is selected.",
+        dl_26h2_notice: "Superlite is unavailable for 24H2 to 26H2 due to changes in the Windows Update mechanism. Normal Edition is selected.",
+        dl_win11_ssd_warn: "It is highly recommended to use an SSD/NVMe for Windows 11.",
+        dl_2019ltsc_notice: "Normal Edition is unavailable for 2019 LTSC. Superlite Edition is selected.",
 
         cbt_modal_header: "tetoOS Development Roadmap",
         cbt_modal_title: "In Active Development",
@@ -218,7 +220,9 @@ const coreTranslations = {
         dl_modal_btn_dl: "ダウンロード",
         dl_no_iso: "このバージョンのISOは利用できません。",
         dl_selected: "が選択されました。",
-        dl_26h2_notice: "26H2はマイクロソフトによる公式サポート期間中のためSuperlite版は提供されません。Normal Editionが選択されます。",
+        dl_26h2_notice: "Windows Update の仕様変更に伴い、24H2 から 26H2 では Superlite 版は提供されません。Normal Edition が選択されます。",
+        dl_win11_ssd_warn: "Windows 11 では SSD/NVMe の使用を強く推奨します。",
+        dl_2019ltsc_notice: "2019 LTSC では Normal Edition は利用できません。Superlite Edition が選択されます。",
 
         cbt_modal_header: "tetoOS 開発ロードマップ",
         cbt_modal_title: "開発進行中",
@@ -354,7 +358,9 @@ const coreTranslations = {
         dl_modal_btn_dl: "Скачать",
         dl_no_iso: "ISO для этой версии недоступен.",
         dl_selected: "выбрано.",
-        dl_26h2_notice: "Для 26H2 редакция Superlite недоступна, так как сборка официально поддерживается Microsoft. Выбрана Normal Edition.",
+        dl_26h2_notice: "Редакция Superlite недоступна для версий с 24H2 по 26H2 из-за изменений в механизме Windows Update. Выбрана Normal Edition.",
+        dl_win11_ssd_warn: "Настоятельно рекомендуется использовать SSD/NVMe для Windows 11.",
+        dl_2019ltsc_notice: "Редакция Normal недоступна для 2019 LTSC. Выбрана Superlite Edition.",
 
         cbt_modal_header: "План разработки tetoOS",
         cbt_modal_title: "В активной разработке",
@@ -490,7 +496,9 @@ const coreTranslations = {
         dl_modal_btn_dl: "立即下载",
         dl_no_iso: "该版本暂无可用 ISO。",
         dl_selected: "已选中。",
-        dl_26h2_notice: "由于 26H2 仍受微软官方官方支持，因此不提供 Superlite 精简版。已自动选择 Normal Edition。",
+        dl_26h2_notice: "由于 Windows Update 机制的更改，24H2 至 26H2 版本不提供 Superlite 精简版。已自动选择 Normal Edition。",
+        dl_win11_ssd_warn: "强烈建议在 Windows 11 上使用 SSD/NVMe 固态硬盘。",
+        dl_2019ltsc_notice: "2019 LTSC 暂不提供 Normal 版本。已自动选择 Superlite 精简版。",
 
         cbt_modal_header: "tetoOS 开发路线图",
         cbt_modal_title: "正在积极开发中",
@@ -626,7 +634,9 @@ const coreTranslations = {
         dl_modal_btn_dl: "다운로드",
         dl_no_iso: "이 버전 조합의 ISO 파일은 준비되지 않았습니다.",
         dl_selected: "선택됨.",
-        dl_26h2_notice: "26H2는 Microsoft에서 공식 지원 중이므로 Superlite 에디션이 제공되지 않습니다. Normal Edition이 선택됩니다.",
+        dl_26h2_notice: "Windows Update 메커니즘 변경으로 인해 24H2부터 26H2까지는 Superlite 에디션이 제공되지 않습니다. Normal Edition이 선택됩니다.",
+        dl_win11_ssd_warn: "Windows 11에서는 SSD/NVMe 사용을 적극 권장합니다.",
+        dl_2019ltsc_notice: "2019 LTSC에서는 Normal Edition이 제공되지 않습니다. Superlite Edition이 선택됩니다.",
 
         cbt_modal_header: "tetoOS 개발 로드맵",
         cbt_modal_title: "활발한 개발 진행 중",
@@ -762,7 +772,9 @@ const coreTranslations = {
         dl_modal_btn_dl: "تحميل",
         dl_no_iso: "ملف ISO غير متوفر لهذا الإصدار.",
         dl_selected: "تم الاختيار.",
-        dl_26h2_notice: "نسخة Superlite غير متوفرة لـ 26H2 لأنها لا تزال مدعومة رسمياً من Microsoft. تم تحديد Normal Edition.",
+        dl_26h2_notice: "نسخة Superlite غير متوفرة من 24H2 إلى 26H2 بسبب التغييرات في آلية Windows Update. تم تحديد Normal Edition.",
+        dl_win11_ssd_warn: "يوصى بشدة باستخدام قرص SSD/NVMe لنظام Windows 11.",
+        dl_2019ltsc_notice: "نسخة Normal غير متوفرة لـ 2019 LTSC. تم تحديد Superlite Edition.",
 
         cbt_modal_header: "خارطة طريق تطوير tetoOS",
         cbt_modal_title: "قيد التطوير المستمر",
@@ -898,7 +910,9 @@ const coreTranslations = {
         dl_modal_btn_dl: "Download",
         dl_no_iso: "ISO tidak tersedia untuk pilihan ini.",
         dl_selected: "dipilih.",
-        dl_26h2_notice: "Khusus build 26H2 tidak tersedia Superlite karena masih didukung resmi oleh Microsoft. Menggunakan Normal Edition.",
+        dl_26h2_notice: "Superlite tidak tersedia untuk 24H2 sampai 26H2 karena perubahan mekanisme Windows Update. Menggunakan Normal Edition.",
+        dl_win11_ssd_warn: "Sangat disarankan menggunakan SSD/NVMe untuk Windows 11.",
+        dl_2019ltsc_notice: "Normal Edition tidak tersedia untuk 2019 LTSC. Menggunakan Superlite Edition.",
 
         cbt_modal_header: "Roadmap Pengembangan tetoOS",
         cbt_modal_title: "Dalam Pengembangan Aktif",
@@ -968,8 +982,11 @@ var translations = window.translations;
 function setLanguage(lang) {
     const t = window.translations || translations || {};
     if (!t[lang]) lang = 'en';
-    // If current saved is 'id' but Indonesian is hidden, fallback to 'en'
-    if (lang === 'id') lang = 'en';
+    // Check Indonesian unlock state
+    const isUnlocked = localStorage.getItem('moedev_id_unlocked') === 'true';
+    if (lang === 'id' && !isUnlocked) {
+        lang = 'en';
+    }
     localStorage.setItem('moedev_lang', lang);
     document.documentElement.lang = lang;
 
@@ -983,6 +1000,7 @@ function setLanguage(lang) {
         zh: flagImg('cn', 'ZH'),
         ko: flagImg('kr', 'KO'),
         ar: flagImg('sa', 'AR'),
+        id: flagImg('id', 'ID'),
     };
     const labelHTML = langLabels[lang] || flagImg('us', 'EN');
 
@@ -1014,7 +1032,20 @@ function setLanguage(lang) {
 
 // Auto-initialize language on page load
 document.addEventListener('DOMContentLoaded', () => {
+    // Check ?lang= parameter (supports en, ja, ru, zh, ko, ar, id)
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get('lang');
+    const validLangs = ['en', 'ja', 'ru', 'zh', 'ko', 'ar', 'id'];
+
+    if (urlLang && validLangs.includes(urlLang)) {
+        if (urlLang === 'id') {
+            localStorage.setItem('moedev_id_unlocked', 'true');
+        }
+        localStorage.setItem('moedev_lang', urlLang);
+    }
+
+    const isUnlocked = localStorage.getItem('moedev_id_unlocked') === 'true';
     let savedLang = localStorage.getItem('moedev_lang') || 'en';
-    if (savedLang === 'id') savedLang = 'en';
+    if (savedLang === 'id' && !isUnlocked) savedLang = 'en';
     setLanguage(savedLang);
 });
