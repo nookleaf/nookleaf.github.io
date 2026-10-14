@@ -1,3 +1,35 @@
+/**
+ * Helper to recursively find an edition by its 'id' anywhere in the JSON tree
+ * Supports both raw editions.json structure and flat key-value dictionary
+ */
+function findEditionById(obj, targetId) {
+  if (!obj || typeof obj !== "object") return null;
+  // If flat dictionary: obj[targetId]
+  if (obj[targetId] && obj[targetId].url) return obj[targetId];
+  // If matching node
+  if (obj.id === targetId && obj.url) return obj;
+
+  for (const key of Object.keys(obj)) {
+    const found = findEditionById(obj[key], targetId);
+    if (found) return found;
+  }
+  return null;
+}
+
+/**
+ * Helper to strip 'url' from the JSON tree for public frontend delivery
+ */
+function sanitizePublicData(obj) {
+  if (!obj || typeof obj !== "object") return obj;
+  if (Array.isArray(obj)) return obj.map(sanitizePublicData);
+  const copy = { ...obj };
+  if ("url" in copy) copy.url = "";
+  for (const key of Object.keys(copy)) {
+    copy[key] = sanitizePublicData(copy[key]);
+  }
+  return copy;
+}
+
 export default {
   async fetch(request, env) {
     const corsHeaders = {
@@ -13,25 +45,15 @@ export default {
     const url = new URL(request.url);
     const rawData = JSON.parse(env.EDITIONS_SECRET_DATA || "{}");
 
+    // Endpoint 1: Mengembalikan struktur JSON publik (field 'url' disembunyikan)
     if (request.method === "GET" && url.pathname === "/api/editions") {
-      const publicData = {};
-      for (const [id, item] of Object.entries(rawData)) {
-        publicData[id] = {
-          id: id,
-          name: item.name,
-          disabled: Boolean(item.disabled),
-          isEa: Boolean(item.isEa),
-          size: item.size || "-",
-          date: item.date || "-",
-          filename: item.filename || "",
-          changelog: Array.isArray(item.changelog) ? item.changelog : []
-        };
-      }
+      const publicData = sanitizePublicData(rawData);
       return new Response(JSON.stringify(publicData), {
         headers: { ...corsHeaders, "Content-Type": "application/json" }
       });
     }
 
+    // Endpoint 2: Verifikasi Turnstile dan berikan URL asli
     if (request.method === "POST" && url.pathname === "/api/download") {
       try {
         const { token, editionId } = await request.json();
@@ -43,6 +65,7 @@ export default {
           });
         }
 
+        // Verifikasi token Turnstile jika TURNSTILE_SECRET_KEY diset
         if (env.TURNSTILE_SECRET_KEY) {
           if (!token) {
             return new Response(JSON.stringify({ success: false, error: "Missing Turnstile token" }), {
@@ -69,7 +92,9 @@ export default {
           }
         }
 
-        const edition = rawData[editionId];
+        // Cari edisi secara rekursif dari struktur data apapun yang di-paste pengguna
+        const edition = findEditionById(rawData, editionId);
+
         if (!edition || !edition.url) {
           return new Response(JSON.stringify({ success: false, error: "Link not found or not ready" }), {
             status: 404,
