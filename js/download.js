@@ -1,10 +1,13 @@
-// tetoOS download modal and edition selector
+window.TETO_WORKER_URL = window.TETO_WORKER_URL || 'https://teto-download-gate.vincntshn.workers.dev';
+window.TETO_TURNSTILE_SITEKEY = window.TETO_TURNSTILE_SITEKEY || '0x4AAAAAAFWNmXv2tbtJ8vKM';
 
 let currentOS = 'win10';
 let currentBuild = '2021ltsc';
 let currentType = 'sl';
 let currentTab = 'supported';
 let selectedEditionObj = null;
+let turnstileWidgetId = null;
+let currentTurnstileToken = null;
 
 /**
  * Get active database from window.TETO_EDITIONS_CONFIG
@@ -261,6 +264,85 @@ function openChangelogModal(item) {
 }
 
 /**
+ * Initialize or reset Cloudflare Turnstile verification widget
+ */
+function initTurnstile() {
+    const wrapper = document.getElementById('turnstile-wrapper');
+    const box = document.getElementById('turnstile-box');
+    const dlBtn = document.getElementById('finalDownloadBtn');
+    if (!wrapper || !box) return;
+
+    wrapper.classList.remove('d-none');
+
+    function renderWidget() {
+        if (!window.turnstile || typeof window.turnstile.render !== 'function') {
+            // Jika Turnstile tidak termuat (misal offline/tanpa internet), tombol unduh tetap aktif pada mode lokal
+            if (!window.TETO_WORKER_URL && dlBtn && selectedEditionObj) {
+                dlBtn.classList.remove('disabled');
+            }
+            return;
+        }
+
+        if (turnstileWidgetId !== null) {
+            try {
+                window.turnstile.reset(turnstileWidgetId);
+                currentTurnstileToken = null;
+            } catch (e) {
+                console.warn('Turnstile reset error:', e);
+            }
+        } else {
+            try {
+                turnstileWidgetId = window.turnstile.render('#turnstile-box', {
+                    sitekey: window.TETO_TURNSTILE_SITEKEY,
+                    theme: 'dark',
+                    callback: function(token) {
+                        currentTurnstileToken = token;
+                        if (dlBtn && selectedEditionObj) {
+                            dlBtn.classList.remove('disabled');
+                        }
+                    },
+                    'expired-callback': function() {
+                        currentTurnstileToken = null;
+                        if (dlBtn && window.TETO_WORKER_URL) {
+                            dlBtn.classList.add('disabled');
+                        }
+                    },
+                    'error-callback': function() {
+                        currentTurnstileToken = null;
+                        if (!window.TETO_WORKER_URL && dlBtn && selectedEditionObj) {
+                            dlBtn.classList.remove('disabled');
+                        }
+                    }
+                });
+            } catch (e) {
+                console.warn('Turnstile render error:', e);
+                if (dlBtn && selectedEditionObj) {
+                    dlBtn.classList.remove('disabled');
+                }
+            }
+        }
+    }
+
+    if (window.turnstile) {
+        renderWidget();
+    } else {
+        let count = 0;
+        const checkTurnstile = setInterval(() => {
+            count++;
+            if (window.turnstile) {
+                clearInterval(checkTurnstile);
+                renderWidget();
+            } else if (count >= 10) {
+                clearInterval(checkTurnstile);
+                if (!window.TETO_WORKER_URL && dlBtn && selectedEditionObj) {
+                    dlBtn.classList.remove('disabled');
+                }
+            }
+        }, 200);
+    }
+}
+
+/**
  * Render edition items in the download list
  */
 function renderEditions() {
@@ -338,7 +420,16 @@ function renderEditions() {
 
                     helperText.style.display = 'none';
                     const dlBtn = document.getElementById('finalDownloadBtn');
-                    if (dlBtn) dlBtn.classList.remove('disabled');
+
+                    // Inisialisasi widget Turnstile
+                    initTurnstile();
+
+                    // Pada mode lokal tanpa Worker, aktifkan langsung tombol unduh
+                    if (!window.TETO_WORKER_URL && dlBtn) {
+                        dlBtn.classList.remove('disabled');
+                    } else if (window.TETO_WORKER_URL && dlBtn && !currentTurnstileToken) {
+                        dlBtn.classList.add('disabled');
+                    }
                 });
             }
 
@@ -377,10 +468,19 @@ function renderEditions() {
  */
 function resetSelection() {
     selectedEditionObj = null;
+    currentTurnstileToken = null;
     const footerStatus = document.getElementById('dl-status-text');
     const finalDownloadBtn = document.getElementById('finalDownloadBtn');
     const helperText = document.getElementById('helper-text-choose');
     const currentLang = localStorage.getItem('moedev_lang') || 'en';
+
+    const turnstileWrapper = document.getElementById('turnstile-wrapper');
+    if (turnstileWrapper) turnstileWrapper.classList.add('d-none');
+    if (window.turnstile && turnstileWidgetId !== null) {
+        try {
+            window.turnstile.reset(turnstileWidgetId);
+        } catch (e) {}
+    }
 
     if (footerStatus) {
         footerStatus.textContent = (typeof translations !== 'undefined' && translations[currentLang] && translations[currentLang]['dl_modal_no_selection'])
@@ -412,6 +512,66 @@ function switchToSupportedTab() {
 
     const supportedTab = document.querySelector('.teto-tab[data-tab="supported"]');
     if (supportedTab) supportedTab.click();
+}
+
+/**
+ * Execute download flow (supports Cloudflare Worker verification & local fallback)
+ */
+async function executeDownload(item) {
+    if (!item) return;
+
+    // Mode Cloudflare Worker (Production)
+    if (window.TETO_WORKER_URL) {
+        const dlBtn = document.getElementById('finalDownloadBtn');
+        const originalContent = dlBtn ? dlBtn.innerHTML : '';
+        if (dlBtn) {
+            dlBtn.classList.add('disabled');
+            dlBtn.innerHTML = `
+                <div class="spinner-border spinner-border-sm text-light me-2" role="status"></div>
+                <span>Verifying...</span>
+            `;
+        }
+
+        try {
+            const res = await fetch(`${window.TETO_WORKER_URL}/api/download`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    token: currentTurnstileToken || '',
+                    editionId: item.id || item.name
+                })
+            });
+
+            const data = await res.json();
+            if (data.success && data.url) {
+                window.open(data.url, '_blank');
+            } else {
+                alert(data.error || 'Verification failed. Please complete captcha.');
+                if (window.turnstile && turnstileWidgetId !== null) {
+                    window.turnstile.reset(turnstileWidgetId);
+                    currentTurnstileToken = null;
+                }
+            }
+        } catch (err) {
+            console.error('Download verification error:', err);
+            alert('Failed to connect to verification server. Please try again.');
+        } finally {
+            if (dlBtn) {
+                dlBtn.innerHTML = originalContent;
+                if (!window.TETO_WORKER_URL || currentTurnstileToken) {
+                    dlBtn.classList.remove('disabled');
+                }
+            }
+        }
+        return;
+    }
+
+    // Mode Fallback Lokal (Laragon / Direct Download via data/editions.json)
+    if (item.url) {
+        window.open(item.url, '_blank');
+    } else {
+        alert('Download link not configured for this edition.');
+    }
 }
 
 /**
@@ -463,9 +623,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                     const continueBtn = document.getElementById('continue-ea-dl');
-                    if (continueBtn) continueBtn.href = selectedEditionObj.url;
-                } else if (selectedEditionObj.url) {
-                    window.open(selectedEditionObj.url, '_blank');
+                    if (continueBtn) {
+                        continueBtn.onclick = (e) => {
+                            e.preventDefault();
+                            if (typeof bootstrap !== 'undefined') {
+                                const eaModalInstance = bootstrap.Modal.getInstance(eaModalEl);
+                                if (eaModalInstance) eaModalInstance.hide();
+                            }
+                            executeDownload(selectedEditionObj);
+                        };
+                    }
+                } else {
+                    executeDownload(selectedEditionObj);
                 }
             }
         });

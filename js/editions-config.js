@@ -1,12 +1,26 @@
-// tetoOS editions and downloads data provider
-// Central data source: data/editions.json
-
+window.TETO_WORKER_URL = window.TETO_WORKER_URL || 'https://teto-download-gate.vincntshn.workers.dev';
+window.TETO_TURNSTILE_SITEKEY = window.TETO_TURNSTILE_SITEKEY || '0x4AAAAAAFWNmXv2tbtJ8vKM';
 window.TETO_EDITIONS_CONFIG = {};
 
 /**
  * Async API fetcher to load central editions data
  */
 window.loadEditionsConfig = async function() {
+    // Mode Worker (jika URL worker dikonfigurasi)
+    if (window.TETO_WORKER_URL) {
+        try {
+            const cfRes = await fetch(`${window.TETO_WORKER_URL}/api/editions`);
+            if (cfRes.ok) {
+                const data = await cfRes.json();
+                window.TETO_EDITIONS_CONFIG = data;
+                return data;
+            }
+        } catch (err) {
+            console.warn('Worker endpoint unavailable, falling back to local data/editions.json:', err);
+        }
+    }
+
+    // Mode Lokal / Direct Fallback
     try {
         const response = await fetch('data/editions.json');
         if (response.ok) {
