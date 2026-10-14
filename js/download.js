@@ -543,8 +543,9 @@ async function executeDownload(item) {
             });
 
             const data = await res.json();
-            if (data.success && data.url) {
-                window.open(data.url, '_blank');
+            const targetUrl = data.url || data.downloadUrl;
+            if (data.success && targetUrl) {
+                window.open(targetUrl, '_blank');
             } else {
                 alert(data.error || 'Verification failed. Please complete captcha.');
                 if (window.turnstile && turnstileWidgetId !== null) {

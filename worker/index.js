@@ -74,18 +74,24 @@ export default {
             });
           }
 
-          const formData = new FormData();
-          formData.append("secret", env.TURNSTILE_SECRET_KEY);
-          formData.append("response", token);
-
           const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
             method: "POST",
-            body: formData,
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              secret: env.TURNSTILE_SECRET_KEY,
+              response: token
+            })
           });
           const outcome = await verifyRes.json();
 
           if (!outcome.success) {
-            return new Response(JSON.stringify({ success: false, error: "Captcha invalid" }), {
+            const errCodes = (outcome["error-codes"] || []).join(", ");
+            return new Response(JSON.stringify({
+              success: false,
+              error: `Captcha invalid (${errCodes || "verification failed"})`
+            }), {
               status: 403,
               headers: { ...corsHeaders, "Content-Type": "application/json" }
             });
@@ -102,7 +108,11 @@ export default {
           });
         }
 
-        return new Response(JSON.stringify({ success: true, downloadUrl: edition.url }), {
+        return new Response(JSON.stringify({
+          success: true,
+          url: edition.url,
+          downloadUrl: edition.url
+        }), {
           status: 200,
           headers: { ...corsHeaders, "Content-Type": "application/json" }
         });
