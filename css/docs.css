@@ -218,19 +218,98 @@
     font-size: inherit;
 }
 
-/* Feature Checklist & Warnings */
+/* Documentation Badges & Tags */
+.docs-wrapper .badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.35rem 0.7rem !important;
+    font-size: 0.82rem;
+    line-height: 1.25;
+    border-radius: 6px;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.docs-wrapper .docs-spoiler-summary .badge {
+    padding: 0.32rem 0.65rem !important;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    border-radius: 6px;
+    vertical-align: middle;
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+    justify-content: center;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.docs-wrapper .docs-table .badge {
+    padding: 0.32rem 0.65rem !important;
+    font-size: 0.82rem;
+    line-height: 1.2;
+    border-radius: 6px;
+    display: inline-flex !important;
+}
+
+/* Feature Checklist & Lists */
+.docs-wrapper ul:not(.toc-list):not(.dropdown-menu):not(.navbar-nav),
+.docs-wrapper ol {
+    margin: 15px 0;
+    padding-left: 1.4rem;
+    color: #cbd5e1;
+    line-height: 1.75;
+}
+
+.docs-wrapper ul:not(.toc-list):not(.dropdown-menu):not(.navbar-nav) li,
+.docs-wrapper ol li {
+    padding: 4px 0;
+    line-height: 1.75;
+}
+
+.docs-wrapper ul:not(.toc-list):not(.dropdown-menu):not(.navbar-nav) li::marker,
+.docs-wrapper ol li::marker {
+    color: #f87171;
+    font-weight: bold;
+}
+
 .feature-list {
-    list-style: none;
-    padding-left: 0;
+    list-style: none !important;
+    padding-left: 0 !important;
     margin: 15px 0;
 }
 
-.feature-list li {
-    padding: 8px 0 8px 1.5em;
-    text-indent: -1.5em;
+.feature-list > li {
+    position: relative;
+    padding: 6px 0 6px 1.5rem !important;
     font-size: 0.95rem;
     color: #e2e8f0;
-    line-height: 1.6;
+    line-height: 1.75;
+    text-indent: 0 !important;
+}
+
+.feature-list > li > span:first-child:is([style*="color"]) {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    line-height: 1.75;
+    display: inline-block;
+    width: 1.2rem;
+    text-align: left;
+}
+
+.feature-list > li ul,
+.feature-list > li ol {
+    margin: 8px 0 4px 0 !important;
+    padding-left: 1.4rem !important;
+}
+
+.feature-list > li ul li,
+.feature-list > li ol li {
+    padding: 3px 0 !important;
+    line-height: 1.65;
 }
 
 .alert-box-warn {
@@ -456,7 +535,22 @@ body.light-mode .docs-table code {
     border: none !important;
 }
 
-/* Feature list in Light Mode */
+/* Feature list and lists in Light Mode */
+body.light-mode .docs-wrapper ul:not(.toc-list):not(.dropdown-menu):not(.navbar-nav),
+body.light-mode .docs-wrapper ol {
+    color: #334155 !important;
+}
+
+body.light-mode .docs-wrapper ul:not(.toc-list):not(.dropdown-menu):not(.navbar-nav) li,
+body.light-mode .docs-wrapper ol li {
+    color: #334155 !important;
+}
+
+body.light-mode .docs-wrapper ul:not(.toc-list):not(.dropdown-menu):not(.navbar-nav) li::marker,
+body.light-mode .docs-wrapper ol li::marker {
+    color: #dc2626 !important;
+}
+
 body.light-mode .feature-list li {
     color: #334155 !important;
 }
@@ -581,7 +675,7 @@ body.light-mode .docs-figcaption {
 .docs-spoiler-summary .spoiler-title-wrap {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
 }
 
 .docs-spoiler-summary .spoiler-icon {

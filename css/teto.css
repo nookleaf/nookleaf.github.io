@@ -197,12 +197,15 @@ body.light-mode .btn-license-teto:hover {
 }
 
 .teto-btn-outline {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
     background: transparent;
     border: 1px solid #333;
     color: #e2e8f0;
     border-radius: 10px;
     padding: 10px 16px;
-    margin-bottom: 12px;
+    margin-bottom: 0;
     text-align: left;
     font-size: 0.95rem;
     font-weight: 600;
@@ -304,6 +307,28 @@ body.light-mode .btn-license-teto:hover {
     height: 15px;
     fill: currentColor;
     flex-shrink: 0;
+}
+
+.teto-link-archive {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #94a3b8;
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.2s ease;
+}
+
+.teto-link-archive:hover {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    text-decoration: none;
 }
 
 .teto-tabs {

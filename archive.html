@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index of /archive/ - moedev tetoOS</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/webp" href="img/t_ic.webp">
+    <style>
+        :root {
+            --bg: #0c0d10;
+            --surface: #14161c;
+            --border: #232733;
+            --text: #e2e8f0;
+            --muted: #838ea3;
+            --link: #60a5fa;
+            --link-hover: #93c5fd;
+            --dir: #f59e0b;
+            --danger: #ef4444;
+            --tag-bg: rgba(239, 68, 68, 0.15);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            padding: 24px 20px 48px;
+            line-height: 1.5;
+            font-size: 13.5px;
+        }
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+        header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 14px;
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+        .breadcrumbs {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+        .breadcrumbs a {
+            color: var(--link);
+            text-decoration: none;
+        }
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+        .notice-banner {
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            border-left: 3px solid var(--danger);
+            border-radius: 4px;
+            padding: 10px 14px;
+            margin-bottom: 18px;
+            color: #fca5a5;
+            font-size: 0.85rem;
+        }
+        .notice-banner strong {
+            color: #fff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+            font-size: 0.88rem;
+        }
+        th {
+            text-align: left;
+            padding: 8px 10px;
+            border-bottom: 1px solid var(--border);
+            color: var(--muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+        td {
+            padding: 7px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+        tr:hover td {
+            background-color: var(--surface);
+        }
+        .icon {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        .icon-dir {
+            color: var(--dir);
+        }
+        .icon-iso {
+            color: #38bdf8;
+        }
+        .icon-txt {
+            color: #a78bfa;
+        }
+        .file-name {
+            color: var(--link);
+            text-decoration: none;
+        }
+        .file-name:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+        .tag-ea {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 1px 6px;
+            border-radius: 3px;
+            background: var(--tag-bg);
+            color: #fca5a5;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            margin-left: 8px;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .size, .date {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+        .desc {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            white-space: normal;
+        }
+        footer {
+            border-top: 1px solid var(--border);
+            padding-top: 14px;
+            font-size: 0.8rem;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        footer a {
+            color: var(--link);
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .hide-mobile {
+                display: none;
+            }
+            body {
+                padding: 16px 12px;
+                font-size: 12.5px;
+            }
+            td, th {
+                padding: 6px 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Index of /archive/</h1>
+            <div class="breadcrumbs">
+                <a href="index.html">&lt;- moedev Home</a> / <a href="teto.html">tetoOS</a> / <span style="color: var(--text);">archive</span>
+            </div>
+        </header>
+
+        <div class="notice-banner">
+            <strong>Archive &amp; Unsupported Builds Notice:</strong> Files listed here are legacy, developmental, or early access testing ISOs. They may contain known bugs, lacks modern update mechanisms, and are intended solely for experimentation or historical reference.
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th class="hide-mobile">Last Modified</th>
+                    <th>Size</th>
+                    <th class="hide-mobile">Description</th>
+                </tr>
+            </thead>
+            <tbody id="archive-table-body">
+                <tr>
+                    <td>
+                        <span class="icon icon-dir">[DIR]</span>
+                        <a href="teto.html" class="file-name">../ (Parent Directory)</a>
+                    </td>
+                    <td class="date hide-mobile">-</td>
+                    <td class="size">-</td>
+                    <td class="desc hide-mobile">Return to tetoOS main downloads</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <footer>
+            <span>tetoOS Archive Mirror | moedev archive server</span>
+            <span><a href="teto.html">Back to Download Center</a></span>
+        </footer>
+    </div>
+
+    <!-- Dynamic synchronization with editions API / config -->
+    <script src="js/editions-config.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const tbody = document.getElementById('archive-table-body');
+            if (!tbody) return;
+
+            // Load API data
+            if (typeof window.loadEditionsConfig === 'function') {
+                await window.loadEditionsConfig();
+            }
+
+            const archives = typeof window.getArchivedBuilds === 'function' ? window.getArchivedBuilds() : [];
+
+            if (archives.length === 0) {
+                const emptyRow = document.createElement('tr');
+                emptyRow.innerHTML = `
+                    <td colspan="4" style="color: var(--muted); text-align: center; padding: 20px;">
+                        No archived builds currently indexed.
+                    </td>
+                `;
+                tbody.appendChild(emptyRow);
+                return;
+            }
+
+            archives.forEach(item => {
+                const tr = document.createElement('tr');
+                const tagHTML = item.isEa ? '<span class="tag-ea">Early Access</span>' : '';
+                const descText = Array.isArray(item.changelog) ? item.changelog.join(' | ') : (item.changelog || 'Archived test ISO');
+
+                tr.innerHTML = `
+                    <td>
+                        <span class="icon icon-iso">[ISO]</span>
+                        <a href="${item.url || '#'}" target="_blank" rel="noopener" class="file-name">${item.filename}</a>
+                        ${tagHTML}
+                    </td>
+                    <td class="date hide-mobile">${item.date || '-'}</td>
+                    <td class="size">${item.size || '-'}</td>
+                    <td class="desc hide-mobile">${descText}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+{
+  "win10": {
+    "name": "Windows 10",
+    "builds": [
+      { "id": "2021ltsc", "label": "2021 LTSC" },
+      { "id": "2019ltsc", "label": "2019 LTSC" }
+    ],
+    "editions": {
+      "2021ltsc": {
+        "sl": {
+          "supported": [
+            {
+              "id": "win10-2021ltsc-sl",
+              "name": "tetoOS 10 Superlite 2021 LTSC",
+              "disabled": true,
+              "url": "https://example.com/downloads/dummy_win10_2021_sl.iso",
+              "changelog": [
+                "Build 19044.7417",
+				"Release Candidate 1"
+              ]
+            }
+          ],
+          "unsupported": [
+            {
+              "id": "win10-2021ltsc-ea",
+              "name": "tetoOS 10 Superlite Early Access March 2026",
+              "filename": "tetoOS-early_ver-08513M26.zip",
+              "disabled": false,
+              "url": "https://sfl.gl/HQfCtx",
+              "size": "2.6 GB",
+              "date": "2026-03-15 14:32",
+              "isEa": true,
+              "changelog": [
+                "Build 19045.4355",
+                "CAUTION: So many bugs."
+              ]
+            }
+          ]
+        },
+        "normal": {
+          "supported": [
+            {
+              "id": "win10-2021ltsc-normal",
+              "name": "tetoOS 10 Normal 2021 LTSC",
+              "disabled": true,
+              "url": "https://example.com/downloads/dummy_win10_2021_normal.iso",
+              "changelog": [
+                "Build 19044.7417",
+				"Release Candidate 1"
+              ]
+            }
+          ],
+          "unsupported": []
+        }
+      },
+      "2019ltsc": {
+        "normalLocked": true,
+        "sl": {
+          "supported": [
+            {
+              "id": "win10-2019ltsc-sl",
+              "name": "tetoOS 10 Superlite 2019 LTSC",
+              "disabled": true,
+              "url": "https://example.com/downloads/dummy_win10_2019_sl.iso",
+              "changelog": [
+                "Build 17763.xxxx",
+                "NOT supported by newer hardware (12th gen Intel and above)"
+			  ]
+            }
+          ],
+          "unsupported": []
+        },
+        "normal": {
+          "supported": [],
+          "unsupported": []
+        }
+      }
+    }
+  },
+  "win11": {
+    "name": "Windows 11",
+    "builds": [
+      { "id": "26h2", "label": "26H2" },
+      { "id": "25h2_24h2", "label": "25H2 Pro + 24H2 LTSC" },
+      { "id": "23h2", "label": "23H2" }
+    ],
+    "editions": {
+      "26h2": {
+        "superliteLocked": true,
+        "sl": {
+          "supported": [],
+          "unsupported": []
+        },
+        "normal": {
+          "supported": [
+            {
+              "id": "win11-26h2-normal",
+              "name": "tetoOS 11 Normal 26H2",
+              "disabled": true,
+              "url": "https://example.com/downloads/dummy_win11_26h2_normal.iso",
+              "changelog": [
+                "Build 26300.9457",
+				"Update 1"
+              ]
+            }
+          ],
+          "unsupported": []
+        }
+      },
+      "25h2_24h2": {
+        "superliteLocked": true,
+        "sl": {
+          "supported": [],
+          "unsupported": []
+        },
+        "normal": {
+          "supported": [
+            {
+              "id": "win11-25h2_24h2-normal",
+              "name": "tetoOS 11 Normal 25H2 Pro + 24H2 LTSC",
+              "disabled": true,
+              "url": "https://example.com/downloads/dummy_win11_25h2_normal.iso",
+              "changelog": [
+                "Build 26200.9457 (25H2 Pro) / 26100.1742 (24H2 LTSC)",
+				"Update 1"
+              ]
+            }
+          ],
+          "unsupported": []
+        }
+      },
+      "23h2": {
+        "sl": {
+          "supported": [
+            {
+              "id": "win11-23h2-sl",
+              "name": "tetoOS 11 Superlite 23H2",
+              "disabled": true,
+              "url": "https://example.com/downloads/dummy_win11_23h2_sl.iso",
+              "changelog": [
+                "Build 22631.6199",
+                "Release Candidate 1"
+              ]
+            }
+          ],
+          "unsupported": []
+        },
+        "normal": {
+          "supported": [
+            {
+              "id": "win11-23h2-normal",
+              "name": "tetoOS 11 Normal 23H2",
+              "disabled": true,
+              "url": "https://example.com/downloads/dummy_win11_23h2_normal.iso",
+              "changelog": [
+                "Build 22631.6199",
+                "Release Candidate 1"
+              ]
+            }
+          ],
+          "unsupported": []
+        }
+      }
+    }
+  }
+}

@@ -14,6 +14,43 @@ function getDatabase() {
 }
 
 /**
+ * Render dynamic OS buttons based on database
+ */
+function renderOSButtons() {
+    const container = document.getElementById('os-buttons-container');
+    if (!container) return;
+
+    container.innerHTML = '';
+    const db = getDatabase();
+    const osKeys = Object.keys(db);
+    if (osKeys.length === 0) return;
+
+    if (!db[currentOS]) {
+        currentOS = osKeys[0];
+    }
+
+    osKeys.forEach(osKey => {
+        const osData = db[osKey];
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = `teto-btn-outline teto-os-btn ${osKey === currentOS ? 'active' : ''}`;
+        btn.dataset.os = osKey;
+        btn.textContent = osData.name || osKey.toUpperCase();
+
+        btn.addEventListener('click', () => {
+            container.querySelectorAll('.teto-os-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentOS = osKey;
+            renderBuildPills();
+            resetSelection();
+            renderEditions();
+        });
+
+        container.appendChild(btn);
+    });
+}
+
+/**
  * Render dynamic build pills based on active OS
  */
 function renderBuildPills() {
@@ -56,14 +93,27 @@ function renderBuildPills() {
 }
 
 /**
- * Handle SSD/NVMe warning for Windows 11 24H2 and above (24H2, 25H2, 26H2)
+ * Handle SSD/NVMe warning for Windows 11 24H2 and above (or any future OS like Windows 12 / 27H2)
  */
 function updateSSDWarning() {
     const ssdBox = document.getElementById('ssd-warning-box');
     if (!ssdBox) return;
 
-    const isWin11Newer = currentOS === 'win11' && ['25h2_24h2', '24h2_25h2', '24h2', '25h2', '26h2'].includes(currentBuild);
-    if (isWin11Newer) {
+    const db = getDatabase();
+    const osData = db[currentOS]?.editions || db[currentOS]?.data;
+    const buildData = osData ? osData[currentBuild] : null;
+
+    // Direct flag from data if specified, otherwise rule-based for Win 11 (24H2+) & future Win12+
+    let isSSDRecommended = false;
+    if (buildData && typeof buildData.ssdRecommended === 'boolean') {
+        isSSDRecommended = buildData.ssdRecommended;
+    } else {
+        const isWin11Newer = currentOS === 'win11' && ['25h2_24h2', '24h2_25h2', '24h2', '25h2', '26h2', '27h2'].includes(currentBuild);
+        const isFutureOS = currentOS !== 'win10' && currentOS !== 'win11'; // Windows 12 etc.
+        isSSDRecommended = isWin11Newer || isFutureOS;
+    }
+
+    if (isSSDRecommended) {
         ssdBox.classList.remove('d-none');
     } else {
         ssdBox.classList.add('d-none');
@@ -71,9 +121,9 @@ function updateSSDWarning() {
 }
 
 /**
- * Handle restrictions:
- * - 24H2 to 26H2 (Windows 11) has NO Superlite (Normal only due to Windows Update mechanism)
- * - 2019 LTSC (Windows 10) has NO Normal (Superlite only)
+ * Handle edition availability dynamically based on editions data in config:
+ * - If a build has NO 'sl' editions -> disable Superlite & select Normal
+ * - If a build has NO 'normal' editions -> disable Normal & select Superlite
  */
 function updateTypeRestrictions() {
     const slBtn = document.querySelector('.teto-type-btn[data-type="sl"]');
@@ -81,8 +131,36 @@ function updateTypeRestrictions() {
     const notice26H2 = document.getElementById('build-notice-box');
     const notice2019 = document.getElementById('win10-2019-notice-box');
 
-    const isWin11NoSL = currentOS === 'win11' && ['25h2_24h2', '24h2_25h2', '24h2', '25h2', '26h2'].includes(currentBuild);
-    const is2019LTSC = currentOS === 'win10' && currentBuild === '2019ltsc';
+    const db = getDatabase();
+    const osData = db[currentOS]?.editions || db[currentOS]?.data;
+    const buildData = osData ? osData[currentBuild] : null;
+
+    const hasSl = buildData && buildData.sl && (
+        (buildData.sl.supported && buildData.sl.supported.length > 0) ||
+        (buildData.sl.unsupported && buildData.sl.unsupported.length > 0)
+    );
+
+    const hasNormal = buildData && buildData.normal && (
+        (buildData.normal.supported && buildData.normal.supported.length > 0) ||
+        (buildData.normal.unsupported && buildData.normal.unsupported.length > 0)
+    );
+
+    // Determine lock state dynamically from JSON config:
+    // If superliteLocked is explicitly set in JSON (true/false), honor it directly.
+    // Otherwise fallback to checking if sl editions are available.
+    let isSuperliteLocked = false;
+    if (buildData && typeof buildData.superliteLocked === 'boolean') {
+        isSuperliteLocked = buildData.superliteLocked;
+    } else {
+        isSuperliteLocked = !hasSl && hasNormal;
+    }
+
+    let isNormalLocked = false;
+    if (buildData && typeof buildData.normalLocked === 'boolean') {
+        isNormalLocked = buildData.normalLocked;
+    } else {
+        isNormalLocked = !hasNormal && hasSl;
+    }
 
     // Reset default button states & notices
     if (slBtn) {
@@ -96,34 +174,50 @@ function updateTypeRestrictions() {
     if (notice26H2) notice26H2.classList.add('d-none');
     if (notice2019) notice2019.classList.add('d-none');
 
-    if (isWin11NoSL) {
+    if (isSuperliteLocked) {
+        // Superlite locked -> auto switch to Normal
         if (slBtn) {
             slBtn.disabled = true;
             slBtn.classList.remove('active');
-            slBtn.title = 'Superlite is not available for 24H2 - 26H2';
+            slBtn.title = 'Superlite is not available for this build';
         }
         if (normalBtn) {
             normalBtn.classList.add('active');
         }
-        if (currentType === 'sl') {
-            currentType = 'normal';
-        }
+        currentType = 'normal';
         if (notice26H2) {
+            if (buildData && buildData.notice) {
+                notice26H2.textContent = buildData.notice;
+            } else {
+                const currentLang = localStorage.getItem('moedev_lang') || 'en';
+                const t = window.translations || {};
+                notice26H2.textContent = (t[currentLang] && t[currentLang]['dl_26h2_notice'])
+                    ? t[currentLang]['dl_26h2_notice']
+                    : 'Superlite is unavailable for this edition. Normal Edition is selected.';
+            }
             notice26H2.classList.remove('d-none');
         }
-    } else if (is2019LTSC) {
+    } else if (isNormalLocked) {
+        // Normal locked -> auto switch to Superlite
         if (normalBtn) {
             normalBtn.disabled = true;
             normalBtn.classList.remove('active');
-            normalBtn.title = 'Normal Edition is not available for 2019 LTSC';
+            normalBtn.title = 'Normal Edition is not available for this build';
         }
         if (slBtn) {
             slBtn.classList.add('active');
         }
-        if (currentType === 'normal') {
-            currentType = 'sl';
-        }
+        currentType = 'sl';
         if (notice2019) {
+            if (buildData && buildData.normalNotice) {
+                notice2019.textContent = buildData.normalNotice;
+            } else {
+                const currentLang = localStorage.getItem('moedev_lang') || 'en';
+                const t = window.translations || {};
+                notice2019.textContent = (t[currentLang] && t[currentLang]['dl_2019ltsc_notice'])
+                    ? t[currentLang]['dl_2019ltsc_notice']
+                    : 'Normal Edition is unavailable for this edition. Superlite Edition is selected.';
+            }
             notice2019.classList.remove('d-none');
         }
     } else {
@@ -324,22 +418,9 @@ function switchToSupportedTab() {
  * Setup Event Listeners
  */
 document.addEventListener('DOMContentLoaded', () => {
-    const osBtns = document.querySelectorAll('.teto-os-btn');
     const typeBtns = document.querySelectorAll('.teto-type-btn');
     const tabBtns = document.querySelectorAll('.teto-tab');
     const finalDownloadBtn = document.getElementById('finalDownloadBtn');
-
-    // OS buttons (Windows 10 / 11)
-    osBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            osBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentOS = btn.getAttribute('data-os');
-            renderBuildPills();
-            resetSelection();
-            renderEditions();
-        });
-    });
 
     // Type buttons (Superlite / Normal)
     typeBtns.forEach(btn => {
@@ -404,7 +485,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initial render
-    renderBuildPills();
-    renderEditions();
+    // Initial render (support async API loading)
+    if (typeof window.loadEditionsConfig === 'function') {
+        window.loadEditionsConfig().then(() => {
+            renderOSButtons();
+            renderBuildPills();
+            renderEditions();
+        });
+    } else {
+        renderOSButtons();
+        renderBuildPills();
+        renderEditions();
+    }
 });
