@@ -63,7 +63,9 @@
               "disabled": true,
               "url": "https://example.com/downloads/dummy_win10_2019_sl.iso",
               "changelog": [
-                "Build 17763.xxxx",
+                "Build 17763.8389",
+                "Old version for very old system",
+                "NOT supported .NET Framework 4.8.1, max version installed is only 4.8",
                 "NOT supported by newer hardware (12th gen Intel and above)"
 			  ]
             }
