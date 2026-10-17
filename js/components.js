@@ -1,31 +1,44 @@
+// Clean URL Handler: Strip .html extension from address bar seamlessly without reloading
+(function() {
+    if (window.location.protocol.startsWith('http') && window.location.pathname.endsWith('.html')) {
+        let cleanPath = window.location.pathname.replace(/\.html$/, '');
+        if (cleanPath.endsWith('/index')) {
+            cleanPath = cleanPath.slice(0, -5) || '/';
+        }
+        const cleanUrl = cleanPath + window.location.search + window.location.hash;
+        window.history.replaceState(null, '', cleanUrl);
+    }
+})();
+
 // Reusable UI components
 const moedevComponents = {
     renderNavbar: function() {
         const navContainer = document.getElementById('main-nav');
         if (!navContainer) return;
 
-        const currentFile = window.location.pathname.split('/').pop() || 'index.html';
-        const isIndex = currentFile === 'index.html' || currentFile === '';
-        const isNews = currentFile === 'news.html';
-        const isTeto = currentFile === 'teto.html';
-        const isTeto11 = currentFile === 'teto11.html';
-        const isZenth = currentFile === 'zenth.html';
-        const isDocs = currentFile === 'docs_setup.html' || currentFile === 'docs_debloat.html' || currentFile === 'docs_tpkg.html' || currentFile === 'docs.html';
-        const isPolicy = currentFile === 'policy.html';
+        const currentPath = window.location.pathname.replace(/\/$/, '');
+        const currentFile = (currentPath.split('/').pop() || 'index').replace(/\.html$/, '');
+        const isIndex = currentFile === 'index' || currentFile === '';
+        const isNews = currentFile === 'news';
+        const isTeto = currentFile === 'teto';
+        const isTeto11 = currentFile === 'teto11';
+        const isZenth = currentFile === 'zenth';
+        const isDocs = currentFile.startsWith('docs');
+        const isPolicy = currentFile === 'policy';
 
         navContainer.outerHTML = `
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid d-flex align-items-center justify-content-between">
-            <a class="navbar-brand me-auto me-lg-4" href="index.html"><span class="brand-highlight">moe</span>dev</a>
+            <a class="navbar-brand me-auto me-lg-4" href="./"><span class="brand-highlight">moe</span>dev</a>
 
             <div class="collapse navbar-collapse justify-content-center order-3 order-lg-2" id="navbarNav">
                 <ul class="navbar-nav align-items-center my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link ${isNews ? 'active' : ''}" href="news.html" data-i18n="nav_news">News</a></li>
+                    <li class="nav-item"><a class="nav-link ${isNews ? 'active' : ''}" href="news" data-i18n="nav_news">News</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle ${isTeto || isZenth ? 'active' : ''}" href="#" id="navbarProjects" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav_projects">Projects</a>
                         <ul class="dropdown-menu glass-dropdown" aria-labelledby="navbarProjects">
                             <li>
-                                <a class="dropdown-item d-flex align-items-center ${isTeto ? 'active' : ''}" href="teto.html">
+                                <a class="dropdown-item d-flex align-items-center ${isTeto ? 'active' : ''}" href="teto">
                                     <div class="project-icon-box icon-teto">
                                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
                                     </div>
@@ -36,7 +49,7 @@ const moedevComponents = {
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item d-flex align-items-center ${isZenth ? 'active' : ''}" href="zenth.html">
+                                <a class="dropdown-item d-flex align-items-center ${isZenth ? 'active' : ''}" href="zenth">
                                     <div class="project-icon-box icon-zenth">
                                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
                                     </div>
@@ -48,7 +61,7 @@ const moedevComponents = {
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link ${isPolicy ? 'active' : ''}" href="policy.html" data-i18n="nav_credits">Policy</a></li>
+                    <li class="nav-item"><a class="nav-link ${isPolicy ? 'active' : ''}" href="policy" data-i18n="nav_credits">Policy</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://donatekasaneproject.vercel.app" target="_blank" data-i18n="nav_support">Support Us</a></li>
                 </ul>
             </div>
@@ -104,12 +117,13 @@ const moedevComponents = {
         const bottomContainer = document.getElementById('shared-bottom-sections');
         if (!bottomContainer) return;
 
-        const currentFile = window.location.pathname.split('/').pop() || 'index.html';
-        const isIndex = currentFile === 'index.html' || currentFile === '';
-        const isTeto = currentFile === 'teto.html';
-        const isNews = currentFile === 'news.html';
-        const isTeto11 = currentFile === 'teto11.html';
-        const isZenth = currentFile === 'zenth.html';
+        const currentPath = window.location.pathname.replace(/\/$/, '');
+        const currentFile = (currentPath.split('/').pop() || 'index').replace(/\.html$/, '');
+        const isIndex = currentFile === 'index' || currentFile === '';
+        const isTeto = currentFile === 'teto';
+        const isNews = currentFile === 'news';
+        const isTeto11 = currentFile === 'teto11';
+        const isZenth = currentFile === 'zenth';
 
         if (isTeto11 || isZenth) {
             bottomContainer.innerHTML = '';
@@ -141,7 +155,7 @@ const moedevComponents = {
                     <p class="mb-1 footer-text" style="color: #64748b; font-size: 0.9rem;" data-i18n="footer_copyright">
                         © 2026 <strong style="color: #10b981;">moedev</strong> - all rights reserved
                     </p>
-                    <a href="policy.html" style="color: #94a3b8; font-size: 0.85rem; text-decoration: underline;" data-i18n="footer_privacy">Privacy Policy & Terms of Service</a>
+                    <a href="policy" style="color: #94a3b8; font-size: 0.85rem; text-decoration: underline;" data-i18n="footer_privacy">Privacy Policy & Terms of Service</a>
                 </div>
             </footer>
         </div>`;
@@ -183,7 +197,7 @@ const moedevComponents = {
                     <p class="mb-1 footer-text" style="color: #64748b; font-size: 0.9rem;" data-i18n="footer_copyright">
                         © 2026 <strong style="color: #10b981;">moedev</strong> - all rights reserved
                     </p>
-                    <a href="policy.html" style="color: #94a3b8; font-size: 0.85rem; text-decoration: underline;" data-i18n="footer_privacy">Privacy Policy & Terms of Service</a>
+                    <a href="policy" style="color: #94a3b8; font-size: 0.85rem; text-decoration: underline;" data-i18n="footer_privacy">Privacy Policy & Terms of Service</a>
                 </div>
             </footer>
         </div>`;
@@ -195,7 +209,7 @@ const moedevComponents = {
                 <p class="mb-1 footer-text" style="color: #64748b; font-size: 0.9rem;" data-i18n="footer_copyright">
                     © 2026 <strong style="color: #10b981;">moedev</strong> - all rights reserved
                 </p>
-                <a href="policy.html" style="color: #94a3b8; font-size: 0.85rem; text-decoration: underline;" data-i18n="footer_privacy">Privacy Policy & Terms of Service</a>
+                <a href="policy" style="color: #94a3b8; font-size: 0.85rem; text-decoration: underline;" data-i18n="footer_privacy">Privacy Policy & Terms of Service</a>
             </div>
         </footer>`;
         }
