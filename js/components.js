@@ -144,7 +144,7 @@ const moedevComponents = {
 
                     <div class="row justify-content-center mt-4" style="max-width: 400px; margin: 0 auto;">
                         <div class="col-12 p-0">
-                            <a href="https://discord.gg/3hXCNdHQ2" target="_blank" class="btn btn-community btn-discord w-100" data-i18n="comm_btn_discord">Discord Server</a>
+                            <a href="https://discord.gg/kMQpqAY4tM" target="_blank" class="btn btn-community btn-discord w-100" data-i18n="comm_btn_discord">Discord Server</a>
                         </div>
                     </div>
                 </div>
