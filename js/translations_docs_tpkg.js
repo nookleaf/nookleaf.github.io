@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ============================================================================
  * TPKG DOCUMENTATION TRANSLATIONS MODULE - moedev & tetoOS
  * Contains translations specifically for docs_tpkg.html
@@ -39,6 +39,7 @@
 
             tpkg_sec3_title: "3. Best & Recommended: Winget & MS Store Integration",
             tpkg_sec3_lead: "For daily computer use, pairing <code>tpkg</code> with the vast <strong>Winget</strong> and <strong>Microsoft Store</strong> ecosystem is the easiest and most powerful method to get your software!",
+            tpkg_sec3_winget_warn: "<strong>Important Notice Regarding Winget Packages:</strong><br>Please note that not all packages available in the Winget catalog are maintained directly by their official developers. Many manifests are contributed and maintained by independent third-party community members. Consequently, updates may occasionally be delayed, manifests may contain inaccuracies, or installers may fail to launch. The tetoOS / moedev team is not responsible for errors, broken packages, or issues caused by third-party Winget maintainers.",
 
             tpkg_sec4_title: "4. Installing & Upgrading Native Packages (-S / Sync)",
             tpkg_sec4_lead: "The <code>-S</code> (Sync) mode interacts with official tetoOS repositories to download, verify, install, and update native <code>.tetopkg</code> packages.",
@@ -90,6 +91,7 @@
 
             tpkg_sec3_title: "3. 最もおすすめ：Winget & MS Store 連携",
             tpkg_sec3_lead: "日常利用において、<code>tpkg</code> を <strong>Winget</strong> や <strong>Microsoft Store</strong> と連携させるのが最も手軽で強力な方法です！",
+            tpkg_sec3_winget_warn: "<strong>Winget パッケージに関する重要なお知らせ：</strong><br>Winget カタログで提供されているすべてのパッケージが公式開発元によって直接保守されているわけではない点にご注意ください。多くのパッケージは独立したコミュニティコントリビューターによって管理されているため、更新の遅延、マニフェストの不備、インストーラーの起動エラーなどが発生する場合があります。tetoOS / moedev 開発チームは、サードパーティのメンテナや Winget パッケージに起因するいかなるエラーや不具合に対しても責任を負いかねます。",
 
             tpkg_sec4_title: "4. 公式パッケージの導入と更新 (-S / Sync)",
             tpkg_sec4_lead: "<code>-S</code>（Sync）モードは、リモートリポジトリと通信して公式の <code>.tetopkg</code> パッケージのダウンロード、検証、インストール、一括更新を行います。",
@@ -141,6 +143,7 @@
 
             tpkg_sec3_title: "3. Лучший выбор: Интеграция с Winget и MS Store",
             tpkg_sec3_lead: "Для повседневного использования связка <code>tpkg</code> с каталогами <strong>Winget</strong> и <strong>Microsoft Store</strong> - самый простой и удобный способ установки программ!",
+            tpkg_sec3_winget_warn: "<strong>Важное примечание о пакетах Winget:</strong><br>Обратите внимание, что далеко не все пакеты в каталоге Winget поддерживаются официальными разработчиками программ. Многие пакеты публикуются и обновляются независимыми участниками сообщества, из-за чего обновления могут выходить с опозданием, манифесты могут содержать неточности, а установщики могут завершаться ошибкой. Команда tetoOS / moedev не несет ответственности за сбои, неисправности и ошибки, возникшие по вине сторонних мейнтейнеров репозитория Winget.",
 
             tpkg_sec4_title: "4. Установка и обновление нативных пакетов (-S / Sync)",
             tpkg_sec4_lead: "Режим <code>-S</code> (Sync) связывается с официальными репозиториями tetoOS для загрузки, проверки, установки и полного обновления пакетов <code>.tetopkg</code>.",
@@ -192,6 +195,7 @@
 
             tpkg_sec3_title: "3. 首选推荐：Winget 与微软商店无缝联动",
             tpkg_sec3_lead: "在日常使用中，将 <code>tpkg</code> 与 <strong>Winget</strong> 及 <strong>Microsoft Store</strong> 配合使用是获取海量软件的最快途径！",
+            tpkg_sec3_winget_warn: "<strong>关于 Winget 软件包的重要免责声明：</strong><br>请注意，Winget 软件源中的软件包并非全部由软件官方开发者直接维护。许多安装清单由社区独立贡献者提交和更新，因此可能会出现版本更新不及时、配置清单有误或安装程序运行报错等情况。tetoOS / moedev 团队对由 Winget 第三方维护者引发的任何安装错误或系统问题不承担责任。",
 
             tpkg_sec4_title: "4. 官方包安装与升级 (-S / Sync)",
             tpkg_sec4_lead: "<code>-S</code>（Sync）模式用于连接官方软件源，进行 <code>.tetopkg</code> 包的下载、校验、批量安装与全系统升级。",
@@ -243,6 +247,7 @@
 
             tpkg_sec3_title: "3. 가장 추천하는 방식: Winget & MS Store 연동",
             tpkg_sec3_lead: "일상적인 PC 사용에서는 <code>tpkg</code>와 방대한 <strong>Winget</strong> 및 <strong>Microsoft Store</strong> 생태계를 함께 사용하는 것이 가장 편리합니다!",
+            tpkg_sec3_winget_warn: "<strong>Winget 패키지 관련 중요 안내:</strong><br>Winget 카탈로그의 모든 패키지가 공식 소프트웨어 개발자에 의해 직접 관리되는 것은 아닙니다. 다수의 패키지가 독립적인 커뮤니티 기여자에 의해 관리되므로, 버전 업데이트가 지연되거나 매니페스트 설정 오류 및 설치 파일 실행 실패가 발생할 수 있습니다. tetoOS / moedev 개발팀은 Winget 서드파티 메인테이너로 인해 발생하는 오류나 문제에 대해 책임을 지지 않습니다.",
 
             tpkg_sec4_title: "4. 공식 패키지 설치 및 업데이트 (-S / Sync)",
             tpkg_sec4_lead: "<code>-S</code> (Sync) 모드는 공식 저장소와 통신하여 <code>.tetopkg</code> 패키지를 다운로드, 검증, 일괄 설치 및 전체 업그레이드합니다.",
@@ -294,6 +299,7 @@
 
             tpkg_sec3_title: "3. الخيار الأفضل والموصى به: التكامل مع Winget و MS Store",
             tpkg_sec3_lead: "للاستخدام اليومي، يعد ربط <code>tpkg</code> بمستودعات <strong>Winget</strong> و <strong>Microsoft Store</strong> الطريقة الأسهل والأقوى للحصول على برامجك المفضلة!",
+            tpkg_sec3_winget_warn: "<strong>تنبيه مهم بخصوص حزم Winget:</strong><br>يرجى العلم أن ليست جميع الحزم المتوفرة في كتالوج Winget مدارة مباشرة من قبل المطورين الرسميين. تتم صيانة وتحديث العديد من الحزم بواسطة مساهمين مستقلين في المجتمع، مما قد يؤدي أحياناً إلى تأخر التحديثات أو وجود أخطاء في ملفات التثبيت أو فشل تشغيل البرامج. لا يتحمل فريق tetoOS / moedev أي مسؤولية عن الأخطاء أو الأعطال الناتجة عن حزم مطوري الطرف الثالث في مستودع Winget.",
 
             tpkg_sec4_title: "4. تثبيت وتحديث الحزم الرسمية (-S / Sync)",
             tpkg_sec4_lead: "يتصل وضع <code>-S</code> (Sync) بالمستودعات الرسمية لتنزيل حزم <code>.tetopkg</code> والتحقق منها وتثبيتها وتحديث النظام بالكامل.",
@@ -345,6 +351,7 @@
 
             tpkg_sec3_title: "3. Paling Direkomendasikan: Integrasi Winget & MS Store",
             tpkg_sec3_lead: "Untuk penggunaan harian, menggabungkan <code>tpkg</code> dengan katalog raksasa <strong>Winget</strong> dan <strong>Microsoft Store</strong> adalah cara termudah dan terbaik untuk memasang software!",
+            tpkg_sec3_winget_warn: "<strong>Pemberitahuan Penting Mengenai Paket Winget:</strong><br>Harap diperhatikan bahwa tidak semua paket yang tersedia di katalog Winget dikelola langsung oleh developer resmi aplikasi terkait. Banyak paket dirawat dan diperbarui oleh kontributor komunitas independen, sehingga pembaruan versi mungkin terlambat, manifest instalasi tidak akurat, atau installer gagal berjalan saat dibuka. Tim pengembang tetoOS / moedev tidak bertanggung jawab atas kesalahan, kegagalan instalasi, atau kendala yang disebabkan oleh maintainer pihak ketiga di repositori Winget.",
 
             tpkg_sec4_title: "4. Instalasi & Update Paket Asli (-S / Sync)",
             tpkg_sec4_lead: "Mode <code>-S</code> (Sync) terhubung ke repositori resmi tetoOS untuk mengunduh, memverifikasi, memasang, dan meng-upgrade paket <code>.tetopkg</code>.",
