@@ -33,7 +33,7 @@ const moedevComponents = {
 
             <div class="collapse navbar-collapse justify-content-center order-3 order-lg-2" id="navbarNav">
                 <ul class="navbar-nav align-items-center my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link ${isNews ? 'active' : ''}" href="news" data-i18n="nav_news">News</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link ${isNews ? 'active' : ''}" href="news" data-i18n="nav_news">News</a></li> -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle ${isTeto || isZenth ? 'active' : ''}" href="#" id="navbarProjects" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav_projects">Projects</a>
                         <ul class="dropdown-menu glass-dropdown" aria-labelledby="navbarProjects">
@@ -54,7 +54,7 @@ const moedevComponents = {
                                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
                                     </div>
                                     <div>
-                                        <div class="dropdown-title">tetoOS Zenth <span class="badge ms-2" style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); font-size: 0.65rem;" data-i18n="badge_coming_soon">COMING SOON</span></div>
+                                        <div class="dropdown-title">Zenth <span class="badge ms-2" style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.4); font-size: 0.65rem;" data-i18n="badge_coming_soon">COMING SOON</span></div>
                                         <p class="dropdown-desc" data-i18n="nav_item_zenth_desc">Linux (Fedora Base) • In Progress</p>
                                     </div>
                                 </a>
@@ -174,7 +174,7 @@ const moedevComponents = {
                             <img src="https://files.catbox.moe/92jb5l.jpg" alt="LortLimbah" style="width: 130px; height: 130px; border: 3px solid rgba(239, 68, 68, 0.3);">
                             <h4 style="font-size: 1.2rem;"><a href="https://www.youtube.com/watch?v=mMEjachbxcA&t=32s" target="_blank" style="color: #fff; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='inherit'">LortLimbah</a></h4>
                             <p style="color: #ef4444; font-weight: 600; font-size: 0.9rem; margin-bottom: 10px;" data-i18n="thanks_creator_vtuber">VTuber Content Creator</p>
-                            <p style="font-size: 0.88rem; line-height: 1.5;" data-i18n="thanks_desc">Creator feedback is vital to our development!</p>
+                            <p style="font-size: 0.88rem; line-height: 1.5;" data-i18n="thanks_desc_lortlimbah">Pengujian riil tetoOS pada tablet touchscreen (Fujitsu V727 Core m3) untuk gaming ringan dan stabilitas hemat daya.</p>
                             <a href="https://www.youtube.com/watch?v=mMEjachbxcA&t=32s" target="_blank" style="display: inline-block; margin-top: 15px; padding: 8px 20px; background-color: rgba(239, 68, 68, 0.1); color: #ef4444; border: 2px solid rgba(239, 68, 68, 0.3); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: 0.3s;" data-i18n="thanks_watch">
                                 Watch Video Review
                             </a>
@@ -183,7 +183,7 @@ const moedevComponents = {
                             <img src="https://files.catbox.moe/hmlf9b.jpg" alt="Bootloop ID" style="width: 130px; height: 130px; border: 3px solid rgba(239, 68, 68, 0.3);">
                             <h4 style="font-size: 1.2rem;"><a href="https://www.youtube.com/watch?v=mkSsxN0BWwk&t=600s" target="_blank" style="color: #fff; text-decoration: none; transition: 0.3s;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='inherit'">Bootloop ID</a></h4>
                             <p style="color: #ef4444; font-weight: 600; font-size: 0.9rem; margin-bottom: 10px;" data-i18n="thanks_creator_tech">Tech Content Creator</p>
-                            <p style="font-size: 0.88rem; line-height: 1.5;" data-i18n="thanks_desc">Creator feedback is vital to our development!</p>
+                            <p style="font-size: 0.88rem; line-height: 1.5;" data-i18n="thanks_desc_bootloop">Uji tuntas tetoOS di PC super kentang (Celeron 1007U). Membuktikan efisiensi RAM idle dan responsivitas sistem tanpa bloatware.</p>
                             <a href="https://www.youtube.com/watch?v=mkSsxN0BWwk&t=600s" target="_blank" style="display: inline-block; margin-top: 15px; padding: 8px 20px; background-color: rgba(239, 68, 68, 0.1); color: #ef4444; border: 2px solid rgba(239, 68, 68, 0.3); border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.88rem; transition: 0.3s;" data-i18n="thanks_watch">
                                 Watch Video Review
                             </a>
