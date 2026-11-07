@@ -91,18 +91,18 @@
         "btn_explore_short": "استكشاف &rarr;"
     },
     "id": {
-        "global_update_notice": "<strong>Update:</strong> tetoOS build final sedang dalam peracikan aktif. ISO Early Access (EA) tersedia di bawah.",
-        "hero_title": "Mendefinisikan Ulang<br><span class=\"text-gradient\">Pengalaman Desktop.</span>",
-        "hero_desc": "Pusat optimasi sistem operasi untuk latensi terendah, efisiensi RAM, dan stabilitas gaming.",
-        "btn_explore": "Eksplorasi tetoOS",
-        "btn_explore_win": "Eksplorasi tetoOS (Windows)",
-        "btn_explore_linux": "Eksplorasi Zenth (Linux)",
+        "global_update_notice": "<strong>Pembaruan:</strong> Versi final tetoOS tengah aktif dikembangkan. Berkas ISO Early Access (EA) sudah dapat diunduh di bawah.",
+        "hero_title": "Standar Baru untuk<br><span class=\"text-gradient\">Pengalaman Desktop.</span>",
+        "hero_desc": "Pusat pengembangan sistem operasi kustom: latensi rendah, efisiensi RAM optimal, dan stabilitas tinggi saat bermain game.",
+        "btn_explore": "Jelajahi tetoOS",
+        "btn_explore_win": "Jelajahi tetoOS (Windows)",
+        "btn_explore_linux": "Jelajahi Zenth (Linux)",
         "btn_license": "Lisensi Windows Gratis",
-        "card_teto10_label": "Edisi Flagship",
-        "card_teto10_desc": "Windows 10 LTSC - Ultra-ringan & stabil untuk gaming dan PC spek rendah.",
-        "btn_explore_teto10": "Eksplorasi tetoOS 10 &rarr;",
+        "card_teto10_label": "Edisi Utama",
+        "card_teto10_desc": "Windows 10 LTSC: sangat ringan, responsif, dan stabil untuk PC spesifikasi rendah maupun kebutuhan gaming kompetitif.",
+        "btn_explore_teto10": "Jelajahi tetoOS 10 &rarr;",
         "card_teto11_label": "Edisi Generasi Baru",
-        "btn_explore_short": "Eksplorasi &rarr;"
+        "btn_explore_short": "Lihat Selengkapnya &rarr;"
     }
 };
 

@@ -43,9 +43,9 @@
         "btn_back_home": "← العودة للرئيسية"
     },
     "id": {
-        "zenth_badge": "Linux • Base Fedora",
-        "zenth_dev_status": "Status: <strong style=\"color: #60a5fa;\">Pengembangan Internal</strong><br><br>Zenth adalah sistem operasi <strong>Linux (Fedora Base)</strong> yang sedang dalam perakitan modul inti.",
-        "btn_closed_access": "Akses Tertutup (Segera Hadir)",
+        "zenth_badge": "Linux • Basis Fedora",
+        "zenth_dev_status": "Status: <strong style=\"color: #60a5fa;\">Pengembangan Internal</strong><br><br>Zenth adalah distribusi <strong>Linux (berbasis Fedora)</strong> yang saat ini tengah berada dalam tahap perancangan modul inti.",
+        "btn_closed_access": "Akses Terbatas (Segera Hadir)",
         "btn_back_home": "← Kembali ke Beranda moedev"
     }
 };

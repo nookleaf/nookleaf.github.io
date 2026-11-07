@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ============================================================================
  * DEBLOAT DOCUMENTATION TRANSLATIONS MODULE - moedev & tetoOS
  * Contains translations specifically for docs_debloat.html
@@ -172,29 +172,29 @@
         id: {
             debloat_badge: "PANDUAN DEBLOAT & OPTIMASI",
             debloat_title: "Filosofi Performa & Debloat",
-            debloat_subtitle: "Memahami layanan Windows, komponen sistem, telemetri latar belakang, dan keseimbangan antara kecepatan tinggi dan stabilitas harian di tetoOS.",
-            debloat_q1_title: "Apakah mematikan lebih banyak layanan (services) selalu membuat Windows lebih cepat?",
-            debloat_q1_ans: "Belum tentu. Layanan yang tidak aktif digunakan tidak terus-menerus memakan CPU atau RAM secara signifikan. Yang terpenting adalah keseimbangan - menghapus apa yang benar-benar tidak perlu tanpa merusak kompatibilitas harian.",
-            debloat_q2_title: "Mengapa tidak semua layanan yang 'tidak terpakai' dimatikan?",
-            debloat_q2_ans: "Karena 'tidak terpakai oleh satu orang' belum tentu 'tidak terpakai oleh semua orang'. Fitur seperti Print Spooler, misalnya, tetap dibutuhkan oleh aplikasi pembuat PDF atau desain yang menggunakan printer virtual - meskipun Anda tidak punya printer fisik.",
-            debloat_q3_title: "Apa filosofi desain tetoOS mengenai layanan Windows?",
-            debloat_q3_lead: "Filosofi kami menyeimbangkan performa dengan kompatibilitas sistem. Layanan yang diam tidak menguras resource, jadi mematikan semuanya secara acak hanya memberi sedikit performa namun berisiko merusak sistem. tetoOS hanya mematikan layanan dengan kriteria:",
-            debloat_q3_crit1: "<span style=\"color: #f87171;\">•</span> Jarang digunakan oleh rata-rata pengguna personal.",
-            debloat_q3_crit2: "<span style=\"color: #f87171;\">•</span> Infrastruktur khusus Enterprise/Korporat.",
-            debloat_q3_crit3: "<span style=\"color: #f87171;\">•</span> Komponen lawas (obsolete).",
-            debloat_q3_crit4: "<span style=\"color: #f87171;\">•</span> Fitur spesifik hardware yang tidak dibutuhkan sistem konsumen.",
-            debloat_q3_crit5: "<span style=\"color: #f87171;\">•</span> Proses latar belakang non-esensial yang tidak memberi manfaat nyata.",
-            debloat_q4_title: "Mengapa fitur seperti Storage Sense, Reserved Storage, dan Prefetcher dimatikan secara default?",
-            debloat_q4_lead: "Fitur lawas ini memberikan sedikit manfaat pada penyimpanan SSD dan NVMe modern:",
-            debloat_q4_item1: "<span style=\"color: #38bdf8;\">•</span> <strong>Prefetcher:</strong> Dirancang untuk HDD mekanik yang lambat; tidak diperlukan untuk SSD cepat.",
-            debloat_q4_item2: "<span style=\"color: #38bdf8;\">•</span> <strong>Storage Sense:</strong> Bisa tiba-tiba menghapus file sementara (temp files) yang mungkin masih Anda butuhkan.",
-            debloat_q4_item3: "<span style=\"color: #38bdf8;\">•</span> <strong>Reserved Storage:</strong> Mengunci beberapa gigabyte ruang penyimpanan secara eksklusif hanya untuk Windows Update.",
-            debloat_q5_title: "Bagaimana sistem Windows Update di tetoOS?",
-            debloat_q5_ans: "Secara bawaan, Windows Update di-pause (dijeda) hingga tahun 2077 untuk mencegah restart tiba-tiba atau update yang tidak diinginkan. Namun, Anda punya kendali penuh untuk menyalakan/mematikannya kapan saja via update control tool bawaan.",
-            debloat_q6_title: "Bagaimana dengan Windows Defender / Antivirus?",
-            debloat_q6_ans: "Microsoft Defender TIDAK dihapus paksa dari sistem. Kami menyediakan script khusus yang memungkinkan user mematikan atau menyalakan Real-Time Protection sesuai kebutuhan.",
-            debloat_q7_title: "Apakah menggunakan custom Windows ini legal?",
-            debloat_q7_ans: "Custom build berada di area abu-abu. Inti sistemnya tetaplah kode asli Microsoft Windows, yang berarti syarat lisensi Microsoft tetap berlaku. tetoOS sekadar memodifikasi dan mengoptimasi environment-nya. Tanggung jawab penggunaan sepenuhnya ada pada user."
+            debloat_subtitle: "Memahami kinerja layanan Windows, komponen sistem, telemetri latar belakang, dan keseimbangan antara kecepatan tinggi serta stabilitas harian di tetoOS.",
+            debloat_q1_title: "Apakah mematikan makin banyak layanan selalu membuat Windows makin cepat?",
+            debloat_q1_ans: "Belum tentu. Layanan yang berada dalam status idle (siaga) tidak membebani prosesor atau RAM secara berkelanjutan. Kuncinya ada pada keseimbangan: memangkas proses yang benar-benar tidak terpakai tanpa mengorbankan kompatibilitas aplikasi harian.",
+            debloat_q2_title: "Mengapa tidak semua layanan yang jarang terpakai langsung dimatikan?",
+            debloat_q2_ans: "Karena fitur yang tidak kita butuhkan belum tentu tidak dibutuhkan orang lain. Print Spooler, misalnya, tetap diperlukan oleh perangkat lunak pembuat berkas PDF atau aplikasi desain grafis yang memanfaatkan printer virtual, sekalipun Anda tidak memiliki mesin printer fisik.",
+            debloat_q3_title: "Bagaimana pendekatan tetoOS dalam mengelola layanan Windows?",
+            debloat_q3_lead: "Prinsip kami adalah menjaga keseimbangan performa dan kestabilan sistem. Layanan yang sedang diam hanya memakan sumber daya sangat minim, sehingga mematikan semua layanan secara membabi buta hanya memberi peningkatan tipis namun berisiko memicu kerusakan sistem. tetoOS hanya menonaktifkan layanan dengan kriteria berikut:",
+            debloat_q3_crit1: "<span style=\"color: #f87171;\">•</span> Hampir tidak pernah dipakai dalam komputasi harian pengguna biasa.",
+            debloat_q3_crit2: "<span style=\"color: #f87171;\">•</span> Infrastruktur jaringan khusus korporat atau perusahaan skala besar.",
+            debloat_q3_crit3: "<span style=\"color: #f87171;\">•</span> Komponen usang peninggalan versi lawas.",
+            debloat_q3_crit4: "<span style=\"color: #f87171;\">•</span> Fitur perangkat keras khusus yang tidak relevan untuk komputer personal atau gaming.",
+            debloat_q3_crit5: "<span style=\"color: #f87171;\">•</span> Proses latar belakang non-esensial yang tidak memberi manfaat nyata bagi pengguna akhir.",
+            debloat_q4_title: "Mengapa Storage Sense, Reserved Storage, dan Prefetcher dinonaktifkan sejak awal?",
+            debloat_q4_lead: "Fitur-fitur ini minim manfaat pada media penyimpanan modern seperti SSD dan NVMe:",
+            debloat_q4_item1: "<span style=\"color: #38bdf8;\">•</span> <strong>Prefetcher:</strong> Dirancang untuk hard disk mekanis (HDD) berkecepatan rendah; tidak lagi relevan untuk SSD kencang.",
+            debloat_q4_item2: "<span style=\"color: #38bdf8;\">•</span> <strong>Storage Sense:</strong> Berisiko menghapus berkas sementara (temp file) dan cache proyek yang sewaktu-waktu masih Anda perlukan.",
+            debloat_q4_item3: "<span style=\"color: #38bdf8;\">•</span> <strong>Reserved Storage:</strong> Mengunci sekian gigabita ruang cakram secara sepihak khusus untuk keperluan Windows Update.",
+            debloat_q5_title: "Bagaimana mekanisme Windows Update di tetoOS?",
+            debloat_q5_ans: "Secara bawaan, jadwal Windows Update dijeda hingga tahun 2077 guna mencegah pembaruan paksa dan pengaktifan ulang tiba-tiba di tengah aktivitas. Kendati demikian, Anda tetap memegang kendali penuh untuk menyalakan atau mematikannya kembali kapan pun melalui perkakas kendali pembaruan yang disertakan.",
+            debloat_q6_title: "Bagaimana dengan Microsoft Defender / Antivirus bawaan?",
+            debloat_q6_ans: "Microsoft Defender TIDAK dibongkar paksa dari citra sistem. Kami menyertakan skrip khusus agar pengguna dapat mengaktifkan atau menonaktifkan Real-Time Protection sesuai kebutuhan masing-masing dengan mudah.",
+            debloat_q7_title: "Apakah menggunakan sistem operasi hasil modifikasi ini sah secara hukum?",
+            debloat_q7_ans: "Build kustom berada di wilayah abu-abu. Inti sistemnya tetap menggunakan berkas biner asli Microsoft Windows, sehingga ketentuan lisensi Microsoft tetap berlaku. tetoOS semata-mata mengonfigurasi dan mengoptimasi lingkungan kerjanya. Seluruh tanggung jawab penggunaan berada di tangan pengguna akhir."
         }
     };
 

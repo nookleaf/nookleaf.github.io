@@ -321,56 +321,56 @@
             tpkg_sec9_lead: "احفظ هذا الجدول المرجعي للرجوع إليه بسرعة أثناء العمل في الطرفية:"
         },
         id: {
-            tpkg_badge: "PACKAGE MANAGER & PANDUAN PENGGUNA",
+            tpkg_badge: "PANDUAN PENGGUNA & MANAJER PAKET",
             tpkg_main_title: "tpkg - Teto Package Manager",
-            tpkg_main_subtitle: "Package manager super cepat bergaya Arch Linux (pacman) untuk Windows. Instal, perbarui, dan kelola software favorit Anda dengan mudah melalui command line.",
+            tpkg_main_subtitle: "Manajer paket super kencang bergaya Arch Linux (pacman) untuk Windows. Pasang, perbarui, dan kelola aplikasi favorit Anda secara praktis melalui baris perintah.",
             
             tpkg_toc_title: "DAFTAR ISI",
             tpkg_toc_1: "1. Apa itu tpkg?",
             tpkg_toc_2: "2. Panduan Cepat Pemula",
             tpkg_toc_3: "3. Rekomendasi: Integrasi Winget & MS Store",
-            tpkg_toc_4: "4. Instalasi & Update Paket Asli (-S)",
+            tpkg_toc_4: "4. Instalasi & Pembaruan Paket Asli (-S)",
             tpkg_toc_5: "5. Mencari & Memeriksa Paket (-Q)",
-            tpkg_toc_6: "6. Uninstall Bersih Tanpa Sisa (-R)",
+            tpkg_toc_6: "6. Pencopotan Bersih Tanpa Sisa (-R)",
             tpkg_toc_7: "7. Repositori Komunitas (TETAUR)",
             tpkg_toc_8: "8. Membangun Paket (-B)",
-            tpkg_toc_9: "9. Lembar Contekan Perintah (Cheat Sheet)",
+            tpkg_toc_9: "9. Lembar Rujukan Perintah (Cheat Sheet)",
 
             tpkg_sec1_title: "1. Apa itu tpkg?",
-            tpkg_sec1_lead: "<strong>tpkg</strong> (Teto Package Manager) adalah sistem manajemen paket modern yang dibangun secara native menggunakan bahasa <strong>Rust</strong> untuk tetoOS dan Windows.",
-            tpkg_sec1_p1: "Jika Anda pernah menggunakan <strong>Arch Linux</strong> (pacman) atau <strong>Void Linux</strong> (xbps), Anda akan langsung terbiasa. Tidak perlu lagi membuka browser, mencari link download, menghindari installer berisi adware, atau menekan 'Next, Next, Agree, Finish' berkali-kali. Dengan <code>tpkg</code>, satu perintah terminal singkat sudah cukup untuk mengelola seluruh software Anda.",
+            tpkg_sec1_lead: "<strong>tpkg</strong> (Teto Package Manager) adalah sistem manajemen paket modern yang dibangun secara native menggunakan bahasa pemrograman <strong>Rust</strong> untuk tetoOS dan Windows.",
+            tpkg_sec1_p1: "Bagi Anda yang terbiasa dengan <strong>Arch Linux</strong> (pacman) atau <strong>Void Linux</strong> (xbps), alur kerjanya akan terasa sangat akrab. Anda tidak perlu lagi membuka peramban web, mencari tautan unduhan, menyortir penginstal agar terbebas dari adware, atau mengeklik tombol konfirmasi berkali-kali. Cukup dengan satu perintah singkat di terminal, seluruh aplikasi dapat dipasang dan dikelola dengan rapi.",
             tpkg_sec1_arch_title: "Keunggulan Arsitektur Sistem:",
-            tpkg_sec1_arch1: "<strong>Kecepatan Native:</strong> Dibuat murni dari nol dengan Rust tanpa runtime berat yang membebani sistem.",
-            tpkg_sec1_arch2: "<strong>PubGrub Dependency Resolver:</strong> Otomatis mendeteksi dan menyelesaikan seluruh dependensi pustaka sebelum proses instalasi.",
-            tpkg_sec1_arch3: "<strong>Format .tetopkg:</strong> Kompresi super kencang berbasis Zstandard (zstd) dan arsip tar untuk ekstraksi instan.",
-            tpkg_sec1_arch4: "<strong>Keamanan Atomik:</strong> Jika proses instalasi terganggu atau gagal di tengah jalan, sistem akan otomatis melakukan rollback agar Windows tidak rusak.",
-            tpkg_sec1_arch5: "<strong>Sinkronisasi GUI Windows:</strong> Otomatis terdaftar di menu 'Apps & features' dan Control Panel Windows agar Anda tetap bisa menghapus aplikasi lewat tampilan grafis biasa.",
+            tpkg_sec1_arch1: "<strong>Kecepatan Native:</strong> Dibangun murni dari nol dengan Rust tanpa ketergantungan runtime tambahan yang membebani memori.",
+            tpkg_sec1_arch2: "<strong>PubGrub Dependency Resolver:</strong> Mendeteksi dan menuntaskan seluruh rantai dependensi pustaka sebelum proses pemasangan dimulai.",
+            tpkg_sec1_arch3: "<strong>Format .tetopkg:</strong> Menggunakan kompresi ultra-cepat berbasis Zstandard (zstd) dan arsip tar untuk ekstraksi instan.",
+            tpkg_sec1_arch4: "<strong>Operasi Atomik:</strong> Bila proses terhenti di tengah jalan, sistem membatalkan perubahan secara otomatis (rollback) guna menjaga keutuhan berkas Windows.",
+            tpkg_sec1_arch5: "<strong>Sinkronisasi Menu Windows:</strong> Seluruh aplikasi terdaftar otomatis pada menu 'Installed apps' dan Control Panel agar tetap dapat dicopot melalui antarmuka grafis biasa.",
 
             tpkg_sec2_title: "2. Panduan Cepat Pemula",
-            tpkg_sec2_lead: "Anda tidak perlu menghafal puluhan flag perintah. Berikut 3 perintah utama yang akan Anda gunakan 95% dari waktu:",
+            tpkg_sec2_lead: "Anda tidak perlu menghafal puluhan opsi perintah. Tiga perintah utama berikut sudah mencakup sebagian besar kebutuhan harian Anda:",
 
-            tpkg_sec3_title: "3. Paling Direkomendasikan: Integrasi Winget & MS Store",
-            tpkg_sec3_lead: "Untuk penggunaan harian, menggabungkan <code>tpkg</code> dengan katalog raksasa <strong>Winget</strong> dan <strong>Microsoft Store</strong> adalah cara termudah dan terbaik untuk memasang software!",
-            tpkg_sec3_winget_warn: "<strong>Pemberitahuan Penting Mengenai Paket Winget:</strong><br>Harap diperhatikan bahwa tidak semua paket yang tersedia di katalog Winget dikelola langsung oleh developer resmi aplikasi terkait. Banyak paket dirawat dan diperbarui oleh kontributor komunitas independen, sehingga pembaruan versi mungkin terlambat, manifest instalasi tidak akurat, atau installer gagal berjalan saat dibuka. Tim pengembang tetoOS / moedev tidak bertanggung jawab atas kesalahan, kegagalan instalasi, atau kendala yang disebabkan oleh maintainer pihak ketiga di repositori Winget.",
+            tpkg_sec3_title: "3. Paling Disarankan: Integrasi Winget & MS Store",
+            tpkg_sec3_lead: "Untuk pemakaian sehari-hari, menggabungkan <code>tpkg</code> dengan katalog luas <strong>Winget</strong> dan <strong>Microsoft Store</strong> merupakan cara termudah dan paling efisien untuk memasang perangkat lunak.",
+            tpkg_sec3_winget_warn: "<strong>Perhatian Terkait Paket Winget:</strong><br>Perlu diketahui bahwa tidak semua paket pada katalog Winget dirawat langsung oleh pengembang resmi aplikasi bersangkutan. Sebagian paket dipelihara oleh kontributor komunitas independen, sehingga pembaruan versi berpotensi terlambat, manifes pemasangan kurang presisi, atau penginstal gagal dieksekusi. Tim pengembang tetoOS dan moedev tidak bertanggung jawab atas kendala yang bersumber dari pengelola pihak ketiga di repositori Winget.",
 
-            tpkg_sec4_title: "4. Instalasi & Update Paket Asli (-S / Sync)",
-            tpkg_sec4_lead: "Mode <code>-S</code> (Sync) terhubung ke repositori resmi tetoOS untuk mengunduh, memverifikasi, memasang, dan meng-upgrade paket <code>.tetopkg</code>.",
+            tpkg_sec4_title: "4. Instalasi & Pembaruan Paket Asli (-S / Sync)",
+            tpkg_sec4_lead: "Mode <code>-S</code> (Sync) terhubung ke repositori resmi tetoOS untuk mengunduh, memverifikasi, memasang, dan memperbarui paket biner <code>.tetopkg</code>.",
 
             tpkg_sec5_title: "5. Mencari & Memeriksa Paket Lokal (-Q / Query)",
-            tpkg_sec5_lead: "Mode <code>-Q</code> (Query) memungkinkan Anda melihat software apa saja yang sudah terpasang, memeriksa informasi paket, dan melacak kepemilikan file.",
+            tpkg_sec5_lead: "Mode <code>-Q</code> (Query) memungkinkan Anda melihat daftar aplikasi yang terpasang, membaca rincian paket, serta melacak berkas sistem.",
 
-            tpkg_sec6_title: "6. Uninstall Bersih Tanpa Sisa (-R / Remove)",
-            tpkg_sec6_lead: "Saat menghapus software dengan <code>tpkg</code>, seluruh file terpasang dilacak secara akurat sehingga tidak meninggalkan sampah registry atau dependensi terbengkalai.",
-            tpkg_sec6_gui_sync: "<strong>Lebih Nyaman Menggunakan Tampilan Biasa Windows?</strong><br>Jangan khawatir jika Anda sewaktu-waktu merasa canggung menggunakan command line! Semua software yang diinstal via <code>tpkg</code> otomatis terdaftar di sistem Windows. Anda dapat membuka <strong>Windows Settings &rarr; Apps &rarr; Installed apps</strong> (atau <strong>Control Panel &rarr; Programs and Features</strong>) dan meng-uninstall aplikasi secara tradisional kapan saja.",
+            tpkg_sec6_title: "6. Pencopotan Bersih Tanpa Sisa (-R / Remove)",
+            tpkg_sec6_lead: "Saat menghapus aplikasi menggunakan <code>tpkg</code>, seluruh berkas terpasang dilacak secara presisi sehingga tidak meninggalkan sampah registry maupun dependensi yang terbengkalai.",
+            tpkg_sec6_gui_sync: "<strong>Lebih Terbiasa dengan Antarmuka Grafis?</strong><br>Bila Anda lebih nyaman dengan antarmuka grafis biasa, aplikasi yang dipasang via <code>tpkg</code> tetap tercatat di sistem Windows. Anda dapat membukanya melalui <strong>Windows Settings &rarr; Apps &rarr; Installed apps</strong> (atau <strong>Control Panel &rarr; Programs and Features</strong>) untuk mencopot program kapan saja.",
 
             tpkg_sec7_title_tetaur: "7. Repositori Komunitas (TETAUR)",
-            tpkg_sec7_lead_tetaur: "<strong>TETAUR</strong> (Teto User Repository) adalah repositori komunitas yang terinspirasi langsung dari AUR pada Arch Linux.",
+            tpkg_sec7_lead_tetaur: "<strong>TETAUR</strong> (Teto User Repository) merupakan repositori komunitas yang terinspirasi langsung dari model AUR pada Arch Linux.",
 
             tpkg_sec8_title: "8. Membangun Paket (-B / TETOBUILD)",
-            tpkg_sec8_lead: "Membuat paket di <code>tpkg</code> sangat mudah. Daripada script shell yang rumit, resep pembuatan paket menggunakan format <strong>TOML</strong> yang bersih dan mudah dibaca manusia.",
+            tpkg_sec8_lead: "Membuat paket di <code>tpkg</code> sangat mudah. Alih-alih menulis skrip shell yang rumit, konfigurasi pembuatan paket menggunakan format berkas <strong>TOML</strong> yang terstruktur rapi dan mudah dibaca.",
 
-            tpkg_sec9_title: "9. Lembar Contekan Perintah (Cheat Sheet)",
-            tpkg_sec9_lead: "Simpan atau tandai contekan cepat ini untuk referensi instan saat Anda membuka terminal:"
+            tpkg_sec9_title: "9. Lembar Rujukan Perintah (Cheat Sheet)",
+            tpkg_sec9_lead: "Simpan daftar ringkas berikut sebagai panduan cepat saat Anda berinteraksi dengan terminal:"
         }
     };
 

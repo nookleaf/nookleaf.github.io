@@ -50,9 +50,9 @@
     },
     "id": {
         "teto_final_soon": "Versi Final",
-        "teto11_subtitle": "Pengalaman Generasi Berikutnya",
-        "teto11_dev_status": "Status: <strong>Dalam Tahap Pengembangan</strong><br><br>Pengembangan ekosistem tetoOS 11 generasi baru sedang berjalan. Nantikan info selanjutnya.",
-        "btn_preregister": "Pra-Registrasi Sekarang",
+        "teto11_subtitle": "Pengalaman Desktop Generasi Baru",
+        "teto11_dev_status": "Status: <strong>Dalam Tahap Pengembangan</strong><br><br>Kami tengah merancang ekosistem tetoOS 11 generasi baru. Nantikan informasi dan pengumuman berikutnya.",
+        "btn_preregister": "Daftar Akses Awal",
         "btn_back_home": "← Kembali ke Beranda moedev"
     }
 };

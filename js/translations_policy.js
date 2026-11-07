@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ============================================================================
  * POLICY & TERMS TRANSLATIONS MODULE - moedev & tetoOS
  * Contains translations specifically for policy.html
@@ -194,35 +194,35 @@
             policy_sec3_item2_desc: "نحن غير مسؤولين عن ملفات tetoOS التي يتم تحميلها من مصادر غير رسمية (مثل روابط إعادة الرفع). استخدم دائماً الروابط الرسمية المقدمة في مجموعات moedev لتجنب الملفات المصابة بالفيروسات."
         },
         id: {
-            policy_badge: "PANDUAN HUKUM & KEBIJAKAN",
+            policy_badge: "KETENTUAN HUKUM & KEBIJAKAN",
             policy_main_title: "Kebijakan Privasi & Ketentuan Layanan",
             policy_meta_info: "MOEDEV PROJECT (tetoOS) - Pembaruan Terakhir: 18 Juli 2026",
-            policy_intro_p: "Dengan mengunduh, menginstal, dan menggunakan tetoOS maupun produk lain dari MOEDEV PROJECT, Anda secara otomatis menyetujui seluruh kebijakan privasi dan ketentuan layanan di bawah ini.",
-            policy_sec1_title: 'BAGIAN 1: KEBIJAKAN PRIVASI (PRIVACY POLICY)',
+            policy_intro_p: "Dengan mengunduh, memasang, dan menjalankan tetoOS maupun produk lain dari MOEDEV PROJECT, Anda menyetujui seluruh ketentuan layanan dan kebijakan privasi berikut.",
+            policy_sec1_title: 'BAGIAN 1: KEBIJAKAN PRIVASI',
             policy_sec1_item1_title: "1. Keamanan Data Pengguna",
-            policy_sec1_item1_desc: "MOEDEV PROJECT berkomitmen penuh menjaga privasi Anda. Kami tidak pernah menyisipkan malware, keylogger, atau skrip apa pun yang bertujuan untuk mengumpulkan, melacak, atau mencuri data pribadi, dokumen, password, maupun riwayat browsing Anda.",
+            policy_sec1_item1_desc: "MOEDEV PROJECT berkomitmen penuh menjaga privasi Anda. Kami tidak pernah menyisipkan perangkat perusak (malware), keylogger, atau skrip apa pun yang bertujuan mengumpulkan, memantau, maupun mengambil data pribadi, dokumen, kata sandi, dan riwayat peramban Anda.",
             policy_sec1_item2_title: "2. Telemetri dan Pelacakan",
-            policy_sec1_item2_desc: "tetoOS dirancang untuk mengutamakan privasi dan performa. Sebagian besar fitur pelacakan bawaan (telemetri) telah dimatikan atau dihapus untuk memastikan sistem berjalan sangat ringan dan data Anda tetap berada di perangkat Anda sendiri.",
-            policy_sec1_item3_title: "3. Penggunaan Laporan (Bug Report)",
-            policy_sec1_item3_desc: "Jika Anda melaporkan error atau bug kepada tim CS kami di grup resmi, informasi teknis yang Anda berikan (seperti spesifikasi PC dan screenshot error) murni hanya akan digunakan oleh tim developer untuk keperluan perbaikan (troubleshooting) pada pembaruan (update) OS selanjutnya.",
-            policy_sec2_title: 'BAGIAN 2: KETENTUAN KOMERSIAL & PENGGUNAAN LISENSI',
-            policy_sec2_intro: "tetoOS didistribusikan secara GRATIS (Freeware) kepada komunitas. Oleh karena itu, MOEDEV PROJECT menetapkan aturan tegas terkait komersialisasi produk kami:",
-            policy_sec2_allowed_badge: "YANG DIPERBOLEHKAN (Jasa Install Ulang)",
-            policy_sec2_allowed_desc: "Bagi teknisi komputer, Anda <strong>DIPERBOLEHKAN</strong> menggunakan tetoOS untuk melayani pelanggan. Biaya yang Anda tarik dari pelanggan harus murni sebagai biaya JASA/TENAGA atas waktu, keahlian instalasi, pengaturan sistem, dan pemasangan driver.",
-            policy_sec2_prohibited_badge: "YANG DILARANG KERAS (Penjualan Produk/File)",
-            policy_sec2_prohibited_desc: "Anda <strong>DILARANG KERAS</strong> memperjualbelikan karya intelektual MOEDEV PROJECT dalam bentuk apa pun. Pelanggaran mencakup:",
-            policy_sec2_prohib1: "<strong>Menjual File ISO:</strong> Menjual link download atau file mentahan tetoOS.",
-            policy_sec2_prohib2: "<strong>Menjual Flashdisk Bootable:</strong> Memasukkan OS kami ke dalam flashdisk / media penyimpanan fisik dan menjualnya sebagai produk dagangan dengan embel-embel OS racikan premium.",
-            policy_sec2_sanctions_title: "Sanksi Pelanggaran Komersial",
-            policy_sec2_sanctions_intro: "Jika kedapatan ada pihak yang menjual file ISO atau flashdisk bootable tetoOS, MOEDEV PROJECT akan mengambil tindakan tegas berupa:",
-            policy_sec2_sanc1: "1. Takedown paksa (pelaporan penghapusan konten/toko kepada pihak platform).",
-            policy_sec2_sanc2: "2. Tuntutan denda ganti rugi atas pelanggaran karya komunitas.",
-            policy_sec2_sanc3: "3. Blacklist permanen dari seluruh ekosistem dan grup moedev.",
-            policy_sec3_title: 'BAGIAN 3: DISCLAIMER & PELEPASAN TANGGUNG JAWAB',
-            policy_sec3_item1_title: "1. Risiko Modifikasi (Use at Your Own Risk)",
-            policy_sec3_item1_desc: "tetoOS adalah sistem operasi hasil modifikasi (custom OS). Dengan menggunakannya, Anda memahami dan menanggung sendiri segala risiko yang mungkin terjadi. MOEDEV PROJECT tidak bertanggung jawab atas kehilangan data, kerusakan hardware, atau error sistem akibat kesalahan prosedur instalasi.",
-            policy_sec3_item2_title: "2. Dukungan Pihak Ketiga",
-            policy_sec3_item2_desc: "Kami tidak bertanggung jawab atas file tetoOS yang diunduh dari luar jalur resmi (seperti link reupload dari pihak ketiga). Selalu gunakan link yang disediakan langsung di dalam grup resmi moedev untuk menghindari file yang sudah disusupi virus."
+            policy_sec1_item2_desc: "tetoOS dirancang dengan prioritas pada privasi dan performa. Sebagian besar fitur pelacakan bawaan (telemetri) telah dinonaktifkan atau dibersihkan agar sistem bekerja sangat ringan dan data Anda tetap tersimpan aman di perangkat lokal.",
+            policy_sec1_item3_title: "3. Pemanfaatan Laporan Kendala (Bug Report)",
+            policy_sec1_item3_desc: "Bila Anda melaporkan kendala teknis atau kutu sistem kepada tim pengembang di grup resmi, rincian teknis yang Anda sertakan (seperti spesifikasi komputer dan tangkapan layar kesalahan) semata-mata digunakan untuk investigasi serta perbaikan pada pembaruan sistem berikutnya.",
+            policy_sec2_title: 'BAGIAN 2: KETENTUAN KOMERSIAL & LISENSI',
+            policy_sec2_intro: "tetoOS disalurkan sepenuhnya secara cuma-cuma (freeware) untuk komunitas. Oleh karena itu, MOEDEV PROJECT menetapkan batasan tegas terkait pemanfaatan komersial:",
+            policy_sec2_allowed_badge: "DIIZINKAN (Jasa Pemasangan Ulang)",
+            policy_sec2_allowed_desc: "Teknisi komputer <strong>DIIZINKAN</strong> memasang tetoOS untuk perangkat milik klien. Tarif yang ditarik dari klien harus murni mencerminkan ongkos jasa atas waktu, keterampilan teknis instalasi, konfigurasi sistem, dan pemasangan driver perangkat keras.",
+            policy_sec2_prohibited_badge: "DILARANG KERAS (Komersialisasi Berkas & Produk)",
+            policy_sec2_prohibited_desc: "Anda <strong>DILARANG KERAS</strong> memperjualbelikan karya cipta MOEDEV PROJECT dalam bentuk apa pun. Bentuk pelanggaran meliputi:",
+            policy_sec2_prohib1: "<strong>Menjual Berkas ISO:</strong> Menjual tautan unduhan berbayar maupun berkas mentah instalasi tetoOS.",
+            policy_sec2_prohib2: "<strong>Menjual Media Bootable:</strong> Menyalin tetoOS ke dalam flashdisk atau media penyimpanan fisik lainnya lalu memperdagangkannya dengan dalih sistem operasi kustom premium.",
+            policy_sec2_sanctions_title: "Sanksi Pelanggaran Hak Cipta Komersial",
+            policy_sec2_sanctions_intro: "Apabila ditemukan pihak yang memperjualbelikan berkas ISO atau media instalasi tetoOS, MOEDEV PROJECT akan mengambil tindakan hukum dan penertiban langsung:",
+            policy_sec2_sanc1: "1. Pengajuan penutupan lapak paksa (takedown) ke pengelola lokapasar atau platform dagang elektronik bersangkutan.",
+            policy_sec2_sanc2: "2. Tuntutan ganti rugi materiil atas pelanggaran karya komunitas.",
+            policy_sec2_sanc3: "3. Pemblokiran permanen (daftar hitam) dari seluruh ekosistem, grup komunitas, dan dukungan teknis moedev.",
+            policy_sec3_title: 'BAGIAN 3: BATASAN TANGGUNG JAWAB & PENAFIAN',
+            policy_sec3_item1_title: "1. Risiko Penggunaan Sistem Modifikasi",
+            policy_sec3_item1_desc: "tetoOS merupakan sistem operasi kustom hasil modifikasi mendalam. Dengan memasangnya, Anda memahami dan menanggung sendiri seluruh risiko yang mungkin timbul. MOEDEV PROJECT tidak bertanggung jawab atas kehilangan data, kerusakan perangkat keras, atau kegagalan sistem akibat kelalaian prosedur instalasi.",
+            policy_sec3_item2_title: "2. Berkas dari Sumber Pihak Ketiga",
+            policy_sec3_item2_desc: "Kami tidak bertanggung jawab atas berkas instalasi tetoOS yang diunduh di luar kanal resmi kami (seperti tautan unggah ulang pihak ketiga). Pastikan selalu memakai tautan resmi yang dibagikan langsung dalam komunitas moedev guna menghindari berkas yang telah disusupi kode berbahaya."
         }
     };
 
