@@ -699,7 +699,31 @@ body.light-mode .navbar-brand:focus {
 body.light-mode .brand-highlight,
 body.light-mode .navbar-brand:hover .brand-highlight,
 body.light-mode .navbar-brand:active .brand-highlight {
-    color: #16a34a !important;
+    color: inherit;
+}
+
+body.light-mode.moe-theme .brand-highlight,
+body.light-mode.moe-theme .navbar-brand:hover .brand-highlight,
+body.light-mode.moe-theme .navbar-brand:active .brand-highlight {
+    color: #db2777 !important;
+}
+
+body.light-mode.teto-theme .brand-highlight,
+body.light-mode.teto-theme .navbar-brand:hover .brand-highlight,
+body.light-mode.teto-theme .navbar-brand:active .brand-highlight {
+    color: #dc2626 !important;
+}
+
+body.light-mode.teto11-theme .brand-highlight,
+body.light-mode.teto11-theme .navbar-brand:hover .brand-highlight,
+body.light-mode.teto11-theme .navbar-brand:active .brand-highlight {
+    color: #ca8a04 !important;
+}
+
+body.light-mode.zenth-theme .brand-highlight,
+body.light-mode.zenth-theme .navbar-brand:hover .brand-highlight,
+body.light-mode.zenth-theme .navbar-brand:active .brand-highlight {
+    color: #2563eb !important;
 }
 
 body.light-mode .nav-link {
