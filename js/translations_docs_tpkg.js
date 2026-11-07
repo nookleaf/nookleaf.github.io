@@ -58,7 +58,8 @@
             tpkg_sec8_lead: "Building packages in <code>tpkg</code> is straightforward. Instead of complex bash scripts, recipes use clean, human-readable <strong>TOML</strong> format.",
 
             tpkg_sec9_title: "9. Quick Command Cheat Sheet",
-            tpkg_sec9_lead: "Bookmark or save this cheat sheet for fast reference whenever you're using the terminal:"
+            tpkg_sec9_lead: "Bookmark or save this cheat sheet for fast reference whenever you're using the terminal:",
+            tpkg_badge_rec: "RECOMMENDED FOR BEGINNERS"
         },
         ja: {
             tpkg_badge: "パッケージマネージャー & ユーザーガイド",
@@ -110,7 +111,8 @@
             tpkg_sec8_lead: "<code>tpkg</code> のパッケージビルドは非常に明快です。複雑なシェルスクリプトの代わりに、人間が読みやすい <strong>TOML</strong> 形式のレシピを使用します。",
 
             tpkg_sec9_title: "9. コマンドチートシート",
-            tpkg_sec9_lead: "ターミナル操作時にすぐ参照できるよう、このチートシートをお役立てください:"
+            tpkg_sec9_lead: "ターミナル操作時にすぐ参照できるよう、このチートシートをお役立てください:",
+            tpkg_badge_rec: "初心者におすすめ"
         },
         ru: {
             tpkg_badge: "ПАКЕТНЫЙ МЕНЕДЖЕР И РУКОВОДСТВО",
@@ -162,7 +164,8 @@
             tpkg_sec8_lead: "Создание пакетов в <code>tpkg</code> предельно просто. Вместо сложных скриптов используются понятные рецепты в формате <strong>TOML</strong>.",
 
             tpkg_sec9_title: "9. Шпаргалка по командам",
-            tpkg_sec9_lead: "Сохраните эту шпаргалку для быстрого обращения при работе в терминале:"
+            tpkg_sec9_lead: "Сохраните эту шпаргалку для быстрого обращения при работе в терминале:",
+            tpkg_badge_rec: "РЕКОМЕНДУЕТСЯ ДЛЯ НАЧИНАЮЩИХ"
         },
         zh: {
             tpkg_badge: "包管理器与使用指南",
@@ -214,7 +217,8 @@
             tpkg_sec8_lead: "在 <code>tpkg</code> 中打包极为轻松。无需编写复杂的 Shell 脚本，而是采用清晰直观的 <strong>TOML</strong> 配置文件。",
 
             tpkg_sec9_title: "9. 常用指令速查表",
-            tpkg_sec9_lead: "请保存此速查表，方便在终端中快速检索对应指令:"
+            tpkg_sec9_lead: "请保存此速查表，方便在终端中快速检索对应指令:",
+            tpkg_badge_rec: "新手推荐"
         },
         ko: {
             tpkg_badge: "패키지 매니저 & 사용자 가이드",
@@ -266,7 +270,8 @@
             tpkg_sec8_lead: "<code>tpkg</code>의 패키징은 간결합니다. 복잡한 셸 스크립트 대신 읽기 쉬운 <strong>TOML</strong> 파일로 빌드 레시피를 작성합니다.",
 
             tpkg_sec9_title: "9. 명령어 요약표",
-            tpkg_sec9_lead: "터미널 작업 시 빠르게 찾아볼 수 있도록 이 요약표를 참고하세요:"
+            tpkg_sec9_lead: "터미널 작업 시 빠르게 찾아볼 수 있도록 이 요약표를 참고하세요:",
+            tpkg_badge_rec: "초보자 권장"
         },
         ar: {
             tpkg_badge: "مدير الحزم ودليل الاستخدام",
@@ -318,7 +323,8 @@
             tpkg_sec8_lead: "بناء الحزم في <code>tpkg</code> بسيط للغاية، حيث يعتمد على ملفات تكوين <strong>TOML</strong> الواضحة بدلاً من السكربتات المعقدة.",
 
             tpkg_sec9_title: "9. جدول الأوامر السريع",
-            tpkg_sec9_lead: "احفظ هذا الجدول المرجعي للرجوع إليه بسرعة أثناء العمل في الطرفية:"
+            tpkg_sec9_lead: "احفظ هذا الجدول المرجعي للرجوع إليه بسرعة أثناء العمل في الطرفية:",
+            tpkg_badge_rec: "موصى به للمبتدئين"
         },
         id: {
             tpkg_badge: "PANDUAN PENGGUNA & MANAJER PAKET",
@@ -370,7 +376,8 @@
             tpkg_sec8_lead: "Membuat paket di <code>tpkg</code> sangat mudah. Alih-alih menulis skrip shell yang rumit, konfigurasi pembuatan paket menggunakan format berkas <strong>TOML</strong> yang terstruktur rapi dan mudah dibaca.",
 
             tpkg_sec9_title: "9. Lembar Rujukan Perintah (Cheat Sheet)",
-            tpkg_sec9_lead: "Simpan daftar ringkas berikut sebagai panduan cepat saat Anda berinteraksi dengan terminal:"
+            tpkg_sec9_lead: "Simpan daftar ringkas berikut sebagai panduan cepat saat Anda berinteraksi dengan terminal:",
+            tpkg_badge_rec: "DIREKOMENDASIKAN UNTUK PEMULA"
         }
     };
 

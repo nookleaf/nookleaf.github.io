@@ -124,7 +124,11 @@
             inst_s6_cap: "Windows Setup: Getting files ready for installation",
             inst_s6_warn: "<strong>Do not force turn off your computer:</strong><br>The process may take several minutes depending on your storage speed and selected tweaks.",
             inst_s6_done: "Your computer will restart automatically several times. Once you arrive at the tetoOS Desktop, the installation is complete! You can now install device-specific drivers and enjoy your lightweight OS.",
-            inst_btn_back: "← Back to tetoOS"
+            inst_btn_back: "← Back to tetoOS",
+            inst_badge_rec: "Recommended",
+            inst_badge_alt: "Alternative",
+            inst_badge_noflash: "No Flash Drive",
+            inst_badge_adv: "Advanced Option"
         },
         ja: {
             btn_install_guide: "インストール手順",
@@ -248,7 +252,11 @@
             inst_s6_cap: "Windows セットアップ: ファイルの準備と展開処理",
             inst_s6_warn: "<strong>PC の電源を強制終了しないでください:</strong><br>SSD/HDD の速度や選択した項目により、処理に数分程度かかります。",
             inst_s6_done: "PC が自動で数回再起動します。tetoOS のデスクトップ画面が表示されればインストール完了です！あとはハードウェアのドライバを導入して、超軽快なシステムをお楽しみください。",
-            inst_btn_back: "← tetoOS に戻る"
+            inst_btn_back: "← tetoOS に戻る",
+            inst_badge_rec: "推奨",
+            inst_badge_alt: "代替方法",
+            inst_badge_noflash: "USBメモリ不要",
+            inst_badge_adv: "高度なオプション"
         },
         ru: {
             btn_install_guide: "Руководство по установке",
@@ -372,7 +380,11 @@
             inst_s6_cap: "Подготовка и распаковка файлов установки Windows",
             inst_s6_warn: "<strong>Не выключайте компьютер принудительно:</strong><br>Процесс займет несколько минут в зависимости от скорости вашего SSD/HDD и количества выбранных твиков.",
             inst_s6_done: "Компьютер автоматически перезагрузится несколько раз. После появления рабочего стола tetoOS установка полностью завершена! Вам останется лишь установить драйверы устройств и наслаждаться быстрой работой системы.",
-            inst_btn_back: "← Назад к tetoOS"
+            inst_btn_back: "← Назад к tetoOS",
+            inst_badge_rec: "Рекомендуется",
+            inst_badge_alt: "Альтернатива",
+            inst_badge_noflash: "Без флешки",
+            inst_badge_adv: "Расширенный вариант"
         },
         zh: {
             btn_install_guide: "安装教程",
@@ -496,7 +508,11 @@
             inst_s6_cap: "Windows 安装程序：正在准备安装文件",
             inst_s6_warn: "<strong>请勿强制关闭电脑：</strong><br>根据您的固态/机械硬盘速度以及所选调整项目的多少，此过程可能需要几分钟。",
             inst_s6_done: "电脑将自动重启数次。当屏幕上出现 tetoOS 桌面时，安装即告大功告成！您现在可以安装相应的硬件驱动程序，尽情体验超轻量、低延迟的全新系统。",
-            inst_btn_back: "← 返回 tetoOS"
+            inst_btn_back: "← 返回 tetoOS",
+            inst_badge_rec: "推荐",
+            inst_badge_alt: "替代方案",
+            inst_badge_noflash: "无需U盘",
+            inst_badge_adv: "高级选项"
         },
         ko: {
             btn_install_guide: "설치 가이드",
@@ -620,7 +636,11 @@
             inst_s6_cap: "Windows 설치: 파일 준비 및 설치 진행 화면",
             inst_s6_warn: "<strong>컴퓨터 전원을 강제로 끄지 마세요:</strong><br>SSD/HDD 속도 및 선택한 항목 수에 따라 몇 분 정도 소요될 수 있습니다.",
             inst_s6_done: "PC가 자동으로 몇 차례 재부팅됩니다. tetoOS 바탕화면이 화면에 나타나면 설치가 완벽히 끝난 것입니다! 이제 장치 드라이버를 설치하고 초경량 고성능 OS를 즐기시면 됩니다.",
-            inst_btn_back: "← tetoOS로 돌아가기"
+            inst_btn_back: "← tetoOS로 돌아가기",
+            inst_badge_rec: "추천",
+            inst_badge_alt: "대안",
+            inst_badge_noflash: "USB 드라이브 없음",
+            inst_badge_adv: "고급 옵션"
         },
         ar: {
             btn_install_guide: "دليل التثبيت",
@@ -744,7 +764,11 @@
             inst_s6_cap: "إعداد Windows: تجهيز الملفات وتثبيتها",
             inst_s6_warn: "<strong>لا تغلق الكمبيوتر بالقوة:</strong><br>قد تستغرق العملية عدة دقائق حسب سرعة قرص SSD/HDD وعدد الخيارات المحددة.",
             inst_s6_done: "سيعيد الكمبيوتر التشغيل تلقائياً عدة مرات. بمجرد ظهور سطح مكتب tetoOS، يكون التثبيت قد اكتمل بنجاح تام! يمكنك الآن تثبيت تعريفات أجهزتك والاستمتاع بسرعة نظامك الجديد.",
-            inst_btn_back: "← العودة إلى tetoOS"
+            inst_btn_back: "← العودة إلى tetoOS",
+            inst_badge_rec: "موصى به",
+            inst_badge_alt: "بديل",
+            inst_badge_noflash: "بدون فلاشة",
+            inst_badge_adv: "خيار متقدم"
         },
         id: {
             btn_install_guide: "Panduan Instalasi",
@@ -868,7 +892,11 @@
             inst_s6_cap: "Proses persiapan dan instalasi berkas Windows",
             inst_s6_warn: "<strong>Jangan mematikan daya komputer secara paksa:</strong><br>Proses ini memerlukan waktu beberapa menit tergantung pada kecepatan SSD/HDD serta banyaknya opsi yang dipilih.",
             inst_s6_done: "Komputer Anda akan memuat ulang (restart) otomatis beberapa kali. Setelah tampilan desktop tetoOS muncul di layar, proses instalasi telah selesai sempurna. Anda dapat langsung memasang driver perangkat keras dan menikmati kecepatan sistem operasi Anda.",
-            inst_btn_back: "← Kembali ke tetoOS"
+            inst_btn_back: "← Kembali ke tetoOS",
+            inst_badge_rec: "Disarankan",
+            inst_badge_alt: "Alternatif",
+            inst_badge_noflash: "Tanpa Flashdisk",
+            inst_badge_adv: "Opsi Tingkat Lanjut"
         }
     };
 

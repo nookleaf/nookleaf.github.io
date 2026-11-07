@@ -8,16 +8,16 @@
     const tetoTranslations = {
     "en": {
         "teto10_badge": "Active Development • In Progress",
-        "teto10_desc": "Built for high performance, low latency, and gaming stability across Windows 10 & 11 architectures.",
+        "teto10_desc": "Tuned for low input latency, minimal memory usage, and gaming stability on Windows 10 and 11.",
         "btn_dl_teto": "Download",
         "btn_help_choose": "Help me choose",
         "btn_cbt_soon": "Roadmap",
-        "teto10_card1_title": "Blazing Lightweight",
-        "teto10_card1_desc": "Fully debloated, light on RAM, only essentials remain. Pure speed, zero dead weight.",
-        "teto10_card2_title": "Your Rules",
-        "teto10_card2_desc": "Modular install - pick only what you need. Defender, Firewall, UAC, Hibernate under your control.",
-        "teto10_card3_title": "Easy App Setup",
-        "teto10_card3_desc": "Installing software is effortless with tpkg - built-in package manager. One command, done.",
+        "teto10_card1_title": "Minimal Footprint",
+        "teto10_card1_desc": "Debloated to the essentials. Low RAM usage and zero background clutter out of the box.",
+        "teto10_card2_title": "Modular Control",
+        "teto10_card2_desc": "Choose what to enable during setup: Defender, Firewall, UAC, and hibernation stay under your control.",
+        "teto10_card3_title": "Streamlined App Setup",
+        "teto10_card3_desc": "Install tools and runtimes easily with tpkg, our built-in package manager. One command handles downloads and setup.",
         "btn_learn_more": "Learn more...",
         "dl_modal_title": "Download tetoOS",
         "dl_modal_subtitle": "Choose your Windows version, build & edition",
@@ -63,7 +63,13 @@
         "dl_modal_version": "Windows Version",
         "dl_modal_unsupported": "Unsupported / Archive",
         "dl_no_iso": "ISO is not available for this selection.",
-        "dl_selected": "selected."
+        "dl_selected": "selected.",
+        "btn_changelog": "Changelog",
+        "dl_no_changelog": "No changelog notes available yet for this build.",
+        "dl_verifying": "Verifying...",
+        "dl_err_verify": "Verification failed. Please complete captcha.",
+        "dl_err_connect": "Failed to connect to verification server. Please try again.",
+        "dl_err_nolink": "Download link not configured for this edition."
     },
     "ja": {
         "teto10_badge": "開発進行中 • 最終調整中",
@@ -122,7 +128,13 @@
         "dl_modal_version": "Windows バージョン",
         "dl_modal_unsupported": "サポート終了 / アーカイブ",
         "dl_no_iso": "このバージョンのISOは利用できません。",
-        "dl_selected": "が選択されました。"
+        "dl_selected": "が選択されました。",
+        "btn_changelog": "更新履歴",
+        "dl_no_changelog": "このビルドの更新履歴はまだありません。",
+        "dl_verifying": "検証中...",
+        "dl_err_verify": "検証に失敗しました。キャプチャを完了してください。",
+        "dl_err_connect": "検証サーバーに接続できませんでした。もう一度お試しください。",
+        "dl_err_nolink": "このエディションのダウンロードリンクは未設定です。"
     },
     "ru": {
         "teto10_badge": "Активная разработка • В процессе",
@@ -181,7 +193,13 @@
         "dl_modal_version": "Версия Windows",
         "dl_modal_unsupported": "Архив / Без поддержки",
         "dl_no_iso": "ISO для этой версии недоступен.",
-        "dl_selected": "выбрано."
+        "dl_selected": "выбрано.",
+        "btn_changelog": "Изменения",
+        "dl_no_changelog": "Для этой сборки пока нет примечаний к выпуску.",
+        "dl_verifying": "Проверка...",
+        "dl_err_verify": "Ошибка проверки. Пожалуйста, пройдите капчу.",
+        "dl_err_connect": "Не удалось подключиться к серверу проверки. Повторите попытку.",
+        "dl_err_nolink": "Ссылка для скачивания этой редакции не настроена."
     },
     "zh": {
         "teto10_badge": "积极研发中 • 处于推进阶段",
@@ -240,7 +258,13 @@
         "dl_modal_version": "Windows 版本",
         "dl_modal_unsupported": "历史归档 / 社区版本",
         "dl_no_iso": "该版本暂无可用 ISO。",
-        "dl_selected": "已选中。"
+        "dl_selected": "已选中。",
+        "btn_changelog": "更新日志",
+        "dl_no_changelog": "此版本暂无更新日志。",
+        "dl_verifying": "验证中...",
+        "dl_err_verify": "验证失败，请完成人机验证。",
+        "dl_err_connect": "连接验证服务器失败，请重试。",
+        "dl_err_nolink": "该版本暂未配置下载链接。"
     },
     "ko": {
         "teto10_badge": "개발 진행 중 • 최종 조율 중",
@@ -299,7 +323,13 @@
         "dl_modal_version": "Windows 버전",
         "dl_modal_unsupported": "미지원 / 아카이브",
         "dl_no_iso": "이 버전 조합의 ISO 파일은 준비되지 않았습니다.",
-        "dl_selected": "선택됨."
+        "dl_selected": "선택됨.",
+        "btn_changelog": "변경 사항",
+        "dl_no_changelog": "이 빌드에 대한 변경 사항이 아직 없습니다.",
+        "dl_verifying": "확인 중...",
+        "dl_err_verify": "확인에 실패했습니다. 캡차를 완료해 주세요.",
+        "dl_err_connect": "인증 서버 연결에 실패했습니다. 다시 시도해 주세요.",
+        "dl_err_nolink": "이 에디션의 다운로드 링크가 구성되지 않았습니다."
     },
     "ar": {
         "teto10_badge": "قيد التطوير النشط • الضبط النهائي",
@@ -358,7 +388,13 @@
         "dl_modal_version": "إصدار Windows",
         "dl_modal_unsupported": "الأرشيف / غير مدعوم",
         "dl_no_iso": "ملف ISO غير متوفر لهذا الإصدار.",
-        "dl_selected": "تم الاختيار."
+        "dl_selected": "تم الاختيار.",
+        "btn_changelog": "سجل التغييرات",
+        "dl_no_changelog": "لا توجد ملاحظات إصدار متاحة لهذا البناء بعد.",
+        "dl_verifying": "جارٍ التحقق...",
+        "dl_err_verify": "فشل التحقق. يرجى إكمال اختبار التحقق.",
+        "dl_err_connect": "فشل الاتصال بخادم التحقق. يرجى المحاولة مرة أخرى.",
+        "dl_err_nolink": "رابط التحميل غير متوفر لهذا الإصدار حالياً."
     },
     "id": {
         "teto10_badge": "Tahap Pengembangan • Aktif",
@@ -417,7 +453,13 @@
         "dl_modal_version": "Versi Windows",
         "dl_modal_unsupported": "Tidak Didukung / Arsip",
         "dl_no_iso": "Berkas ISO belum tersedia untuk kombinasi ini.",
-        "dl_selected": "telah dipilih."
+        "dl_selected": "telah dipilih.",
+        "btn_changelog": "Catatan Rilis",
+        "dl_no_changelog": "Belum ada catatan rilis untuk build ini.",
+        "dl_verifying": "Memverifikasi...",
+        "dl_err_verify": "Verifikasi gagal. Harap selesaikan captcha.",
+        "dl_err_connect": "Gagal terhubung ke server verifikasi. Silakan coba lagi.",
+        "dl_err_nolink": "Tautan unduhan belum tersedia untuk edisi ini."
     }
 };
 

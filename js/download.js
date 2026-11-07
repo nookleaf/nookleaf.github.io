@@ -243,7 +243,11 @@ function openChangelogModal(item) {
     const bodyEl = document.getElementById('changelogModalBody');
     if (!modalEl || !titleEl || !bodyEl) return;
 
-    titleEl.textContent = `Changelog: ${item.name}`;
+    const currentLang = localStorage.getItem('moedev_lang') || 'en';
+    const changelogTitleWord = (typeof translations !== 'undefined' && translations[currentLang] && translations[currentLang]['btn_changelog'])
+        ? translations[currentLang]['btn_changelog']
+        : 'Changelog';
+    titleEl.textContent = `${changelogTitleWord}: ${item.name}`;
 
     if (item.changelog && Array.isArray(item.changelog) && item.changelog.length > 0) {
         bodyEl.innerHTML = `
@@ -254,7 +258,10 @@ function openChangelogModal(item) {
     } else if (item.changelog && typeof item.changelog === 'string') {
         bodyEl.innerHTML = `<p class="m-0" style="color: #cbd5e1; line-height: 1.6;">${item.changelog}</p>`;
     } else {
-        bodyEl.innerHTML = `<p class="m-0 text-muted" style="font-style: italic;">No changelog notes available yet for this build.</p>`;
+        const noChangelogMsg = (typeof translations !== 'undefined' && translations[currentLang] && translations[currentLang]['dl_no_changelog'])
+            ? translations[currentLang]['dl_no_changelog']
+            : 'No changelog notes available yet for this build.';
+        bodyEl.innerHTML = `<p class="m-0 text-muted" style="font-style: italic;">${noChangelogMsg}</p>`;
     }
 
     if (typeof bootstrap !== 'undefined') {
@@ -385,7 +392,7 @@ function renderEditions() {
             let displayName = item.name;
             if (item.disabled) {
                 const inProgressText = {
-                    id: '(On Proses)',
+                    id: '(Dalam Proses)',
                     en: '(In Progress)',
                     ja: '(進行中)',
                     ko: '(진행 중)',
@@ -395,6 +402,8 @@ function renderEditions() {
                 };
                 if (displayName.includes('(On Proses)')) {
                     displayName = displayName.replace('(On Proses)', inProgressText[currentLang] || '(In Progress)');
+                } else if (displayName.includes('(Dalam Proses)')) {
+                    displayName = displayName.replace('(Dalam Proses)', inProgressText[currentLang] || '(In Progress)');
                 } else if (!displayName.includes('(In Progress)')) {
                     displayName += ' ' + (inProgressText[currentLang] || '(In Progress)');
                 }
@@ -441,12 +450,15 @@ function renderEditions() {
             const changelogBtn = document.createElement('button');
             changelogBtn.type = 'button';
             changelogBtn.className = 'ed-changelog-btn';
-            changelogBtn.title = `View Changelog for ${item.name}`;
+            const changelogLabel = (typeof translations !== 'undefined' && translations[currentLang] && translations[currentLang]['btn_changelog'])
+                ? translations[currentLang]['btn_changelog']
+                : 'Changelog';
+            changelogBtn.title = `${changelogLabel}: ${item.name}`;
             changelogBtn.innerHTML = `
                 <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
                     <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
                 </svg>
-                <span>Changelog</span>
+                <span>${changelogLabel}</span>
             `;
 
             changelogBtn.addEventListener('click', (e) => {
@@ -519,6 +531,9 @@ function switchToSupportedTab() {
  */
 async function executeDownload(item) {
     if (!item) return;
+    const currentLang = localStorage.getItem('moedev_lang') || 'en';
+    const t = window.translations || {};
+    const tCurrent = t[currentLang] || t['en'] || {};
 
     // Mode Cloudflare Worker (Production)
     if (window.TETO_WORKER_URL) {
@@ -526,9 +541,10 @@ async function executeDownload(item) {
         const originalContent = dlBtn ? dlBtn.innerHTML : '';
         if (dlBtn) {
             dlBtn.classList.add('disabled');
+            const verifyingText = tCurrent['dl_verifying'] || 'Verifying...';
             dlBtn.innerHTML = `
                 <div class="spinner-border spinner-border-sm text-light me-2" role="status"></div>
-                <span>Verifying...</span>
+                <span>${verifyingText}</span>
             `;
         }
 
@@ -547,7 +563,7 @@ async function executeDownload(item) {
             if (data.success && targetUrl) {
                 window.open(targetUrl, '_blank');
             } else {
-                alert(data.error || 'Verification failed. Please complete captcha.');
+                alert(data.error || tCurrent['dl_err_verify'] || 'Verification failed. Please complete captcha.');
                 if (window.turnstile && turnstileWidgetId !== null) {
                     window.turnstile.reset(turnstileWidgetId);
                     currentTurnstileToken = null;
@@ -555,7 +571,7 @@ async function executeDownload(item) {
             }
         } catch (err) {
             console.error('Download verification error:', err);
-            alert('Failed to connect to verification server. Please try again.');
+            alert(tCurrent['dl_err_connect'] || 'Failed to connect to verification server. Please try again.');
         } finally {
             if (dlBtn) {
                 dlBtn.innerHTML = originalContent;
@@ -571,7 +587,7 @@ async function executeDownload(item) {
     if (item.url) {
         window.open(item.url, '_blank');
     } else {
-        alert('Download link not configured for this edition.');
+        alert(tCurrent['dl_err_nolink'] || 'Download link not configured for this edition.');
     }
 }
 
