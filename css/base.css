@@ -190,7 +190,7 @@ body.light-mode .section-title { color: #0f172a !important; }
 
 /* TYPOGRAPHY & UTILITIES */
 .system-font {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 0.95rem;
     line-height: 1.8;
     color: #cbd5e1;
