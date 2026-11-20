@@ -55,10 +55,14 @@ async function getSafelinkuUrl(originalUrl, env) {
     return { url: originalUrl, debug };
   }
 
-  const token = env.SAFELINKU_TOKEN ? env.SAFELINKU_TOKEN.trim() : "";
+  const token = (env.SAFELINKU_TOKEN ? env.SAFELINKU_TOKEN.trim() : "") || "a3bb15459877babe1ac9e299e6b0e5fc27501cb0";
+  debug.tokenSource = env.SAFELINKU_TOKEN ? "environment_secret" : "worker_fallback";
+  debug.hasToken = Boolean(token);
+  debug.tokenLength = token.length;
+
   if (!token) {
-    debug.status = "missing_safelinku_token_in_env";
-    console.warn("SAFELINKU_TOKEN is not defined in Secrets! Returning original URL.");
+    debug.status = "missing_safelinku_token";
+    console.warn("SAFELINKU_TOKEN is not defined! Returning original URL.");
     return { url: originalUrl, debug };
   }
 

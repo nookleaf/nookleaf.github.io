@@ -24,6 +24,8 @@ jobs:
           secrets: |
             TURNSTILE_SECRET_KEY
             EDITIONS_SECRET_DATA
+            SAFELINKU_TOKEN
         env:
           TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}
           EDITIONS_SECRET_DATA: ${{ secrets.EDITIONS_SECRET_DATA }}
+          SAFELINKU_TOKEN: ${{ secrets.SAFELINKU_TOKEN }}
