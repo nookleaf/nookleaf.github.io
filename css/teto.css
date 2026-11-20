@@ -187,6 +187,10 @@ body.light-mode .btn-license-teto:hover {
     flex-direction: column;
 }
 
+.modal-right-pane-header {
+    border-bottom: 1px solid #2a2a2a;
+}
+
 .pane-title {
     font-size: 0.75rem;
     font-weight: 700;
@@ -516,9 +520,79 @@ body.light-mode .btn-license-teto:hover {
 
 /* LIGHT MODE OVERRIDES */
 body.light-mode .teto-modal {
-    background-color: #f8fafc;
+    background-color: #ffffff;
     color: #1e293b;
     border-color: rgba(239, 68, 68, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+body.light-mode .modal-right-pane-header,
+body.light-mode .modal-right-pane [style*="border-bottom: 1px solid #2a2a2a"],
+body.light-mode .modal-right-pane .d-flex.align-items-center.justify-content-between.mb-3.pb-2 {
+    border-bottom: 1px solid #e2e8f0 !important;
+}
+
+body.light-mode .modal-divider-h {
+    background-color: #e2e8f0 !important;
+}
+
+body.light-mode .pane-title {
+    color: #64748b !important;
+}
+
+body.light-mode .teto-pill-btn {
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #475569 !important;
+}
+
+body.light-mode .teto-pill-btn:hover {
+    background: #e2e8f0 !important;
+    border-color: #94a3b8 !important;
+    color: #0f172a !important;
+}
+
+body.light-mode .teto-pill-btn.active {
+    background: #fee2e2 !important;
+    border: 1px solid #ef4444 !important;
+    color: #dc2626 !important;
+    font-weight: 700 !important;
+}
+
+body.light-mode .teto-tab {
+    color: #64748b;
+}
+
+body.light-mode .teto-tab:hover {
+    color: #334155;
+}
+
+body.light-mode .teto-tab.active {
+    color: #0f172a !important;
+}
+
+body.light-mode .teto-link-archive {
+    color: #475569;
+    background: #f1f5f9;
+    border-color: #e2e8f0;
+}
+
+body.light-mode .teto-link-archive:hover {
+    color: #dc2626;
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+body.light-mode .alert-notice-box {
+    background: #fef2f2;
+    border-color: #fecdd3;
+    color: #b91c1c;
+}
+
+body.light-mode .alert-notice-box.alert-warning-box {
+    background: #fffbeb;
+    border-color: #fde68a;
+    color: #b45309;
 }
 
 body.light-mode .btn-close-custom {
@@ -528,32 +602,58 @@ body.light-mode .btn-close-custom {
 }
 
 body.light-mode .teto-btn-outline {
-    color: #475569;
-    border-color: #cbd5e1;
+    background: #ffffff !important;
+    color: #475569 !important;
+    border: 1px solid #cbd5e1 !important;
+}
+
+body.light-mode .teto-btn-outline:not(.active):not(:disabled):hover {
+    background: #f8fafc !important;
+    border-color: #94a3b8 !important;
+    color: #0f172a !important;
 }
 
 body.light-mode .teto-btn-outline.active {
-    color: #fff;
-    background-color: #ef4444;
-    border-color: #ef4444;
+    color: #ffffff !important;
+    background-color: #ef4444 !important;
+    border: 1px solid #ef4444 !important;
 }
 
 body.light-mode .ed-btn {
-    background: #f1f5f9;
+    background: #f8fafc;
     color: #1e293b;
-    border-color: #e2e8f0;
+    border: 1px solid #e2e8f0;
+}
+
+body.light-mode .ed-btn:not(:disabled):hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
 }
 
 body.light-mode .ed-btn.selected {
     background-color: rgba(239, 68, 68, 0.1) !important;
     border-color: #ef4444 !important;
+    color: #b91c1c !important;
+    font-weight: 600;
 }
 
-body.light-mode .modal-divider-h, 
-body.light-mode .modal-left-pane, 
-body.light-mode .teto-tabs, 
+body.light-mode .ed-btn:disabled {
+    background: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+    color: #94a3b8 !important;
+    opacity: 0.7;
+}
+
+body.light-mode .modal-left-pane {
+    border-right-color: #e2e8f0 !important;
+}
+
+body.light-mode .teto-tabs {
+    border-bottom-color: #e2e8f0 !important;
+}
+
 body.light-mode .modal-footer-custom {
-    border-color: #e2e8f0;
+    border-top: 1px solid #e2e8f0 !important;
 }
 
 body.light-mode .teto-link-help {
@@ -565,15 +665,15 @@ body.light-mode .teto-link-help:hover {
 }
 
 body.light-mode .ed-changelog-btn {
-    background: #f1f5f9;
-    border-color: #e2e8f0;
-    color: #64748b;
+    background: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #475569 !important;
 }
 
 body.light-mode .ed-changelog-btn:hover {
-    background: rgba(239, 68, 68, 0.1);
-    border-color: #ef4444;
-    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1) !important;
+    border-color: #ef4444 !important;
+    color: #dc2626 !important;
 }
 
 body.light-mode .changelog-content-box {
@@ -585,10 +685,127 @@ body.light-mode .changelog-list li {
     color: #334155;
 }
 
-body.light-mode .alert-notice-box.alert-warning-box {
-    background: #fffbeb;
-    border-color: #fde68a;
-    color: #b45309;
+body.light-mode .download-final-btn {
+    background-color: #ef4444 !important;
+    border: 1px solid #ef4444 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25) !important;
+}
+
+body.light-mode .download-final-btn:not(.disabled):hover {
+    background-color: #dc2626 !important;
+    border-color: #dc2626 !important;
+    color: #ffffff !important;
+}
+
+body.light-mode .download-final-btn.disabled {
+    background-color: #f1f5f9 !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #94a3b8 !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+}
+
+body.light-mode .download-final-btn.disabled svg {
+    stroke: #94a3b8 !important;
+}
+
+body.light-mode .helper-text {
+    color: #64748b;
+}
+
+body.light-mode .footer-status {
+    color: #475569;
+}
+
+/* Modals inside teto.html: editionFaqModal, eaWarningModal, changelogModal */
+body.light-mode #editionFaqModal .modal-content,
+body.light-mode #eaWarningModal .modal-content,
+body.light-mode #changelogModal .modal-content {
+    background: #ffffff !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12) !important;
+    color: #1e293b !important;
+}
+
+body.light-mode #editionFaqModal .modal-title,
+body.light-mode #changelogModal .modal-title,
+body.light-mode #changelogModalTitle {
+    color: #0f172a !important;
+}
+
+body.light-mode #editionFaqModal .modal-header h5,
+body.light-mode #editionFaqModal .modal-header h5[style*="color"] {
+    color: #dc2626 !important;
+}
+
+body.light-mode #editionFaqModal .mb-4[style*="background: rgba(255,255,255"],
+body.light-mode #editionFaqModal .mb-2[style*="background: rgba(255,255,255"],
+body.light-mode #editionFaqModal .modal-body > div {
+    background: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+}
+
+body.light-mode #editionFaqModal h6,
+body.light-mode #editionFaqModal h6[style*="color: #fff"],
+body.light-mode #editionFaqModal h6[style*="color: white"] {
+    color: #0f172a !important;
+}
+
+body.light-mode #editionFaqModal p,
+body.light-mode #editionFaqModal ul,
+body.light-mode #editionFaqModal li {
+    color: #334155 !important;
+}
+
+body.light-mode #editionFaqModal strong {
+    color: #0f172a !important;
+}
+
+body.light-mode #editionFaqModal div[style*="rgba(239, 68, 68, 0.08)"] {
+    background: #fef2f2 !important;
+    border-color: #fecdd3 !important;
+}
+
+body.light-mode #editionFaqModal div[style*="rgba(239, 68, 68, 0.08)"] div[style*="color: #fca5a5"] {
+    color: #dc2626 !important;
+}
+
+body.light-mode #editionFaqModal div[style*="rgba(239, 68, 68, 0.08)"] div[style*="color: #fff"],
+body.light-mode #editionFaqModal div[style*="rgba(239, 68, 68, 0.08)"] div[style*="color: white"] {
+    color: #991b1b !important;
+}
+
+body.light-mode #editionFaqModal div[style*="rgba(239, 68, 68, 0.08)"] p {
+    color: #991b1b !important;
+}
+
+body.light-mode #eaWarningModal .warning-box {
+    background: #fef2f2 !important;
+    border-color: #fecdd3 !important;
+}
+
+body.light-mode #eaWarningModal .warning-box p,
+body.light-mode #eaWarningModal .warning-box p[style*="color"] {
+    color: #991b1b !important;
+}
+
+body.light-mode #eaWarningModal #continue-ea-dl {
+    color: #dc2626 !important;
+}
+
+body.light-mode #changelogModal .changelog-content-box {
+    background: #f8fafc !important;
+    border-color: #e2e8f0 !important;
+    color: #334155 !important;
+}
+
+body.light-mode #changelogModal .changelog-content-box p {
+    color: #334155 !important;
+}
+
+body.light-mode #changelogModal .changelog-list li {
+    color: #334155 !important;
 }
 
 /* Responsive Modal Split */

@@ -85,6 +85,33 @@
     transition: none !important;
 }
 
+.brand-logo {
+    display: inline-block;
+    height: 30px;
+    width: 124px;
+    background-color: #10b981;
+    -webkit-mask: url('../img/moedev-logo.webp') no-repeat left center / contain;
+    mask: url('../img/moedev-logo.webp') no-repeat left center / contain;
+    vertical-align: middle;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-brand:hover .brand-logo,
+.navbar-brand:focus .brand-logo {
+    opacity: 0.85;
+    transform: scale(1.02);
+}
+
+@supports not ((-webkit-mask: url('')) or (mask: url(''))) {
+    .brand-logo {
+        background-color: transparent !important;
+        background-image: url('../img/moedev-logo.webp');
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: contain;
+    }
+}
+
 .nav-link {
     color: #94a3b8 !important;
     font-weight: 500;
@@ -764,13 +791,26 @@ body.light-mode .dropdown-title {
     color: #0f172a;
 }
 
-body.light-mode .shared-bg-2 {
-    background: rgba(255, 255, 255, 0.3) !important;
+body.light-mode .dropdown-desc {
+    color: #64748b;
+}
+
+body.light-mode .shared-bg-1,
+body.light-mode .shared-bg-2,
+body.light-mode .shared-bottom-wrapper {
+    border-top-color: rgba(0, 0, 0, 0.08) !important;
+    border-bottom-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 body.light-mode .footer-moedev {
     background: #f8fafc;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 991px) {
+    body.light-mode .navbar .navbar-collapse {
+        border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+    }
 }
 
 
@@ -867,6 +907,10 @@ body.light-mode .navbar .btn-theme-toggle:active svg {
     }
     .navbar-brand {
         font-size: 1.15rem;
+    }
+    .brand-logo {
+        height: 25px;
+        width: 103px;
     }
     .nav-link {
         margin: 0 5px;
@@ -980,6 +1024,10 @@ body.light-mode .navbar .btn-theme-toggle:active svg {
     }
     .navbar-brand {
         font-size: 1.05rem;
+    }
+    .brand-logo {
+        height: 22px;
+        width: 91px;
     }
     .nav-link {
         margin: 0 3px;

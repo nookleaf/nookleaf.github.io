@@ -127,6 +127,18 @@ body.light-mode .rs-news-img-wrapper {
     background: #f1f5f9;
 }
 
+body.light-mode .rs-news-img-wrapper div[style*="background"] {
+    background: #f1f5f9 !important;
+}
+
+body.light-mode .rs-news-meta {
+    color: #64748b;
+}
+
+body.light-mode .rs-news-category {
+    color: #059669;
+}
+
 body.light-mode .rs-news-title {
     color: #0f172a;
 }

@@ -30,6 +30,106 @@ function sanitizePublicData(obj) {
   return copy;
 }
 
+// In-Memory cache fallback agar link yang sama tidak membebani limit API SafelinkU
+const SHORTLINK_CACHE = new Map();
+
+/**
+ * Generate shortlink via SafeLinkU REST API with dual format & caching
+ */
+async function getSafelinkuUrl(originalUrl, env) {
+  if (!originalUrl) return "";
+
+  // Jika URL aslinya sendiri sudah merupakan link safelinku, gunakan langsung
+  if (originalUrl.includes("safelinku.com") || originalUrl.includes("safelinku.my.id")) {
+    return originalUrl;
+  }
+
+  const token = env.SAFELINKU_TOKEN ? env.SAFELINKU_TOKEN.trim() : "";
+  if (!token) {
+    console.warn("SAFELINKU_TOKEN is not defined in Secrets! Returning original URL.");
+    return originalUrl;
+  }
+
+  // 1. Cek KV Cache jika namespace LINK_CACHE terhubung
+  if (env.LINK_CACHE) {
+    try {
+      const cached = await env.LINK_CACHE.get(originalUrl);
+      if (cached && (cached.includes("safelinku.com") || cached.includes("safelinku.my.id"))) {
+        return cached;
+      }
+    } catch (e) {
+      console.warn("KV Cache get error:", e);
+    }
+  }
+
+  // 2. Cek Memory Cache
+  if (SHORTLINK_CACHE.has(originalUrl)) {
+    const cached = SHORTLINK_CACHE.get(originalUrl);
+    if (cached && (cached.includes("safelinku.com") || cached.includes("safelinku.my.id"))) {
+      return cached;
+    }
+  }
+
+  // 3. Request ke API SafeLinkU
+  try {
+    // Format REST API v1 (POST)
+    let shortUrl = "";
+    try {
+      const res = await fetch("https://safelinku.com/api/v1/links", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          url: originalUrl
+        })
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        shortUrl = data.url || data.shortenedUrl || (data.data && (data.data.url || data.data.shortenedUrl));
+      }
+    } catch (postErr) {
+      console.warn("SafeLinkU POST API error, trying GET fallback:", postErr);
+    }
+
+    // Fallback format GET query API
+    if (!shortUrl) {
+      try {
+        const getRes = await fetch(`https://safelinku.com/api?api=${encodeURIComponent(token)}&url=${encodeURIComponent(originalUrl)}`);
+        if (getRes.ok) {
+          const getData = await getRes.json();
+          shortUrl = getData.shortenedUrl || getData.url || (getData.data && (getData.data.url || getData.data.shortenedUrl));
+        }
+      } catch (getErr) {
+        console.warn("SafeLinkU GET API error:", getErr);
+      }
+    }
+
+    if (shortUrl) {
+      // Simpan ke Memory Cache
+      SHORTLINK_CACHE.set(originalUrl, shortUrl);
+
+      // Simpan ke KV Cache jika tersedia
+      if (env.LINK_CACHE) {
+        try {
+          await env.LINK_CACHE.put(originalUrl, shortUrl);
+        } catch (e) {
+          console.warn("KV Cache put error:", e);
+        }
+      }
+      return shortUrl;
+    }
+  } catch (err) {
+    console.error("SafeLinkU API error:", err);
+  }
+
+  // Fallback ke link asli jika SafelinkU sedang offline / timeout
+  return originalUrl;
+}
+
 export default {
   async fetch(request, env) {
     const corsHeaders = {
@@ -53,7 +153,7 @@ export default {
       });
     }
 
-    // Endpoint 2: Verifikasi Turnstile dan berikan URL asli
+    // Endpoint 2: Verifikasi Turnstile dan berikan URL SafelinkU
     if (request.method === "POST" && url.pathname === "/api/download") {
       try {
         const { token, editionId } = await request.json();
@@ -108,10 +208,13 @@ export default {
           });
         }
 
+        // Konversi link asli (Google Drive) ke link SafeLinkU via REST API
+        const finalUrl = await getSafelinkuUrl(edition.url, env);
+
         return new Response(JSON.stringify({
           success: true,
-          url: edition.url,
-          downloadUrl: edition.url
+          url: finalUrl,
+          downloadUrl: finalUrl
         }), {
           status: 200,
           headers: { ...corsHeaders, "Content-Type": "application/json" }

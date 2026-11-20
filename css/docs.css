@@ -498,6 +498,54 @@ body.light-mode .policy-badge-prohibited {
     color: #dc2626 !important;
 }
 
+/* Badges in Light Mode */
+body.light-mode .docs-wrapper .badge[style*="#e2e8f0"],
+body.light-mode .docs-wrapper .badge[style*="rgba(255, 255, 255"],
+body.light-mode .docs-wrapper .badge[style*="rgba(255,255,255"] {
+    background: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+    color: #475569 !important;
+}
+
+body.light-mode .docs-wrapper .badge[style*="#fca5a5"],
+body.light-mode .docs-wrapper .badge[style*="#f87171"] {
+    background: #fee2e2 !important;
+    border-color: #fca5a5 !important;
+    color: #b91c1c !important;
+}
+
+body.light-mode .docs-wrapper .badge[style*="#93c5fd"],
+body.light-mode .docs-wrapper .badge[style*="#38bdf8"] {
+    background: #e0f2fe !important;
+    border-color: #bae6fd !important;
+    color: #0369a1 !important;
+}
+
+body.light-mode .docs-wrapper .badge[style*="#34d399"],
+body.light-mode .docs-wrapper .badge[style*="#10b981"] {
+    background: #d1fae5 !important;
+    border-color: #a7f3d0 !important;
+    color: #047857 !important;
+}
+
+body.light-mode .docs-card .text-white {
+    color: #0f172a !important;
+}
+
+body.light-mode kbd {
+    background: #f1f5f9 !important;
+    color: #0284c7 !important;
+    border: 1px solid #cbd5e1 !important;
+}
+
+body.light-mode .policy-box-prohibited li {
+    color: #9f1239 !important;
+}
+
+body.light-mode .policy-box-allowed li {
+    color: #065f46 !important;
+}
+
 /* Code Blocks in Light Mode (Clean dark terminal container) */
 body.light-mode .code-block {
     background: #18181b !important;

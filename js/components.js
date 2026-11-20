@@ -29,7 +29,7 @@ const moedevComponents = {
         navContainer.outerHTML = `
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid d-flex align-items-center justify-content-between">
-            <a class="navbar-brand me-auto me-lg-4" href="./"><span class="brand-highlight">moe</span>dev</a>
+            <a class="navbar-brand me-auto me-lg-4 d-inline-flex align-items-center" href="./" aria-label="moedev"><span class="brand-logo" role="img" aria-label="moedev"></span></a>
 
             <div class="collapse navbar-collapse justify-content-center order-3 order-lg-2" id="navbarNav">
                 <ul class="navbar-nav align-items-center my-2 my-lg-0">
