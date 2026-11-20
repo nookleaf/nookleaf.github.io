@@ -34,100 +34,85 @@ function sanitizePublicData(obj) {
 const SHORTLINK_CACHE = new Map();
 
 /**
- * Generate shortlink via SafeLinkU REST API with dual format & caching
+ * Generate shortlink via SafeLinkU REST API with detailed diagnostic logging
  */
 async function getSafelinkuUrl(originalUrl, env) {
-  if (!originalUrl) return "";
+  const debug = {
+    hasToken: Boolean(env.SAFELINKU_TOKEN),
+    tokenLength: env.SAFELINKU_TOKEN ? env.SAFELINKU_TOKEN.trim().length : 0,
+    originalUrlSample: originalUrl ? originalUrl.substring(0, 35) + "..." : "empty",
+    status: "init"
+  };
 
-  // Jika URL aslinya sendiri sudah merupakan link safelinku, gunakan langsung
-  if (originalUrl.includes("safelinku.com") || originalUrl.includes("safelinku.my.id")) {
-    return originalUrl;
+  if (!originalUrl) {
+    debug.status = "no_url_provided";
+    return { url: "", debug };
+  }
+
+  // Jika URL aslinya sendiri sudah merupakan link safelinku / shortlink
+  if (originalUrl.includes("safelinku.com") || originalUrl.includes("safelinku.my.id") || originalUrl.includes("sfl.gl")) {
+    debug.status = "already_shortened_url";
+    return { url: originalUrl, debug };
   }
 
   const token = env.SAFELINKU_TOKEN ? env.SAFELINKU_TOKEN.trim() : "";
   if (!token) {
+    debug.status = "missing_safelinku_token_in_env";
     console.warn("SAFELINKU_TOKEN is not defined in Secrets! Returning original URL.");
-    return originalUrl;
+    return { url: originalUrl, debug };
   }
 
-  // 1. Cek KV Cache jika namespace LINK_CACHE terhubung
-  if (env.LINK_CACHE) {
-    try {
-      const cached = await env.LINK_CACHE.get(originalUrl);
-      if (cached && (cached.includes("safelinku.com") || cached.includes("safelinku.my.id"))) {
-        return cached;
-      }
-    } catch (e) {
-      console.warn("KV Cache get error:", e);
-    }
-  }
-
-  // 2. Cek Memory Cache
+  // 1. Cek Memory Cache
   if (SHORTLINK_CACHE.has(originalUrl)) {
     const cached = SHORTLINK_CACHE.get(originalUrl);
-    if (cached && (cached.includes("safelinku.com") || cached.includes("safelinku.my.id"))) {
-      return cached;
-    }
+    debug.status = "memory_cache_hit";
+    debug.shortUrl = cached;
+    return { url: cached, debug };
   }
 
-  // 3. Request ke API SafeLinkU
+  // 2. Request ke API SafeLinkU
   try {
-    // Format REST API v1 (POST)
+    const res = await fetch("https://safelinku.com/api/v1/links", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+      },
+      body: JSON.stringify({
+        url: originalUrl
+      })
+    });
+
+    debug.apiHttpStatus = res.status;
+    const rawText = await res.text();
+    debug.apiRawResponse = rawText.substring(0, 300);
+
     let shortUrl = "";
     try {
-      const res = await fetch("https://safelinku.com/api/v1/links", {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${token}`,
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({
-          url: originalUrl
-        })
-      });
-
-      if (res.ok) {
-        const data = await res.json();
-        shortUrl = data.url || data.shortenedUrl || (data.data && (data.data.url || data.data.shortenedUrl));
-      }
-    } catch (postErr) {
-      console.warn("SafeLinkU POST API error, trying GET fallback:", postErr);
-    }
-
-    // Fallback format GET query API
-    if (!shortUrl) {
-      try {
-        const getRes = await fetch(`https://safelinku.com/api?api=${encodeURIComponent(token)}&url=${encodeURIComponent(originalUrl)}`);
-        if (getRes.ok) {
-          const getData = await getRes.json();
-          shortUrl = getData.shortenedUrl || getData.url || (getData.data && (getData.data.url || getData.data.shortenedUrl));
-        }
-      } catch (getErr) {
-        console.warn("SafeLinkU GET API error:", getErr);
-      }
+      const data = JSON.parse(rawText);
+      shortUrl = data.url || data.shortenedUrl || (data.data && (data.data.url || data.data.shortenedUrl));
+    } catch (parseErr) {
+      debug.parseError = parseErr.message;
     }
 
     if (shortUrl) {
-      // Simpan ke Memory Cache
       SHORTLINK_CACHE.set(originalUrl, shortUrl);
-
-      // Simpan ke KV Cache jika tersedia
-      if (env.LINK_CACHE) {
-        try {
-          await env.LINK_CACHE.put(originalUrl, shortUrl);
-        } catch (e) {
-          console.warn("KV Cache put error:", e);
-        }
-      }
-      return shortUrl;
+      debug.status = "success";
+      debug.shortUrl = shortUrl;
+      return { url: shortUrl, debug };
+    } else {
+      debug.status = "api_response_missing_url";
     }
   } catch (err) {
+    debug.status = "api_fetch_exception";
+    debug.error = err.message;
     console.error("SafeLinkU API error:", err);
   }
 
-  // Fallback ke link asli jika SafelinkU sedang offline / timeout
-  return originalUrl;
+  // Fallback ke link asli jika SafeLinkU error
+  return { url: originalUrl, debug };
 }
 
 export default {
@@ -153,7 +138,15 @@ export default {
       });
     }
 
-    // Endpoint 2: Verifikasi Turnstile dan berikan URL SafelinkU
+    // Endpoint 2: Diagnostic test endpoint untuk SafeLinkU
+    if (request.method === "GET" && url.pathname === "/api/test-safelink") {
+      const testResult = await getSafelinkuUrl("https://drive.google.com/test", env);
+      return new Response(JSON.stringify(testResult, null, 2), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" }
+      });
+    }
+
+    // Endpoint 3: Verifikasi Turnstile dan berikan URL SafeLinkU
     if (request.method === "POST" && url.pathname === "/api/download") {
       try {
         const { token, editionId } = await request.json();
@@ -209,12 +202,13 @@ export default {
         }
 
         // Konversi link asli (Google Drive) ke link SafeLinkU via REST API
-        const finalUrl = await getSafelinkuUrl(edition.url, env);
+        const { url: finalUrl, debug: safelinkDebug } = await getSafelinkuUrl(edition.url, env);
 
         return new Response(JSON.stringify({
           success: true,
           url: finalUrl,
-          downloadUrl: finalUrl
+          downloadUrl: finalUrl,
+          debug: safelinkDebug
         }), {
           status: 200,
           headers: { ...corsHeaders, "Content-Type": "application/json" }

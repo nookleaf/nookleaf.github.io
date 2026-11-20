@@ -559,6 +559,10 @@ async function executeDownload(item) {
             });
 
             const data = await res.json();
+            console.log('[Download Response]', data);
+            if (data.debug) {
+                console.log('[SafeLinkU Diagnostic Log]', data.debug);
+            }
             const targetUrl = data.url || data.downloadUrl;
             if (data.success && targetUrl) {
                 window.open(targetUrl, '_blank');
